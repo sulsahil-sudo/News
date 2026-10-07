@@ -68,9 +68,21 @@ if(currentCat==="عاجل")items=items.filter(n=>n.is_urgent);
 else if(currentCat!=="الكل")items=items.filter(n=>n.category===currentCat);
 const feed=document.getElementById("feed");
 if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار</div>';return}
-feed.innerHTML=items.slice(0,200).map(n=>`<div class="card"><a href="${n.url}" target="_blank"><span class="cat ${n.category}">${n.category}</span><h3>${esc(n.title_ar||n.title)}</h3><div class="meta">${n.source||''}</div></a></div>`).join("");
+feed.innerHTML=items.slice(0,200).map(n=>`<div class="card"><a href="${n.url}" target="_blank"><span class="cat ${n.category}">${n.category}</span><h3>${esc(n.title_ar||n.title)}</h3><div class="meta">${esc(n.source||'')} • ${timeAgo(n.published_at)}</div></a></div>`).join("");
 }
 function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function timeAgo(iso){
+if(!iso)return '';
+const d=new Date(iso),now=new Date();
+const m=Math.floor((now-d)/60000);
+if(m<1)return 'الآن';
+if(m<60)return 'قبل '+m+' دقيقة';
+const h=Math.floor(m/60);
+if(h<24)return 'قبل '+h+' ساعة';
+const dd=Math.floor(h/24);
+if(dd<7)return 'قبل '+dd+' يوم';
+return d.toLocaleDateString('ar-EG',{year:'numeric',month:'short',day:'numeric'});
+}
 function checkNewUrgent(){
 const u=allNews.filter(n=>n.is_urgent);
 if(!u.length)return;
