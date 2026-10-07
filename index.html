@@ -31,38 +31,55 @@ h1{font-size:20px;margin:8px 0}
 .card .meta{font-size:11px;color:#64748b;margin-top:8px}
 .card a{color:inherit;text-decoration:none}
 .loading,.empty{text-align:center;padding:40px;color:#64748b}
+#refreshBtn{background:#3b82f6;color:#fff;border:none;padding:8px 18px;border-radius:20px;font-size:14px;font-family:inherit;cursor:pointer}
+#refreshBtn:disabled{opacity:.7;cursor:wait}
 </style>
 </head>
 <body>
 <header>
-<h1>أخبار العالم</h1>
+<h1>🌍 أخبار العالم</h1>
 <div class="status" id="status">جاري التحميل...</div>
+<div style="margin-top:8px">
+<button id="refreshBtn" onclick="refreshNews()">🔄 تحديث الأخبار</button>
+</div>
 <div class="cats" id="cats"></div>
 </header>
 <div id="urgent"></div>
-<div class="feed" id="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
+<div class="feed" id="feed"><div class="loading">⏳ جاري تحميل الأخبار...</div></div>
 <script>
+// ⚠️ ضع هنا رابط Web App من Google Apps Script
+const SHEETS_API = "ضع_هنا_رابط_Google_Sheets";
+
 const CATEGORIES=["الكل","عاجل","سياسة","اقتصاد","علوم","تقنية","رياضة","صحة","طبيعة","عام"];
 let allNews=[],currentCat="الكل",lastUrgentId=null;
+
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+
 async function loadNews(){
+const btn=document.getElementById("refreshBtn");
+if(btn){btn.disabled=true;btn.textContent="⏳ جاري التحديث...";}
 try{
-const r=await fetch("news.json?t="+Date.now());
+const r=await fetch(SHEETS_API+"?t="+Date.now());
 const data=await r.json();
 allNews=data.articles||[];
 document.getElementById("status").textContent=allNews.length+" خبر • آخر تحديث: "+new Date(data.updated).toLocaleTimeString("ar");
 render();checkNewUrgent();
+if(btn){btn.textContent="✅ تم التحديث";setTimeout(()=>{btn.textContent="🔄 تحديث الأخبار";btn.disabled=false;},1500);}
 }catch(e){
 document.getElementById("status").textContent="خطأ - أعد المحاولة";
+if(btn){btn.textContent="❌ فشل";setTimeout(()=>{btn.textContent="🔄 تحديث الأخبار";btn.disabled=false;},1500);}
 }
 }
+function refreshNews(){loadNews();}
+
 function renderCats(){
 document.getElementById("cats").innerHTML=CATEGORIES.map(c=>`<button class="${c===currentCat?'active':''}" onclick="setCat('${c}')">${c}</button>`).join("");
 }
 function setCat(c){currentCat=c;renderCats();render()}
+
 function render(){
 const urgent=allNews.filter(n=>n.is_urgent).slice(0,3);
-document.getElementById("urgent").innerHTML=urgent.length?`<div class="urgent-banner"><h2>عاجل الآن</h2>${urgent.map(n=>`<a href="${n.url}" target="_blank">${esc(n.title_ar)}</a>`).join("")}</div>`:"";
+document.getElementById("urgent").innerHTML=urgent.length?`<div class="urgent-banner"><h2>⚡ عاجل الآن</h2>${urgent.map(n=>`<a href="${n.url}" target="_blank">${esc(n.title_ar)}</a>`).join("")}</div>`:"";
 let items=allNews;
 if(currentCat==="عاجل")items=items.filter(n=>n.is_urgent);
 else if(currentCat!=="الكل")items=items.filter(n=>n.category===currentCat);
@@ -70,7 +87,9 @@ const feed=document.getElementById("feed");
 if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار</div>';return}
 feed.innerHTML=items.slice(0,200).map(n=>`<div class="card"><a href="${n.url}" target="_blank"><span class="cat ${n.category}">${n.category}</span><h3>${esc(n.title_ar||n.title)}</h3><div class="meta">${esc(n.source||'')} • ${timeAgo(n.published_at)}</div></a></div>`).join("");
 }
+
 function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
 function timeAgo(iso){
 if(!iso)return '';
 const d=new Date(iso),now=new Date();
@@ -83,19 +102,21 @@ const dd=Math.floor(h/24);
 if(dd<7)return 'قبل '+dd+' يوم';
 return d.toLocaleDateString('ar-EG',{year:'numeric',month:'short',day:'numeric'});
 }
+
 function checkNewUrgent(){
 const u=allNews.filter(n=>n.is_urgent);
 if(!u.length)return;
 if(u[0].id!==lastUrgentId){
 lastUrgentId=u[0].id;
 if("Notification" in window&&Notification.permission==="granted"){
-new Notification("عاجل",{body:u[0].title_ar});
+new Notification("⚡ عاجل",{body:u[0].title_ar});
 }
 }
 }
+
 renderCats();
 loadNews();
-setInterval(loadNews,60000);
+
 if("Notification" in window&&Notification.permission==="default"){
 setTimeout(()=>Notification.requestPermission(),5000);
 }
