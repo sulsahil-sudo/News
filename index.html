@@ -93,14 +93,31 @@ function timeAgo(iso){
 if(!iso)return '';
 var d=new Date(iso);
 if(isNaN(d.getTime()))return '';
+var now=new Date();
+var h=d.getHours();
+var mi=String(d.getMinutes()).padStart(2,'0');
+var ampm=h>=12?'مساءً':'صباحاً';
+var h12=h%12||12;
+var timeStr=h12+':'+mi+' '+ampm;
+
+// التاريخ
 var y=d.getFullYear();
 var mo=String(d.getMonth()+1).padStart(2,'0');
 var da=String(d.getDate()).padStart(2,'0');
-var h=d.getHours();
-var mi=String(d.getMinutes()).padStart(2,'0');
-var ampm=h>=12?'PM':'AM';
-h=h%12||12;
-return y+'-'+mo+'-'+da+' '+String(h).padStart(2,'0')+':'+mi+' '+ampm;
+
+// اليوم/أمس
+var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+var thatDay=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+var diffDays=Math.round((today-thatDay)/86400000);
+
+var dayLabel;
+if(diffDays===0)dayLabel='اليوم';
+else if(diffDays===1)dayLabel='أمس';
+else if(diffDays===2)dayLabel='قبل يومين';
+else if(diffDays<7)dayLabel='قبل '+diffDays+' أيام';
+else dayLabel=da+'/'+mo+'/'+y;
+
+return dayLabel+' • '+timeStr;
 }
 
 function checkNewUrgent(){
