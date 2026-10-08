@@ -53,30 +53,20 @@ const CATEGORIES=["الكل","عاجل","سياسة","اقتصاد","علوم","
 let allNews=[],currentCat="الكل",lastUrgentId=null;
 
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
-
-function loadNews(){
+async function loadNews(){
 var btn=document.getElementById("refreshBtn");
 if(btn){btn.disabled=true;btn.textContent="⏳ جاري التحديث...";}
-var callbackName="newsCallback_"+Date.now();
-window[callbackName]=function(data){
+try{
+var r=await fetch(SHEETS_API+"?t="+Date.now());
+var data=await r.json();
 allNews=data.articles||[];
 document.getElementById("status").textContent=allNews.length+" خبر • آخر تحديث: "+new Date(data.updated).toLocaleTimeString("ar");
-render();
-checkNewUrgent();
+render();checkNewUrgent();
 if(btn){btn.textContent="✅ تم التحديث";setTimeout(function(){btn.textContent="🔄 تحديث الأخبار";btn.disabled=false;},1500);}
-delete window[callbackName];
-var s=document.getElementById("jsonpScript");
-if(s)s.remove();
-};
-var s=document.createElement("script");
-s.id="jsonpScript";
-s.src=SHEETS_API+"?callback="+callbackName+"&t="+Date.now();
-s.onerror=function(){
-document.getElementById("status").textContent="خطأ - تحقق من الاتصال";
+}catch(e){
+document.getElementById("status").textContent="خطأ - أعد المحاولة";
 if(btn){btn.textContent="❌ فشل";setTimeout(function(){btn.textContent="🔄 تحديث الأخبار";btn.disabled=false;},1500);}
-delete window[callbackName];
-};
-document.body.appendChild(s);
+}
 }
 
 function refreshNews(){loadNews();}
