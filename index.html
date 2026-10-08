@@ -53,6 +53,7 @@ const CATEGORIES=["الكل","عاجل","سياسة","اقتصاد","علوم","
 let allNews=[],currentCat="الكل",lastUrgentId=null;
 
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
+
 async function loadNews(){
 var btn=document.getElementById("refreshBtn");
 if(btn){btn.disabled=true;btn.textContent="⏳ جاري التحديث...";}
@@ -68,7 +69,6 @@ document.getElementById("status").textContent="خطأ - أعد المحاولة"
 if(btn){btn.textContent="❌ فشل";setTimeout(function(){btn.textContent="🔄 تحديث الأخبار";btn.disabled=false;},1500);}
 }
 }
-
 function refreshNews(){loadNews();}
 
 function renderCats(){
@@ -76,15 +76,19 @@ document.getElementById("cats").innerHTML=CATEGORIES.map(function(c){return '<bu
 }
 function setCat(c){currentCat=c;renderCats();render();}
 
+function searchUrl(title){
+return 'https://www.google.com/search?q='+encodeURIComponent(title);
+}
+
 function render(){
 var urgent=allNews.filter(function(n){return n.is_urgent;}).slice(0,3);
-document.getElementById("urgent").innerHTML=urgent.length?'<div class="urgent-banner"><h2>⚡ عاجل الآن</h2>'+urgent.map(function(n){return '<a href="'+n.url+'" target="_blank">'+esc(n.title_ar)+'</a>';}).join("")+'</div>':"";
+document.getElementById("urgent").innerHTML=urgent.length?'<div class="urgent-banner"><h2>⚡ عاجل الآن</h2>'+urgent.map(function(n){return '<a href="'+searchUrl(n.title_ar||n.title)+'" target="_blank">'+esc(n.title_ar)+'</a>';}).join("")+'</div>':"";
 var items=allNews;
 if(currentCat==="عاجل")items=items.filter(function(n){return n.is_urgent;});
 else if(currentCat!=="الكل")items=items.filter(function(n){return n.category===currentCat;});
 var feed=document.getElementById("feed");
 if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار</div>';return;}
-feed.innerHTML=items.slice(0,200).map(function(n){return '<div class="card"><a href="'+n.url+'" target="_blank"><span class="cat '+n.category+'">'+n.category+'</span><h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+esc(n.source||'')+' • '+timeAgo(n.published_at)+'</div></a></div>';}).join("");
+feed.innerHTML=items.slice(0,200).map(function(n){return '<div class="card"><a href="'+searchUrl(n.title_ar||n.title)+'" target="_blank"><span class="cat '+n.category+'">'+n.category+'</span><h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+esc(n.source||'')+' • '+timeAgo(n.published_at)+'</div></a></div>';}).join("");
 }
 
 function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -93,19 +97,17 @@ function timeAgo(iso){
 if(!iso)return '';
 var d=new Date(iso);
 if(isNaN(d.getTime()))return '';
-var now=new Date();
 var h=d.getHours();
 var mi=String(d.getMinutes()).padStart(2,'0');
 var ampm=h>=12?'مساءً':'صباحاً';
 var h12=h%12||12;
 var timeStr=h12+':'+mi+' '+ampm;
 
-// التاريخ
 var y=d.getFullYear();
 var mo=String(d.getMonth()+1).padStart(2,'0');
 var da=String(d.getDate()).padStart(2,'0');
 
-// اليوم/أمس
+var now=new Date();
 var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 var thatDay=new Date(d.getFullYear(),d.getMonth(),d.getDate());
 var diffDays=Math.round((today-thatDay)/86400000);
