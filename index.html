@@ -110,12 +110,9 @@ var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 var thatDay=new Date(d.getFullYear(),d.getMonth(),d.getDate());
 var diffDays=Math.round((today-thatDay)/86400000);
 
-var dayLabel;
-if(diffDays===0)dayLabel='اليوم';
-else if(diffDays===1)dayLabel='أمس';
-else if(diffDays===2)dayLabel='قبل يومين';
-else if(diffDays<7)dayLabel='قبل '+diffDays+' أيام';
-else dayLabel=da+'/'+mo+'/'+y;
+var days=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+var dayLabel=days[d.getDay()];
+if(diffDays>=7)dayLabel=dayLabel+' '+da+'/'+mo;
 
 return dayLabel+' • '+timeStr;
 }
