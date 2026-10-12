@@ -25,19 +25,18 @@ def has_arabic(t):
     return any("\u0600" <= c <= "\u06FF" for c in t[:30])
 
 def translate(text):
-    if not text: return text
+    if not text:
+        return text
+
     try:
         url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + urllib.parse.quote(text[:1500])
+
         with urllib.request.urlopen(url, timeout=10) as r:
             data = json.loads(r.read())
             return "".join(x[0] for x in data[0] if x[0])
+
     except Exception:
         return text
-
-def classify(title):
-    t = title.lower()
-    rules = {
-        "سياسة": ["انتخاب","رئيس","حكومة","وزير","برلمان","election","president","government"],
         "اقتصاد": ["اقتصاد","بورصة","دولار","نفط","economy","market","inflation"],
         "علوم": ["علم","دراسة","فضاء","science","study","space"],
         "تقنية": ["تقنية","ذكاء","هاتف","technology","software"],
