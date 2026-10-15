@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T15:01:58.121638+00:00",
+  "updated": "2026-10-15T19:08:02.759423+00:00",
   "count": 192,
   "articles": [
     {
@@ -10,7 +10,7 @@
       "source": "Afrik",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:58.121475+00:00"
+      "collected": "2026-10-15T19:08:02.759248+00:00"
     },
     {
       "id": "cd27fcb992076ae518f72e2aec4b2df4",
@@ -20,7 +20,7 @@
       "source": "Groupe mind",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:58.121457+00:00"
+      "collected": "2026-10-15T19:08:02.759234+00:00"
     },
     {
       "id": "0736c4da7d4afe5dbb44afdbf4e393e9",
@@ -30,7 +30,7 @@
       "source": "Nice-Matin",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:58.121446+00:00"
+      "collected": "2026-10-15T19:08:02.759225+00:00"
     },
     {
       "id": "e301ff0bba7eb721baab14e87bc91a5f",
@@ -40,7 +40,7 @@
       "source": "Crunchyroll",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:58.121428+00:00"
+      "collected": "2026-10-15T19:08:02.759210+00:00"
     },
     {
       "id": "4c397fab5173006a03aa1ffd2584e4d7",
@@ -50,7 +50,7 @@
       "source": "Bahá’í World News Service",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:58.121415+00:00"
+      "collected": "2026-10-15T19:08:02.759200+00:00"
     },
     {
       "id": "389b559986dbbd3843161a153bd0a002",
@@ -60,7 +60,7 @@
       "source": "Moto-Station",
       "category": "عام",
       "is_urgent": true,
-      "collected": "2026-10-15T15:01:58.121390+00:00"
+      "collected": "2026-10-15T19:08:02.759179+00:00"
     },
     {
       "id": "538c5f332562b318428f03afed18b1ac",
@@ -70,7 +70,7 @@
       "source": "Africa24 TV",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:58.121375+00:00"
+      "collected": "2026-10-15T19:08:02.759168+00:00"
     },
     {
       "id": "2985a9c3f3e08e92a232fc074ab2cbfa",
@@ -80,7 +80,7 @@
       "source": "Sound Of Violence",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:58.121348+00:00"
+      "collected": "2026-10-15T19:08:02.759140+00:00"
     },
     {
       "id": "2ff8809c53453baf2f3ccb5763f2d705",
@@ -90,7 +90,7 @@
       "source": "ABC News - Breaking News, Latest News and Videos",
       "category": "عام",
       "is_urgent": true,
-      "collected": "2026-10-15T15:01:57.349317+00:00"
+      "collected": "2026-10-15T19:08:02.299567+00:00"
     },
     {
       "id": "0d2fc51b1d812c0d71d37b8224b2df0e",
@@ -100,37 +100,7 @@
       "source": "BBC",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:57.349304+00:00"
-    },
-    {
-      "id": "c49f89b4e4fe2963d08a1146f5bd8d28",
-      "title": "Ukraine says new Starlink restrictions disrupt military as it reels from intel gaps and Trump clash - NBC News",
-      "title_ar": "Ukraine says new Starlink restrictions disrupt military as it reels from intel gaps and Trump clash - NBC News",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVFZxOFpYUkhfNjVDUzFoSUhVQ3JRdERHWXdlbk1PUW9zc0tvNEo5cnVnODNTUHA0V1lmX1hyVERYc2FtX0d4MjMzdVZOVGpETjNTTy1FaHpFakZKYzQwWW9RV2hJeE9nQ0JoSUs4c0FJVE1ZSUdsWk5zSmxJcHVEaHJza2NjSEd1RmNYNVM0MHUxcDV1dzBraTB2UUh2RzhSdk05VmMyOUhVeEdKcFZjXzZGYUhTSlE?oc=5",
-      "source": "NBC News",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:57.349292+00:00"
-    },
-    {
-      "id": "69dfaace6b4fc1a84f45048e29df347c",
-      "title": "What is Starshield, SpaceX’s military-grade Starlink system, and how will its restriction affect Ukraine? - The Guardian",
-      "title_ar": "What is Starshield, SpaceX’s military-grade Starlink system, and how will its restriction affect Ukraine? - The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZkNuTlFoRFhjRHU4cGpqaVB6aXJYNlVjc3NhZ0dlS0UwTENYV0ZDWGk5RTNmVWlhNFZlVTZWY2x1UVlNWk9zNEtGNUozaDl1b2RNZ1cycnBDdjNxWjFCWHphM1JxYUtWWHAxd1h6SGNzWGpzVU9KX2FaaVBhMmFtUWRtWE5KY1IyWlZNb0xaVUZCTlNNcjBGT1lWUQ?oc=5",
-      "source": "The Guardian",
-      "category": "علوم",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:57.349278+00:00"
-    },
-    {
-      "id": "b448c61356162e3c2cce36634c6d6948",
-      "title": "Zelensky turns on Trump - The Telegraph",
-      "title_ar": "Zelensky turns on Trump - The Telegraph",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdDVwVnA4R3RaMHFxWFZ5Nm9oeXdRN3kxcU9BN2FaMWFza1JmT1Z2QWRfNGZxaFpfS0VLM2w4TGJmdHRkRWIyenAzTVBjTXNPcHBGLU9DbmNreUtVWU5KLTdTbDcteHAtWkIwOUhjNFg3d2NiQ1JoU1V5dFdsRGctOE45RTVib3prcXgxM2l1LWk5UTNJYW5EWnJnUXZUZ0VocG9RbE0zQ3N6ejdvOU1J?oc=5",
-      "source": "The Telegraph",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:57.349256+00:00"
+      "collected": "2026-10-15T19:08:02.299556+00:00"
     },
     {
       "id": "22db6526db39fa6a9e47381f5e09f1ec",
@@ -140,17 +110,47 @@
       "source": "CBS News",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:57.349244+00:00"
+      "collected": "2026-10-15T19:08:02.299547+00:00"
     },
     {
       "id": "6c51fcfc20e80c0e6a474423032cd975",
-      "title": "Trump calls off livestream for Fort Hood shooter's execution by firing squad - BBC",
-      "title_ar": "Trump calls off livestream for Fort Hood shooter's execution by firing squad - BBC",
+      "title": "Trump calls off livestream of Fort Hood attacker's execution by firing squad - BBC",
+      "title_ar": "Trump calls off livestream of Fort Hood attacker's execution by firing squad - BBC",
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA5bXY3WjdLWnUtYVI0V2NNQmMtd2hZemx6MHM0RXpobVg4YlNqWm01aWluQVlSTTdxbHlTNW5tTE12YmlCVU9lZGYwWkh4ZXBKcjdUR3ZmcUk3bEE?oc=5",
       "source": "BBC",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:57.349229+00:00"
+      "collected": "2026-10-15T19:08:02.299537+00:00"
+    },
+    {
+      "id": "69dfaace6b4fc1a84f45048e29df347c",
+      "title": "What is Starshield, SpaceX’s military-grade Starlink system, and how will its restriction affect Ukraine? - The Guardian",
+      "title_ar": "What is Starshield, SpaceX’s military-grade Starlink system, and how will its restriction affect Ukraine? - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZkNuTlFoRFhjRHU4cGpqaVB6aXJYNlVjc3NhZ0dlS0UwTENYV0ZDWGk5RTNmVWlhNFZlVTZWY2x1UVlNWk9zNEtGNUozaDl1b2RNZ1cycnBDdjNxWjFCWHphM1JxYUtWWHAxd1h6SGNzWGpzVU9KX2FaaVBhMmFtUWRtWE5KY1IyWlZNb0xaVUZCTlNNcjBGT1lWUQ?oc=5",
+      "source": "The Guardian",
+      "category": "علوم",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:02.299527+00:00"
+    },
+    {
+      "id": "fd72bf32a76b7d36721e7545ec5fe36e",
+      "title": "Ukraine’s Exposure Grows as Satellite Use Is Restricted and Russia Escalates - The New York Times",
+      "title_ar": "Ukraine’s Exposure Grows as Satellite Use Is Restricted and Russia Escalates - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPNXdEMlRSTDR5bVVYU1RhR1ljMjB3RU5iaFZYZmdndGg5UWdtdjVLOEdibVlXLUtRSVB3S3RGYXhkZnJWY2dNQjlwMWZaSnJ3NTliaTZrQ0p6X2RWYm9CSEZiTmFDWEJVNnZjeGsyMUlPdkVCajIya2tXWWlNeFFTcVBn?oc=5",
+      "source": "The New York Times",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:02.299512+00:00"
+    },
+    {
+      "id": "02176d48b1b5ce05413cdb86e1a7d64f",
+      "title": "‘We’re done’: Ukraine resumes strikes on Russian oil refineries as anger at Trump mounts - NBC News",
+      "title_ar": "‘We’re done’: Ukraine resumes strikes on Russian oil refineries as anger at Trump mounts - NBC News",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOOGlmVmZvMDNPb3VjRGN2ckNvY1ZaaHRxQmdENlI4U1hLX2tNZlVHR2lzdEt1cTN1RnZldFQwRlFzMW5jMkNsbXlYYVhmWktsRXBtdU1EN0E2ODFpWWNtenBSSjVIYS1QWHluTzFiT3BiV0pzbl9IVEZHcmNWZGEyUWUtYXFONDhBYURjdHc5WDdzZFlEZ042YVJkMUFiaTNQX0hTd01hZFdqMG9yNXIzQ0ZFUGs3cms?oc=5",
+      "source": "NBC News",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:02.299496+00:00"
     },
     {
       "id": "57b7761f297efa2e4cb6601293a033f3",
@@ -160,17 +160,27 @@
       "source": "News.com.au",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:57.349203+00:00"
+      "collected": "2026-10-15T19:08:02.299466+00:00"
     },
     {
-      "id": "fcdfcbd2298be808fac80dee1af3ad2e",
-      "title": "بكين تتمسك بفلسطين: دعم مستمر للقضية الفلسطينية ودعوة لحل الدولتين - صوت بيروت إنترناشونال",
-      "title_ar": "بكين تتمسك بفلسطين: دعم مستمر للقضية الفلسطينية ودعوة لحل الدولتين - صوت بيروت إنترناشونال",
-      "url": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxPdGhVVGN3Sm9fWXd1UGR1cE5zdmgycHVVZkpXOGxmUjVxazNSOFg1MnRXemZMb1pRU1dRWHpIV2RpZ1N1UWFZVUpvTUNmXzh5NFZnZWNwMDd3SVlOWFlsV05lWm9oaDdMNngzaWRfSW9YUDIzb3p4TVQzMElWSm9zZ1FEZlhJVVUxWnBWQ2wzaTh1UWhobUtMQ1BLNmlLZGpJZ2ZlRzJiQy10VVVzYWhLdEFfRDZfQk1KclJhTU9yWGV2S3lJMnREMkR3eDhTaFJlRUE3RjJSLUFLdTItZTRVRlBhRUNtTldCVXZHRHRyRFg2Z1JMNW5XZmZDbGdTeUM3RnBrVTg1RU56Qm5qcjR0YkdvcW9rb1k3bUlvOXU1S1p0UjFjSmJkbEk3YTBFNlFGcnpaRV9RQ25uNk8wdjdTRW9TaFJHcndUZ3hkeTROODRVMldwQmpuWQ?oc=5",
-      "source": "صوت بيروت إنترناشونال",
+      "id": "87236d871c7ab2603e7986ab0ceaf1b0",
+      "title": "دروس اللغة اليابانية تبدأ في مدارس بمصر - NHKニュース",
+      "title_ar": "دروس اللغة اليابانية تبدأ في مدارس بمصر - NHKニュース",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE0yUDBIX1FLMFQycko2NWY5ZFVmRVZxV25WRlJ4UlJwb2JDSzBBU002OHNsMVpYRzJ2YlFaajZXeUZqMThtdE1yOENTQXNxcUFFekJOUHp4QXJQdE5BbmJTZnFZNzM?oc=5",
+      "source": "NHKニュース",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.788932+00:00"
+      "collected": "2026-10-15T19:08:02.207943+00:00"
+    },
+    {
+      "id": "a065bb93e4c3cfe26366b1e117e28366",
+      "title": "أطفال يتحدون إلها شينتويا في نزال سومو - NHKニュース",
+      "title_ar": "أطفال يتحدون إلها شينتويا في نزال سومو - NHKニュース",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBCS2F2b3VaU3M3dnNyaFNJX0xWQ1AzdElSMTM3RmFiX1ZHa3lmaERRM2lyOEJoQ1pBd3pxUHdhemJSenhJNDd3YUJNWmZrR0ZzQUNGbU1WV0lBbWswTHh2OUZ1Rjh0cUE?oc=5",
+      "source": "NHKニュース",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:02.207933+00:00"
     },
     {
       "id": "8114802f0813eefdf89d89551ce3409d",
@@ -180,7 +190,7 @@
       "source": "NHKニュース",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.788915+00:00"
+      "collected": "2026-10-15T19:08:02.207922+00:00"
     },
     {
       "id": "3da2d175624e95a96e556deebe548ede",
@@ -190,17 +200,7 @@
       "source": "سكاي نيوز عربية",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.788900+00:00"
-    },
-    {
-      "id": "9b7fac3b2c0fd8771af925351f93bc1c",
-      "title": "الأمير هاري وميغان يظهران معا لأول مرة منذ العودة إلى بريطانيا - صوت بيروت إنترناشونال",
-      "title_ar": "الأمير هاري وميغان يظهران معا لأول مرة منذ العودة إلى بريطانيا - صوت بيروت إنترناشونال",
-      "url": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxQNTJTMUkyVVNES25JaVQ3aDE5V242Wm42YUJ3NUZtVzNtdkxiMlFndFpfYjFDRmRKSERiS2h4YlZlV0ZBWHl6S1VzSUdXbEdzTk9Iakd3eHJsTDc1cjl1U0hfS1NTb2Rnc3F6Nm82ZkN0M2E2MTdVclp1OU5sc25kcURaeWVOLVNIeXVqbk5COVNTeWp4Q01NajI2OEtxcERNdkFwQk90LXFtMi0zVzZaRDFJd2R5U3pDMkRkMFZBN3ZwcnFPV0VfaXpvdnZtNEhueVRUR0JKUFFHVnljVEtKeFJUc0NjVmtOYkdoQng3RG9fUlNqcHVfWnhJZE1GWmFsR2NoRHJFOWN3cHFSSm1FdjdGTUxSMWFIaXpIejVybWFtTFlxV3pvNkpBTUVvQmR3RDk2N0xlYUUwZGdBUlpVcUZnbmJCaW9US25wTkVVVDZHam9GTFJTdA?oc=5",
-      "source": "صوت بيروت إنترناشونال",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.788883+00:00"
+      "collected": "2026-10-15T19:08:02.207912+00:00"
     },
     {
       "id": "037796562133dafd5772eec0fc967805",
@@ -210,17 +210,17 @@
       "source": "NHKニュース",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.788866+00:00"
+      "collected": "2026-10-15T19:08:02.207897+00:00"
     },
     {
-      "id": "fd7f63909e2c15cb79f4057de72f4c7c",
-      "title": "وكالة الطاقة الدولية تتجاوز خطة طرح 400 مليون برميل نفط وتسرّع ضخ الكميات المتبقية - صوت بيروت إنترناشونال",
-      "title_ar": "وكالة الطاقة الدولية تتجاوز خطة طرح 400 مليون برميل نفط وتسرّع ضخ الكميات المتبقية - صوت بيروت إنترناشونال",
-      "url": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxPZERmMzdZUjNWaW4ybFpjazVvMno2dnJsdDJtRk9DRnVCZURFcVNDamtkV21hWElnc2twUkliMjBxNHl4dWpjM3N0QTE3ZEZ6RnRZQjZQdWZyOUpvRWtfYzFWR2o4TFcwLVNhN1VsSk42TndwLUZSTlBORWtJa0RxS2FtdmZBelp3S3FiUmQtU0g0aEJFSjdLZzBVeWYtczZkM3NVend2V3c5aXhzenA0QXYxUlpvZXpVN0hBMTJiUlRjdUd2Z0F5OXpuNXNsTnVPaEEzd3Nzc3Z5LU5feFpIVUlXMElNeHBZWTg0UFZTSGlkUWlYRU8xNUFXcFF6bXNnNVRZSFpSaTFkd1NyMFJzdGY0TXI5RVVCRXB0MnZQNVRZMHF4MzhDc25DRDFCcXNBRVBlcGdLaTJhNnBnT0FkSmRWSk5zV1BoS3lOZlNZWnE1TXlTWEE?oc=5",
+      "id": "67465f0b84efe633cc851d3b8f70e29d",
+      "title": "تركيا تكشف عن إمكانية إجراء انتخابات مبكرة تتيح لأردوغان الترشح - صوت بيروت إنترناشونال",
+      "title_ar": "تركيا تكشف عن إمكانية إجراء انتخابات مبكرة تتيح لأردوغان الترشح - صوت بيروت إنترناشونال",
+      "url": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxPMGpia010LWxkbWlPeENBSzFVZW92dDJYV29PUlZPdzFaZC1rano5SzlXbWtVQ0x4dlowY25KaWFmeEVqYlk5d2lqNmp3NlZyVEZPbkJaY05JdnE3ajBYdDFnQm1QZ0ttaExCWVp2bjB0QmhvYU9QWXBhbm1DSjF3Zm85LS1sTWstdUdNbUpWNzdvQVdPODdla2Z4WjZqMmItZm84anY2MkdsREIyYTFrS1hkVzBRUFVrcHBlRDF1TkJxLWxiS3otNXdFY1k1OUdrSzcxZlNvLXpwQnc3eFI3WENDZUpzLWxNaWwwTzdIazBsOVVxeXZhb3hwdHVWZmlqcnJpcDdCNnRxcEVrdXNaME5VbFBFV2FoMHAxT1lGaVFZZDBzVy11MjViSzd5WEtBNUtpcjRabEtwY0FWQjd2SUpsbVN1RnNTQTNWVi13b0liTUhyeTFxUQ?oc=5",
       "source": "صوت بيروت إنترناشونال",
-      "category": "اقتصاد",
+      "category": "سياسة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.788851+00:00"
+      "collected": "2026-10-15T19:08:02.207885+00:00"
     },
     {
       "id": "cd08c8a0cb821c2d65ee0032fc798964",
@@ -230,7 +230,7 @@
       "source": "سكاي نيوز عربية",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.788834+00:00"
+      "collected": "2026-10-15T19:08:02.207873+00:00"
     },
     {
       "id": "b551c65f4f6163aebdbd0a40b8244ccb",
@@ -240,47 +240,47 @@
       "source": "البيان",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.788805+00:00"
+      "collected": "2026-10-15T19:08:02.207843+00:00"
     },
     {
-      "id": "d983fc0fee33e8d0b66794d434b73439",
-      "title": "Montenvers, un patrimoine face au recul des glaciers - Réseau Action Climat",
-      "title_ar": "Montenvers, un patrimoine face au recul des glaciers - Réseau Action Climat",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPc0ZlVEpoSU9VOWJCU1FEbktfeU5CUU5GbVNwUWoxLXhrLUpIYmFweG9hc0FFYlM1ZWdkUDJxbXkwdjZETkRiMDdIUC13MzJoeVF6aVRQS3lrNW16ckVRQWZYR1JqLWRVNWVGcWswcXg5SzBsOEU3cG1OY1E0S0dBU2hVUGxlQzRuT1NJ?oc=5",
-      "source": "Réseau Action Climat",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.218202+00:00"
-    },
-    {
-      "id": "7bdd372f1f43c98aa03b9bcb3c0e1d03",
-      "title": "Des dizaines de milliers de manifestants dans les rues de Bruxelles pour la défense du climat - Euronews.com",
-      "title_ar": "Des dizaines de milliers de manifestants dans les rues de Bruxelles pour la défense du climat - Euronews.com",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOS2ZPajVfNnVMSEN1X190VmhNd0dpQ1lDQ29scHMwZmxScWh2ZXEwNmV1Q0dzdG4wRnVmZkdmN3pieUlIRHJzTmxsWk50TlM4YWxWQkdZQzM2SVBiOEVRRkU5Zm92T29xdTNfTE1MZnpKc1JVanJNRFdkem9QYWJBV0Y1ajV0ME56N0xTT2lQaERMb1Y2U0oxSzNKVnM5WmhBTUVpb01GOVU0VkZkbXVIUzk4OGtrZXBIQ2FHSmNMV0FxelE?oc=5",
+      "id": "9183dd29ff0b5b603269a11972fd0308",
+      "title": "Nvidia ouvre à Stockholm un hub IA pour les start-up santé et climat - Euronews.com",
+      "title_ar": "Nvidia ouvre à Stockholm un hub IA pour les start-up santé et climat - Euronews.com",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVXZFVkhFUXdibkxnOHp3a3MxVl9uVGVTYmNJUEZHaHc4c2hSSmtDQnZFMTZSdmJVcDlERjN2X2l5UzNyTkFJSFNUSHZBanFrZFFXNUF3eDFQU2M3aEJBUEVXSUNxUWJxVm50dlhsbEl2cU1rYW4zRjBLaWtVS3ItUnJ2YzR5cWlsYm5JLVVvdE93WGJpS3hJVmZ4Z1AwT0pjLTBFMGdB?oc=5",
       "source": "Euronews.com",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.218187+00:00"
+      "collected": "2026-10-15T19:08:01.655707+00:00"
     },
     {
-      "id": "35e8c68409eef11f32bbc3d98c34a517",
-      "title": "Vidéo. Marche pour le climat à Bruxelles : la planète hurle contre les énergies fossiles - Euronews.com",
-      "title_ar": "Vidéo. Marche pour le climat à Bruxelles : la planète hurle contre les énergies fossiles - Euronews.com",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQcFlvdnRqLWxJbUxqUWdHSkRWUHNEZ1M2TTJHMVNKMWlyaWFjMzB3Q3V3ZWlJNzV2YXVHOG4zN3Fid2xObGRBcWkySEE0S01ibGUtOUxjOVNZV0czcXVRWEpNdVg0TUVDVVI5LWZkRXZJVFA3TFhPVTVtQXJtVExodUxBcWRhU25NbDdLY3c2Tkk1NUJ3R0JZZ3YtUy1DQmU4UmV6TjYyb0pBeTVMS1NCLU9JRzBlMkxWc3pMaElmVW9qNUd5dFpXVUt5bw?oc=5",
-      "source": "Euronews.com",
+      "id": "92e9c840e30f6a47b9429bce632842e6",
+      "title": "Journal Météo climat en replay - Journal Météo Climat - France TV",
+      "title_ar": "Journal Météo climat en replay - Journal Météo Climat - France TV",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPTEVrU2RHSHB5Z0pEdnprbjJJWmRIQTRhdlZMWE9hakpqTDNwT3prUW5NV0VfQUhrZGNIU2l3bjhVYjByZmxUOTYyaFJtSkNnRm1PV1ZVMWk1enNMQUFsVVIwRDRKanpfU2FnazF5dnRuNFg3RjNKelFPZEszRnpQeTdQdEN4cHlaTnN1MTFBYjFrQQ?oc=5",
+      "source": "France TV",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.218170+00:00"
+      "collected": "2026-10-15T19:08:01.655695+00:00"
     },
     {
-      "id": "06df6c09787cfecb3e83d5b0adf7bace",
-      "title": "« Ce n’est plus une mise en garde, mais un diagnostic » : pourquoi les scientifiques s’inquiètent de l’emballement du climat - Futura, le média qui explore le monde",
-      "title_ar": "« Ce n’est plus une mise en garde, mais un diagnostic » : pourquoi les scientifiques s’inquiètent de l’emballement du climat - Futura, le média qui explore le monde",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQeWd0eUlXd194ZTd0by1qZU5jMjFVVHozQXVMZEJHZkVwRWVQMTZ2R3l1YzRaUTh1dXNKcXZZYnZqWFI0Vi10cnppR0VEcVNYbFE2SGpWSWptUjNJNzdmb0FxZTJIeFJjWUVFaFdKZnRUSml0Z3hfNzczOFJzYV9kVXB4SE9Wb3A0SFNYUnRybHBVR2hnMUhJUldzdkdXOGVxRlZFWUtLSy1kNHpST1lQZHhhU1lYR0puSTZmdEFCM095U0w2Ukl3NkFfNXNGemVwajdMTWNGQ2lrdmFsVHcxN3QxOA?oc=5",
-      "source": "Futura, le média qui explore le monde",
+      "id": "547ef88a614800a155bf57c442d7cbd6",
+      "title": "Une taxe sur les surprofits pétroliers plairait à 76 % des Canadiens, selon un sondage - Le Devoir",
+      "title_ar": "Une taxe sur les surprofits pétroliers plairait à 76 % des Canadiens, selon un sondage - Le Devoir",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeVhkTXp3a2czLXBBU1IteXZYZnhGZ1FWSG5PQ09vNXBXYUluVzd3VkZxWUk3RF9kODhCRWtweEwta0FnUVhVSVU4RHpjRUcwSzVFcTRlZVJfMWRrejNOSkw0NnRfNkFDdWZhZVN3eFpYVWtqM1FNYlBkRXM4akhWZGFRRXg3RUJEN21oX2pPUWtKSWJLY2ItZ3JZRVZzRkVWSTViU0gyNA?oc=5",
+      "source": "Le Devoir",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.218153+00:00"
+      "collected": "2026-10-15T19:08:01.655683+00:00"
+    },
+    {
+      "id": "5fc261287b3246b1c60a9d6692bd1d9f",
+      "title": "Multilateralism: Council sets EU position ahead of climate change and biodiversity summits - Consilium.europa.eu",
+      "title_ar": "Multilateralism: Council sets EU position ahead of climate change and biodiversity summits - Consilium.europa.eu",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNUWRTUUhDTmhOWjNFeTg2Y05pVkVsd3E4Nm05bjl3MmZONzFzVGRMUjM3WlhodlVHU2sySV9IQnlJQ3UwZy1oRWJQbHVNSVVrcFZBN2lyQ1ktMWJkYzFoR1htSWpfNWczcEx5OEI2TTFMb2ZLNG5NTy1uWTk4Mmxqc3JXZm9OM21hdURFZEZGaDJFZVF3WVNZLUVtTHh1U3dwekFZS1YwR3I2cFlTdVlneXU5T2pYUW4yZTU4Q2J3N2R3VWI5VzdlQ29ZV1pyNW9MbXVzRlNRZUdNdjFnaXA0dzU3UW8tMFNVZDhnNVZ3?oc=5",
+      "source": "Consilium.europa.eu",
+      "category": "طبيعة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:01.655658+00:00"
     },
     {
       "id": "d08cb5a695d89db1099cb045b63e3641",
@@ -290,17 +290,17 @@
       "source": "Novethic",
       "category": "طبيعة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.218129+00:00"
+      "collected": "2026-10-15T19:08:01.655647+00:00"
     },
     {
-      "id": "e0e096b8eb3e301eb03db3935e6050a7",
-      "title": "\"Il y a un impératif de tous travailler sur le climat\" : les rencontres du littoral s’interrogent sur l’érosion et la biodiversité marine - Midi Libre",
-      "title_ar": "\"Il y a un impératif de tous travailler sur le climat\" : les rencontres du littoral s’interrogent sur l’érosion et la biodiversité marine - Midi Libre",
-      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNRmh1RHA3Y1ZyeVNSTjhlcUtVdjFEVWlzUS1zQmttV0tBemhFYUlxeUI1U1NjcXc3Y3Bpc0RMd2FWeDdlVnRlTHl4Rjdwem91OTNIbkxGRlVBWHRyTU9YbGllWnVHVHZqbTR2V2V5RmxBY3pjYVdyTU5mNC13RFNYTkdxQ2drZ0E5YnhYcEJ4UTRjc0FEajRsM0U2blRoU1RjOE9PRE5DcUdVVklsNkk0dmdmRG9oXzdjT25CanQxS2x4SWFLSTM4ZThhVTBYSGNNOTlVUnlnZXJFeDB1cXFJaDFXUjJMaU9wbEJEekp4bmRLRDJkUVNjcVhueUpIdFUzdGRNN3lIOXNham1K?oc=5",
-      "source": "Midi Libre",
+      "id": "a602996214fc23ba752862bf6f278609",
+      "title": "Derrière l'empreinte carbone de l'IA, un possible outil pour le climat - France 24",
+      "title_ar": "Derrière l'empreinte carbone de l'IA, un possible outil pour le climat - France 24",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPd1hJZWJfSlpkeHZRbThVOWlkdmZRa2hkN1NmRl9DUFNOUld2MkdyRWdzT2JyLUxHeTFNeEVOdlUxeExTU05CVFJKanZWVnZtRG95cmgxNWtqMWNoVGV4aVF3b3NoZjJ0MG1yOGFKdFVkbm9GeVdjNjlQa2xZQlZmNWJoVkFDVkVjVDk4UG1iWVkxUl9vWEFYSVVLMDVRcWFUMFBJdXBLY254a3BRQ0RCRldKTng5WTJSakV4Z1BkbFAtVFVLVnc?oc=5",
+      "source": "France 24",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.218109+00:00"
+      "collected": "2026-10-15T19:08:01.655631+00:00"
     },
     {
       "id": "6422e2d1ffa9ff9adb5dcb40a3266459",
@@ -310,57 +310,37 @@
       "source": "Courrier international",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.218085+00:00"
+      "collected": "2026-10-15T19:08:01.655617+00:00"
     },
     {
-      "id": "48cb31bfe573be47f952ce797507ca2f",
-      "title": "Derrière l'empreinte carbone de l'IA, un possible outil pour le climat... - Fortuneo",
-      "title_ar": "Derrière l'empreinte carbone de l'IA, un possible outil pour le climat... - Fortuneo",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQcFBrUVVhVUVkN1pJZzZEQTVaWnd1aGpTUW9vRktqU05GRUVrMkdsSEl1Q2xVTnJ4bG53TzNkbTBmMDVDdGFvdS1abEd1V0ZYbUFrY2hmS3BVVE5iVmVkTm1BYXE1UXR2eTMwc0I5SUlFMm5mU1dON0xyZy1mcnY3ZDRLV29BMndkNGE2NVhvRjNCTDdSSW5mZFBmTnlkcG14REFRRWZ5LXhtWEQtcUZYNmdmTm5YQdIBuwFBVV95cUxNRG5LOVJET3huUzRaRlY3TFIwRl8tN2FHcUJWWGF1Z3piSXBTUW9hYmNUOU82eWgyUjQzOW5IcmFLWVNaaFZjTXpTd0xxcHZ4OTlpUmx0ZWVqLW5jUFIzVjdPSjJMOWo5aXdwNkFfSmtMaXdaYjhub29VOWRaQU9fbW9vVzJFM1RHSjViU1ZXeDFNNUg1RjFGbVVsWXJWeEdUcUpyZUhhd0k4Mi03Nk5yOFFhZ2R2T19jaERr?oc=5",
-      "source": "Fortuneo",
+      "id": "d983fc0fee33e8d0b66794d434b73439",
+      "title": "Montenvers, un patrimoine face au recul des glaciers - Réseau Action Climat",
+      "title_ar": "Montenvers, un patrimoine face au recul des glaciers - Réseau Action Climat",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPc0ZlVEpoSU9VOWJCU1FEbktfeU5CUU5GbVNwUWoxLXhrLUpIYmFweG9hc0FFYlM1ZWdkUDJxbXkwdjZETkRiMDdIUC13MzJoeVF6aVRQS3lrNW16ckVRQWZYR1JqLWRVNWVGcWswcXg5SzBsOEU3cG1OY1E0S0dBU2hVUGxlQzRuT1NJ?oc=5",
+      "source": "Réseau Action Climat",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:56.218053+00:00"
+      "collected": "2026-10-15T19:08:01.655585+00:00"
     },
     {
-      "id": "59269f790e5d73c3e3fed6ca7a716daa",
-      "title": "Opinion | ‘Digger,’ Tom Cruise’s Big Flop, Is a Secret Masterpiece - The New York Times",
-      "title_ar": "Opinion | ‘Digger,’ Tom Cruise’s Big Flop, Is a Secret Masterpiece - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNGhmVktTNkxBTDJ2eVRaSDhEYlVXM1FEeFJYY1k4U1lMb216WS1uLXdVdXp3MnQ5Zl9oLWNpNEVITWNZQXZJTVp6N3VsOVV2dnpvQTRGcnRtd2ltdTVpeWp6ZHo3UWhSVDhhWDRmODU1cVRwamd6YV9yZ0MtS1p5cVZRQ1JNckRRS3dwWg?oc=5",
-      "source": "The New York Times",
+      "id": "3628887f56d7a603682c06790806b50c",
+      "title": "What new research reveals about the dangers of smoke from urban firestorms - The Washington Post",
+      "title_ar": "What new research reveals about the dangers of smoke from urban firestorms - The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOVDZ4VVlhNk04RXdqaVdpcVpHdGdSanZIZlRtMGxOUnFIT2hLRmdPMmxkWHFIYm9MVS1BS3FEak1TRGdKTXF6bXZRRGdfMlRQZmNEUTFKdDc3bGRTLWxEODZxRU1rdHpZcHlCQlVPX29TV09WTnFGREp4cDlTOGhoNjJQTFdhbTlfS2oyOE9ydVY0X1JIb0dZV3hzVHEtUXd5VElZVTd0VktIektPNlNIN1dJaVNDOE1VNkFqeXlvYW9uRW8?oc=5",
+      "source": "The Washington Post",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:55.644513+00:00"
+      "collected": "2026-10-15T19:08:01.224874+00:00"
     },
     {
-      "id": "7f5d85a4ea514dbf6ec85e145a39ae6f",
-      "title": "There are ‘six Americas’ on climate change, but only two on data centers - Fortune",
-      "title_ar": "There are ‘six Americas’ on climate change, but only two on data centers - Fortune",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZmJBV1EzZmdLX01XMU9KaElFc3BNbFVXSmdhd253ZnJUOXo0M2JCcDRhNGpjSzdyVEhHR0FpUGhrOTNic3hqV3lrVXd5VGotYk9kZjgtQWFsRzlCcWlOTmlld05zRGRYMmZ5ck9UV0Z4UFo4Tmx6RUdWZklqU2RDclhDS3JOalE?oc=5",
-      "source": "Fortune",
+      "id": "1e3f4f1ec563e3e8cf108438e0f26e28",
+      "title": "2026 State of the Climate Report Shows a Planet Reaching Its Limits - Eos",
+      "title_ar": "2026 State of the Climate Report Shows a Planet Reaching Its Limits - Eos",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZ3VIdFpjMVRPQTh4Y1NOVExXOS1LQUJ2OVhfRGdfTmdSckRwVWpENTZIMV9ZMGtvRnBXXzFtOFFsV2NXMTZsVHdscl9wRWszd0hENW05ZlcwTlpuS09mYnVjMk0zczNlNHhielAtVEZGTkE4Y3hmeGlDUkFFX2lGLWxZSDVpeUExQ0FraVZsdG9ZU3M5Wm5neVVWTjZWQWthY2dUaVdCSTU2MTRDOGc?oc=5",
+      "source": "Eos",
       "category": "طبيعة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:55.644495+00:00"
-    },
-    {
-      "id": "187e86915033ca12fd6aa748cf9bdc63",
-      "title": "This Instagram-favorite tree could face changes in warming PNW - The Seattle Times",
-      "title_ar": "This Instagram-favorite tree could face changes in warming PNW - The Seattle Times",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVDllaWhhMzdyZGZyTEVSQjB1RHJ1VGRrcG90NUNSc3ZGSndqcWs4TnYyY1k0VDNMVXlqVF9wZ183RE9aUTRzVWRWWXM1Z2dWdF81cUxTMk1rTzVfbVI5S0lNOVE1VkZxM2V4N2F2bmVxRnNPRzNncFUzbXoxd0dxb2hjQWRVV1RNYUZ2cERZTVRkNGxmNXBJdzR0cEpOZE84a3RCNE1ldXdJb1NOQnY1cU5DU3BPVHVR?oc=5",
-      "source": "The Seattle Times",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:55.644477+00:00"
-    },
-    {
-      "id": "3d4a0e5bd44f3f09b4ede3453ab91ced",
-      "title": "An AI-for-Climate Startup Won Nvidia’s Backing—After Putting the Climate Part on Ice - WSJ",
-      "title_ar": "An AI-for-Climate Startup Won Nvidia’s Backing—After Putting the Climate Part on Ice - WSJ",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNak9mU2RoMUtpX2tSZlY3YTJwMms2UDZMVnNqTGJSTkdTTTBtdm5Cc3pHUUg4V2p2Um1SWmhTWGF1TUhIcmZZYWU3R2ZxYjVYRWRURDdHNXRUN0stSEU1STFrZ2t1Nko4RjFKRGF5NmRuX0RsMEhRMEhCNUFBQ0NoWmZ2LVpmVzR6MFZRTGlFVFRoLXhYQWZ6MjREMGRwb01EZWZBTjB5dTdTTXJjemVNVTE1MVFLTERoSmV6VG9NMmdxQ09aNFpVZm5XUQ?oc=5",
-      "source": "WSJ",
-      "category": "طبيعة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:55.644465+00:00"
+      "collected": "2026-10-15T19:08:01.224864+00:00"
     },
     {
       "id": "f908d1016f8ac30a1c33f7bc45297ee5",
@@ -370,17 +350,7 @@
       "source": "Time Magazine",
       "category": "طبيعة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:55.644444+00:00"
-    },
-    {
-      "id": "789ffc3afabc2a57eeed8d97af5f61b4",
-      "title": "The Earth’s vital signs are concerning, a new report says - The Washington Post",
-      "title_ar": "The Earth’s vital signs are concerning, a new report says - The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNTFHanVQdE9fd3ZkeWdtRUlmT0FKU1ZqRDNzUkZJaGRvc1NpWnBUdTY5eS01bS00QndNVHVrcG93cVoxV3E3ODFpUWd3UzNSNS1UajJ2WlFpNURUWG9jeGMtdVFUcGVGREZUSkhOcjFmWkFPQmN3WjBUQkI1YldjQTJMbnFJVVZreHNDNWtiNHloSmNLR2FzSEJfTHFxa1NfVVROY2dqMnFaV0N1SnZBSHdR?oc=5",
-      "source": "The Washington Post",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:55.644430+00:00"
+      "collected": "2026-10-15T19:08:01.224854+00:00"
     },
     {
       "id": "dd2cd7d66f1430ac2e7a7112dfb69fd2",
@@ -390,7 +360,37 @@
       "source": "CBS News",
       "category": "طبيعة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:55.644408+00:00"
+      "collected": "2026-10-15T19:08:01.224843+00:00"
+    },
+    {
+      "id": "76beff54d30e6caa1ffcc670b5356b44",
+      "title": "Despite efforts, Northwest cruise ships collide with whales, climate - KUOW",
+      "title_ar": "Despite efforts, Northwest cruise ships collide with whales, climate - KUOW",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPalVSTGNES1RodUo1U0NBb2txSnBPVVprX3dobDJjVVRYZ3NLWlM0amJsSnpYelB2U2ltYU9oNV90eWNMejdkUXczZnJ4UlR5bE1pSmhsWWlVNlV1WUMtZ2FEVUR4LU5TRnNYVDFQcms5YXFqc3c0RG9JUEZOX2trU0Y0ZXYxOHMtclp5Tld6N3JnSnQyVFByRWFSWVdENjBRa2oyS0NWbU5DNmJNS2U4?oc=5",
+      "source": "KUOW",
+      "category": "طبيعة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:01.224832+00:00"
+    },
+    {
+      "id": "59269f790e5d73c3e3fed6ca7a716daa",
+      "title": "Opinion | ‘Digger,’ Tom Cruise’s Big Flop, Is a Secret Masterpiece - The New York Times",
+      "title_ar": "Opinion | ‘Digger,’ Tom Cruise’s Big Flop, Is a Secret Masterpiece - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNGhmVktTNkxBTDJ2eVRaSDhEYlVXM1FEeFJYY1k4U1lMb216WS1uLXdVdXp3MnQ5Zl9oLWNpNEVITWNZQXZJTVp6N3VsOVV2dnpvQTRGcnRtd2ltdTVpeWp6ZHo3UWhSVDhhWDRmODU1cVRwamd6YV9yZ0MtS1p5cVZRQ1JNckRRS3dwWg?oc=5",
+      "source": "The New York Times",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:01.224821+00:00"
+    },
+    {
+      "id": "4ba1f4e40d9d88aab88cd81386758621",
+      "title": "Early humans in America endured climate chaos – new research - The Conversation",
+      "title_ar": "Early humans in America endured climate chaos – new research - The Conversation",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVjdjSkNoR294bldSX3Q1MmlfMUhwcFdaZ0gySDFicHFHNDVwOHgwcnhrVjlyQ1BFaWhoZTRYVDlHdURDbm5UMWlJR2tPMm1tck5UZW16emhpYWxMWWdSdG9pclNTY3dmUmVHcUhzX1VZclFhT1RsNHl5WjhCZnNHT1hLZFBOOF9pRFNmUFJGRnlzU3NIbVA3Mw?oc=5",
+      "source": "The Conversation",
+      "category": "طبيعة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:01.224803+00:00"
     },
     {
       "id": "8cf13afb30c14c81efcec17bd549aa6d",
@@ -400,7 +400,7 @@
       "source": "Los Angeles Times",
       "category": "طبيعة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:55.644381+00:00"
+      "collected": "2026-10-15T19:08:01.224770+00:00"
     },
     {
       "id": "b92b417823bcc47f5cf5f1cbaff2fa78",
@@ -410,7 +410,7 @@
       "source": "بوابة الشروق",
       "category": "سياسة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.984363+00:00"
+      "collected": "2026-10-15T19:08:00.673209+00:00"
     },
     {
       "id": "cd2794bbcd97254ac9faade67eb219ac",
@@ -420,7 +420,7 @@
       "source": "Euronews.com",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.984351+00:00"
+      "collected": "2026-10-15T19:08:00.673199+00:00"
     },
     {
       "id": "920081b627ec3d111d5fa613f2f29d8c",
@@ -430,17 +430,7 @@
       "source": "العربية",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.984336+00:00"
-    },
-    {
-      "id": "41a193b3953c48584ea629bbe33e534f",
-      "title": "كيف يعاني سكان المدن الأوروبية من تداعيات تغير المناخ؟ - بوابة الشروق",
-      "title_ar": "كيف يعاني سكان المدن الأوروبية من تداعيات تغير المناخ؟ - بوابة الشروق",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRy1NY2x5bkVXc3QybmJDcXF4U09GQ2VSelJ1Z3BNLTdiZFFzcXhMZ05Gc2xjRU1ubDd2SnoxV05zSl9BT0JHWnpsejJ5a3NmR05rZTBJWHJUYk1pR2NVbUhaZDhVSHRRZEI1Ql82S3NtUVpLc29sczVldXFjNkc1WS1QTHlwWnJEWVBzQzI4elFYUDlCQmoyUU12VDNVTGlCUEFwenZPVQ?oc=5",
-      "source": "بوابة الشروق",
-      "category": "طبيعة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.984322+00:00"
+      "collected": "2026-10-15T19:08:00.673187+00:00"
     },
     {
       "id": "ed72b6006eb08fa13a2a06b2a387ba5a",
@@ -450,7 +440,17 @@
       "source": "الشرق الأوسط",
       "category": "طبيعة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.984306+00:00"
+      "collected": "2026-10-15T19:08:00.673175+00:00"
+    },
+    {
+      "id": "41a193b3953c48584ea629bbe33e534f",
+      "title": "كيف يعاني سكان المدن الأوروبية من تداعيات تغير المناخ؟ - بوابة الشروق",
+      "title_ar": "كيف يعاني سكان المدن الأوروبية من تداعيات تغير المناخ؟ - بوابة الشروق",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRy1NY2x5bkVXc3QybmJDcXF4U09GQ2VSelJ1Z3BNLTdiZFFzcXhMZ05Gc2xjRU1ubDd2SnoxV05zSl9BT0JHWnpsejJ5a3NmR05rZTBJWHJUYk1pR2NVbUhaZDhVSHRRZEI1Ql82S3NtUVpLc29sczVldXFjNkc1WS1QTHlwWnJEWVBzQzI4elFYUDlCQmoyUU12VDNVTGlCUEFwenZPVQ?oc=5",
+      "source": "بوابة الشروق",
+      "category": "طبيعة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:00.673162+00:00"
     },
     {
       "id": "e4a321e18e8c28cf26c0801051bcbf8e",
@@ -460,17 +460,7 @@
       "source": "إرم نيوز",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.984288+00:00"
-    },
-    {
-      "id": "f0cb5f45dfe3e03d9297edc157d9cef2",
-      "title": "النينيو أم تغير المناخ: تأثير أكبر على الإعصار القوي بولو؟ - Euronews.com",
-      "title_ar": "النينيو أم تغير المناخ: تأثير أكبر على الإعصار القوي بولو؟ - Euronews.com",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxORjFqWmxjVmNCNjI4QzNBTGRkOWZhVExkY2J3M3ozc1phTjB6cUVyeHRISG12X2dQY2dEZnJlWXYyaHY4bzlRT0ZISEVqSnZqSHNydS03VFYwTHJ0TVM3S1BJQU5NN3JPN09QVEo2Rm9WaVpPcV9nY3RFR1ZRc2oxRnVZUnV0Y2swbURFckdHeXotdGh3YkhXOVVJZVR5aGtTRVd0TVl5TzhaUHd6ZjRtZjBxd05pMlF5eUF2SF9iOA?oc=5",
-      "source": "Euronews.com",
-      "category": "طبيعة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.984271+00:00"
+      "collected": "2026-10-15T19:08:00.673150+00:00"
     },
     {
       "id": "7748f48e315763dde95f8855752d28bd",
@@ -480,17 +470,17 @@
       "source": "عكاظ",
       "category": "طبيعة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.984241+00:00"
+      "collected": "2026-10-15T19:08:00.673137+00:00"
     },
     {
-      "id": "b4ca4ca341dfea0c7a7f9177052f0bbf",
-      "title": "Afnor Spec One Health : un nouvel outil pour passer du concept à l'action - Actu-Environnement",
-      "title_ar": "Afnor Spec One Health : un nouvel outil pour passer du concept à l'action - Actu-Environnement",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQVpIWmZVdGdkQkZlMTFuSHVpclEzVlNxY3dZekNfVm9md19qQUlOMFM2VXRNckhhN240VHk1YUFPZVVGSTJyMGMxMFhMVUE1dXVoY1llM3FqcmR6Sl9FT1FZM1BBTnZVUlQxRWpoclZYR0NnSFMwZGFkQjIzSWZyMUx6TUNFR0RSOWZ0VTZyRzdGTmtDMlAyUnVaclFta1dra2dr?oc=5",
-      "source": "Actu-Environnement",
-      "category": "صحة",
+      "id": "f0cb5f45dfe3e03d9297edc157d9cef2",
+      "title": "النينيو أم تغير المناخ: تأثير أكبر على الإعصار القوي بولو؟ - Euronews.com",
+      "title_ar": "النينيو أم تغير المناخ: تأثير أكبر على الإعصار القوي بولو؟ - Euronews.com",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxORjFqWmxjVmNCNjI4QzNBTGRkOWZhVExkY2J3M3ozc1phTjB6cUVyeHRISG12X2dQY2dEZnJlWXYyaHY4bzlRT0ZISEVqSnZqSHNydS03VFYwTHJ0TVM3S1BJQU5NN3JPN09QVEo2Rm9WaVpPcV9nY3RFR1ZRc2oxRnVZUnV0Y2swbURFckdHeXotdGh3YkhXOVVJZVR5aGtTRVd0TVl5TzhaUHd6ZjRtZjBxd05pMlF5eUF2SF9iOA?oc=5",
+      "source": "Euronews.com",
+      "category": "طبيعة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.394237+00:00"
+      "collected": "2026-10-15T19:08:00.673110+00:00"
     },
     {
       "id": "35295034f74a62410453e39f37de4a43",
@@ -500,27 +490,7 @@
       "source": "Investing.com France",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.394222+00:00"
-    },
-    {
-      "id": "37564fc6e03222f4aacaab74783c2417",
-      "title": "Labcorp va racheter certains actifs de la filiale Opko Health pour un montant pouvant atteindre 872 millions de dollars - TradingView",
-      "title_ar": "Labcorp va racheter certains actifs de la filiale Opko Health pour un montant pouvant atteindre 872 millions de dollars - TradingView",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9teVZPb3VObW5QM3FTQm1SX29iazlkNEg0MGJfaWljaXR3OW9VTTloLVhKQ3RXRHM0X1I2Q3R2VUdOTWRFX1YtOU0tSVk0VG14THQ4WFVBNHV5SWFwY3pNSWJoVVJYXzVCbkdWeldjWUNOdlJqcFZV?oc=5",
-      "source": "TradingView",
-      "category": "صحة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.394202+00:00"
-    },
-    {
-      "id": "589858283445e44c569c9a0c2d99d5b5",
-      "title": "Google Health et Fitbit Air : encore plus intelligents - blog.google",
-      "title_ar": "Google Health et Fitbit Air : encore plus intelligents - blog.google",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWUtCLWlhQXRSY0ZMNW5nSDNuRUtSWU1OaHFubG5qR05WZDZuNDhBeUJCYUhBd2syU1BHU3RwaV9vQ0I5b0tTcmMxUFRBV3BDS3U0endIYTR3NjNiSEhucW0zcFRsd2M5VGdKTGVqSm13aHBGVkVqZnV1UWMxMDdVSGZYSUdpcXZnRmRLTm5ERDcxTG4wbFU2WGJtOTNHb3VOMUxpUHNsU0F2VjVrdFBmS0Vn?oc=5",
-      "source": "blog.google",
-      "category": "صحة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.394190+00:00"
+      "collected": "2026-10-15T19:08:00.102357+00:00"
     },
     {
       "id": "18a96b3b2d89d38bd974a38bd99089cb",
@@ -530,7 +500,17 @@
       "source": "Université Angers",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.394177+00:00"
+      "collected": "2026-10-15T19:08:00.102340+00:00"
+    },
+    {
+      "id": "589858283445e44c569c9a0c2d99d5b5",
+      "title": "Google Health et Fitbit Air : encore plus intelligents - blog.google",
+      "title_ar": "Google Health et Fitbit Air : encore plus intelligents - blog.google",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWUtCLWlhQXRSY0ZMNW5nSDNuRUtSWU1OaHFubG5qR05WZDZuNDhBeUJCYUhBd2syU1BHU3RwaV9vQ0I5b0tTcmMxUFRBV3BDS3U0endIYTR3NjNiSEhucW0zcFRsd2M5VGdKTGVqSm13aHBGVkVqZnV1UWMxMDdVSGZYSUdpcXZnRmRLTm5ERDcxTG4wbFU2WGJtOTNHb3VOMUxpUHNsU0F2VjVrdFBmS0Vn?oc=5",
+      "source": "blog.google",
+      "category": "صحة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:08:00.102327+00:00"
     },
     {
       "id": "c69ca75537e49a16173695731309bc94",
@@ -540,17 +520,7 @@
       "source": "Boursorama",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.394160+00:00"
-    },
-    {
-      "id": "6f07a449e3a501a71aed0f8ed7d972b4",
-      "title": "One Health : Lyon réunit chercheurs, entreprises et collectivités le 3 novembre - Lyon Entreprises [LE]",
-      "title_ar": "One Health : Lyon réunit chercheurs, entreprises et collectivités le 3 novembre - Lyon Entreprises [LE]",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZ3Z5LS1KX3ZnbmJvRlFTbzdpUnF3b0wtNTJxQ2laNWlBd2dXcWJRN29CRjNzSmtlUmI1V2pmenp1VDRNTHFzdi0zeVFfSXQxbFhRdk9hWVVJV1BCUDdoaU4takZ5dENiRkhGRUhlUGZld3NhUERNX1N6MDhhM2Q1NHJDUVRnSmtmenFaYmFBa1cwNjJyRy1jNzllaGREdGZzTzViVXhPRDEzcEJmR1RIX2w5TDZ2WUNJU2JldkFVdWN4N1JEWGpR?oc=5",
-      "source": "Lyon Entreprises [LE]",
-      "category": "صحة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.394144+00:00"
+      "collected": "2026-10-15T19:08:00.102318+00:00"
     },
     {
       "id": "6106c6c1d06bf86f7b38c8f1e442ff34",
@@ -560,77 +530,47 @@
       "source": "FashionNetwork France",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:54.394112+00:00"
+      "collected": "2026-10-15T19:08:00.102307+00:00"
     },
     {
-      "id": "54eb6051498a35986b5890dc50676c9b",
-      "title": "Kristaps Porziņģis says he does not have HIV or AIDS amid indefinite Warriors absence - The New York Times",
-      "title_ar": "Kristaps Porziņģis says he does not have HIV or AIDS amid indefinite Warriors absence - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOalBKc1A5bFJTTDloSGx4TFdTcjlIY2k5MEYycnJDUWF5S2RjSlgxakY1ZnJwQy00blRVS1haZUctUDJlb0gtX3UzUlIyV0RnOElBM182SjRlQXJEME1mMFowNzRycjktejQxVGlLZnVPQ2dZWjV0Q0pEb29aU09zMVRORlVtdlM0d09LbjNnZ0hTMFF0X3htTldFaGlVR0JXcGNWcTJrekMtRjRxREUtaQ?oc=5",
-      "source": "The New York Times",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.775020+00:00"
-    },
-    {
-      "id": "fba214f5eb11acbb4d89a760ed147e53",
-      "title": "Opinion | It was meant to stop surprise bills. It cost Americans $17 billion instead. - The Washington Post",
-      "title_ar": "Opinion | It was meant to stop surprise bills. It cost Americans $17 billion instead. - The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdXYtRUdEYzJuSFJkQ05tRG51NF9jSE1rV3pzQ19QdExWUGpUS08wTDZpQjdRT18tYllPZm53ZVFaSjRGMWNmT3RwcFA1YVFBZWZhOWN4aFJya0hieXp0SVMxVW9RdVlSbXFtaHR2UHdkR2tlY3lQRktGS0dUVWxRbzRSNFNHV05XR1ZLSm05b0dUVmhKUzNDb1pTV1lYekNYT3ZTSFNadGNhSEhWVVE?oc=5",
-      "source": "The Washington Post",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.774967+00:00"
-    },
-    {
-      "id": "645938878f6f4533894848ddce0f23d2",
-      "title": "North Phoenix sports bar, 2 Mesa restaurants cited for health violations - AZ Family",
-      "title_ar": "North Phoenix sports bar, 2 Mesa restaurants cited for health violations - AZ Family",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVWctYy1yeEI4QlZJbXNIenBEeUxsYWRLVnFUQXZ4NjBzOFNwQzFyTzl1ek1Bb01MRVNkUURKd2I1WC1vLXdIS1lvdnBwRUxoV2JVN1RiUmN2RC1WWXRDLTJ4Wkk0U3BBR0VPbjRxcXR3T3JwZU1mRXNhNWl6ZVBOVVh3d05OSE0wM2xJNE1iM3lmcnVjdGNWQi1fdUpNVVdxOTJiTDNzWdIBuwFBVV95cUxPMC0zQ1NiODE2eWN1T2N0blpuamlxVDZfRWE3WjE4M25XVWNCU2Y1NzNYVTAxMUZCWnp4eU91RWU1NDNZMjBEVGhQaUpmaXBNLXNnYUhBbTA0ZFJ2WVhiRjdoVHZMekpRcFI2THVhMkQ5TzBPLXRwNHRGZzAyV05WUjNaajFoZGhlTmpfckFQbFpmX2NOS0FTY0ZLN0RfNXJnOW8tTE4yR0locmRUakNBUG9lOWVERC1RcDln?oc=5",
-      "source": "AZ Family",
-      "category": "رياضة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.774954+00:00"
-    },
-    {
-      "id": "267d5a808f16a4eef5601dde6b003e93",
-      "title": "Climate extremes are the new health threats — here is why - DW.com",
-      "title_ar": "Climate extremes are the new health threats — here is why - DW.com",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQTRvb29keVBQQUljWndjMGxWMkxqQWQwUkJwRWp5Sl9UNVdqamZmZzVJb0JvVjEyVm9Eekg2TEZjZ1hFdGZnanpRU2RSTGMtSy1Iei02eUdyS0F1UWw2bGxqY1k2TVFiTnBOSHNraUJ5UG5hZFV1WUZkcVl0dVRyRFppR1NJemNqaksxbngyRkdocnFzX01j?oc=5",
-      "source": "DW.com",
+      "id": "6f07a449e3a501a71aed0f8ed7d972b4",
+      "title": "One Health : Lyon réunit chercheurs, entreprises et collectivités le 3 novembre - Lyon Entreprises [LE]",
+      "title_ar": "One Health : Lyon réunit chercheurs, entreprises et collectivités le 3 novembre - Lyon Entreprises [LE]",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZ3Z5LS1KX3ZnbmJvRlFTbzdpUnF3b0wtNTJxQ2laNWlBd2dXcWJRN29CRjNzSmtlUmI1V2pmenp1VDRNTHFzdi0zeVFfSXQxbFhRdk9hWVVJV1BCUDdoaU4takZ5dENiRkhGRUhlUGZld3NhUERNX1N6MDhhM2Q1NHJDUVRnSmtmenFaYmFBa1cwNjJyRy1jNzllaGREdGZzTzViVXhPRDEzcEJmR1RIX2w5TDZ2WUNJU2JldkFVdWN4N1JEWGpR?oc=5",
+      "source": "Lyon Entreprises [LE]",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.774941+00:00"
+      "collected": "2026-10-15T19:08:00.102294+00:00"
     },
     {
-      "id": "4d973c01499f22f80841ce2f8a107cae",
-      "title": "Beach Boys frontman dealing with health problems | Morning in America - Yahoo",
-      "title_ar": "Beach Boys frontman dealing with health problems | Morning in America - Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbTE5R0FBbFVVcTM2MlZFSHZlM1dVYml1bHpLTXFNXzBtXzdKenhhRHg5MWU2bjJOU0h6S0hPTmptWWlVMUMwREh2ZkZLMUo1Zl93MWtaaUJkenpONVdoSmpBVlFCMzJrd0gtZ2xQUEdFU1NwcGpJVUF6SWZDdGlYYXVHNkltcktMemM0?oc=5",
-      "source": "Yahoo",
+      "id": "ae2b862d46f2a0fe014048d88e1d89cc",
+      "title": "Galderma rachète le californien ZO Skin Health pour 1,5 milliard de dollars - Premium Beauty News",
+      "title_ar": "Galderma rachète le californien ZO Skin Health pour 1,5 milliard de dollars - Premium Beauty News",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQM0lfM2ZmVFJKUVBUeTZfU1o4NHJKZ210a2VJTlFMZlpWWll4Zl9fYTZPLTJKY1BrNEoxdlN0Z0ZuUE1oSzd0VldpSVBxM2pYMm5pS0xrWjNPYWpLb08xd3NFd1VCdjZWeEltYmViWlozUzlNeDdZOHlIcUxJOVdlUGZyaw?oc=5",
+      "source": "Premium Beauty News",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.774919+00:00"
+      "collected": "2026-10-15T19:08:00.102279+00:00"
     },
     {
-      "id": "86d59f1d50ba6a66fe54c16ae7a8c82a",
-      "title": "Billy Joel Offers Health Update in Rare Interview as He Prepares to Sell Prized Motorcycle Collection - The Hollywood Reporter",
-      "title_ar": "Billy Joel Offers Health Update in Rare Interview as He Prepares to Sell Prized Motorcycle Collection - The Hollywood Reporter",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcHMyLUVNQTR0akV6TzJRZWZDWDhHTnJoVEM1VGQ2b1Z6czM4WFlqeFdXSUdNMG1iUy14NkRXOFRzUHRNQkp1VTdHUFRTTTZZYU52NHA3VGhHUUJUUFJaWlF0Qlpra01HaWdwX01BWlRiTUNKTHdvRGRjVG5jM3ZXbmhJWkFkRGw0TFZ3WVlWcTFLR2p2aGxUS3VuNkYyY0NsZnVBbVhvQVZjLWsyQzVnWC00cEE1NWJnNVFETWdOTGRFdw?oc=5",
-      "source": "The Hollywood Reporter",
+      "id": "7b1e0ae92071cc194061b1470024860b",
+      "title": "Samsung Health facilite la mise en place du Coach Sommeil et propose des conseils hebdomadaires personnalisés - samsung.com",
+      "title_ar": "Samsung Health facilite la mise en place du Coach Sommeil et propose des conseils hebdomadaires personnalisés - samsung.com",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVkdieHgxWGFwNkJIZndFZ2ZkenNtMk5iSnpJQVQ1VWpsaGZXMVB2QmxHWm5GQnd4VGpaT0s1cnNlUDhTOWVpbU9mU3NfaWtCN1lQQ1NtN3JHeko1UmtGS21zbDh0ejktZ2pGcEdhLTZxbVM0UEo3ck9adEV6emMyQ2d2aEpzamd5U2otWGJYcWtBVjY2QlBZR00taDVZdVZyQUxYbHFvR2pLUng4ZVRpaU0yQ1FGTUFwYlZjc2lnQzFkeGthT0J1ZmRxRjF2d3c0bHFlcEljMA?oc=5",
+      "source": "samsung.com",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.774908+00:00"
+      "collected": "2026-10-15T19:08:00.102250+00:00"
     },
     {
-      "id": "fe460ad2fcf0dd491d67da9fd6b1e7e5",
-      "title": "State Health Plan to take Atrium Health out of network, NC treasurer says - WRAL",
-      "title_ar": "State Health Plan to take Atrium Health out of network, NC treasurer says - WRAL",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZFBRQ3RJdDQzQlhQWHRvbXQzUnFtaFl1WXJxZk84cHotYzhlTGFFOS0ycGNSTm9LSWducnBhVE1uZ3dpdWx2YW1wc1VsU3N6cU5RZ3ljWUFrV09OY19EU2hvRFU1OXRyNm40OHgtcGFqTUdGbEhTdGZ3WENFa3JMOXhSZ3ZoLWNEdkd3TlpORTFzRWJZTENjeE92R0hkNFhrTXA4UHF4YWtxVWtqR2QwdEpJMEJ5RjZTYWc3ME13RHJIdw?oc=5",
-      "source": "WRAL",
+      "id": "a068bed213830897f631a89bf4562a0a",
+      "title": "Weight-loss drugs may fight 7 serious health problems before the pounds even come off - Fox News",
+      "title_ar": "Weight-loss drugs may fight 7 serious health problems before the pounds even come off - Fox News",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbHdMU0YzWnZ6M0VFM0hmVk1TcVZKY25qTlJKcTJXY0pUdjh1d09KNjBiY2xYQV9kcWl1dC1uNWw2SEtxQWZHODAzSE9zNC1oR1JjbWZJakxhY1dqRlhObXliMjkzQTJuT3RqUFJHX3BxamRlNGtyOWZ4Zlk2NmY0S2JIaEF3YmNBYUxYSkIxOEpVV0F2X0pmRGlwZzhWa2ZodTMxZHJ30gGrAUFVX3lxTE9SS3N1ai1sOHRJUGxtUGdob1l2SUxiSVpxVHhGUDV3Q1JqMFN5dWdOTXF0aEp5bWxNbE1lamNHT0pHMHo3OG56dFhnaE9zWDNpbExuYnAwMHUtVm5NQ01TOFJpQ0Z5Y0ZTNTdYVTFfblplbWgtREZvYldGQ1FneWVQYk1TN3J3QlFtYTZrb0lJNjhra2pKOFk5RUljdWtDV25Id0d4eGNvMGpkcw?oc=5",
+      "source": "Fox News",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.774894+00:00"
+      "collected": "2026-10-15T19:07:59.635754+00:00"
     },
     {
       "id": "efe12f53ffb580288437add7cadc2abd",
@@ -640,27 +580,77 @@
       "source": "NPR",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.774867+00:00"
+      "collected": "2026-10-15T19:07:59.635744+00:00"
     },
     {
-      "id": "555c1bedf823a84ece10ee4caf03cd0d",
-      "title": "منظمة الصحة العالمية تُسلّط الضوء على الحوكمة المسؤولة للذكاء الاصطناعي بوصفها إحدى أولويات الصحة العامة في الدورة الثالثة والسبعين للجنة الإقليمية - World Health Organization (WHO)",
-      "title_ar": "منظمة الصحة العالمية تُسلّط الضوء على الحوكمة المسؤولة للذكاء الاصطناعي بوصفها إحدى أولويات الصحة العامة في الدورة الثالثة والسبعين للجنة الإقليمية - World Health Organization (WHO)",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOeWV4TWJYQ1h3b0JPUTVxRDdsMmc4YWJyWFIyQVFtT09ZZ2FXMmF3SWgzM1ZCYm53aW1iM1ZGNEpLUXVDNGt4aW8zSGpITWJNYzJVWXZ6Vm5CeFFOTDUzQUFOQnhCZmpDd2xRaXlNWlc5OXQwSFNqWEtKdmEtcmN4eWVUTGtGTF81VlVSZU1kb3dqX1VnZS1hZGNXYU54bkFlMEZ2TldJdWtsYkpLX3R3WXlhY2RUMHN0Tl9fbQ?oc=5",
-      "source": "World Health Organization (WHO)",
-      "category": "تقنية",
+      "id": "fba214f5eb11acbb4d89a760ed147e53",
+      "title": "Opinion | It was meant to stop surprise bills. It cost Americans $17 billion instead. - The Washington Post",
+      "title_ar": "Opinion | It was meant to stop surprise bills. It cost Americans $17 billion instead. - The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdXYtRUdEYzJuSFJkQ05tRG51NF9jSE1rV3pzQ19QdExWUGpUS08wTDZpQjdRT18tYllPZm53ZVFaSjRGMWNmT3RwcFA1YVFBZWZhOWN4aFJya0hieXp0SVMxVW9RdVlSbXFtaHR2UHdkR2tlY3lQRktGS0dUVWxRbzRSNFNHV05XR1ZLSm05b0dUVmhKUzNDb1pTV1lYekNYT3ZTSFNadGNhSEhWVVE?oc=5",
+      "source": "The Washington Post",
+      "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.137252+00:00"
+      "collected": "2026-10-15T19:07:59.635735+00:00"
     },
     {
-      "id": "de623f748f3412c1fa8ad977c6ed2577",
-      "title": "الوكالة الأوروبية للسلامة: رعاية الصحة النفسية في العمل تبدأ بكسر المحظورات - Euronews.com",
-      "title_ar": "الوكالة الأوروبية للسلامة: رعاية الصحة النفسية في العمل تبدأ بكسر المحظورات - Euronews.com",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRFptdTVJZDdMTVhjTjNCeDBnOF8wSWZZaDZSaGFXcVU2NUFPVjRHeUE5Z2xnZEREOTM1eEx2X3BHYk1zcTJTYVh3WmtUaVc2YVI3bUFXUFptT2dnQk1WVnc0eGRWRjhsWnNxV2txQ2ozN2hxSDNRcUVRS0RfYms0T2l2NTdJNUFuZ19hbm8tRk9pcXlPLUVzR0lISDd3eE1OX1Vwenhndw?oc=5",
-      "source": "Euronews.com",
+      "id": "26f8286edbf4141c0db0a878a6d4bb12",
+      "title": "Update/Located: Man previously reported as missing is located in good health - Maui Now",
+      "title_ar": "Update/Located: Man previously reported as missing is located in good health - Maui Now",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPR1UxR1pGQU92ZTRSWVVsdDAtMEFtNTlMMkdPY3liczU2TWdfb0Y2VlZTb1VzTjV2TVJrTXQxcjJBN1oydVMtbzRaY3g2ZEpYWTE2N1VfNGhCNnFycDc1Z25EMUUydS0wWDVkckZ6dzZqcnp0bVIxODUtNEZSQWZ2YzQwclBJckV0UmYwN0FZX2hNcjJVQTl2U194dXJUaUcxU0ZSMi04VHRTeVk?oc=5",
+      "source": "Maui Now",
       "category": "صحة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.137232+00:00"
+      "collected": "2026-10-15T19:07:59.635725+00:00"
+    },
+    {
+      "id": "f1fe1c47a33bf1f12b96f18bd3e95195",
+      "title": "Billy Joel says he can't drive, perform in new health update - Yahoo",
+      "title_ar": "Billy Joel says he can't drive, perform in new health update - Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOcXptQ09OZ21IUDc2cFdLUTFEeVF2Nk5ZbGlXY2ZwN19kdEVUSkJ4N24zMTNOcUlfR1d3YTlkYzdpWUJ2QXFKdUhVZHE3Z1dzNTVqbkxNRlNNX3FVRGdGcUtma2QxXzkzY3Z3c1NNQzhjeXdMQ2hINGFadGV4TmlFYWExU25UMnExTnN6Tmo5THJPZG9yQnVZ?oc=5",
+      "source": "Yahoo",
+      "category": "صحة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:59.635716+00:00"
+    },
+    {
+      "id": "d095ad20010f8b8e3b0a3d7e4e229b62",
+      "title": "Atrium Health's $340M behavioral health push includes north Charlotte hospital - Axios",
+      "title_ar": "Atrium Health's $340M behavioral health push includes north Charlotte hospital - Axios",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMUdNS0ZYSDY5b19FQVJLYlpUaVkyRHBTeDRGNmROVDJ1TFl0ZGhlZGUxdTlTM1Z3akp1WFNrQkNkQWIwRDFmQkdhT21KQXZwQlp1dklzQllqZVB4ZWdsS1ltNk9WMWQtcVBmTzJweXJ3a0Q2aEhsc2g5UDNDcTgxbVV1Z3RkWTJKemtaUmJBelpxSGpVUHBBUHBudFJPd09CbGVCMzhXQ1Z1QjZMcXQzNXI4ZmNNU3VRZHhQQg?oc=5",
+      "source": "Axios",
+      "category": "صحة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:59.635706+00:00"
+    },
+    {
+      "id": "439e40436441a200dc5de12d5244dd5d",
+      "title": "HHS Declares Public Health Emergencies for Florida, Alabama following Hurricane Isaias - HHS.gov",
+      "title_ar": "HHS Declares Public Health Emergencies for Florida, Alabama following Hurricane Isaias - HHS.gov",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNN0dQTF8wS09CQllhYlZQeWl3LXA4QThiRHVvQnlRbjNfU3RvMXBDekZSTUxudlR4V1lSOEp3LWRMRVhqa1AxN3djRUg1Z0ZyTldQT0RLbVFsWUluU3BLakhwcW5fUzVhT3FpTmRJV0w3eUhBT1lIcGQydHpHbXRpTEsxWjBwY201Nml0MUF5alYzVU1UU2JtOWZKZlE0ZVhJbXduR0FkT1RmSjg?oc=5",
+      "source": "HHS.gov",
+      "category": "صحة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:59.635696+00:00"
+    },
+    {
+      "id": "fe460ad2fcf0dd491d67da9fd6b1e7e5",
+      "title": "State Health Plan to take Atrium Health out of network, NC treasurer says - WRAL",
+      "title_ar": "State Health Plan to take Atrium Health out of network, NC treasurer says - WRAL",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZFBRQ3RJdDQzQlhQWHRvbXQzUnFtaFl1WXJxZk84cHotYzhlTGFFOS0ycGNSTm9LSWducnBhVE1uZ3dpdWx2YW1wc1VsU3N6cU5RZ3ljWUFrV09OY19EU2hvRFU1OXRyNm40OHgtcGFqTUdGbEhTdGZ3WENFa3JMOXhSZ3ZoLWNEdkd3TlpORTFzRWJZTENjeE92R0hkNFhrTXA4UHF4YWtxVWtqR2QwdEpJMEJ5RjZTYWc3ME13RHJIdw?oc=5",
+      "source": "WRAL",
+      "category": "صحة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:59.635658+00:00"
+    },
+    {
+      "id": "2450fd7936c42f01904e0239c3d9e6a9",
+      "title": "خيارات Elevance Health تشير إلى تحرك بنسبة 6.8% مع إعلان النتائج في 21 أكتوبر - Investing.com",
+      "title_ar": "خيارات Elevance Health تشير إلى تحرك بنسبة 6.8% مع إعلان النتائج في 21 أكتوبر - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE91eVJZOVBybmZVS1E2aENPRy1kaUd5QjBlT0JPcFJydURpWXNfTWVBQW9PT1YxU2JabjYwTjljSlYyU0pOd3JhUEFNWXh4ci1NZzFEZmdwUlV3TUdNdWlFY3VJc3l2MlE0RXBpOXZMcERvcFp1aHZZ?oc=5",
+      "source": "Investing.com",
+      "category": "صحة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:59.101577+00:00"
     },
     {
       "id": "c2167dec465334bbc0a8fb5f22fd3fd8",
@@ -670,17 +660,7 @@
       "source": "الشرق للأخبار",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.137216+00:00"
-    },
-    {
-      "id": "51ce16ac392ccfe79191e610b19a48c7",
-      "title": "هل يمكن أن تساعد أدوية GLP-1 على إبطاء الشيخوخة؟ - CNN Arabic",
-      "title_ar": "هل يمكن أن تساعد أدوية GLP-1 على إبطاء الشيخوخة؟ - CNN Arabic",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPbWthU0xncHctRllvYjZDOWxZb0o2NGVrNzRucEowRFVDTUdaTEgtRFBFd1hGRWZaWk11MUN5MHJmLXFmakFKSkJKU29IdWJkdUpwSkpWS1BVX2swNzAzY0pTdHU0eFAyTGZfRzlFc2RFQW5Dc0xzX3V5VnBhcUMzRnd0YmhydUxDWExR?oc=5",
-      "source": "CNN Arabic",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.137199+00:00"
+      "collected": "2026-10-15T19:07:59.101564+00:00"
     },
     {
       "id": "8857f1a75f70ca0423fade29246fc5b4",
@@ -690,7 +670,17 @@
       "source": "عكاظ",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.137184+00:00"
+      "collected": "2026-10-15T19:07:59.101551+00:00"
+    },
+    {
+      "id": "51ce16ac392ccfe79191e610b19a48c7",
+      "title": "هل يمكن أن تساعد أدوية GLP-1 على إبطاء الشيخوخة؟ - CNN Arabic",
+      "title_ar": "هل يمكن أن تساعد أدوية GLP-1 على إبطاء الشيخوخة؟ - CNN Arabic",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPbWthU0xncHctRllvYjZDOWxZb0o2NGVrNzRucEowRFVDTUdaTEgtRFBFd1hGRWZaWk11MUN5MHJmLXFmakFKSkJKU29IdWJkdUpwSkpWS1BVX2swNzAzY0pTdHU0eFAyTGZfRzlFc2RFQW5Dc0xzX3V5VnBhcUMzRnd0YmhydUxDWExR?oc=5",
+      "source": "CNN Arabic",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:59.101540+00:00"
     },
     {
       "id": "c17ed2a0247f9d5282b62fecb16307e7",
@@ -700,7 +690,17 @@
       "source": "PR Newswire",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.137169+00:00"
+      "collected": "2026-10-15T19:07:59.101528+00:00"
+    },
+    {
+      "id": "89b68b950747440642605865d09d7a15",
+      "title": "فطر نادر يهاجم الدماغ.. إصابات مقلقة والوفيات تصل إلى 70% - الجزيرة نت",
+      "title_ar": "فطر نادر يهاجم الدماغ.. إصابات مقلقة والوفيات تصل إلى 70% - الجزيرة نت",
+      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxPMzZnUlJ3eGdXSG1JelhzQ0JMX1R1Z295bF96OXl5R2FhWU51TVJXcFdZZk1hYkQ2bENBcll0eXktLS1vX3JFUTREZGZ6cjlpZnNkcUhDOEpMcjJzSjhvYjlQbWY4SEx1YjBuaW00ODRHa1ZaZUNpRTVXZ1VnNXlxdDQ0eGx5OVVyem9KckFPXzF3N0FNLWNZa1pwNGRKbzV1QWF0eEpJeUpkM2pFWVczZHkwdTl5UHRMMndYbWVTdWQycGUyNnQwcDluU19iYkM3OGlOVkRZV3F1cjJQZFEtdHpTQlB1eVJQY0lyMm5zYzJIcEMtSy1uM1gyWU5XODVXbGx0OG1Md25iMjEwNHFFUDEzV0NsVDk3STg2djJiY3ZacThjYjFmSDU3cVY4X3h5RklqeFR4TktvVmM2TDJNNGlCbUJCd9IBywJBVV95cUxNWjc0a2xGeTBqc0lQbFFOcWxPbHJYQ0x4eDNvU3BvUGtjUE9RM2FEdXNfNzhnTjAwNlZ4M1NKWm1nZVVzbGpKai14RWFpREZjNlgyNTc2bmNwT2RTZ1pzcm52WVptOUlaRndUM2FTclN4VnB2ZkRDcDBKTVBHRnh4Q3ZrM2pQcmVkU3pTb0Z3YTd4bzM5WGx3WE5kYUdKT1VJZ1VxVzY4LWh6a1pJWDJlcnN6UmVBa3ZxUm9pa21fa3MtX0NOc0ctZ1FibEExQnBXZnZjM3dVZFJqTnYweDc3Wk1XX0hjQWNXMUZMdld4QUlLY2xNY0pUblZuTXFDMnlvV3MzOFRsNXM2TTJtQ0poV2pISEFVQkhfYnZudEdoZ0JsZ0dBQy10dGRzbWdBOGs4MVpqQmtjcjBqbWlPbGR1cDYzRHo3VmR4RC1R?oc=5",
+      "source": "الجزيرة نت",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:59.101515+00:00"
     },
     {
       "id": "960e05ca22bbeb532f756fecb3100d0a",
@@ -710,7 +710,7 @@
       "source": "Investing.com",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.137152+00:00"
+      "collected": "2026-10-15T19:07:59.101500+00:00"
     },
     {
       "id": "df7ee043ca4e68f68d1bcc69f4b2af55",
@@ -720,37 +720,47 @@
       "source": "العربية",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:53.137126+00:00"
+      "collected": "2026-10-15T19:07:59.101474+00:00"
     },
     {
-      "id": "9bd5e8e928cbe8b749249d10fce46e33",
-      "title": "Ligue des champions : le Real Madrid arrache la victoire sur la pelouse de la Roma avec un but et un record pour Kylian Mbappé - franceinfo",
-      "title_ar": "Ligue des champions : le Real Madrid arrache la victoire sur la pelouse de la Roma avec un but et un record pour Kylian Mbappé - franceinfo",
-      "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxOUTdUWUhaNUhwcnEyTHRVdW9BVjB5UjhITHMycXJaZjdHdTBMcE9aSFAwVHhhNmdhUllIX25mRjBCN2o1X19qU1pYVGdSRVRKWVAwRk05NU05U3ZKQWg4NkpaSUhKNVBNMmU0UVhNTDZPcll1SFNaWndBMzBkUmtPRF9meTRWVUJMY2ROUUZwSnhiOU1EaERxdXRIcFhEWTVZMzhFZDVpbjRUNEo2UVJIQl9uZjR4LTJlUXdNNmRLWTcwSW5xeEtKRkpTQVJwN1B4bW9Ib3lLVHBuTlZGMzU1Qi1GbVdyb2ZIYVNXMlJPRkotUWtPcjVQeUxQVFAwYzNHVXo4RjVWWXlKZVB2MDlFajFER0xqSjkxeklIQzgyUEM?oc=5",
-      "source": "franceinfo",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:52.510133+00:00"
-    },
-    {
-      "id": "85393b4bf7e07611e07ef0f5de8e2135",
-      "title": "DIRECT. Ligue des Champions : « Le PSG est favori à sa propre succession » - Le Parisien",
-      "title_ar": "DIRECT. Ligue des Champions : « Le PSG est favori à sa propre succession » - Le Parisien",
-      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPbFI0SDE2bEVpZW9hNDFTTUlsRU5Jb08wck1WTndtTkhFOE5QaWdPVzQwcGNHUUxXLU9qQ1FEWklzd0owTWNwLUZ3dXNIQ2FLSUZHQy1wRjBhd2dnWmptZFJaOU5sVmVSaFB6WUYxSlA5TnNELVo4bm5nQ055YkRta1lJZnYwX0RLRWYweWNFclBqQjc4VnN3b3hQX3JEbGhsS1hKdWhhMC1reC14M3BDREk0R2NXZzcyaWdGaEpWTWhuT0hYbUVpbVl4ZGUzdVdFSWNNa2llNHFwSEZHQ0kxZnUtV1FhZ1hRYnNUZVU4NE84VEpqY0h6T2Y4dUVUOVYzVlZtTHkyRXctUHdKeXd3WlpWdmYxZw?oc=5",
-      "source": "Le Parisien",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:52.510114+00:00"
-    },
-    {
-      "id": "0df18587c22f4dd7e06729a621aeb881",
-      "title": "Streaming illégal : BeIN Sports rejeté en justice face aux VPN - Univers Freebox",
-      "title_ar": "Streaming illégal : BeIN Sports rejeté en justice face aux VPN - Univers Freebox",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMS1KcGdTMEExOXZLNlZRelFpQmwzek53RXFiRUdTTXJ6VTJ6VzN2ZzFrMzcxZjhRc1BDUUxPV0gtQ1NPbmFmenVuWDJVSjcwcVNCUkJvQ1F2WTV5clNsSVVJVlJKOEhfb0puLWFfR19XbFZTWDBWb2JZQTYyamhmQktIdjZ6WDNCQ0VDUkM3YW1LNFZoczBKRW95Q0lmemZLU2Z3eXVJLVJuQdIBrwFBVV95cUxPQjc3RklORFNZeGQtN1JxWkRzd0Z1eGc5MktuOGw3SlVlUE1DN3dPNTFDcV9kZVZ2RGJZYWxPdXZKa0R1N2dMNk9ZMWhjLVlyOTM1LWpqRjJMU0VXOEsxeUtTa0ZJMkYtRzY3OGFTdkRYWkNJWXEwUXZlZkdFOFpId0FScmQzajdPVW0xa3puNi1LczhVOFBhc0NqN3FjTzVDZjEwRWpCX21ORXNaQkc4?oc=5",
-      "source": "Univers Freebox",
+      "id": "5d693e31e1d1cd6dd78610f3bf78cfa7",
+      "title": "Rencontres sociétales et culturelles, ou Festival national des sports du Japon, la famille impériale sur tous les fronts - Point de Vue",
+      "title_ar": "Rencontres sociétales et culturelles, ou Festival national des sports du Japon, la famille impériale sur tous les fronts - Point de Vue",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNOHRfZVZ1WE1iUjBEQVRjUGdTR3RqLXNXUmpyeU5hMzhNS3FQWEF2bTZhelY2cEt4UGdRMjd0Z2ZvVmtXSUtJcmh4UjVrSERGWF9pUzllbEFQZHZyR09RMjVILWx6ZS1OY2ktWFZJQWN6ODVnVzc1bnB0RFlSV2NOMVFQV2dORHZkbmROdlBEMURRQ2xpUmdSTWhNYjZSRmg1TENnRWpPVjBiR0tYV2pxT1l1cU5FNlJyQlNTbUQyVjVsc29lOURhQXU3Z1hFRmJtb0RQTE9sd0V1eTlzaXN3Wmgyd3kxRkt3MUtyZTlnX1RfWl9iM1pxYi1jMHgyZw?oc=5",
+      "source": "Point de Vue",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:52.510098+00:00"
+      "collected": "2026-10-15T19:07:58.521599+00:00"
+    },
+    {
+      "id": "7ddcc3517562772577e1c47c2f3566d9",
+      "title": "« C’est décourageant » : l’Office du sport de Saint-Brieuc est prié de faire ses cartons, le maire justifie la décision - Ouest-France",
+      "title_ar": "« C’est décourageant » : l’Office du sport de Saint-Brieuc est prié de faire ses cartons, le maire justifie la décision - Ouest-France",
+      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQQXV1dExITlJOR1had1NaWDl5eHk3bHJrenVWWV9KS29MNXBNZUlaa2xzdWx3cHFYRFRFOG81YXpMRUpFXzFKNHZkYnFURHRRWWpiQk9jUzhGc2NLTTFsUXBNRUs2NUp2MmN5c2dMaXNTWHpBSkRBUXhEMXFnd1dNUGFLVDJadW9nMTNqUWNOTkNtaXlwWHR5VmpRUHZXbm5MbDA4S2dxbWhrVFZacVlVWGtiNVMtWFU5UXl1QjQybDFhVV9iN2Zkd1NGV2VhcndMQ2k0TW1rWEkzM09FQjNKbldrbmgyc0piSVN1TjEtRjQ3c09BUjd1VU5BX3pPUGsyMzQ3YjU1bkl1ZDlTWmNQYjFoS0l1cTYwb05MR2hhcXBBYWo5UHRHVGZpSQ?oc=5",
+      "source": "Ouest-France",
+      "category": "رياضة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:58.521586+00:00"
+    },
+    {
+      "id": "df2ef6c17d7b4aef25fa7f115a21c013",
+      "title": "19h Sports | Arnaud Cormier est le nouvel entraîneur des Girondins de Bordeaux - Sud Ouest",
+      "title_ar": "19h Sports | Arnaud Cormier est le nouvel entraîneur des Girondins de Bordeaux - Sud Ouest",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNblpWcVdJNGtkNmFnNzZfSDZIS01OUWNvVFEtUGhfMVNVNzEtU0ZXbkYwXzdTWXYwSkRoUE9FUklMSTJTNmd4YkNpazRPZEZzc1Z5R2Z5TksyMkdXZkh2cVUxSVYzMWlyMEs3dnpqellOLVpPUDF6cG5ZWFdJaHRsMGZjNDdhZw?oc=5",
+      "source": "Sud Ouest",
+      "category": "رياضة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:58.521569+00:00"
+    },
+    {
+      "id": "8eb2513536732a6566167db92994f666",
+      "title": "Banderoles en soutien de la mobilisation lycéenne dans les stades : le football, un sport où tout est politique - Libération",
+      "title_ar": "Banderoles en soutien de la mobilisation lycéenne dans les stades : le football, un sport où tout est politique - Libération",
+      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOOGRHWnptem1LcDFFdno1YlJ2eEZTUGtfWEFFejlhSVFkUEVLYVY4M3lnTUZZaEtXanpURlhtVG10MzJMQUw2OEJmY0tieGJaNmZBa2dVb25iZ08tdUlaR1RVeFNOZXN6QThEZHNNWWM4ckRlZEZXNkV5UFF3cTEwWjhwYXg5VUM4ZUhCRkZhVV9ZTDE4TEU0SHE1Q2l5RVZIX2Nzdk5VUE9tVk5aUVlteHN1MUt6dXE4VXBaTGl3RF9oWlRKZTlvcHVuSVZOMHM5NjJZVjU1b1R3TFRrYnhwNUQwMTdtUXBWbHcyb3k5UkpFYUk4NzlqcU1Ha1N2Z2dEeXJBX1VEU0FXRmJhN2xWb2huaS05dw?oc=5",
+      "source": "Libération",
+      "category": "رياضة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:58.521557+00:00"
     },
     {
       "id": "002994d99136041e37cad5353a8994de",
@@ -760,67 +770,57 @@
       "source": "L'Équipe",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:52.510083+00:00"
+      "collected": "2026-10-15T19:07:58.521544+00:00"
     },
     {
-      "id": "cb320eb0d0bca42db6be0abd0654cca4",
-      "title": "NBA, NFL, NHL, MLB... beIN Sports présente sa saison américaine - L'Équipe",
-      "title_ar": "NBA, NFL, NHL, MLB... beIN Sports présente sa saison américaine - L'Équipe",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUUZZek1VZ2hPU3YyVVd3RDdTclZ1Q3FCMm5JRXFaV1NQdVdDQUdIZTBRQzM1cWpLTWpPQkR5VkR1ZnRYSnpfM3VjMFZpclVBUHpKWU5Ub2tpRWdMUnBqQlBJYV9EZ01xTlJjdVNFQzIwM2FoUUdGLTh0RXZXYjJsaEU2NS01a0hvWU1LTDBrZUlwX184ek5fV3R4U1laSHUtWjhaYmNxRzVRZw?oc=5",
-      "source": "L'Équipe",
-      "category": "رياضة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:52.510067+00:00"
-    },
-    {
-      "id": "6d8d728492a4dd0fb0215db79d049904",
-      "title": "PSG : Henry encense « l'inarrêtable » Doué : Sports - Orange - Sports - Orange",
-      "title_ar": "PSG : Henry encense « l'inarrêtable » Doué : Sports - Orange - Sports - Orange",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQb01UaTM4Q3plNTl0LUJENGNvbTF0SmpOZUVXWWljVVlHYUhSTDlQTFA4d05JMUx4aGxOUkxFUHFDNEt4SHFoREtfSXBfbk1SN0pOQklnSW55ekVtd2x3U2ZSRk1YTnpOb3ZfV2VDQnBvdE0wUi1XT2F6clBFNURUeFYtZzkzRklwOEZZVjNHX2EzY19xR1hZZzVKMFJIZkFwSWxxU3J1aDRBS2FMLVMtSGkwVXRieHNlQmVOb1VkZXk1UdIBwAFBVV95cUxPcjJKOVZJeERDX3YxUlJZUGFBc3JpZE1EdE9qQ2JfWTRIWFdwYW4wb3hNbmdCMTVzR09YRFZSeW9vR2R1UzREWkdBYWZiTFdGTW5Fb3pKNDRXZTZSZklYbEdPWnRPaEdual9VNzl6X240ZWdQVml2dXd4WTdUbmlXb0Jyc1EwQjM1MURMRFZaM1c5MldxVlZyUzF6SVVydzZzLVZ0MDY1Z0ctWHpvc2FDaTZHSDVxMC1YV3lZSE5TRU8?oc=5",
+      "id": "8448aa45cd652af56e6492ac3e7b28d9",
+      "title": "Ligue 1 : Des flocages floutés pour les maillots - Sports - Orange",
+      "title_ar": "Ligue 1 : Des flocages floutés pour les maillots - Sports - Orange",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPSGZCRTRVUHp5dXI0c2FsWjdWT3pwY2dEUk5hMDFLRngtZXZ3MUFtMW5RbWNzTmpveHBOMmdTRWZuMWdlSjNZYk0zdEZMNmdjNC15MDJCcFJFd3UzbUJOcWNFajhudTdrMV9LM21SanVRQ3doT2YyY1V2WnZaVFFVUUVXV2ZXekt3RUNZMk1wUFBTQmhyeEZpZEd0RWVmbkRSMmVtVmZUVWplNUVMbVZHTml3bU5HbWs5d1ZhX3ZDRQ?oc=5",
       "source": "Sports - Orange",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:52.510052+00:00"
+      "collected": "2026-10-15T19:07:58.521532+00:00"
     },
     {
-      "id": "171ac25c395d9739704f0e43b69e01a3",
-      "title": "Coupe Davis : Ferrer va quitter son poste : Sports - Orange - Sports - Orange",
-      "title_ar": "Coupe Davis : Ferrer va quitter son poste : Sports - Orange - Sports - Orange",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOHY0czI5bWZfcml4d0RWNkREbnBuWGpwcDMyeHBOVDFaN2NhOVM5NHZEVUx4R2tqeFZkcktKdnhEUFBNYVBITTV3RjRHeTlaSWwtUEZIOEdfejFqLTIzSVNpMXFwTzlvWFpuSmpSeEppMkJQb1ZmQllqd3Y1ekRMZkk4dGI1R2VMSWRjMzFzWm13TjYyaE1SWHlsODZxZVY0X2t1LXE1X3TSAacBQVVfeXFMUFRTYUl5QlNkVVNwTjN1ZkNOX3Fod2hESzlRRjRMWjhYamhQUWVUa0xyaFZ3WW5EU0VuNl9VaHFhcFJ1WGJWd0N6dFptcnlOc0ZneTFoU3pQTnV3bFRRREpIdGN3Ym5fWmFOTEFzUG1aMi14STdsc3VacUFLT2Z3ZFNmTHhYZ1NqTUlXbnhUYkpIcTJZN0JEQVNYc2FRemlTbm9YYnVoSGM?oc=5",
+      "id": "392359b79f24f0e1013a59c6771a7198",
+      "title": "UAE Emirates XRG : « Une chance qu'il ne fallait pas laisser passer » pour Gautherat : Sports - Orange - Sports - Orange",
+      "title_ar": "UAE Emirates XRG : « Une chance qu'il ne fallait pas laisser passer » pour Gautherat : Sports - Orange - Sports - Orange",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbkIyRG94OFFKSkFpbFpCWXA0M0VEbHhlVm1KQVAwQkxzX2NOUmpsVkozTXNDX3k4RkxWclJjR2JNYW9yZHlEZnhQaVg0SmFfU3NxM25GSVJRQnJnTXc0WUZxVlBrWWdNU1RhZk96d080dEF6bm1UaC1iUzcwcVdwSXJQUjFhUHhQV0R1QVpRMlFGLXUzV2tfYmxEN1FkZkd6TWpJWUcxR3NuMEJNZGFwWUdyTnZybTN6Vm5KcEpJQkp4cVYtMVZubFpuQkpiRm51c2lBTnZhR21OcVozTVBR0gHeAUFVX3lxTE1sZ2JQY2dEallCZWYtSlQtYUVnZU5ieDZTa012elZabWRHNGZWRXl3eHcwa0JzR2xvZnR0VWEtSzFNTm9KNW9JMk9jZnM5TEE3MFl6bGNKZ2NKdTd3VExfel9pcjlwdmJCaGZtMmJoZFh0RkhUUWpuY2l6X05raFpkTW5lWno5WUU3Mk1yTmNYSThFY2YzNkpDVzhGNkVlY3RyaEVtOU1KQ0twMmV1c3NtMWJnVC1ubVlweVBaMVFvb1ZLeXo4X1I1cmJYaWNndzN5WFQ4OVRtMEFFeEt4QQ?oc=5",
       "source": "Sports - Orange",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:52.510034+00:00"
+      "collected": "2026-10-15T19:07:58.521519+00:00"
     },
     {
-      "id": "cd61696c3409247d95156e1c385ae44d",
-      "title": "Orlando : Griezmann franchit un cap en MLS : Sports - Orange - Sports - Orange",
-      "title_ar": "Orlando : Griezmann franchit un cap en MLS : Sports - Orange - Sports - Orange",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN2hWcUt0N2ZYMEI5aUpnSUFWZVVkWllsZXludXQ1eWZpaDNHR1ZHdzNmRnlUYVJPNFNXSS0ycjFXZkhITzRUWUtMSExwTENjRlA0SDJNWDlfMVV3NXc0Z0x4bWRIUGN0NDUtYjZGTkR5N3p0blA5OHRndnREY0w0aWNIZ0JmdV9iMkFiRndFRG5WTU91ckVUTzVPVjc1SlNKYzBjU0ZVYy1BbWxYcDNRdUk3OXB0Z9IBtAFBVV95cUxQVEFHeTlldnVPUEQzSTQ5dk9uUkY1WVRhMldfNW5Oa1BmTHQyUGlvdmJHWjZERS12Ui1KUDlZcUY1UXFFWlc5UXVWRG9uQlRFNUs3bXMtUVhlNlgxREhUanFYbUJnS3haS0tIclNDTjFUeHdZN01zUXJCV0lVMlE3bzUyWFBsZnROdl9Ra2RSa012V1ZKd3Nldk94LTgzZnpVXzVRUFhKNVBVUUd0NmpzR29MV0g?oc=5",
+      "id": "a0221b8c450daba32deeb18b97553d0a",
+      "title": "Tennis de table - Chpts d'Europe : Alexis Lebrun revient de loin, Félix Lebrun expéditif : Sports - Orange - Sports - Orange",
+      "title_ar": "Tennis de table - Chpts d'Europe : Alexis Lebrun revient de loin, Félix Lebrun expéditif : Sports - Orange - Sports - Orange",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQVDJET21YSkNTbDNRVmtTUmhUV0dxWnlQczJobEZfWDhjODFWTERiOVJmRW5nWVo0ckM3NmM1V01tOVI3VDZTWmo5bHJ2M3QzQl9FR1YxalRkaG8yNVhWUUliQUh4bXVrNTdGMEhYWE8tUmJVZjdoLXlYcmFOQTlzRzg3QjcwUTZlNW5mODFXZHlOT0p0WDRvLXNGRVlrc0tMOFNjd2ZtSC1OaDEwWXA1TlY4WFV2SUlfaldwczlrT1hnZk82bHUwMC1jb0lnSGNLcDlEamtNUFdJV2FiWXlpVEhTUkhkT25icmEwVtIB6wFBVV95cUxPaWpoajBDU3U4MHBJbWp3YkdCSXhzS3dUbndjeVIzNFd6Zk1EdlJNVjExbWd3TENBR09HNDF3SnpDSlhpVDNLcnFFUF9NdkRiY0FIX0J0enF3a0VOcEpIenpzUXA0anc5RFlaenF4TDlQTXpTX0JJTjl6YjRDZWxLSEVQQmJGWDBXZzFKd203RmVYMEgzSWhyWUV3ckQxMUFoOHRJU1phXzVJV0o4bTB3OGQ5ME0wcUhzRktyRWZUOTRFV2NpZm55T2RCVXYyT3dFQ1I4T2Z0eDMzWmU3VGE3NXBPaVRhVEFuQ0pv?oc=5",
       "source": "Sports - Orange",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:52.510007+00:00"
+      "collected": "2026-10-15T19:07:58.521489+00:00"
     },
     {
-      "id": "0cd79b761a3369e776941f40de7089da",
-      "title": "Connections: Sports Edition today: Hints and answers for Oct. 15, 2026, puzzle No. 752 - The New York Times",
-      "title_ar": "Connections: Sports Edition today: Hints and answers for Oct. 15, 2026, puzzle No. 752 - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUk9OM094SDNpeTlVdzUzWUU0LXc0TDhiVG5IM2VERWJFeUttMmxfMTJxWHpmeWRLT3dTSm0waDNqd3BMbDhPSnl2TlJhbWg1V1oydFQ1dC00NF9CNWpIUnVQOURTSW1KRkZ4eHVvVWg2TEh3c2dDU3hidENJVnpZcHFjTjRuZ2FkeG5SSmNkMTNWU010MkE0ME9RWTRiREMycUM0eGZlTlk?oc=5",
-      "source": "The New York Times",
-      "category": "رياضة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.895162+00:00"
-    },
-    {
-      "id": "6df559253e1c4ae89e06f0e6fc044f6c",
+      "id": "deb197106717f8cc21f3f624420ab40d",
       "title": "Phillies to move on from Kevin Long, Bobby Dickerson as staff changes begin - NBC Sports Philadelphia",
       "title_ar": "Phillies to move on from Kevin Long, Bobby Dickerson as staff changes begin - NBC Sports Philadelphia",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTlFGOHo3ZEpRby16Y1Y5RGFmVUd1OExWVnYwTVFhYkoyLXJuVEloU3dDZExtV3RyRDJCTDRVZXlMWGNmNUxzZk1hM3pPOVk1UG8zNTBmbXR3OVJyTW51aTdFZFNXUXgwd0prYkZYTUxtd29aTlZIeVYyaTZBN3NwQ1NnU05IdlZDZG5XdGtiOHRIanNHcXJPbHhhWmFrM1BHNTNQY3dSb3NaZUt5WlEzbGZGQ0NWMUpQRVFIZTVYd9IBowNBVV95cUxQd3FCOHlnM2JRaHZsVXcyd3NUVnFWaUFJSUxTYVF0MG1lZHNXZXVpdDk0TUwyN3dRUFluYW5Kbmw0Z3lfM2M3Rm9Fc2ROcWowX3lYQjREdmdOYmJpQ0JXOE9jajJvRmx6MkN0YUJoMXZreWJnbzBxakFNVmkyMU9wLS1GeDhSNXlkaWd5ZFlUTTZubHZlYXB1Qm1uNkc4VmVsS3BIeVlkc1ZlTTdBOGtDUjBNaWJWZzFxbWR0ZHhNeW5qOTJLaGVreU9sZTZzVF9LZHdUZFkzQndVVkpWYTlNdHNac0Ntd0FQMkZoOHVncVlFaUc2bkEzMHRnOU11YUlrODNJZ0h4Rll2ZGp0V0NkcENXYzJKQTNjeEZ2bVRyT1ZxRVFrS2ZzMmpabGFNZzNnMnYxR3BBNHh2eHgwNl8yU0xqWGFZV2NtNy1NaGEzN1FrUHA5aXJSNDZ5WGNPTGUybG8tcXdyQzJyRFo1bzY4S0RkMkZBZ01tY3JRMFRLZDFMcEhLS1Z3YTFiMGVHS1VMRTNYSkxBVWEwdWRHcG0yRF9YRQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTlFGOHo3ZEpRby16Y1Y5RGFmVUd1OExWVnYwTVFhYkoyLXJuVEloU3dDZExtV3RyRDJCTDRVZXlMWGNmNUxzZk1hM3pPOVk1UG8zNTBmbXR3OVJyTW51aTdFZFNXUXgwd0prYkZYTUxtd29aTlZIeVYyaTZBN3NwQ1NnU05IdlZDZG5XdGtiOHRIanNHcXJPbHhhWmFrM1BHNTNQY3dSb3NaZUt5WlEzbGZGQ0NWMUpQRVFIZTVYd9IBxwFBVV95cUxPclcybHNzSjlIMGRhQWFpSURxbm10Mi1sNVE4T2FJVTBkYkh1bkt3OWRfV3plLTBiUGduSjlNekFyZGh4M0UyTC10dndQY3pOZS1DUnhYem1xbDdJb280cE0wNkJaeGhoMWpWT3F2VUVaX09pQTFKeDUyQkNUTmpDZGk0OGNhNlNpZDJlaGJMck0xWnRtbGdBMEtIeWxTSjFQMm45VG9PUHBVM2NxdkQ4d093Q1RHb1pCcXRzTzRqc0JpOFQxZmpj?oc=5",
       "source": "NBC Sports Philadelphia",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.895151+00:00"
+      "collected": "2026-10-15T19:07:58.029533+00:00"
+    },
+    {
+      "id": "d4fcaf06b605a229e1f660ae8ce87b64",
+      "title": "Tesla Leads a Rush to Sell Electric Cars That Cost More Than $100,000 - The New York Times",
+      "title_ar": "Tesla Leads a Rush to Sell Electric Cars That Cost More Than $100,000 - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOemtTYzlLRlNsdU1lbUV2OG84eFNvenhtdFFGeVlGdGdyaWtJZmJzSlRfQmlKX3ZKdldkcWpXb3ZfamtWNEE4MF9VNnFLRnR1NHN3VnpBYkZvZTFQZkhybzY5OGlHZldFaUozcXdrRF9PNXlWRnhOZUtXNjU5SFB2UnhOS29lUFVqUlE?oc=5",
+      "source": "The New York Times",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:58.029523+00:00"
     },
     {
       "id": "15e9925b706f280f0ab3ce4af755d9cb",
@@ -830,57 +830,57 @@
       "source": "Reuters",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.895138+00:00"
+      "collected": "2026-10-15T19:07:58.029513+00:00"
     },
     {
-      "id": "58e3076a3ea25adf40af6dadf565c4ac",
-      "title": "76ers could explore an unexpected plan involving LeBron James - Yahoo Sports",
-      "title_ar": "76ers could explore an unexpected plan involving LeBron James - Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQU1ZKTENWb1BFX3dhcXEyNG9lRmdBNTVIY0ZrdExHSWdxekl6bC1RVTNNeGd6SVVRaXIxd0RENkVMRzFhOHphMlh3dnJPekJ3Qk9BTG5uWW96MU1qa3VDaldxMFlLeHpKblZyd2lrZzM1eUp2NURzNGdWSzlpT2tjRnNCdjRTWnZGdG5EMA?oc=5",
+      "id": "337b86e5a47fd05c99dfb496275da5d6",
+      "title": "Trail Blazers Urged To Make Surprising Decision With Ja Morant - Yahoo Sports",
+      "title_ar": "Trail Blazers Urged To Make Surprising Decision With Ja Morant - Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOb25LQUVTRWFVeEVYa1NyeWF0QjBUaFJUQ2tGZldhdTFXV0NwcmpoeHA4NkhXTU1vOUw4bDcwSDkwWGIySGdVUklvNzVrakU1eTVmNVc5TjgyVE02bEtNQzRYTExKZmM5eDZSbnNkVFRHUWNqN2NET0JFV0Y4dDRlTExUd3Rtc2JCZkt2Y0d0MVBFdw?oc=5",
       "source": "Yahoo Sports",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.895125+00:00"
+      "collected": "2026-10-15T19:07:58.029504+00:00"
     },
     {
-      "id": "9499d21b5b7c15d53b4685af75defe24",
-      "title": "Jameis Winston is Turning the Giants' Franchise Around — Seriously - Yahoo Sports",
-      "title_ar": "Jameis Winston is Turning the Giants' Franchise Around — Seriously - Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPOFFtMWJzV1RwU0FGczRZNm5WTWhWWTR6aFppdVF6OEg2TktfeXlwVWc3cnQ4bmN0ek1MZ2RBa19pc3YwRTR0V01tOHZhZHYxX1QtYWFWcVJvdG5LX2dkTDNFdkZzUmg0bEMzalFtVzg0cUVUbG1JUFhuTHp4SFZibVJNX3BfYkhKUjBIT3B1V1Vqdw?oc=5",
+      "id": "09eb13ec0f5edfa66bdc08872273f6fd",
+      "title": "Bucs' Todd Bowles warns defense about Steelers RB Jaylen Warren - Yahoo Sports",
+      "title_ar": "Bucs' Todd Bowles warns defense about Steelers RB Jaylen Warren - Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSnhfd0VwNUNvdjBXNGh2ZlQ1TXhDRlA3YnZSTHF2Q2dIZ3pDZ1djczlXRkhQdU5ERzJTTVJoQUFZMXBVZUxBZ00tMUIzamQxNERJQW5jSHU5eE1FVUQwbXVSZG1PM1RHcW9ETF9mUV9PYXo5dlJaM3gyWjFqNnRQTE9rbFBmdw?oc=5",
       "source": "Yahoo Sports",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.895113+00:00"
+      "collected": "2026-10-15T19:07:58.029496+00:00"
     },
     {
-      "id": "f8ca9334b75204d65b37650b3658cc78",
-      "title": "DP World India Championship: Rory McIlroy four off clubhouse lead after thunder and lightning delays in first round - Sky Sports",
-      "title_ar": "DP World India Championship: Rory McIlroy four off clubhouse lead after thunder and lightning delays in first round - Sky Sports",
-      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQXy04aG81elkteGVPLUdWa2dSRGYxX1NwX3JfcVBkR3pxelhqSlpTVUxkQWJYVTdnX0pCaFRqMXl4eHVWdFBTYTJUc3pQYzFkT1RhcWM1YVUyY2o4Tko2Rk42T2c3emQ1RlFvZHlrVzVfVUh2SVVYTWp4SG1ONVRWa0xOZFRpWXVGdURQZmdlNzlpcUN0M20tNmxwbVR5YW1qaVRldnJQNnoyVEF5dU1YR3FwNlpRclNhWWplS1BHbFFQeFl1aEM5aUpIXzRkWHVWUmJMTFFPd2FfdXl6UXNPbTFwb3Q3Yk9GVjl3RVpnQUQ?oc=5",
-      "source": "Sky Sports",
+      "id": "1533ccbe2739714981a38fc80b2dd5f0",
+      "title": "[[[CBS^Sports]] Dinamo Zagreb UEFA Europa League Live Game - Universidad de Córdoba (UCO)",
+      "title_ar": "[[[CBS^Sports]] Dinamo Zagreb UEFA Europa League Live Game - Universidad de Córdoba (UCO)",
+      "url": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxOMFplSlJmRUE5SXZOVlg5WE1Oc29VNUdwOU5zcm9vUjdpcWZHX0RiMzRtSHRULWdFVENVRGo0dWpjUkhZWTVEaGhJd2c2eUtYZkpsOEZidDVWbTlyWEY0cGNfLTN1Q2FYMFVWVzNhaDZTdTcwNFM2eUU2YzNrRTJSN1MtRnNveXNxTTJNMHRvTWNrSGN0RDVleTJxRHd0SktZTEk5VHZuV2NkRVQ3WnVrTEoyaC1Gc1p3VUlGOGJJRVNsZUxXZVctYnB5Si0wVkkzQXlqVjdzNEVlbURXZ3JYWmRmV201OTYzN0tfcjNIRVktRzkwRUJOOGozRkU2R0RnUmVsVUZpeVN3bFRfWjNVOElMbEhvdDRwNWJuYjF6UFdmX2JzdUhrSkllbDV6MU5DNVd0OGxqZWswbWw5dmlDaDNnRnl6cWxRTllLNUVMRUlUUVV3bmRKem1UUWN4QWM?oc=5",
+      "source": "Universidad de Córdoba (UCO)",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.895094+00:00"
+      "collected": "2026-10-15T19:07:58.029486+00:00"
     },
     {
-      "id": "00382c12780a4b36cd5e2757961a812e",
-      "title": "College football's new reality: Schools can't fire their way out of trouble anymore - Yahoo Sports",
-      "title_ar": "College football's new reality: Schools can't fire their way out of trouble anymore - Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZTA3QkZOS0lMYzRyUC0wOGNqQXB1SGRxbGFFM1NZQ3h3RDhQRzdSUHp1QWdjd0VYZVh5cGRiWlY1RnJOcVNZd2ZqMktWMExHTkppOVVyM1ZxOUZXMDlLRjVBdzF2ZVlNa3BLdzdRX19qVlNJbUk1ekt6SkxLREpXbGI2X3VmTHBLNmgta1JST1Z4UFpvc19jcjFKcDA3ZG9HS01NcjRsRlpjTmptRDFZRDNMcmhIV3lhWmM4ZWlMMF9BbU9mSEdKeWlDTnJuTzdIQkJnWnBPSHlKLWtsd1E?oc=5",
+      "id": "fcbf13318d9d3cbee4fb670db6512430",
+      "title": "NFL coaches on the hot seat: Who's in the most trouble after 5 weeks? - Yahoo Sports",
+      "title_ar": "NFL coaches on the hot seat: Who's in the most trouble after 5 weeks? - Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd3hkazlaMklkd3VKbmxFcUpVQ0hYRWpmejFHM193X3kwdE9yakEzaTl2SUY4YWoybmMyeUtmdnhQQ1RULThmdE5tM0Zqd0hENEhudUJBUFd2YUJoc3FsdVNLeDZfdzBKaE5JcGtwNHYzQ1dFdm5uNFVscFdtN3gxclNKM3ZyR3lVbWF1OVN6WGZ2eWdFMlkyY3hyMXlJRzh2THJZM1NlMHpSRXU4X1ltNWdQQnlwRGNwN0E?oc=5",
       "source": "Yahoo Sports",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.895080+00:00"
+      "collected": "2026-10-15T19:07:58.029471+00:00"
     },
     {
-      "id": "30f04828a53841d6cad3ded50cfa80f3",
-      "title": "Joe Buck, Troy Aikman Have Had Tension Amid ESPN Contract Talks - Front Office Sports",
-      "title_ar": "Joe Buck, Troy Aikman Have Had Tension Amid ESPN Contract Talks - Front Office Sports",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQV1VjODRlSXZQdUxHWnhFVW5raFVnRFFHTFdPU2ZtYXEzc180V1FyMTV2ZU5LT3RnUUdhcUp5UkE1OHRQbnFkQnh4ZDFvS2F6MV91eFZJb3JGcGNsTF9Gel9QTEhhd1ZGX01nRGgyNElQM3UyQVJlTWFLUFdEOTEwbFByZEI?oc=5",
-      "source": "Front Office Sports",
+      "id": "00ea77462d5059897f8476cdca775c47",
+      "title": "2026-27 CBS Sports Preseason All-America Teams: Thomas Haugh, Jeremy Fears Jr., Tyran Stokes among top stars - CBS Sports",
+      "title_ar": "2026-27 CBS Sports Preseason All-America Teams: Thomas Haugh, Jeremy Fears Jr., Tyran Stokes among top stars - CBS Sports",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPLXFCRXNaUDR2MlJlaVVMamdHWU9ka0t1Zm01X3UwdFFOcDEwem9YLVZabFpBWU9fZjVfZU1NaWpOYVRKQ01vMjFTLW13djJKdmJZZWQ1M051cUNVWlFjNnhhU1pXTTFmNkNmUlZudFRNQ0NLOU1qdmhNYjdWMGxkLVlLZl9FZnFlalh0QS1xNVFTRTlRLTBQMWJ6NkloNmtxODd2WjM1aWlQNmdrS1BOZW5zODJUNDhZY2FkdEJVNXJhX3RSR3JEYTk4RWtVbFFzTVE?oc=5",
+      "source": "CBS Sports",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.895055+00:00"
+      "collected": "2026-10-15T19:07:58.029446+00:00"
     },
     {
       "id": "8b91f06d788af9f2fbffff3fd4133912",
@@ -890,7 +890,17 @@
       "source": "Goal.com",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.269397+00:00"
+      "collected": "2026-10-15T19:07:57.943086+00:00"
+    },
+    {
+      "id": "2ec63793248d95337b24c76c98b513e6",
+      "title": "مواعيد مباريات اليوم.. مواجهات قوية بأبطال أوروبا والسد مع الهلال - اليوم السابع",
+      "title_ar": "مواعيد مباريات اليوم.. مواجهات قوية بأبطال أوروبا والسد مع الهلال - اليوم السابع",
+      "url": "https://news.google.com/rss/articles/CBMilwRBVV95cUxPMzVTZjl1VDNHdThCX2JSLU83UUttTGxYVXBVY09yNkZpaDBScFR1MmF4dGwySkdmUG5VakNUZzBEMVR0clNZR1JWdmZqT0ZvRGlldTk1djYwOUNROEVOWXREdEVDSU1RMXF0MV9XUk5rN0ZqNHc5MExWZi03T0QzVDlobXU4NTVaUkxQUmtzT2VHOXdCQzV0TTJ5eE9oS2hYbGV3Q2ZJYlp0YTI0SEtBUUxLdGxMV1pUQ21qZWp5a0s5aEUtekQxSGNpZVV4SlJHMzZWREd4Q3BubnBhMmc5cVBpYkpnTjhqa0JUS1M3OEdvRGEtb0JEY3NjMVVNdGkxQ19yZ00zRWlFQW9zNVh1YzJLT0dzY2lYd0xROU5GVHZuWXVBNEQ1ZDlUVkxUeXJvZnNYWlpvUHpuSmpQdmtRT1lZcnlwOTk3cVlkaktSVzllN04wNkFMQURxODY3bWhKTUlmWi1sRkdELW5QSnkyUTJTb0Q5alJqb2dWeUZ1eUVFNG9Sa096Ny1tMUx5N3JaeG4zZzZDVGgxRUJPZ0p5OWhNcGY0anZSTVRiLU8zaHJ6bFdYSVkwVFB3SzZVU2JjaFFuOTBuRUtsQnVXV19lLU5tYzEyQk1zZVpobXNYVzNjNi1FTGVTeDg4Qy1LY0ZPRXNlNm9FYUlZZDdONUVVZEI2VUFUT1NndVZiSkl0czRocE5UOXpn0gGSBEFVX3lxTE9DTGdFN0otazA0eFVCSXZKWi1zVm9WX0ZkdXo0cUx6VWJxcEt6Q25XckVma0RHVThQYzEzRHVIc3ZPWVhrM3FDMlFUamRMdk5idlM2bkNHb0oxSjhxRU5WbTJqRzh4anVTUEdWM3oxeUlnZFAwbGdfdDdrejNyNzVROXN4RDk2RUNmcmRfQkh2TkxTQmI5c3ZmcWxLMGVkSFFNQnVTc0t1bTVwVWFtRjhWVXRCRkpJcUR2SkR6T2VMUnJ4aE9jbmx5SXlUWkF2TTF5aEI0VmJmcHhQTklQOVREWWEwNDA2a0J2em5VdVUySHJwZldwdElCb3ItaDdmM1hKcFA2X2lNa0tlUUE2LVZad01BekdBZWtlYmlDSjVTc2hheGY4RlpxeUU2bmM1aHRNSW80VlAtQ1Zxb0hwN1BYem91NldCV0VNOU95RDI4M0s5eGhkRnJ6MkswM3gwSks3QlYyUi1lMEg4S09MSUxUR21SY2NveERvRE82UG5UMl9qUEdBUEpQMWtMajQyNTluX3RTLUtxU0gzQzBnbjNZMXNlTEJRU09xRlJyNllVd3A5SFlqVEVEaVpkQXRQWnZDVWFwRTR1XzhDWFpad1RFNjhZcm54NmFzRTJKZ2VVQ1lZZ1RybUNhOUZvUVlPVWRHQjNuQTlJaDNaZTZVRXVCM2g4aXNNdlRLVkRiQ1BqbHdR?oc=5",
+      "source": "اليوم السابع",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:57.943074+00:00"
     },
     {
       "id": "46fbb5407a1f186e39b43d40cbe02942",
@@ -900,17 +910,7 @@
       "source": "Kooora",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.269381+00:00"
-    },
-    {
-      "id": "d7cca59a85056eda25431d091785c599",
-      "title": "نتيجة وملخص وأهداف مباراة النصر ونيفتشي في دوري أبطال آسيا للنخبة - إرم نيوز",
-      "title_ar": "نتيجة وملخص وأهداف مباراة النصر ونيفتشي في دوري أبطال آسيا للنخبة - إرم نيوز",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5aX0IzcDVrNlRpc19IWXk3eUZWRTh5akJUbVhEU3dhZGw3X1V2VDdRX3poYlpzTXJzdVFuWHhNYXgwZlBqcTNTV0VzYzQzVWZ3?oc=5",
-      "source": "إرم نيوز",
-      "category": "رياضة",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.269364+00:00"
+      "collected": "2026-10-15T19:07:57.943060+00:00"
     },
     {
       "id": "a50c301496419f2d173d4819002ad695",
@@ -920,7 +920,7 @@
       "source": "الجزيرة نت",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.269350+00:00"
+      "collected": "2026-10-15T19:07:57.943046+00:00"
     },
     {
       "id": "d3443ad49da353800af986779759495b",
@@ -930,17 +930,7 @@
       "source": "عكاظ",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.269332+00:00"
-    },
-    {
-      "id": "19f72aa7f2a91e0328325891a7c73810",
-      "title": "مواعيد مباريات اليوم.. صلاح يقود طرابزون سبور فى زيارة أوروبية إلى فنلندا - اليوم السابع",
-      "title_ar": "مواعيد مباريات اليوم.. صلاح يقود طرابزون سبور فى زيارة أوروبية إلى فنلندا - اليوم السابع",
-      "url": "https://news.google.com/rss/articles/CBMi_wNBVV95cUxPWXFyTTIybThUNVU3V2wzRGc2aW1PR1c0NkFYZnhoNDE1X2lLTTZXOTZkQXdnLWRBcEs3a1MtRVZrWlVtVHJPdVI4cXZKN0thWXpZUG1mME40d1lBTkZ1OE5xU1ZZdXNJZ2J4Q2REcFZLTGhnLWN0WWhCZTA5YVZKbFFqQk55cy1JeWF6SzduQ3BOcS1zX0xrVDlKU0luNWhFMk5lVXg4LVBGTTRTS1h4Y3B0TEVRbFVsT1M4ZUVxakdERXlpcnJvM2s0MmF3MkZlYzZDRi1hZEp6SzhQWVU5TUtYOC00blJYdEJGTkNXUTFRNm5VZDVOSkNQTXdxZjItUWhXVkhBbDF4NU5RU3MxRUdTNmtUaXRXWHQ3aVEwMW5sV2wyTjF0NzhxQUFUZTBaU1dtLUM3dlZyTmNuZ2g2S0NfTmJtcGpaSERJQXNVcTcwamJQcXlTRlFQazF3M1RJbmRvVV9SUHJNSWpiZmVieDJ5Z2V1aHRMemdrbzRFcWZ0ZVNXdnZMNlhXSWJpSkNLQ2RuaUl4Nmp2dXdVR2VKWEtlekRRWHVMbUJ6ZDNhaU9vRV8ydkNhYjNPUmVLZ2FBUlNDTTZpaU5PWWh3cWczU0Q3enEwaFhWdVhiSlpxYUlrQ2kyV2tnVXZ0Wk5jdzRKb3F4RWYzN3BvWk8xTTE40gH6A0FVX3lxTFBlSzc4eGdwcDFNa21vcmtMYlgyajJHLXY2eWVuSVpKTjE1Slo3NVVnR29JRmx6Rnd5WENxY0w1OEJTTjUwakFpQzFJRThDTjUtc3NUcEZaczlaX1NhTjdLdWtYaEZhMnFWam1vQldiOEUzMzhLN0NlMlNWbWRqVFFucFE4VUZYU2U0M2RwUW1IVUhUVjJwdVUwYmlnYnNXd3ZyaXp2SVdnLTItRG1xUTlhd0V3NnNwdEFMdjlPbGliU3pTUWRVMTZLNHFnTUhaVWc2c2xxV202eVFaVWdvLVBydlY0NkpTaUVDZmI0Y3hPSko4eU5rNWYxU1N6SGVwQWptN1RKa1Q3ck5Qbk5taHZJazFnZ2JObU9qT2toNmNzWG14YUdlcTV1M0RDR3MtRzdBSl93R3pxdjJhUkgzY001TDRPVkk0MFFHRGVjeXlnWXFXWkpvd3h1MjZ5SS1lRjRibDFWclFXWnB1amNlQlFaamVwdFNYM3dfeXMwQjFXTjl1bERRa2hZSkF5WUVjcU5kYTVJM1E0ZThsTDYyaS16THliQm9oZjRvT0tUNFdDemszcS1oWmJISjhwaWJSeUxOZGJmY3o3RjRlbU1Gd29kLUFqX1p1dUJSclRLbVgyWEpldnRxLWxtUHF3MGh1NllleDBCZ1N3WlN3?oc=5",
-      "source": "اليوم السابع",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.269317+00:00"
+      "collected": "2026-10-15T19:07:57.943032+00:00"
     },
     {
       "id": "7db5f0fb414b102acce37a239bd8edef",
@@ -950,7 +940,17 @@
       "source": "beIN SPORTS",
       "category": "رياضة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.269296+00:00"
+      "collected": "2026-10-15T19:07:57.943020+00:00"
+    },
+    {
+      "id": "19f72aa7f2a91e0328325891a7c73810",
+      "title": "مواعيد مباريات اليوم.. صلاح يقود طرابزون سبور فى زيارة أوروبية إلى فنلندا - اليوم السابع",
+      "title_ar": "مواعيد مباريات اليوم.. صلاح يقود طرابزون سبور فى زيارة أوروبية إلى فنلندا - اليوم السابع",
+      "url": "https://news.google.com/rss/articles/CBMi_wNBVV95cUxPWXFyTTIybThUNVU3V2wzRGc2aW1PR1c0NkFYZnhoNDE1X2lLTTZXOTZkQXdnLWRBcEs3a1MtRVZrWlVtVHJPdVI4cXZKN0thWXpZUG1mME40d1lBTkZ1OE5xU1ZZdXNJZ2J4Q2REcFZLTGhnLWN0WWhCZTA5YVZKbFFqQk55cy1JeWF6SzduQ3BOcS1zX0xrVDlKU0luNWhFMk5lVXg4LVBGTTRTS1h4Y3B0TEVRbFVsT1M4ZUVxakdERXlpcnJvM2s0MmF3MkZlYzZDRi1hZEp6SzhQWVU5TUtYOC00blJYdEJGTkNXUTFRNm5VZDVOSkNQTXdxZjItUWhXVkhBbDF4NU5RU3MxRUdTNmtUaXRXWHQ3aVEwMW5sV2wyTjF0NzhxQUFUZTBaU1dtLUM3dlZyTmNuZ2g2S0NfTmJtcGpaSERJQXNVcTcwamJQcXlTRlFQazF3M1RJbmRvVV9SUHJNSWpiZmVieDJ5Z2V1aHRMemdrbzRFcWZ0ZVNXdnZMNlhXSWJpSkNLQ2RuaUl4Nmp2dXdVR2VKWEtlekRRWHVMbUJ6ZDNhaU9vRV8ydkNhYjNPUmVLZ2FBUlNDTTZpaU5PWWh3cWczU0Q3enEwaFhWdVhiSlpxYUlrQ2kyV2tnVXZ0Wk5jdzRKb3F4RWYzN3BvWk8xTTE40gH6A0FVX3lxTFBlSzc4eGdwcDFNa21vcmtMYlgyajJHLXY2eWVuSVpKTjE1Slo3NVVnR29JRmx6Rnd5WENxY0w1OEJTTjUwakFpQzFJRThDTjUtc3NUcEZaczlaX1NhTjdLdWtYaEZhMnFWam1vQldiOEUzMzhLN0NlMlNWbWRqVFFucFE4VUZYU2U0M2RwUW1IVUhUVjJwdVUwYmlnYnNXd3ZyaXp2SVdnLTItRG1xUTlhd0V3NnNwdEFMdjlPbGliU3pTUWRVMTZLNHFnTUhaVWc2c2xxV202eVFaVWdvLVBydlY0NkpTaUVDZmI0Y3hPSko4eU5rNWYxU1N6SGVwQWptN1RKa1Q3ck5Qbk5taHZJazFnZ2JObU9qT2toNmNzWG14YUdlcTV1M0RDR3MtRzdBSl93R3pxdjJhUkgzY001TDRPVkk0MFFHRGVjeXlnWXFXWkpvd3h1MjZ5SS1lRjRibDFWclFXWnB1amNlQlFaamVwdFNYM3dfeXMwQjFXTjl1bERRa2hZSkF5WUVjcU5kYTVJM1E0ZThsTDYyaS16THliQm9oZjRvT0tUNFdDemszcS1oWmJISjhwaWJSeUxOZGJmY3o3RjRlbU1Gd29kLUFqX1p1dUJSclRLbVgyWEpldnRxLWxtUHF3MGh1NllleDBCZ1N3WlN3?oc=5",
+      "source": "اليوم السابع",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:57.943006+00:00"
     },
     {
       "id": "52c993f654b3e2a87a7110c472e3573c",
@@ -960,47 +960,7 @@
       "source": "Kooora",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:51.269269+00:00"
-    },
-    {
-      "id": "94eff853e34f6dbbb2a9a4f846d0191b",
-      "title": "Align Technology : soupçons d'abus de position dominante - Dentaire365",
-      "title_ar": "Align Technology : soupçons d'abus de position dominante - Dentaire365",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTGR2OHlRU2VLdnFsZ01VSjRneEIzZGxhUEJqbFBBeGtNbHhTdjQ1d1EwZ0E1bWhwSEpMSHg1d185bW94b09CMU1vbFAwYVJSZWs4dm9RTEhQOWp2X3ktWHd1U2J0NzRzem56ejFaZndmdVJ2RmRPc0stblo3SmVGSVZmWTVNME5tR3dyX2VHY1l3OFhhczdV?oc=5",
-      "source": "Dentaire365",
-      "category": "تقنية",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:50.698932+00:00"
-    },
-    {
-      "id": "e8ae1de0a3d6e4d22aeae38881693791",
-      "title": "Eureka Technology veut aider les transporteurs à optimiser leurs tâches - Le Journal du Poids Lourd",
-      "title_ar": "Eureka Technology veut aider les transporteurs à optimiser leurs tâches - Le Journal du Poids Lourd",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPMHA2QUpxNDBjdTZYd1c4VHc4MW9FQ2xjRFdVa3hTdFl4dzZleW9xZU0yNXktR0hyc084aTlCUU43U0dvSVBKdHZNSmJXTUpFNUtXd0F4OGVDWnctTnhfQ3ZyUmFkVDhNSVhGSHJjUmtlSlQxaUM4RjZoSm5aSno2bUVwWlVRN1ZLNnZRNU54N0V4dktyd3F0RXZlWlJ6MUVzSnpFNTNUbVBOc19XRFRDenlXQQ?oc=5",
-      "source": "Le Journal du Poids Lourd",
-      "category": "تقنية",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:50.698917+00:00"
-    },
-    {
-      "id": "35cab091f273a6a2c2af6051db2f28df",
-      "title": "Micron Technology perd 3,88% - Boursier.com",
-      "title_ar": "Micron Technology perd 3,88% - Boursier.com",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdEMzSkVYNUhncmthbkp0YUstYzVTd1ZqMmM4VlY3Q0dfcnlDVE4xWDVQVEFadzQyNWtpc0x3bFVybm1uQ2pwZXE2cDV6NDlvZlJtNDhmaGk5VG1WTFBvRTJMWHNicnJ3X19kX3F0eGZVWks0VDhaMng2Zk93U1FyemxlTGs2d3hUektYR2ZReElZUQ?oc=5",
-      "source": "Boursier.com",
-      "category": "تقنية",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:50.698902+00:00"
-    },
-    {
-      "id": "46bc5b1138fdf065197bddba01c4a46b",
-      "title": "Royaume-Uni, Ukraine Kraken Technology Group et les services britanniques engagés dans la guerre navale ukrainienne - Intelligence Online",
-      "title_ar": "Royaume-Uni, Ukraine Kraken Technology Group et les services britanniques engagés dans la guerre navale ukrainienne - Intelligence Online",
-      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQb2FOZnVybTRNbVBPMU1melF2UFVyeGpZZEdzc0VUbkh1S3lrQ1dfRkVaUnljdDRXV0owYUVUQkNTQ3FfTHRWTUNGY01vS1RLVnI1REdKZjNzMFUxeXA3WGNWb2lIelYyRGhnSTlkMF90LWZRQXg2RnM4M2tBeEZWVklCVDdmTDZuOWhmaTFaSU96dHJ6NmtCY0JDTk1rV3FGc3FkQ1BDRlVrQll1NVFFbEN1T0NBbmFLZjVSQXZzNmt1SU1zckgwSkVRM1ZzbllaV29STVA0bGkzRHJPaVBfc1NEQW50Z0hvdmdXVHJmNmIxenNHQ0dUVmdzSQ?oc=5",
-      "source": "Intelligence Online",
-      "category": "تقنية",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:50.698891+00:00"
+      "collected": "2026-10-15T19:07:57.942970+00:00"
     },
     {
       "id": "ff0ac186cd80dd806cfd2d5a4422e757",
@@ -1010,17 +970,47 @@
       "source": "Electroniques",
       "category": "تقنية",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:50.698873+00:00"
+      "collected": "2026-10-15T19:07:57.419640+00:00"
     },
     {
-      "id": "bfd8a429ba87726103df7e62ed489cec",
-      "title": "White Pearl Technology réalise une émission par compensation de 12,6 millions de couronnes - Zonebourse Suisse",
-      "title_ar": "White Pearl Technology réalise une émission par compensation de 12,6 millions de couronnes - Zonebourse Suisse",
-      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPcHVheHZJcDhzWUY5SkNLam5WXzNJQ2x5YVJHWE5haEljQXpQMXJxeXlYQ0hnNDdfZnpOaHlNWnZvZmNRMnZMME5xTWFNcHFxeUZENk5uZDFEU3hQR1FNZ1QyQmM0N2dZRFFwSjdNcXpwUDdjVzhSbjhPS1diR3lwMU5WYW5CeXByYk5BaWJ1YkY4ZTFPekdKSnF6dVNzbnM4aVRDbXFPc3NYWUM3bFBtMFNMbUdOQ0tOamlTOEFBMkZMUjNjQ3lFNFR6TU44SzJNdTdIblkwVGVqamVWTHdMMm4xSkE?oc=5",
+      "id": "00ed975145d12b2fe30dc5ce306c6aad",
+      "title": "Plug and Play and CMS - where art meets technology - Aerocontact.com",
+      "title_ar": "Plug and Play and CMS - where art meets technology - Aerocontact.com",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOUzYyUXN6a3dMMFhJb3dSWVZGYkN5RWJrT1Ayb0ZrS1hiek1IT3pWeEUzd19yYUJ0bUlwcFJjTXkwZVVFd2tteTZqSHpoOXBjZ2dmUkxMNmR4dVF5amJLZWZwS0pjUUkyS3VqMFBSN0V2Ymlad0R2NTJWcW5QZDQtODFhb2Nxd3ZweHpxTmwyZElKZ2J5?oc=5",
+      "source": "Aerocontact.com",
+      "category": "تقنية",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:57.419629+00:00"
+    },
+    {
+      "id": "46bc5b1138fdf065197bddba01c4a46b",
+      "title": "Royaume-Uni, Ukraine Kraken Technology Group et les services britanniques engagés dans la guerre navale ukrainienne - Intelligence Online",
+      "title_ar": "Royaume-Uni, Ukraine Kraken Technology Group et les services britanniques engagés dans la guerre navale ukrainienne - Intelligence Online",
+      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQb2FOZnVybTRNbVBPMU1melF2UFVyeGpZZEdzc0VUbkh1S3lrQ1dfRkVaUnljdDRXV0owYUVUQkNTQ3FfTHRWTUNGY01vS1RLVnI1REdKZjNzMFUxeXA3WGNWb2lIelYyRGhnSTlkMF90LWZRQXg2RnM4M2tBeEZWVklCVDdmTDZuOWhmaTFaSU96dHJ6NmtCY0JDTk1rV3FGc3FkQ1BDRlVrQll1NVFFbEN1T0NBbmFLZjVSQXZzNmt1SU1zckgwSkVRM1ZzbllaV29STVA0bGkzRHJPaVBfc1NEQW50Z0hvdmdXVHJmNmIxenNHQ0dUVmdzSQ?oc=5",
+      "source": "Intelligence Online",
+      "category": "تقنية",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:57.419621+00:00"
+    },
+    {
+      "id": "35cab091f273a6a2c2af6051db2f28df",
+      "title": "Micron Technology perd 3,88% - Boursier.com",
+      "title_ar": "Micron Technology perd 3,88% - Boursier.com",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdEMzSkVYNUhncmthbkp0YUstYzVTd1ZqMmM4VlY3Q0dfcnlDVE4xWDVQVEFadzQyNWtpc0x3bFVybm1uQ2pwZXE2cDV6NDlvZlJtNDhmaGk5VG1WTFBvRTJMWHNicnJ3X19kX3F0eGZVWks0VDhaMng2Zk93U1FyemxlTGs2d3hUektYR2ZReElZUQ?oc=5",
+      "source": "Boursier.com",
+      "category": "تقنية",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:57.419608+00:00"
+    },
+    {
+      "id": "adf8a8d30e29d89ddf27d85b09e256f0",
+      "title": "Elektrobit et Microchip Technology Inc. collaborent sur des solutions AUTOSAR préintégrées pour les plateformes automobiles de nouvelle génération - Zonebourse Suisse",
+      "title_ar": "Elektrobit et Microchip Technology Inc. collaborent sur des solutions AUTOSAR préintégrées pour les plateformes automobiles de nouvelle génération - Zonebourse Suisse",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNUi0xeGdUM2lyUW1BcFdFSWgyQkFYcUk4ZDRwTS15N0xjNlVIbGh4UldPcEpfM1g2RG5ZR21IaTh2RlItSHI0NC04M1Zpa0twOExOSXFlS2pvZGhoa29VYm05SEdEWmN5bmc2MFlDWS05aHpKQlY4djJ3ckdKOUpMaUxMc01COUtTOGJwNlhVY2RWUXVzUTZabUF6OFBWWFdocW53ZGNvbkNoQkRNS3pBRTAzU2lxVlJHang5ZzBMOWtIc2VpWE55T0ZraXVLRDRjRF9yODFVQmhxdnVOUS1OYlI4aUwwTWhrY0VabGRGZw?oc=5",
       "source": "Zonebourse Suisse",
       "category": "تقنية",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:50.698858+00:00"
+      "collected": "2026-10-15T19:07:57.419600+00:00"
     },
     {
       "id": "2709653d955e17db72a1566ed85d3629",
@@ -1030,7 +1020,7 @@
       "source": "Investing.com France",
       "category": "تقنية",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:50.698840+00:00"
+      "collected": "2026-10-15T19:07:57.419585+00:00"
     },
     {
       "id": "b9316b5ec72244670fe1092173478eb9",
@@ -1040,47 +1030,37 @@
       "source": "L'Usine Nouvelle",
       "category": "تقنية",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:50.698811+00:00"
+      "collected": "2026-10-15T19:07:57.419570+00:00"
     },
     {
-      "id": "32e25dc30f5ce05353fb7e03824e6aeb",
-      "title": "Online ads weaponised to deliver ‘zero-click’ spyware, researchers say - The Guardian",
-      "title_ar": "Online ads weaponised to deliver ‘zero-click’ spyware, researchers say - The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQR1RpeTl2ZWhPMDFLZndVR2V4bUJ2U2g4UHN3MXFKN0JaOGdnVnZ1dmJ6RUcxUXd5M3VOakJyV2UtemlGWWhjaTEwR1NmRGVXei1BZnp2eko0V3JReFB3NzFwYmsxNzFaYTFYSFNTSGlJa3pUMC1tM2c0d2dhbUZlZzc5aWloR3U5eHJWUW9WNVcxaWUwb2NueUM1bkRJVGZuRWFiVlU1RTU5VlNHREI1WmduRnNwaHg5ZmhSRTVWanhIaDhqeW4xYXJpMHoxTHdw?oc=5",
-      "source": "The Guardian",
+      "id": "70f426189ae1ac515b735710813ba999",
+      "title": "Le palmarès des Hearing Technology Innovator Awards dévoilé, Zeal primé - L'Ouïe Magazine",
+      "title_ar": "Le palmarès des Hearing Technology Innovator Awards dévoilé, Zeal primé - L'Ouïe Magazine",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNbFBXZFhWendLLXNXY3pDUmJMSC1ZS0tiRENLekRvb2t0S0tiVFp5bGhtbURtRG9raDBWWDc0MVV2ZmdCeUhYR2JURlZiOGhDUks4Q09yaUc0MEt0LWJ5eGh3Q3Fmb2N6R2FTUkd4NWc1Y2JCOWVkQnZycGs5WENGSzQ5TXRlTlZHQld3VmtEY2Y?oc=5",
+      "source": "L'Ouïe Magazine",
+      "category": "تقنية",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:57.419536+00:00"
+    },
+    {
+      "id": "446e4696729f1a72a09e3bc2903fa126",
+      "title": "The Nordics and NVIDIA Show What’s Possible When a Region Commits to Advanced Computing - NVIDIA Blog",
+      "title_ar": "The Nordics and NVIDIA Show What’s Possible When a Region Commits to Advanced Computing - NVIDIA Blog",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB1VnZ3Q0NabGw5VDBWc3RjSEotNnNaRDhyMTRJcF9VczhMTTB5Ui1ad2FQZllkTy1WNUhubmNBLXdjcDVQc3V3VzJsWkhjWlF2M044SWNVWGQxYkhBajBXeGVEeEpDU0UxZWZr?oc=5",
+      "source": "NVIDIA Blog",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.922410+00:00"
+      "collected": "2026-10-15T19:07:56.911414+00:00"
     },
     {
-      "id": "e3ab625fa3a6b81209e8af7de37fe58e",
-      "title": "When It Comes to Technology, Catholic Schools Can Lead by Example - Public Discourse",
-      "title_ar": "When It Comes to Technology, Catholic Schools Can Lead by Example - Public Discourse",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1hWkJYVGpMZk9mOXhPTDRXckYzZ3F1d1AwYjl6SGVPYVZYMFRaekxON0VIdy1RSjhpTFJZTmhpNEhGNTlzb0p2MnhoOWxTUzhiM3FjVlRGcGx2R05EaS0w?oc=5",
-      "source": "Public Discourse",
-      "category": "تقنية",
+      "id": "2e832691dd47ad974391a6fccca44755",
+      "title": "Nvidia, AMD, Dell sell-off in global tech rout on AI funding worries - CNBC",
+      "title_ar": "Nvidia, AMD, Dell sell-off in global tech rout on AI funding worries - CNBC",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaGhRTkZ4cjB1WFcxY0ZaekZ0anhJSW1MYlRMVV9pZzFacHJySWt5QkZaSEFoMmVBbVZKRzc0TmloQXkydmRSaGs5RW1vQjIyZ1hhQzFBSXN1ZGlJVmI1b2VKU1FIaXlZVTJBZHZZMUkxemJ1ZWZUY3E5Q205RWp1WFItS2FJMEx2Zjg4ejRHQy11UjRMbkFPSXJnSkluT01nMVNKbHRn0gGrAUFVX3lxTE1fQkI2UFBBMEExelZWTnRzQ1lzaE1Hdms2R3hjLW9tVmdsZ1hWNGdxRVE1VnlZWVBQU1ZZTW56SUJrYVNYX25QTFFOMExfZmpZY1RCRkpwZmFZX3d6T1BCdU5Rd3ZsME5zdHJhUFRkNG5KUHdkNUsyRHBjX3I1VWNpZkhWRVZ4eFZlS3Jhc1ZoS1dBbVpPRlFyTkRUd1pRNDNqMHNDTWgzV1VGaw?oc=5",
+      "source": "CNBC",
+      "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.922391+00:00"
-    },
-    {
-      "id": "392059fa2450a5131d83c45ecff9c347",
-      "title": "CT teachers say technology is destroying student academic ability. One said some are ‘functionally illiterate’ - Hartford Courant",
-      "title_ar": "CT teachers say technology is destroying student academic ability. One said some are ‘functionally illiterate’ - Hartford Courant",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOaTJiS1lYMmM1YWdVanhLVnViSWR6SGZvMXVkX2I0Yld1OTB0NFJsZzdNUHFCdHZYTV9qRjZNRmxnTmlmNEE1TDBWR0U2clp1cWlvVjdKSGs1bGw5MldMLU1Bb25LVWc0S1VlajVBb1U4RWtFY2FTZWFFUlE4TUlZM1Q1d21BMG5sRVFsdWxqX2JoVTFaRUVVSUxuSVhlTjRfdkVoTGl6TjlQbDN4V1J3d0h1MWwwMHYwQlFHWHhCcDNocXgx?oc=5",
-      "source": "Hartford Courant",
-      "category": "تقنية",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.922378+00:00"
-    },
-    {
-      "id": "7a9bc23847e2654365696c1fde8ad87f",
-      "title": "Connecticut teachers say students are struggling to finish chapter books, some blame technology - NBC Connecticut",
-      "title_ar": "Connecticut teachers say students are struggling to finish chapter books, some blame technology - NBC Connecticut",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOV3B0S2tKelJFV1pKTE1QSkVpWkd5ZXZyT3UxaGllc2RxRmhhR2pJZ0FpVE1seFV2OERFMlcxN28tcjIwNEhYbXZWWWJfNzB4NjZpNHJiVW9nR25TSXgtTWJ2RktIVWFmMGUxRUx5VjFxNG5DXzFwODVPNmpNNnhhODRkVXBjTTFCMlA1V3NuWGhPc29CUkxUWmJmbzFocDhyUU1ReW1hb3N5a2p5Tzhfc2JpN2lpcVozYzFORDZTS0J1cjRXYnpTTi1KUE05YUQ1SF81SWkyWmVBM3N0VFHSAeYBQVVfeXFMUHdmUk5CcVctbU1fZU82SDM1LVBIc1FtdUR6TWF1X0hRTkhUX2M3bG1FWk1IdV9xd2ZDckR2UjFQRzU5aHVOMVFLV2RlQnZVejNJOFRKemIzaWFOb2FIR2lGeHIyd0xJN0ItazVsQTBfX2RlN2NkRGdubEt5RUFzT1p1c2dRQTdLZWNJWlNQYnVuOENWRUFKVG5TMVR5Zm5LSXZEdnd4MEVsSmNqbWM1bzd6UFRnaHhrdDRPNHNMdXhJOGUyQVhYeVQtb3BvLXVSdmp6cUhCSDNfWS1sbF9iSFhDWkYybkE?oc=5",
-      "source": "NBC Connecticut",
-      "category": "تقنية",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.922359+00:00"
+      "collected": "2026-10-15T19:07:56.911398+00:00"
     },
     {
       "id": "029575dcc660f69b9bab30d40dfe28fa",
@@ -1090,17 +1070,37 @@
       "source": "The Washington Post",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.922347+00:00"
+      "collected": "2026-10-15T19:07:56.911387+00:00"
     },
     {
-      "id": "bb48e36a5f4f2c7890d6fa133e78f897",
-      "title": "Trump announces new Montana 'super range' for DOD to test advanced military technology - WSYX",
-      "title_ar": "Trump announces new Montana 'super range' for DOD to test advanced military technology - WSYX",
-      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNZndfRmNwWkppaUdYTUlySGdFbGN2c1VJNm5iQllSWHRKejJDUVlnZ1FQSU15eWdTZ0x1Y2duVzhlTmZZbU1lcjBzSXhQZUtsWXgwb01hTE9mLVlrLXhwcUpEU0NobUFlcVBJaXh3dmd1a1lucG1BUGFXbzRJMWQzLUdzaVk5NE9yNDRxYlNpdndwaGRJVjhSeURSeF9mNHFmZ2hzMkhPWnNWSW1kWks2YzRhZlF1eGQya3l0QkxyMWRJZE1nMWtBVlpXenB4NHpVaFlUWGdpd3V3REdPYkZYWjFBcnpkQUoxMHMwUXROVTg0TE5HcHdYMTZMTkY?oc=5",
-      "source": "WSYX",
+      "id": "9653dbf7a2f4057576ba8dc4bd426a97",
+      "title": "D.C. startup founded by Goldman Sachs alums raises $15.5M to expand real estate platform - The Business Journals",
+      "title_ar": "D.C. startup founded by Goldman Sachs alums raises $15.5M to expand real estate platform - The Business Journals",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUXhGdS1RNDNmUDl4MFpURUV0WFkxbmtJU0FqRTZJSHVyTzk0VnBWNkRGQVU1WGMzQ3hVUUxFbm1QQ01WZWhYSEMwMFg1V3dSYWxBM05xQ2poOGhxTXpJMFNoTXZTM3pIYVZsd1RYeVNUWWtnczFxTGZnSXVlS01ZckhwR0d6bXVfMU90SFNHMjJxS2RhbUpnelVkR2dTRjhlTDBnOGJTUEhYLW5IQm1R?oc=5",
+      "source": "The Business Journals",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:56.911377+00:00"
+    },
+    {
+      "id": "16133b2613456c47195f2b0ddcc6b500",
+      "title": "Gen X embraces technology and a different outlook in 'Classic Chronicle' - WCVB",
+      "title_ar": "Gen X embraces technology and a different outlook in 'Classic Chronicle' - WCVB",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWWVEMnJ6SmlzbTMwMWdrSC04X3NPNGlEdk9MUExXVE1yUGxRZWl4Z2F3aFFKQ3hNd29ORDlLMUdDS0F0M0JueDNHS2tlcTIxS3lCU09kMTZLcVJlVE5ZNlB4SFU3RHRIbDMyU0c1ZW44Y2d0aDZVOWJ1UWcwZnVNVUpXSVhwSjlFWWxtRGJtUmxQMHQ0dHQ1SWRqby1nMjNv?oc=5",
+      "source": "WCVB",
       "category": "تقنية",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.922333+00:00"
+      "collected": "2026-10-15T19:07:56.911366+00:00"
+    },
+    {
+      "id": "9663e802aa95c392222fcc6665fc97fb",
+      "title": "Divers Institute of Technology faces protest from students, faculty - KIRO 7 News Seattle",
+      "title_ar": "Divers Institute of Technology faces protest from students, faculty - KIRO 7 News Seattle",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdFh0RDlCNDFrelVWMWdrVlFCUXBQcEZ3RFNuWTVfY2lKcjROMEdyU3o1clZNNTdPM0prU3BjZXdjUnRnand5TGVnTjYwU0xiQjNLZE9sVVgwMmVhODBBUVZ6UlFRQURIY2p2dGk1aXBGVWptc3dTSDFBa29uV3AtamVhd2k2aUJvaDFyM0xYUjdhNXNucmVydWp4YXcyYzRCZWhVWlNlVkNPVnZtcmg2Q2FvenR0WkN6c3F30gHPAUFVX3lxTE90eHhCckhwZF81bDFDTW41TWJqV3d3Yk92RE5fLVNDd01teHJBeldSSWpJRHYzYkJEMEZKV3owU2FWOF9CNU1WcEN1ZkpwV2k0cURHYVhFTHpHWEgwWkM3dmx4eC1RamFqRXltVFMzSnJ6RmZqSGZVRThXV05SUmVnUW5qdWJKU0hXUVNudjdjSDQzT2NSbzV2MkZRZW82SzFhbW5MdDR1aktwaXRRbUtpeUtURW5oSEl6OUlPY2hkdlI5U2dfMHNyaGc1NlRGZw?oc=5",
+      "source": "KIRO 7 News Seattle",
+      "category": "تقنية",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:56.911357+00:00"
     },
     {
       "id": "3f2d861a6d4af57cdd5ef9abb9d6a149",
@@ -1110,7 +1110,7 @@
       "source": "CBS News",
       "category": "تقنية",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.922319+00:00"
+      "collected": "2026-10-15T19:07:56.911347+00:00"
     },
     {
       "id": "ad899a1837939db70f2eae7bf0c842b3",
@@ -1120,7 +1120,7 @@
       "source": "Fortune",
       "category": "تقنية",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.922294+00:00"
+      "collected": "2026-10-15T19:07:56.911321+00:00"
     },
     {
       "id": "9a9d5d4e4a28e1c1bf47f0626785c731",
@@ -1130,17 +1130,27 @@
       "source": "أريبيان بزنس",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.354462+00:00"
+      "collected": "2026-10-15T19:07:56.395312+00:00"
     },
     {
-      "id": "f6d5be927f76822c5584fde12e15ff76",
-      "title": "أنثروبيك تحذر: الذكاء الاصطناعي قد يهاجم ثلاجتك وتلفازك - الجزيرة نت",
-      "title_ar": "أنثروبيك تحذر: الذكاء الاصطناعي قد يهاجم ثلاجتك وتلفازك - الجزيرة نت",
-      "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxNb1lSckxhaTA4ZTFSZnMycl9jeTM0dXVNNlZYSnBxWUlOODlEVTE1MnFmSnAzc3FvZERpeVpwQVlUM3czSFJ6UE1oYW9ZV3Jvb0JwOFZ5Wm1nbEtadk9sYkJldW5udTBTZU1HakNMTkotVno1WXQ3RXdzOXFkY2NyY2FMWUZFSWVMelZtczZyeWtlSEowTTM2YnZEczVKdlpRLWRBVlFvQWZZN3RXT3JnMUFrb0JnYzdSMkp5dVNiTEtDS0JJaHNsbzBLUE5OQ3lPbEpIc0t3VTNoQVhaeEt6R2lHN0hXLXVaaGlBSTNwV3pVOFU0OU5JSERUN2VsdkJwd0M5bGhZemxsUkVoclB1c0JRV2Y4Y2JCa1VOdVZuVmR5a1lOVUU1emVURGFVa0o0SURUVF91cGVWVGV1cnp2VURR0gHHAkFVX3lxTE1QSVFJVFlhZ0o0bDJfZmsyMVloc3pzTkpBQmUySFliYzdHN3pvdnlrMnlwS200UURqbG03dlMwSURPX0htMjJ1ZndGV3JKX3hsTWE0LXhtX3ZjMF9WckhXN3k5aUdzVkhOZGViTzNyWHRwVjA4d1ZpOUtYWENwXzNWWEFSMVhwZWZGSFJnRkE0Vkc1d2VoTGRrNTFZTWVkSzJhWXRBeENHc2pVNDAxeGc2OUc5TkVVN3pKcTlxT0dJU0JUQjhldTJVeVN0d1QyMnVkc0lUb2JreDdRV1dlRkl6RHNCR2hENDZvS1pRX3JZa1NJOFBQZHg4aGFjV0tBd1RWTlFhSG1heWNXQzFfMFJNWE9RRzlqWFItM1h2SkpfbDBDanQwcG5qS0x1Q2ZUTHd6NDBkYnhRU0RzdjVGWHl6UzZJREgxaw?oc=5",
-      "source": "الجزيرة نت",
-      "category": "تقنية",
+      "id": "fe73d05be7aa2f584f683579db779d12",
+      "title": "أسهم أوروبا تتراجع جراء هبوط قطاع التكنولوجيا العالمي - العربية",
+      "title_ar": "أسهم أوروبا تتراجع جراء هبوط قطاع التكنولوجيا العالمي - العربية",
+      "url": "https://news.google.com/rss/articles/CBMi5wNBVV95cUxPZUNmRkJiV282VDJZM290WnZGQ2xPY0NUaTZPMExSTWlsWHR0YVc1TjVxamxVZ1F2Mkc1NlFoTnpKZWljVUExVGVBTVh6LWJHWXZ3S0dvM3dNU1JZZjBzREgxZW1HU05ZTDhsWlZQX1M3eFh0QzdKUzg5WEtTZVIyM0xrZmR3V2NCUVJaRVlPTURQR0xkaDg2UXRyazNmMDdBa2dMYm5Zak1KME1zX1l5a1BsYnNUMjlqYUpXRktob2xCb0hpVTdqTHVpQ1NxdWVxekFPcHRadVpBMkpPMVkwMWo2NU9NaXVnbGdpX2VQdVR5ZG11N0paVkhvNHdSX1Fnay1sa1NnN0RqZnNsS2F5Q0JNdFB1ZFNXR0E5SVd2aE1Td1F6Smp2YVV1R01qdEJNZHgxUTZXZXFUMkRHY2xUZTUybFFBWDJQYmJ6cFNfU19pcmljcFFZbmNFVlY3UTZrTThLTzRHeXRjdU92WE1JRGg1R2llSmMyYnpBVWJfcmRtOFpXZ0sxeFZGTTRaWWM5TzIwN0NyOXJwenJsdHdkN1l4aFQ2X3hnY0hTMmNpcDlBNWVzTUFFMmRUS1VCcF9TZU5TYktxV29YWkwwR3BKZmxhbFhjOEgwVFBzSlducFM2VUVjNl840gHsA0FVX3lxTE1yYXpmNWxhOUhhU3ZOM0lub1ctdV8wMVhhQksteWtxa2U1LUd0UnNHMDVhNlg4azRMNTI3OW1hS1pUdHN2TUxOdFR3WUxmZDdia1J4bG85eHVON0xNZVZ4VHcwaFZPWWdZclVsTFExTm1Bdm55WUFydGN2OFYydEpqMEloU25lRmhQMndSWEN1YlFmSWdHVDRETUdROTU3cGp4aHlVV002RkNEOEM5RzNibUNHSjVrR2h2ZHVEd0NmWXZEUDdGMWNabmRPeGpDY3NHRElJMElmb1ZJd2JoWTBaTXVTMG1FcW9BeFZsTWM3UENqODN6a09DSlZMcjlaQXNBeTRHa0NTRS10amtfU1gxellaMHFfc2RDU004QkI2Y0hnQmo5a3VRVUpEWFZkek1XN2pPb1hjY2xudXA3LTl1NXNtSTdrZmRBQmxkbDBEWVJNV1VtZ2dqbERtZGdjQ0hpekxOZW1pV0E3WXpKY3ljZ2dlRU55SUxDOG5Ha2tCYk1yOUZDS2hxdVAzSEJtN05SaU1QMUVwdFNyMUlLc0ZweGdkZ0JpWDJKUy1NSV9GMFIzSldTdjdiT1RWX24zUldvYVNub1BkUXp2QnhvcXJGbzJmZzhLYnRaRjNtQjcwTjBRWE9RTXA1czExUA?oc=5",
+      "source": "العربية",
+      "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.354446+00:00"
+      "collected": "2026-10-15T19:07:56.395299+00:00"
+    },
+    {
+      "id": "c3d30d70232f9fe051bf79b47fd852a4",
+      "title": "حين يصبح مقعد سائق أوبر فارغا.. من يدفع كلفة الرحلة؟ - الجزيرة نت",
+      "title_ar": "حين يصبح مقعد سائق أوبر فارغا.. من يدفع كلفة الرحلة؟ - الجزيرة نت",
+      "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxQTXowRWVja05QZmZQcXBUQzE0RjlCdVVfb2ptWi00ZUxsNHdEb3FVeVB0VFlXTGY1TS01LVpOY0tBWENBNzFHaGVyYlgwbmxDQVhiQzZXb25JWHpIVDh2R1VGT2dudXJDWHpiVFRtUWxRTHlvU0g3Z2tSdGphZ3RlalRUVUE0Z2xya3hZbkIxR1hWWkVkeXA4LUI1TXdYaW5iN2JYNlpwVFFWYmVyZkxDcnM2ai1XUjBGUm1QUldSUW5HYms5VVd1RjFQTlVqOTEtb21ia1owMGgtXy1MY2g5Q202YXR1VUJpcXVNQmhNdTBPSDVuTlpsMTBGZUdMZzF3bnRhby1fejhHZEZLbFZmbzJvRDh2WVZHQ3N2Z19GanFKZ0JtWENpenpaZ3dpMGxGNEJMeW9oYnc5d0kzMDROd1doUG3SAcoCQVVfeXFMT180c0FYdzlzQ0NCd2lPREdtT2pxUHV1T0VkOTM0OU9xZ196Y09qWkFpMjFObFliUFA5YVAyY3EwLW10dHBlbk8xRmttcUROUUxxWHI1MXFYb2lkQjJkM002cGpLVTZ1d0NsRC1TaWlvN0dXTUNnTjkwZEwwWGZkOEN5eXVjUlNaV0xhSHdlUWMtTllFSzgtNUZja0JKdWdCMzVPRmdRaHIyd1cyd0RENUtRRndSMXU3Mi1uZXFoV1lkRHEtbGtHTVh5VC14V0lvT1dUNE1ScGZURUNBM2pDay1FUy1HcXA2SlphRGNmTWhLRmRIT3E2TjEwRDI1Y2xBTGE4OEw0LWd3b3JBQnM2cDFqRExIajFVTTNjZHdYZElMOW9UbTY3OVR6SHVuS0tsSVdaZWE4Q084b1ozS1ZoNmVkT2Z0aUV4eUNn?oc=5",
+      "source": "الجزيرة نت",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:56.395286+00:00"
     },
     {
       "id": "2fe32e95fc579da7acac13ec52d4ac77",
@@ -1150,17 +1160,7 @@
       "source": "annahar.com",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.354432+00:00"
-    },
-    {
-      "id": "6ea2a543617637c7be292254b54dddd7",
-      "title": "أرجل عملاقة وسط الصحراء.. ما سرّ التكوين الصخري الغريب؟ - البيان",
-      "title_ar": "أرجل عملاقة وسط الصحراء.. ما سرّ التكوين الصخري الغريب؟ - البيان",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBfaDZCQzU5NHhrcWhFUGo5dmlIam1Mb1RrRFYtZ05MeW5lelVyU2VBUUxxdnhld00tVGVvWTFWazNKeFlVWDdtTXdsQzNQUjJuNTU0LVgzNjBkZ3VfUU1SVWxicGlaanRlRFlieHFYUWY1cDk10gF6QVVfeXFMTnpNb0gxcFJ4N0dMNC1ON3FwM2FySHhzYmR5bEJzLWdDbmw1OV9mdmp1TnZGNFlMcHlrUXU3MDJMd1RBMGNieWVybkVLWTVvcDg0Z3UwU0ozUjNCTlRqcFhiTi1TOWJnLXJiRE5feUUwcU5Pd2VtajVEcUE?oc=5",
-      "source": "البيان",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.354415+00:00"
+      "collected": "2026-10-15T19:07:56.395274+00:00"
     },
     {
       "id": "01784404dba69ab9f17ae2765877f886",
@@ -1170,7 +1170,17 @@
       "source": "سكاي نيوز عربية",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.354400+00:00"
+      "collected": "2026-10-15T19:07:56.395261+00:00"
+    },
+    {
+      "id": "8f36e263e9f12831faa51de64289ea7e",
+      "title": "شركات التكنولوجيا.. هل حفرت حفرة الذكاء الاصطناعي ووقعت فيها؟ - البيان",
+      "title_ar": "شركات التكنولوجيا.. هل حفرت حفرة الذكاء الاصطناعي ووقعت فيها؟ - البيان",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1jd3l3WTd0WjVlVVQ3UTJrT0c2S3g3YTdDMmNlVWllYWkxRkpoX0E1SUp6Y21Obl95SEx4Wklkam1LWUdEb1ViQ1RIV19nMjNGYV9R0gFYQVVfeXFMTXptQnJLNVljSHZxLUdqZGVxT0gzajk2NDd3bEpjSnBHbWJxUHBUSW1SY2FVSGFnTmVmZWtvQzlEZnh5V2ctS0JmQmxhbGIyYnZsSVlqcmVXSg?oc=5",
+      "source": "البيان",
+      "category": "تقنية",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:56.395246+00:00"
     },
     {
       "id": "9329fc0f102fdb7c120de1c1847057f2",
@@ -1180,47 +1190,27 @@
       "source": "الشرق للأخبار",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.354382+00:00"
+      "collected": "2026-10-15T19:07:56.395234+00:00"
     },
     {
-      "id": "6772025c027a8f1e8051a35888f03b35",
-      "title": "تقنيات أنقذت البشرية وأخرى دمرتها.. تكنولوجيا خطيرة لم نتوقع عواقبها - العربية",
-      "title_ar": "تقنيات أنقذت البشرية وأخرى دمرتها.. تكنولوجيا خطيرة لم نتوقع عواقبها - العربية",
-      "url": "https://news.google.com/rss/articles/CBMivARBVV95cUxORWlNQjRVNVpoMmFfMXFfN2ZGd3owUnNTVmk3Q3RCQnVZRnZNZHpKWUpLN2E0b2x2cU1FZTNoWnVISElKTXpySHVUODZLdGs5em9EVUVpRGthdFhSZ19fX1ZUQ0pqcF9kdXZkbkRxT0pZR1I3MTltUlA3OEZ4YXg3V2MxQ0xIR0lGZ0c5WlBuNXMzc05FeTNESEhCWWZqMGMyVTY5ZTlrYUVmSTI4bmF6R2ZMckNqNEJsWk1vWnRUakxpVTk2NGMtcTZIUGhseWV5QjZTdEJYa29wSGZsTGp6MEItdERHbXpfelk1VWJCNkxaM0dLYXNUcUhYamhGREo0NWNGT0d0MFUyR1dCNEhqRWJhYlU3Y2dyNHdZX0U3dFpOTnVKNnU5N1dKdV9udDlPbUhEXzBwdVBLVVBNNnRpVXM0NmMxYW9NNVZBV0J0Vnp5ejY5NHVkaDVoSEZHNUJEdVo4Vmk1dmtfWTNiQUdMbm5HbWgzeVkwNWt3WnZCc216by1JZ09sdklqM2FoLWw2c21KOXJLc3pBa1VUd0NxQXNaTGJaWFhfenFKdC1ITGJXcm0yME12WGZsRy05M1M3X2ZrXy16dlZXc0YwVGtJQnRTWG9JcVNVYm5xbzAxX3c5a0Q5YlN2LXl4WElvdndrcWpmU3h2T1pDT25vN0NCQVVZanBWc1Nxazhzcm5JaDRRRHlabVlGLUJUQVZLSjV1cjU3ZjRfMkE5XzJNUUFWYmZDNXVPR2ZUZVF5X9IBwgRBVV95cUxOTk4wWFBUTXJYbGFnTmhZWWJYUnZReW9CMlVuLVpyZlE5a095a2JndFJudWZmZWgxUG9qRUNCemUzZEQwZk54Z19RSlV2RENONzFMc0V0TGNlZzZ4ckJhWVRmSUpPTmItb3F6NE0xdk9JdEptSm9yZUhsOVE0SnU0c0xTd0hQS2pWZklqSEtMVlllU3NuTWRVMV9IY3ZjV1VWVXh1UDZ4bEs5c3EwTFRudDZFbW11MlplU1JDNElucms2OEdZUmpqRkh0ZjU3S3hlbTllX3VfeXB3Q3BHU2hIb2dZYWFXVXBtVTFQQlVLQTdNV3JkWXR4ZjVTQl93aDdOdm9CWlBHd0lnbnF0X0hKWUVhRlcxU3I4OE05elhnNEFtUnppbGN0NXBuVWc5UUt2R1ZTcmFUVEd2eGoxcERrYjNUcE1vNWduZ1J0ZEcwTDNySm5VaUlKZ29vWTZBQ2NYMk5uVndROWgyZEc1aV9icWV0YnhYekh4bm9SZG9JYUd5Ml9Db2dkd0xieVMwLTRSLTFQUFY2LVhyLVREQTJ5YTdEbktHOW1xWnRSWkY5X3ZTb3R5RGY0SjV1SENwdUtaTHJSYU1KVHc3ZnVUVlpHZ2VJSnFaWEhEd3ZoMnBibWFDMkwybmx2TVNPNXZjVWtvZjctNWt6cVFfVTQ5SERPMlpZVnZuWFdMMUJ4SktHaTltNWhpYTRUZ25SX09neThDYUdZNG0wM2hvMDVTb3VsX0NwQVBTaFU4ZU1MT1ZqM29SUQ?oc=5",
-      "source": "العربية",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.354364+00:00"
-    },
-    {
-      "id": "eb32d7bc29f7ab60d542449ea8dc3bea",
-      "title": "سعي إيلون ماسك لجمع 40 مليار دولار نقداً يختبر طفرة ديون الذكاء الاصطناعي - الشرق بلومبرغ",
-      "title_ar": "سعي إيلون ماسك لجمع 40 مليار دولار نقداً يختبر طفرة ديون الذكاء الاصطناعي - الشرق بلومبرغ",
-      "url": "https://news.google.com/rss/articles/CBMi0ANBVV95cUxOMHQ4SGJSMnFjOHFIbmEwMEpoRnJKeW5mWjhjdU1mNjRVT3UwTHl4NExUZC0tUlV1a1NxamRSZmFiYk9vSTNmMTJaaFhGR1dXelBOb29VZ0hIUVY2MDNWUTRlVlZ5TjRqbkVUWDBaNjlSazdmbmlBR0hRMkFpWnFRanNJQVRVUUVUX2Z3WDB1bnFCZDkwMjYybzBnSmpMS1JRS3dMUkhFWmJPTVRiV2ZnUGtRTDhTRjM1dGEyQ2NWVEIwZ1M0RkpYQ3lZaWJyNkFJNnljR3lBdkN2ZXZWS0hKQk42RE9JOURPSTYya19rOTFETGVPeVMyNmJGYmxacEk5MlRvZ0VNbE5fUWJnWGdxQ2JyYWJ1RmI3dUhMc05IZEJzd1RRbkNuV0swOExqTE42MlVQdGdOQllNQk1pTks1eno4VWtGNlBnZXZkSVowWHFtcVZQTnJ5MjNpUFZXU1pIYzluTkFiREx6Q3hjanBSaGN1TElEZkpsN2JUUjZmMEtPb1FxbFQtYXQ3T2pRcUZabldWU0YwaUsyV3Z4Rk96TjN5RUF4RWhTeDljTHRSUC1mS0R3VmN4b1h3NmpOcEF4b3htZ216bmVMdjNabFplcA?oc=5",
+      "id": "16891768ec61b67e90e6a12c9eba23ae",
+      "title": "غارتنر : سباق الذكاء الاصطناعي يهدد بخفض قيمة أصول بـ3.5 تريليون دولار - الشرق بلومبرغ",
+      "title_ar": "غارتنر : سباق الذكاء الاصطناعي يهدد بخفض قيمة أصول بـ3.5 تريليون دولار - الشرق بلومبرغ",
+      "url": "https://news.google.com/rss/articles/CBMi0gNBVV95cUxPc1JSOGdqV0o1V0V3UWpXUG5mcm1RU1gyRmxCR3hfWXUzcms4TDB2RHpQaTBxaTZCSmlHMGNKeDZWUkMzQlRQeUtmZHZoNWpTRC1wcWtVOF94b2FIWmhiTG15V280X21GY05rX1RkWnhwMXVkN3N5UHVDRWJEbFdCbG5RQ21yRFdaZi15SjRVR0JaNTNzYVd1dFlVOEtOS0t4bHg4YzZ0UDRTQVh0ZGFOUlp2U2RUMm1kN1hiZmY2eHlJeU5qUk9HY2VoeFhlV3dKVDhJcEthdGRIOXJlWXF6ZFRKdUdxTy1lRU51NWtrVnNZTWdFR25PQlRrTHlKNENoWDhiaEdEQ0NsVVUtS29ZZnhoSUZ6Ukota2c5TUVfVTlHdlhGVTkwdWUtaTdtOE1zZS1BZE1oLWxScW9kMWYtcWhubXdINFBwQjI3OEVBbGdPX3ZvUmNaTzhrV2lpUFg1eWxJUzI2VE9lYTB4bi1iazNYNy1JTFIwaUwyQzJZOWhRNnJCYTEzQXVJR3JPWko3ak41bUE5c2dib1FGb2JsR0d5aXBBbDYxbml2REtkYWpGSktQOW5nbnluVzJwYmU4V3hJRnJJSEIzVUJUZ0h4a29B?oc=5",
       "source": "الشرق بلومبرغ",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:49.354333+00:00"
+      "collected": "2026-10-15T19:07:56.395204+00:00"
     },
     {
-      "id": "50887c31414e5d1a586eb2bf8027e19e",
-      "title": "Zendaya retrouve la science-fiction avec Alex Garland chez A24 - Première",
-      "title_ar": "Zendaya retrouve la science-fiction avec Alex Garland chez A24 - Première",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbHRmYUpuTFAtcTdocGV0OGhkaWFCbDI4UHI2QWVRZllHdkpDZENkME5qY3RIdXFqMjF2WHFCYW1XV3R6WFJ5Y01CdUxZRFptVGN1RDFGNlpfbGlaazVmTW5MNE1kMVRQcFltSUN1ajlPYm00dzA2MzhoM0lvSDZ1LXFYWXZCaDc1UG1nVGJWVXBCdGVJYzdHbGowNXhjUkdkaW9BMUIwdm0?oc=5",
-      "source": "Première",
-      "category": "علوم",
+      "id": "dff5373b25fdc78f275a2d96444767f5",
+      "title": "Becky Chambers : quand sort son nouveau roman de SF ? - L'Éclaireur Fnac",
+      "title_ar": "Becky Chambers : quand sort son nouveau roman de SF ? - L'Éclaireur Fnac",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNNVlyR3VndEF6czlGTVZFSjBxUWZxcU41UlVEdjY0WVhTQlQyNmx5SzdRbFRRRnNGTzk1UVFwVXpXS1JmaF80NXJKbi1YbWZfU3NXdmt6SnJqdGRGd1JHcjlKSHY0QVBZWm8td0FtQ296U3ZGbnFWYzY4UEJLZWYwd0NTMTJIQTF0ZFFjTDI3b1BVZm5IT1ZJQQ?oc=5",
+      "source": "L'Éclaireur Fnac",
+      "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:48.768225+00:00"
-    },
-    {
-      "id": "8ee0ab43df808707298c998744264ae7",
-      "title": "Science-fiction : culte depuis 32 ans, cette saga dont le reboot avait été annulé aura finalement une suite ! - AlloCiné",
-      "title_ar": "Science-fiction : culte depuis 32 ans, cette saga dont le reboot avait été annulé aura finalement une suite ! - AlloCiné",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBuUkhObWo3dWo0UkhTdkRLQkF5SGRGOENGZ29iWHhNdS1Zd1EwVzhhQzlZNTIxLUtuZDZ1YjFCSFVJTTF4SWl5S2o0VmlkeEYwaTdybHJQRDR1c2hhQ01Fc2NkSEZEY24tS1pBdHB5MmNvSG94Ykx1dHBGTDU1QQ?oc=5",
-      "source": "AlloCiné",
-      "category": "علوم",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:48.768213+00:00"
+      "collected": "2026-10-15T19:07:55.889533+00:00"
     },
     {
       "id": "952bf826eb89b021b6bce0d685384dbd",
@@ -1230,17 +1220,7 @@
       "source": "Moto-Station",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:48.768199+00:00"
-    },
-    {
-      "id": "2e63dba126f841c20f584e6eabb9dd40",
-      "title": "En soutien au mouvement lycéen, des étudiants bloquent le campus de Sciences Po Menton ce jeudi - Nice-Matin",
-      "title_ar": "En soutien au mouvement lycéen, des étudiants bloquent le campus de Sciences Po Menton ce jeudi - Nice-Matin",
-      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPRlh1VXBxMjN1X0kxaDlzT2JZSmdkWEhoZFA0Yi1ER29sZXdkZTZMQ1RqZjZFUnpyTjV1a3ZVTWpmdnR5ZkJxeXQ1SUFtdzVzM1c5TlRuREQ1VlRmbUU3c0lManlhb3ZuNU5vM2dZT21IcmJpc3I3bXdEQzhTczNFMGVDMWNYblhpUkMyMG1ZNkhBT3k4bVlhYzJvdFNHb0h4SFdwSlRyWVZUR1FMcHN4SWtrRi1uTjZUZWl1VWpJaGlXMkZOc3RLVFZWY29JQ0RRbEpWSDc3VHVWSmdzV1JXczlGM1ZHUlVRWXlLYVhFam1pdVdVbEMya0prZWd1S2xSNkE?oc=5",
-      "source": "Nice-Matin",
-      "category": "علوم",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:48.768186+00:00"
+      "collected": "2026-10-15T19:07:55.889522+00:00"
     },
     {
       "id": "1bd62eac6d666c619d7568c7240262aa",
@@ -1250,37 +1230,67 @@
       "source": "France TV",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:48.768171+00:00"
+      "collected": "2026-10-15T19:07:55.889513+00:00"
     },
     {
-      "id": "70c16ceffee138b675d32e8996bb8a7b",
-      "title": "En 1945, l'Islande a introduit une fleur sur son sol pour lutter contre l'érosion - des décennies plus tard, elle est devenue une menace - Science et vie",
-      "title_ar": "En 1945, l'Islande a introduit une fleur sur son sol pour lutter contre l'érosion - des décennies plus tard, elle est devenue une menace - Science et vie",
-      "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPYjU4VVhudjdLMXhhb1hLZnVGMTllSTB4NEtEOFZnNGc1eTF2SXZfSHVFSUQ5akdqa0taajRLTUxuSVpjdERsQV9FdFl2c1VUUjJlbFRMNS1EMk05ZVRyT0x4R0lKak1xTjZDd2lBbGpDU05yQ3E1WWdyNVE0VTlfVUs1dExVQ1FqS0RlS0MtYnhiZGdfMm8zMVQ3blFZQWxNcTBtVl90ZEZLYzA0cGRQeEJHelEzUzNIZlQydGJiQ19sZDF0UU5XR1M1NXF2STlrQ0xFSzl4UG1FWjFMTnBmVVYtYlRFcWYxOV9iRW5ZcXlkRnY3eVlNdVdJYV9sOWV0UFdNcmRtUzFkQzZQN0NDZVZNQW0xNl9ELVluTFRYUE9hZms?oc=5",
+      "id": "030581417095d03b2548bfe3e1c4c8cc",
+      "title": "Disney+ dégaine aujourd'hui sa nouvelle série de science-fiction événement inspirée de l'univers Marvel - Ozap",
+      "title_ar": "Disney+ dégaine aujourd'hui sa nouvelle série de science-fiction événement inspirée de l'univers Marvel - Ozap",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOa1MzT0QyR2xaOTQ5R1MyMUdFQWhvNjM5cjhyYWR2UlBfMS11dTRURnRSSV9qSVhkbUlnWDBBTFFiT21HbUFOalNqOEtPVS1ObjdqTXVCYzVzUE9xS3I2VHlpeERvR0hlSlM0T25yLWFtYjNOUmxrcnB0RnV2VEpZQlItVkd3U3RtVnVhZHFQWEpRY0ZNRlJqUXZUYUNKcmpXWTBLOG4xNWZCV2dGT0NDZEx0bVd6N2RJSE1HWmluU2MzUXZqQlpaNUpxcUJ5UQ?oc=5",
+      "source": "Ozap",
+      "category": "علوم",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:55.889502+00:00"
+    },
+    {
+      "id": "8ee0ab43df808707298c998744264ae7",
+      "title": "Science-fiction : culte depuis 32 ans, cette saga dont le reboot avait été annulé aura finalement une suite ! - AlloCiné",
+      "title_ar": "Science-fiction : culte depuis 32 ans, cette saga dont le reboot avait été annulé aura finalement une suite ! - AlloCiné",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBuUkhObWo3dWo0UkhTdkRLQkF5SGRGOENGZ29iWHhNdS1Zd1EwVzhhQzlZNTIxLUtuZDZ1YjFCSFVJTTF4SWl5S2o0VmlkeEYwaTdybHJQRDR1c2hhQ01Fc2NkSEZEY24tS1pBdHB5MmNvSG94Ykx1dHBGTDU1QQ?oc=5",
+      "source": "AlloCiné",
+      "category": "علوم",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:55.889491+00:00"
+    },
+    {
+      "id": "50887c31414e5d1a586eb2bf8027e19e",
+      "title": "Zendaya retrouve la science-fiction avec Alex Garland chez A24 - Première",
+      "title_ar": "Zendaya retrouve la science-fiction avec Alex Garland chez A24 - Première",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbHRmYUpuTFAtcTdocGV0OGhkaWFCbDI4UHI2QWVRZllHdkpDZENkME5qY3RIdXFqMjF2WHFCYW1XV3R6WFJ5Y01CdUxZRFptVGN1RDFGNlpfbGlaazVmTW5MNE1kMVRQcFltSUN1ajlPYm00dzA2MzhoM0lvSDZ1LXFYWXZCaDc1UG1nVGJWVXBCdGVJYzdHbGowNXhjUkdkaW9BMUIwdm0?oc=5",
+      "source": "Première",
+      "category": "علوم",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:55.889479+00:00"
+    },
+    {
+      "id": "392163c0aaaad75a0df0e7655f7491dc",
+      "title": "Un effet quantique a été observé dans un cristal assez gros pour être tenu dans la main - Les Numériques",
+      "title_ar": "Un effet quantique a été observé dans un cristal assez gros pour être tenu dans la main - Les Numériques",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNd2JnbDNuRTdNNjJXSjF4dU93RUN2a1F5ZjNNYnA1NEw4d3gwakMwR25oUVJUSWVtM0lDN2NnLUNrdmFJTlNNS1dMOXRkNmRJdGRXWWY1Ml9adVZhVXE3ejI1RTFLTFkwaTB1bHpxMGZtaTNnS016NEo4QXMxUU03NGk3Qi0wRkJRU01FekNkT21DU1BCUkZnVk9fTldhenFSVmpLU3U2TGszbkFDQy1wNWRlaHM1V05IVVgtWmI3bFlsVTFBVEJDR29JYWRNN3BPbEZGVmIyTUgwRG5JU2c?oc=5",
+      "source": "Les Numériques",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:55.889468+00:00"
+    },
+    {
+      "id": "5b94fcda7eb07327248768a9bb588b2f",
+      "title": "Arthrose : on pensait que l'origine était l'usure de l'articulation, les chercheurs en découvrent une toute autre - Science et vie",
+      "title_ar": "Arthrose : on pensait que l'origine était l'usure de l'articulation, les chercheurs en découvrent une toute autre - Science et vie",
+      "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPOHgxck53R1FoTG9ELVdqSmlaUk1aalF1Z0lxNkxLamZ5X3JJTW4yM0hTNmNTT2FidVVBVUlycEY3enE1SGN3bVZnMzhVYTNENVJ4c2xmdGhmUE5FT3dYTHNmd3pNNlJLSl9VS2YteG9OMGxON0owSEpUVjJRLWNXQmRnbjFScnpzalo1dTZzWXpYQlBiLU4zajViaWNOOVdLdnRZMzgtazI3MkdzYzZ3RVNNc3NZeTBWWU1NMERmMmpmVmRINUtlNHZHOWgwcTZaVTFMZVdFSFRQTzJneTAzZnlxVkN6RFA5MG5aNGJaXzhiSGZsSllDNHQ0RzQ2QkxWVkVnNzZqYmp1cFRGbEE?oc=5",
       "source": "Science et vie",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:48.768157+00:00"
+      "collected": "2026-10-15T19:07:55.889437+00:00"
     },
     {
-      "id": "255a5f9d8e2a029d5d1c86c09c8403ef",
-      "title": "Le Creusot. La Société d’histoire naturelle a mis les insectes au menu des saveurs savantes de la fête de la science - Le JSL",
-      "title_ar": "Le Creusot. La Société d’histoire naturelle a mis les insectes au menu des saveurs savantes de la fête de la science - Le JSL",
-      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOc2F5MnRUSjVvaUVKNGZnQjZYZXdBUWRIYk8yRkxOeVEydWR0SHU1cUZieHhseWZKaHc4dFJhQWVJbndETVhBRXFCak9idGVhY1lNdEpKSTB6NFlTTGNoVUVTTHV3dnk4eldBRzROMEExaElpTFlUWjBodzhJV1pqcG1IYUVFai0yNWd5aFA4c08yMkFXNG5RbEpTVllQbjF4YTdDUFg4SjdqX3M2QVNSYzEtSzhOQTJCZWlqc1c5YjRjNzZ6WGhhbXdUOVJXQkplX3hObkZjYUxobEkzdnhsQ1VtMDlaazlNMy1zSEtMcE5zQQ?oc=5",
-      "source": "Le JSL",
+      "id": "31d6ef741cffbbdf6373944b84594615",
+      "title": "What if the machines take over science? - The Economist",
+      "title_ar": "What if the machines take over science? - The Economist",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOUThnNVRQNGtUSUVRdjBXNTRGbzNFWjFPbW82X3dlLUp3RWNHcWZ6NnVPdG15WGRnbjZraklGSFpTb2VSTWx6NDc2MU5LZWk2M2FYRUVxdlpEYTBicEJwRVRUNDNlTUZrVlF1aTNpaVVybm5DS3BzcVhCN0RxaFp0Z0Fab05KSHVDSzZj?oc=5",
+      "source": "The Economist",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:48.768138+00:00"
-    },
-    {
-      "id": "39029b3f08657d8a51c6cde3aad0da96",
-      "title": "Des horloges pour capturer la matière noire : la course est lancée entre Vienne et Pékin pour explorer les frontières de la science - Science et vie",
-      "title_ar": "Des horloges pour capturer la matière noire : la course est lancée entre Vienne et Pékin pour explorer les frontières de la science - Science et vie",
-      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxOWW4wVlpJZVdxMXFRNGdpeXFhZ1drYUZzeW9pc09zbkZNbWFhOTVteVdLYUZjQjZzRkh6SUhwc3ljd1hqY2thdUtibGFlWDFjTHlqQUhfSkFfQVdHY0tySHBpZ1hfT2pLc2dNRDNiQzBqaE5ZMVo1dF82RE9QUVk5ZVdSNE1BUjdyNE9NUUFPdV9oREpjLWNhMHFMcXBvZXpNbi1UZ0F2UHl0dnh4VmF1bDVqZ0ZkWXV1UG82bGV2MHRtNnRVa1IySkpTRUxLaTBsbmt5ay1ING5lYWpBVW84SEJyM0tvcVdibTd1NEJNQ1VXRmFVR2tJSG1HZm50cTVoVWtIR2pobmR0T3lFTjlPQUZoN0lfSTBf?oc=5",
-      "source": "Science et vie",
-      "category": "علوم",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:48.768103+00:00"
+      "collected": "2026-10-15T19:07:55.439397+00:00"
     },
     {
       "id": "17b1b11f1c12e755958c7ddf5487d0ce",
@@ -1290,27 +1300,7 @@
       "source": "Popular Science",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.994701+00:00"
-    },
-    {
-      "id": "d9729398a3234f8e0a1e6e2e633fb7de",
-      "title": "Clock ticking for leap second: Why timekeeping could change forever - Al Jazeera",
-      "title_ar": "Clock ticking for leap second: Why timekeeping could change forever - Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNd0x0bDZ1XzVxUy13MEpwWlVOd3gwX29sdkZHSWFHSngzN3JiUlZoYnpsdFBiVDRQcjBHSm9DcWw0V1pkcE9KMjN5UVh6bjRrSmdCWVRFcEFIcGNvaE9RQ3I4elJnamNvM0YtV0c2Y292ZG1yaXNnWkhTZDhaTV9mTUxCNHFRWDZSdXk5andORXhjRTN5UzhjVmJKbWdtQXFINXZRckFUZ21VRFEz0gGyAUFVX3lxTFA2U0JhcVlIQTItS2xEMllNb1EwTlRrYnJ4X1QydzBPeFMxTjE5V2FHN2gwelROMXgtRno1TG90ZXRFaHBDdzlKbnN6ZmhVR2tyb0o2dk9nZ2JORXRrVnRSMHJ6bHVBbl9jd2VpVUhRcHlET0pIRnBJa29DMWZfRGtmRUlFN1o2eW5zUUt2SzA3NTJzNlJUZ3lnWnFSRzlvV1gwNEtJMDlyS2t6ZFpXRXVadnc?oc=5",
-      "source": "Al Jazeera",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.994691+00:00"
-    },
-    {
-      "id": "e35170ff8d1ded3fa208872c415682bc",
-      "title": "APOD: 2026 October 15 - The Milky Way over Manhattan - NASA Science (.gov)",
-      "title_ar": "APOD: 2026 October 15 - The Milky Way over Manhattan - NASA Science (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPRl84c3BWTmVnRzNHejNLN1BmUkswbGVVS3R5elFtRWkxWFhQMlcyZm5HYWRRVmhkUFIweDlDVUxpRi16VVo1cjdBMnFxZVp6b3p2NnlTdTZ4UVpiSUl1Smk5SkpFVWtUV3VCY0w3UGhqZnVVWE5MbzIzLVB0U2RIME56WVlYSjhqV0RoMk00UWJEcGM?oc=5",
-      "source": "NASA Science (.gov)",
-      "category": "علوم",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.994677+00:00"
+      "collected": "2026-10-15T19:07:55.439390+00:00"
     },
     {
       "id": "e88130861f9a4abde989ee6649b386a1",
@@ -1320,7 +1310,27 @@
       "source": "The Washington Post",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.994667+00:00"
+      "collected": "2026-10-15T19:07:55.439382+00:00"
+    },
+    {
+      "id": "8c24d0c1aa12f47dd9e3a8d84059a503",
+      "title": "Science Lab: Mike Pettine hire means what exactly for Christian Parker? - Dallas Cowboys | Official Site of the Dallas Cowboys",
+      "title_ar": "Science Lab: Mike Pettine hire means what exactly for Christian Parker? - Dallas Cowboys | Official Site of the Dallas Cowboys",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdGFEM0l5Zl8ybkdYYkpVTzhJOEU5RW1SejZWRUhBVGh0Zi1BVGt5aExFVEx1TUlGaDN3M3VscjF2RTBYdDNIc3NTLVRSdi1nLTFFOVVod095eUF6UGw2N0EwR2JWX3phS2dweERIRVFIbFRVYW5XWkI3bjVOMHVlQXJQZDUzaXJXYUhScmNnZFZYMGlwMDlEQml4RmhXNUN6elZtLVlpRQ?oc=5",
+      "source": "Dallas Cowboys | Official Site of the Dallas Cowboys",
+      "category": "علوم",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:55.439372+00:00"
+    },
+    {
+      "id": "6c0c893873890c38ede1f03dbfe81ae6",
+      "title": "How an accelerating Earth led experts to adopt the leap hour - The Guardian",
+      "title_ar": "How an accelerating Earth led experts to adopt the leap hour - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPSGFTMkkzSE41akNqeklLcW9RT05hZ3pfV09QRGxiWDlKMTVONTRFSGxhaDRINnRoQTFBWkoxbVBaS2NaUGZSVmdvNGR5SEZoR1JKd3BNa1dHamFHNUJvdzBkSlBpTEtXMkwyMGVQQ0c3RVVuMTlaRHhRaGI4VnQ2QW5NWjFyYXRuWkJBZ0FxeWpPXzIySXZFTlUxdVFlV0RmbzdFdWQ2VG5PN042YWt4QkVHSUl6TFE?oc=5",
+      "source": "The Guardian",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:55.439364+00:00"
     },
     {
       "id": "e68746332920c00fed9a16e0c8cef537",
@@ -1330,27 +1340,17 @@
       "source": "The Conversation",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.994654+00:00"
+      "collected": "2026-10-15T19:07:55.439354+00:00"
     },
     {
-      "id": "ab00b0475d14b970dea7f4addf4d2eb8",
-      "title": "Are UFOs evidence of alien technology? Here’s what science actually says - Yahoo",
-      "title_ar": "Are UFOs evidence of alien technology? Here’s what science actually says - Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxONTNuMWdsVDAxZVF6TXFrR2xSTGxBU0JCeGhkemFlM0NKaTZURmpmSlBQcnd6YVFZVzFWMDlHenpJekpFU241aXRIWnN2RW05OTIyRTh5UW9mbjFFNF9OcGZxVklDSTBDaWtVcEF3MlNYRWsyeHhEWWhMbWF4MEp2c1JQZTYxTlFyMVdCU2NtWGM4WGxHYlJ6UUstY1Badw?oc=5",
-      "source": "Yahoo",
+      "id": "7bc49fc295496db3bc0667f4f37157b1",
+      "title": "As White House shifts focus toward AI and tech, U.S. science leaders defend role of the American university - STAT",
+      "title_ar": "As White House shifts focus toward AI and tech, U.S. science leaders defend role of the American university - STAT",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZXoySFgyclF2WHZOb0t2ajhta1FnMllsZ1ByZW9vNk0tdElsM0haUmhXUHI0c2xNQzhjRmxiNmY5a1BzX0RRN3ZYMnUzZGlJQjd3MGFKWlJ4SjlqTVJyenl5ZHdVcS03ZEVhN2lNTDFnVEwwRUtKUGdPT3pKeXpEcDlNaTQ3X2Foc19WOXFDZU9XSXVXVzg4MVlfNlRYcnhMcER5MFlwOTdQaVJIMkpZSQ?oc=5",
+      "source": "STAT",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.994643+00:00"
-    },
-    {
-      "id": "ead307340f1abe552eae284d5657d436",
-      "title": "Can science save meetings? - Knowable Magazine",
-      "title_ar": "Can science save meetings? - Knowable Magazine",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYjhiX2R3WXdrbHlQOEljNUc3bXpPTV8zMjVxdTcyZmNobTg2aEZPUHdVVXRBWUNJVDVTM19kMzhqYXdlMlU4a0doWnRETWV6R3dMNEw0M3U0VkpZR3hyb18zalZZSVNRelI0TENEdUVjRzY5YWxxMVZ6TnAzZzhzRFBWdnBpX0pMSTFj?oc=5",
-      "source": "Knowable Magazine",
-      "category": "علوم",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.994626+00:00"
+      "collected": "2026-10-15T19:07:55.439344+00:00"
     },
     {
       "id": "a3d8768e518795483194668a1aa1949c",
@@ -1360,37 +1360,27 @@
       "source": "WIRED",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.994604+00:00"
+      "collected": "2026-10-15T19:07:55.439320+00:00"
     },
     {
-      "id": "e780b9f624fd0517838dc47cb485202d",
-      "title": "الذكاء الاصطناعي يستدرج المحتالين.. سلاح جديد يقلب قواعد المواجهة - البيان",
-      "title_ar": "الذكاء الاصطناعي يستدرج المحتالين.. سلاح جديد يقلب قواعد المواجهة - البيان",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUUprdGFYRGFBOEFNMkVJMlVUcjk1eWpScHdaWmNYVi1PU0Rfc21lSTVESXREWktPNUJjdDRfY3pGS195OXVscnQ2c2JlZmRXc05VbGxnMUxaajFkcmhiYmJCa1FvLURfanhiOW85SGRSblg0bmRzNzhHdENpOFFzRWctNy12eDJyVjBic9IBkgFBVV95cUxPUTNmM05BUGtoOWhCWmg0cW56V21QbHRKVm82cG5VamhyZ3lqZzNPR0VGLUJkZHJsdW1rZEhhS3Jmam9kS0dDTHZhUDUyOWNqUnlTaUpWOHpaWVY3Zlhyd3M1NGtTVXN6eXJlSWswY3JheV9EMGFoZngwVW9lY1RiR1oxV2Y4R2lLRTVBMkpXWWMzZw?oc=5",
-      "source": "البيان",
-      "category": "تقنية",
+      "id": "dc472a29e976ad877ab8e2433177c74c",
+      "title": "الزيدي يدعو لرفع جاهزية القوات المسلحة إلى أعلى المستويات - جريدة الجريدة الكويتية",
+      "title_ar": "الزيدي يدعو لرفع جاهزية القوات المسلحة إلى أعلى المستويات - جريدة الجريدة الكويتية",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1VTGhNaXlwLWE4RFFhSGJSeDR4WVlfTDB4VVV2c2s1Y2E4YjJSODZaa1hlXzExYjJ6YkFoUGpWOGJ6eFB5Ukt4NUpnRXFVT3hz0gFWQVVfeXFMT1QwbXJJMnVsZEdudEdaczFmVUpscmZaTXNUaDVXWDBMZlR4YnVWOEhWZXhtYlFZMmthSEwzRlZ3T3ZqVFpUUW1zUk1sSHdEMUItVXJHQUE?oc=5",
+      "source": "جريدة الجريدة الكويتية",
+      "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.399922+00:00"
+      "collected": "2026-10-15T19:07:54.923617+00:00"
     },
     {
-      "id": "120575a381641f81f7f4624bb3af7470",
-      "title": "شركة Science تنجح في زراعة شريحة استعادة البصر لأول مريض بمرض ستارغاردت - أراجيك - Arageek",
-      "title_ar": "شركة Science تنجح في زراعة شريحة استعادة البصر لأول مريض بمرض ستارغاردت - أراجيك - Arageek",
-      "url": "https://news.google.com/rss/articles/CBMizgJBVV95cUxPQzM4dHpMWms4N0VuOWo0eDBvQm50bGcxMVphZVVUcVFlY0hVRF91b0ZGc3lNM0lld2xocGxHMDNPUVpxUDRWbEJ4SzNZWi1MTHA3aHI3NHVOWmtwWEJfalhUbWZhVmtGM2l1a2xpM2tZejB2MEVTeDE1d1VYUzR4M0h2NFl3alhtRGllY3VKNGlmbnVGYl9MSUpuUC15aEZzaHpueXJTel85aXlNTE9aODJBYU1GN1RjS2syMkNsdVltSy13YXVNaXllbTBMUkRsVk1lTzktc29HaHVRRUtxeEFwM25Za05nUHQzb0xsdHVFLVItQkwxX2VYUkNuNDktNWxBeTVMcDk2WkZqaXhUeE5JalByZzZnMHNpQm5qVEZ0aFJvbkR3cWVkOGJUaEhLT3lGUUxqMWNRWlVQRldVYWpqUmZuWENnX0dfTFZR?oc=5",
-      "source": "أراجيك - Arageek",
-      "category": "علوم",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.399909+00:00"
-    },
-    {
-      "id": "c8aeb3c45b79c4a4874505c100d644ab",
-      "title": "لغز كوني في قلب الصحراء الجزائرية.. فوهة غامضة حيرت العلماء - العربية",
-      "title_ar": "لغز كوني في قلب الصحراء الجزائرية.. فوهة غامضة حيرت العلماء - العربية",
-      "url": "https://news.google.com/rss/articles/CBMi-gRBVV95cUxPTl9ubGVoTXh1ODBUUTNYWmpOenZJV0lIMnBKWVY2UjllSGpMU2ZiU1lkcTl3dFh0cnNYaEpBYW9xUnoyM1A5cy1SM0JuSG9zMU5qbGdzMUx2YTZ6aU1waWNwRlQwTkplcjhacDlOdWxIRXZxWVpTaUdwRkJ4SU1sdF9IQlFYYW1wZjQ3S08wNGZGZU9ROXdHNUZmNVNldlhqWVNVd3paclkwLUhiQmdfTTBCSW5qUkpMZ1BFZDhHbzZFMG5qUTJ3U3VhdF9oN21XZF9OZVlrQjlETllqU1lNTlBDbXE1am1FNy1LN0V1dGNQQ1ViNl9pUlZ3Mmo1VnRIQjRadWNJNHdjZEQ5TXdwb2tNS2ItZ1d6UXFWTURlZXc3YXdTMkp1RC13ckNQdzJoZFlhdmlNUUw1cHdPR2t6azZGWHl3Q1VNWVMtX2ZmS3NyUm1VLXdhejExcDlPUzBLamdUa0RDNlZzWXpDd01fR0dmRTFaQTZxTTRCNDNQYkJBdzNaSkhZVjdzZ2E1c3RkVFJDbVU3WEFMVVlaQWxKSHhfUE1VaXB5OEZpRERFaldUQjZkcUtXUDlvajRQVFNKV2dyN0hoLWNLTVdMenRHNUxlWUR0TmxFMXZXU1Z6Q1NvNzIxQXU0ZlM2X1QzRXFST3FySG5jWWFubWZjVG1Ub0NRYmE2Y1pzX2M1WFdDOC13VnllUWV1Nk96RTBScDg4RGFYVjlvSFBzV3hMVEZnaS00ZnpwQ3l6VVpFeW1Wa0ZtbnpPUjNRRUp0MWZmd3pGUTh4SHIxOVlGNng5bUZlZFJ6eElPUHN2SDdNZGdJbGxvOGNrT05tMDJB0gH_BEFVX3lxTFBsaF9FbHR4RUVZTlJHc2FWRzlvcG42TVYtLXpoLUlvMkVNWWdpQTVGY2RRNUJZRExiNHpFamxURjF0QkI2SjVEc0xCT2ZyeWdreUgzUS03SFFQVmxOY0lNa0ItYkNWVDQxSjNhenFsRmloRFl2OTJlM004NVBwX2NuTkFyQ0NOTElwazJvMThJRjF2Nzh1anhIQjlJNG05OWVqczAtUFVXOHp6czRnVUVmNWJ5OTdCNTFtZzdTZkM1bzRVQWJXSmtwWnBmN3ZyVk9HeEZUUU5EWXQ3TXpQbExGRnltYUZEaTdGY1B1SWdPTFdLM0lFbXBITFg3dE9sdVZLYkZlY1F1dXdyMDY1NmV6bVJ0bldMUE1SMVp4Q0dnTUF6NFgxYkhEb0hDelU4SlRQcUI5TzY3MlpqWjdBYVUtLW1LV3hXVV93U2VVN3czYVBpVG1TUW1vRTEtLVJfcTlnUEV0Q1ZhOGtuRm1tbDBON1dzeGpDMVBraDVpMGlIcDF6Vk9GaVRQRUI4bnpqbXVWazRhaG1JcWk1SXpXclJiU1JfUFJMRllLT1c3Yy0zRE5HeWxEMGpEMWh0THltckVVczNEMXNPMXQtUlF2dTNIM2d5LUVNS2JYMzZ5VWE5R1FqUFNyazBrWU0zWE1Ra195LUtYR21pRDlWRmdLcGFlZVRMU2NKQS1vb0ctRmlaZHhmdnhmNjdqRUJ2dk9VRVRxSThKRWRJWXZnSmF2bkJQa09fNXZ2NFdFOTNweEFrbWxWT1RhQmd2aWFUWHpFRlhoTl9EdmpvaEcxME1WTHNNUDhPUTFKMnZpMkR5OVJIZ3Q5OVhWNThwWGFPdVhuMA?oc=5",
+      "id": "677862b6bc68bca154c3d3776040e7e4",
+      "title": "دراسة تكشف أثراً غير متوقع لكوفيد طويل الأمد.. قد يفسر سر ضبابية الدماغ - العربية",
+      "title_ar": "دراسة تكشف أثراً غير متوقع لكوفيد طويل الأمد.. قد يفسر سر ضبابية الدماغ - العربية",
+      "url": "https://news.google.com/rss/articles/CBMiqARBVV95cUxNczE1YldGVlVCVzhhQmxwSlhaRTQ5S2p5MG5hREI4NFo2U0NxaXJNSzRnVlloUTByX0JWdmdFZHVZVDIzal91YTJndmJQZmZ4RmZnbm1ndkc4OVlmdUhpQlM5Rm1ZQXhxWUVXT1VMQ0JwWlFwa1oxcUd1dHFxdF95M2phQk9mbjBkYTdfNFFGdWszZ21QWU5TLVBsYlRZb19OTmdRZmpvLWtlT0ZmQ2c0MEprcUNSTTk2X0dTNDZJRllnVVZYTUloSTZqY0F6VTRGdHNWbzJOZ1dHT0FTeWNic1RWcHNXRENRYS1WWDgzWXh0dTFoYXhtUmt4Z0ROeGhqQzNYNld4SDd1WE5icWJYNWhPRVFKSHZLa3VGSWdBaDNUblRJX0IwbjJubGFUOWNsS1VxUFV5aGZwODdBWmVaZldiMzQ2YnFxUWdHRzdncFM3cXJQSUVKSzI1SktyZnVXc0YtZWdRQ3psMzJMNHJwbE5YT2hwUXhQU0VsdG1lcGpoRDgyWFJZSm1PXzBfb2RwRGFNYkhVQmRzS3NNX1lMb1RVMGNMMjVVak5fRTkwdHNUdFhWbW1QZ2hpbU04WFpUdFhkMWZ2SThLWGFNQTZQYTlocmdWd0lsTFBkTWsyeE44aDV2cHlWVzF5dXVUb0lJQVRhUGF1dG9yeGgwb0psQWpEdFVOZlZLX1kyV0g3aEdQUk9rVFN6VDN1Q09mcE9wWFZBSUlGRDjSAa4EQVVfeXFMTWVHZXllZHkyeXhTOGxrYnMyMUU5ejB4VE03WEpkcUh2MkhzUkxjaEIxeFNmVXFZR1RjdjdyYTNWdVdGMHJDNkJtUll3MUFYdWlKYTFYMGlaN2xiUjJ1Q1Y1b2gwSWFWN3otME1CeHdmTnlYazIxVXNxMTlXMmxrRkVxeUJLWUg2UUFqeG1mS25wNnY3SzFVVll5cjBSUE5tWnFESFNqLTNfWW9nWHl2dkt0c1BMVTZLS3NJT1ZOUzBHOW9Jb05NQm8yZ1FiaFF1NEw3YmY5elh0SGQzdzdreW1uc21MUFhuNmxFWjJEemRpMFBLdkdMOUNnVmJ2S01NMENsUHlPbXAzNEVkbGVnTlROLWtrc3JGYTRuVGFtMXhCQjFJZVlwamJuOU1QZ2c0QmN2dmw2bVVtQlZmeU9HY0NaSlB2d3VLN3ZQSXFaYWRZU3NkY2p3YXhWRGtuYjgyX0M5UXNWSUFFQk5fQjJCaDQtb3lMMVF1dFdrekJpZnFOQnBjcUxxMndTOHA3VDlkV25RZG43MnpPUTFJSlhfTVQ3aF8xbmFCdDNmZkVQSzlPa2R4aGJKSjhtMlhJRFozUmQzc2EwZ1BZMDBHaC1HQVg5czA5aGtTNnFyOElSc3hTaTNWODk4STBGaHVfSVo5Z0hpOHRRd3BtNlpZQU5qWmlJTjRMcVAxdnR0YWRzTjdfeDNJelNwZjF4WTN5ZFpLczNWc0JIWjBUUENFSU93?oc=5",
       "source": "العربية",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.399895+00:00"
+      "collected": "2026-10-15T19:07:54.923605+00:00"
     },
     {
       "id": "de1e7f2648e1d9c59256375538e26728",
@@ -1400,7 +1390,7 @@
       "source": "الشرق للأخبار",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.399881+00:00"
+      "collected": "2026-10-15T19:07:54.923592+00:00"
     },
     {
       "id": "bc7f0ced0ed3ee980d569fefdb0a96e4",
@@ -1410,7 +1400,17 @@
       "source": "Crunchyroll",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.399864+00:00"
+      "collected": "2026-10-15T19:07:54.923579+00:00"
+    },
+    {
+      "id": "120575a381641f81f7f4624bb3af7470",
+      "title": "شركة Science تنجح في زراعة شريحة استعادة البصر لأول مريض بمرض ستارغاردت - أراجيك - Arageek",
+      "title_ar": "شركة Science تنجح في زراعة شريحة استعادة البصر لأول مريض بمرض ستارغاردت - أراجيك - Arageek",
+      "url": "https://news.google.com/rss/articles/CBMizgJBVV95cUxPQzM4dHpMWms4N0VuOWo0eDBvQm50bGcxMVphZVVUcVFlY0hVRF91b0ZGc3lNM0lld2xocGxHMDNPUVpxUDRWbEJ4SzNZWi1MTHA3aHI3NHVOWmtwWEJfalhUbWZhVmtGM2l1a2xpM2tZejB2MEVTeDE1d1VYUzR4M0h2NFl3alhtRGllY3VKNGlmbnVGYl9MSUpuUC15aEZzaHpueXJTel85aXlNTE9aODJBYU1GN1RjS2syMkNsdVltSy13YXVNaXllbTBMUkRsVk1lTzktc29HaHVRRUtxeEFwM25Za05nUHQzb0xsdHVFLVItQkwxX2VYUkNuNDktNWxBeTVMcDk2WkZqaXhUeE5JalByZzZnMHNpQm5qVEZ0aFJvbkR3cWVkOGJUaEhLT3lGUUxqMWNRWlVQRldVYWpqUmZuWENnX0dfTFZR?oc=5",
+      "source": "أراجيك - Arageek",
+      "category": "علوم",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:54.923566+00:00"
     },
     {
       "id": "8d1570e5c186ec84d5c3c7d10f19e9e4",
@@ -1420,17 +1420,7 @@
       "source": "جولة",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.399849+00:00"
-    },
-    {
-      "id": "ae708ab47ccef3b18e9a0e4c7e2133dc",
-      "title": "ناسا ربما تملك دليلًا على حياة قديمة على المريخ.. فهل تتمكن من استعادة العينات؟ - CNN Arabic",
-      "title_ar": "ناسا ربما تملك دليلًا على حياة قديمة على المريخ.. فهل تتمكن من استعادة العينات؟ - CNN Arabic",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOd0k2U2xVMUJyRjNSQWU5SjMxOXJOU1dKSmszSHlkQnV5cEt3NUZpMlducHczeGNPai1ybU1XNVYyRHpHN1owNk9OemtDaExXTk9lVTFyYmlvNHJVQ3hEaG9kWl9DYVlLb29rVGNhLVJ1ZWNxNV9VWm1USEdneVVNaWF3XzVwSm1YYlhnTDF3WkJ1U0JISXJQRTdLakUzQ09zaHZoaFJkQWhTZw?oc=5",
-      "source": "CNN Arabic",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.399833+00:00"
+      "collected": "2026-10-15T19:07:54.923554+00:00"
     },
     {
       "id": "fb279aa84fa7841dcc5b8e6e3335fe3c",
@@ -1440,7 +1430,17 @@
       "source": "الجزيرة نت",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:47.399806+00:00"
+      "collected": "2026-10-15T19:07:54.923542+00:00"
+    },
+    {
+      "id": "ae708ab47ccef3b18e9a0e4c7e2133dc",
+      "title": "ناسا ربما تملك دليلًا على حياة قديمة على المريخ.. فهل تتمكن من استعادة العينات؟ - CNN Arabic",
+      "title_ar": "ناسا ربما تملك دليلًا على حياة قديمة على المريخ.. فهل تتمكن من استعادة العينات؟ - CNN Arabic",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOd0k2U2xVMUJyRjNSQWU5SjMxOXJOU1dKSmszSHlkQnV5cEt3NUZpMlducHczeGNPai1ybU1XNVYyRHpHN1owNk9OemtDaExXTk9lVTFyYmlvNHJVQ3hEaG9kWl9DYVlLb29rVGNhLVJ1ZWNxNV9VWm1USEdneVVNaWF3XzVwSm1YYlhnTDF3WkJ1U0JISXJQRTdLakUzQ09zaHZoaFJkQWhTZw?oc=5",
+      "source": "CNN Arabic",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:54.923512+00:00"
     },
     {
       "id": "8876cc2c2645d68bac0f5ce00f029765",
@@ -1450,7 +1450,7 @@
       "source": "Influencia",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:46.815231+00:00"
+      "collected": "2026-10-15T19:07:54.403745+00:00"
     },
     {
       "id": "bb17936783f0f22091b55b33122e55ef",
@@ -1460,17 +1460,7 @@
       "source": "BDM",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:46.815212+00:00"
-    },
-    {
-      "id": "547c01f2f5da865444062bfcb6fcfd50",
-      "title": "Contributions vietnamiennes aux débats du Bloomberg New Economy Forum 2026 - VOV World",
-      "title_ar": "Contributions vietnamiennes aux débats du Bloomberg New Economy Forum 2026 - VOV World",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVnhQQzVKQ3JYNlZOOXR4M1N5c2NPbndmQnoxRndTdU9pOE1JQ1JWZTl3R3o5UklXaElQdWl4WVp2Si1GTEFvcjhBbnM5Wkx2ZUFBdHpKc01oc3cxNy1RN2pzbGlzR015SUhJc3pPRTFaZWJmMnowYldZdWRXeGpVWE85SllOUFBIa1E2VnMxOEhBZ3VMUVdtSXRPaXNybzFYZFNBWVROQ0tCajREeTBucUJkY0FhaHlVSnZpVXFSUWlFUQ?oc=5",
-      "source": "VOV World",
-      "category": "اقتصاد",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:46.814935+00:00"
+      "collected": "2026-10-15T19:07:54.403733+00:00"
     },
     {
       "id": "2341aec38aee5888d31dfc243961832f",
@@ -1480,7 +1470,7 @@
       "source": "Minted",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:46.506118+00:00"
+      "collected": "2026-10-15T19:07:54.403689+00:00"
     },
     {
       "id": "c5308e0d0469cbcb71fe339492ba36bd",
@@ -1490,7 +1480,7 @@
       "source": "La Réclame",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:45.978662+00:00"
+      "collected": "2026-10-15T19:07:53.907139+00:00"
     },
     {
       "id": "c1edc967c73149ca0e4dbfd8956a593d",
@@ -1500,17 +1490,17 @@
       "source": "Les Echos",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:45.684987+00:00"
+      "collected": "2026-10-15T19:07:53.392536+00:00"
     },
     {
-      "id": "c41a4431af47af35e400279de05e4e53",
-      "title": "AI-boosted UK economy beats forecasts, giving Healey pre-budget lift - TradingView",
-      "title_ar": "AI-boosted UK economy beats forecasts, giving Healey pre-budget lift - TradingView",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOWnczUzltbUVyUnljSk9KRXZkWkhOT3I4blVOVkZHSTZuNEtQVDd4Y2lMVFNpU01aaGxObDZGRWYzaXcwVkYzS0o4bnJnNnZRWkp4RWpEYXlaSXVRaWxVTzdLVVJHZnAyc3g4YVp3dld5U2RXd3RXR2stZ3Z4TjNZUGNxYW5wLXplUUNHQ0kwSmVqNDZWdDJTbC0tQ2N3ZElLbm9ROU5HalFBbTVvTjR0VER2SVFIdmRBdTZEN29iUjM?oc=5",
-      "source": "TradingView",
+      "id": "d13a038c3c19721a2980013996a0f9d1",
+      "title": "France’s Nouvelle-Aquitaine launches $8.6 million fund to shore up social economy groups after 10,400 job losses - lavoixdefrance.fr",
+      "title_ar": "France’s Nouvelle-Aquitaine launches $8.6 million fund to shore up social economy groups after 10,400 job losses - lavoixdefrance.fr",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZ29uLVNkajIyZXNkb0lMN2VNdXozZG5IUUU2SGNrRDVqcU9PZFB1OEJnTGpEZ2pDZ3FJU2FtR1hGdUZwRkFFVW1pNVNWWFBKbzRxV2Ezd2NRLURIN00yR2d5MENZZjNXOXZFQ29JT1FQbXlNNk90TWRtdTBRYkRVOWVtV2h1YzZvR0t0T1BEOVNrQi1WWVJFRGJkNm1HRFJPWV8yMU5ySHV4VFR5VnI5SE45TjlhbTBFSlltbEtFN0ZKTlJjcnlVUVZqaGJxMk53MnRYQTdVdV9OZEY0MXc?oc=5",
+      "source": "lavoixdefrance.fr",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:45.278302+00:00"
+      "collected": "2026-10-15T19:07:52.890466+00:00"
     },
     {
       "id": "fd1881adea92cedf4aa779d3cca038e7",
@@ -1520,7 +1510,17 @@
       "source": "lecourrier.vn",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:44.902218+00:00"
+      "collected": "2026-10-15T19:07:52.528390+00:00"
+    },
+    {
+      "id": "3721e08252dff363158d035832643c3b",
+      "title": "Peru's economy grows 3.23% year-on-year in August - TradingView",
+      "title_ar": "Peru's economy grows 3.23% year-on-year in August - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxON0ZydEwzTlpzQTNLRmFKMkFHaFB6NG9nVDlhbTNOQ2FxNUcwYkxJV0N0ZVN4U1FuOE5fM19UcEZCbnFBajZiU3YtZThWNWZiWVdrbUNlWFRRNHFkb1pQSGNCUmphYTltWnRZT3o0QzdHQ0VrR2xkZjZpMXc4SzQwSi1aU21IbUxWelJucDN0V1hjcVVjLThqMnE1LVlpdXloV2lNbUZId1RMdFI5dmUxZlBEeXlIQU9U?oc=5",
+      "source": "TradingView",
+      "category": "اقتصاد",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:52.268174+00:00"
     },
     {
       "id": "502e0402eacef5da2e6134dc6178bb81",
@@ -1530,47 +1530,47 @@
       "source": "CNBC",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:44.077932+00:00"
+      "collected": "2026-10-15T19:07:51.178651+00:00"
     },
     {
-      "id": "9a10e7bd7feb8932774d31b1545d38aa",
-      "title": "COMMENTARY: AI investment boom may be papering over US economic cracks - Reuters",
-      "title_ar": "COMMENTARY: AI investment boom may be papering over US economic cracks - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQS1Q2OXZIUkpRbEJQUVlCVUJzdDZQQ2pJelNhTmZVTGJYSEtCWGd6TXZtTzJnc01UUGR5bzdmZW4tZ2pLQ3hCSXQwMzV4TGdXQS1ZMkE3cDg0R2RjYXRQRF9ETERWNXpLS3JjcjViWk5ZLU14ajZjbmt0aWJaZHphdWhEV0tCZ2RiRU1ZLTQwRE1GWHo3dUxkeFM1aWEtRDNyWERYTTZJN05qUmRmSEJGU19oTGdEWnFOSElyTnp3ZFB3V0RrOEI4LUhVeWRhX3pHQ1NaZQ?oc=5",
-      "source": "Reuters",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:43.675082+00:00"
-    },
-    {
-      "id": "111b590a2e3bc33f7dafa5f74b113591",
-      "title": "AI Boom Shields Select Few Nations as Economic Pain Sweeps Globe - WSJ",
-      "title_ar": "AI Boom Shields Select Few Nations as Economic Pain Sweeps Globe - WSJ",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQ2VRd3NEcWRqVnNXUDdWSXZiNTl3TEI1eXhDZ2xldXNFUVY4UXdQN2ZZbHlhQm52QUlpMjNodlFMWUZ5cnIwV2pnSUVLR25jY1VaZ3dRZkgySmM1ckZSaVROZkJzU1gtTE1HUXlnMWlic2w1c2pEM2FjVHQxVnZ1aGNCd2F0QVJldVJmT2YzMHFIZ0NnT25LV2FHN1A3VlhMS014bkR6aHpGTGRl?oc=5",
-      "source": "WSJ",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:43.416984+00:00"
-    },
-    {
-      "id": "ecbf7d31ce242f24148307170ade106a",
-      "title": "Fed's Goolsbee: Even without AI, the economy would not be in recession - Yahoo Finance",
-      "title_ar": "Fed's Goolsbee: Even without AI, the economy would not be in recession - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOOGNUVFpNdUg4RVJZcllLbWVBWUpzZF9vWlFWV1d6bG1scGZaNXlHZmJVcnJjZWp4VE16UFVnbk1DU1h4eFZWdHczek9nUGI1WXVzUV84LW4yZVQ0SEFqZHlpZ1ljZlg2U1pRRHNwU1JuelVpNTk3SVJVT2trWDZyWFNPeDRMLUJ6SE5LV1Q5U01rUlpqZzVQMWdNZ3oxbXhIVGl3SFBkd3FxNVBUQTBNMlVNN1oyQkNGalBHTHBaUFNwQQ?oc=5",
-      "source": "Yahoo Finance",
+      "id": "2a316289f79b9c19a1ac09e2f2ec782e",
+      "title": "Suddenly, Wall Street is worried that the U.S. economy is more ‘vulnerable’ than it looks - Fortune",
+      "title_ar": "Suddenly, Wall Street is worried that the U.S. economy is more ‘vulnerable’ than it looks - Fortune",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbjBoMGROS1lUT0Zfc3Y1YVRzcVJyUmVPaDZ2dHd5U25ZZUtfNzNHOXVTaUN0UVNEcEpLNm5neGowdTJjNE5YVEplaTVPT3lBTlpSUG1CdGs5WHduU2ZpdkQ3aWxWeUFvUTVoZHFjeS1nRC1HVDJyTUIwSm9pYWdEU3RiMGVWbTk2ZURXZWFCbkJKeHREQko0dE5ZQUVPcElvTjhyZlRUdmlhM0xDTHU0QklrNHBUemZX?oc=5",
+      "source": "Fortune",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:43.136813+00:00"
+      "collected": "2026-10-15T19:07:50.750956+00:00"
     },
     {
-      "id": "f391705ca22921826b618baf18d2b016",
-      "title": "Michelle Tafoya outlines economic agenda in Minnesota Senate race - Fox News",
-      "title_ar": "Michelle Tafoya outlines economic agenda in Minnesota Senate race - Fox News",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fVDJBNDVOSzZUdGdzUXZWVW5iLTNiOUtXUktrcEhha0FJM0tobk13c0VJbjNxWWJ5TzdWWlpPVU9VVW5MV2Y2VGlYU2tuSUN5NEh1MTFB?oc=5",
-      "source": "Fox News",
+      "id": "1086c07694595bdf1a520784dbe759e6",
+      "title": "Members of Governor’s Competitiveness Council break ranks to criticize tax proposal - The Denver Post",
+      "title_ar": "Members of Governor’s Competitiveness Council break ranks to criticize tax proposal - The Denver Post",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQM3RNVlJ4dGw5YURlaUUyMnJfTDFVajk3UGlkN1N2c3J5MXFNSGRkOUYwWVY3ODcyR0FxMDg0V2k4QUs4NWx5elFTcmo2OGRYbE9zdmI2OWdJVnkzVW5PT056dWZ2WlJ0RnJBM2Ytd1ExMzJJdW4tYU9XUEVuM3JTYmJiSnd2MTFMTHgyaFVn?oc=5",
+      "source": "The Denver Post",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:42.838903+00:00"
+      "collected": "2026-10-15T19:07:50.497219+00:00"
+    },
+    {
+      "id": "b4f5573239b805d2e4b0d5bff8247879",
+      "title": "Opinion | Recycling Strengthens the American Economy - WSJ",
+      "title_ar": "Opinion | Recycling Strengthens the American Economy - WSJ",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNOExtYm1lR2lDZ2M0WXZUa2N5M3dST3dPalg4LWVGTnRmQXlPLUJiMTBvYjRBZ0NHMjVoUF9ON3MxcXEzRXBXQ3RrOGl5Tlg4WlQyZjdadnRDRkFlcTlUUU5vZUw5aDREam1ySEh1cTZBSXNTeno2NjNlRVRqeExwaUlUc2hoZw?oc=5",
+      "source": "WSJ",
+      "category": "اقتصاد",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:50.008573+00:00"
+    },
+    {
+      "id": "2fc427dc2e6c7c7d42fcfca770da8d85",
+      "title": "The too-hot-for-comfort economy - Axios",
+      "title_ar": "The too-hot-for-comfort economy - Axios",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE56UEdUWEUzZFV2SUxvdUxrZm1LQzdWVlM0YlE0U1hXdlY4YmJub1k5UTJxSmY3U0lTeW9rQXRwa3RKMC1aSU5pdDczVERtSlQydVdQMlhTLVRhOVYyZnM0bE5Sbm40N3M?oc=5",
+      "source": "Axios",
+      "category": "اقتصاد",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:49.537063+00:00"
     },
     {
       "id": "84ed2fd1f7dfe5e028da9b4d2b28dbc8",
@@ -1580,17 +1580,7 @@
       "source": "The Atlantic",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:41.414918+00:00"
-    },
-    {
-      "id": "c6b81c78cb84d2b53e448abb840302c8",
-      "title": "Bad news for Trump ahead of the midterms: it’s still the economy, stupid - The Guardian",
-      "title_ar": "Bad news for Trump ahead of the midterms: it’s still the economy, stupid - The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNeGVMcFdTWjhOQUxraHZreXMta3lMM1VONVh2R2JsMHMteG53TDdUTHUweVRVclE1Q1VQc2k5b1F3T2F4QTZLWVhtQlhMOElKNll3QXVDaC1NMld3bzJsejMyY2lBNWNwTlB6TTdQeGgyZ2ZTcVd0aU04QWcxc3p3R1FsdUhCWXc?oc=5",
-      "source": "The Guardian",
-      "category": "اقتصاد",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:41.118086+00:00"
+      "collected": "2026-10-15T19:07:49.034619+00:00"
     },
     {
       "id": "25195761faec41fe85a73fbb067db2fe",
@@ -1600,17 +1590,17 @@
       "source": "NBC News",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:40.616524+00:00"
+      "collected": "2026-10-15T19:07:48.783583+00:00"
     },
     {
-      "id": "980e65719d778d86917b1478091c9fde",
-      "title": "منتدى الرياض: استضافة «إكسبو» و«كأس العالم» يدعمان الاقتصاد بـ 665 مليار ريال - جريدة المدينة",
-      "title_ar": "منتدى الرياض: استضافة «إكسبو» و«كأس العالم» يدعمان الاقتصاد بـ 665 مليار ريال - جريدة المدينة",
-      "url": "https://news.google.com/rss/articles/CBMi4ARBVV95cUxOWm5rcWp0TlRMcVRDQnNiRmx1UXR1WGRBazR3NVVzU1dsaEx6ajNDY21zcHA5U2dDU3ZIdUhXX09oOG5HUkl5Ml9jb1pscUpCOGlJbzJHRkdpOG9yQVhGVTkwUjlLXzM1QTNqU3dKOHh0T0JiWGtDSUg5Y0MxNnQ5V1I4WjFFaTdILUpONWR3SVlVdEI4cVZDeUQzUjFEVXJDeVEtdGtVTGVFTGhpLTJxVHBOT1hNaGdZTmtLLVYwVF9PNnRkcWgtRUdlWHhpVGJIanpKa3Fra1FTdGtpalZBRTA1LTQtY1FRLTNLNlMwNGs2WnVFMDU5aHRkekdEdllFUTNyOHh2enRwT3JEc2xWb3piWkJCTWo5LVVVRkkzcjNZNW5za1FQOC1ONV8tVHIwX1pqajRIZ2d6eks0N1diYVJMcUhKeWpvVkVtYU9SV0wtSE1IX3hOTjNIQ3l1YUE4UWRfUlJnMjhlNTBSYmRJcERNbGhWY2l1TTZ0ZVhmVlprdzlNT19aWVExeEFQWmdQbm91TE03WjJfb3JpS2d5OEw0ZkVBNEkwUDBpOGFBUlFUTmt1QzNUdU9uVTFRc2ZncEhIbklCOE9ZWFh5ZjcwOFI2Rnl3OFlTVEZxZWh0X3hKYVp2UVVEbi1YXy1ET2U5Qkk2TnFob0R1WDQ5NW9adW1nZW9IaGc4dmdjTjE4Wk4yNl9CbWFEMWxZNW82NWw0Q0cwanVNQVRQLXVSSS1pcklYWVJiSTU3YXZtOUdMaEx2dU9ieFcySXBsaXB0RHBtQzZpQnBJbUJZNHFvY2ljbw?oc=5",
-      "source": "جريدة المدينة",
-      "category": "اقتصاد",
+      "id": "cf6660ff636c4165d07415aa2ec36650",
+      "title": "Will Trump’s economy sink Republicans in the US midterm elections? Our reporters take your questions live - The Guardian",
+      "title_ar": "Will Trump’s economy sink Republicans in the US midterm elections? Our reporters take your questions live - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQzVDdjhMSlE0MmFXaG5mMWROd2pmaHFhSW1iTmVzVmdzdkZMOHhUblFSSDBMNDJ4TklCZDgzRG1FcFFhZVRaaXFvVmZpU0ttLW13a0pXcGowWG1VQk5zZXctSWtYQlR4Mjk0bjA2eUhIZ0xCQWRzUFppTXFZaERzV3MwTlVaNW1VTTJhaF9zXzhvLVdMWXlBZnQ4VU55Y1pZSWxnd3ZkUnJ1MnVmTEpuNWdER3ZYdw?oc=5",
+      "source": "The Guardian",
+      "category": "سياسة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:38.663353+00:00"
+      "collected": "2026-10-15T19:07:48.299985+00:00"
     },
     {
       "id": "90121feb1c9eb154d551287090c149d8",
@@ -1620,7 +1610,17 @@
       "source": "CNN Arabic",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:38.663340+00:00"
+      "collected": "2026-10-15T19:07:47.360516+00:00"
+    },
+    {
+      "id": "980e65719d778d86917b1478091c9fde",
+      "title": "منتدى الرياض: استضافة «إكسبو» و«كأس العالم» يدعمان الاقتصاد بـ 665 مليار ريال - جريدة المدينة",
+      "title_ar": "منتدى الرياض: استضافة «إكسبو» و«كأس العالم» يدعمان الاقتصاد بـ 665 مليار ريال - جريدة المدينة",
+      "url": "https://news.google.com/rss/articles/CBMi4ARBVV95cUxOWm5rcWp0TlRMcVRDQnNiRmx1UXR1WGRBazR3NVVzU1dsaEx6ajNDY21zcHA5U2dDU3ZIdUhXX09oOG5HUkl5Ml9jb1pscUpCOGlJbzJHRkdpOG9yQVhGVTkwUjlLXzM1QTNqU3dKOHh0T0JiWGtDSUg5Y0MxNnQ5V1I4WjFFaTdILUpONWR3SVlVdEI4cVZDeUQzUjFEVXJDeVEtdGtVTGVFTGhpLTJxVHBOT1hNaGdZTmtLLVYwVF9PNnRkcWgtRUdlWHhpVGJIanpKa3Fra1FTdGtpalZBRTA1LTQtY1FRLTNLNlMwNGs2WnVFMDU5aHRkekdEdllFUTNyOHh2enRwT3JEc2xWb3piWkJCTWo5LVVVRkkzcjNZNW5za1FQOC1ONV8tVHIwX1pqajRIZ2d6eks0N1diYVJMcUhKeWpvVkVtYU9SV0wtSE1IX3hOTjNIQ3l1YUE4UWRfUlJnMjhlNTBSYmRJcERNbGhWY2l1TTZ0ZVhmVlprdzlNT19aWVExeEFQWmdQbm91TE03WjJfb3JpS2d5OEw0ZkVBNEkwUDBpOGFBUlFUTmt1QzNUdU9uVTFRc2ZncEhIbklCOE9ZWFh5ZjcwOFI2Rnl3OFlTVEZxZWh0X3hKYVp2UVVEbi1YXy1ET2U5Qkk2TnFob0R1WDQ5NW9adW1nZW9IaGc4dmdjTjE4Wk4yNl9CbWFEMWxZNW82NWw0Q0cwanVNQVRQLXVSSS1pcklYWVJiSTU3YXZtOUdMaEx2dU9ieFcySXBsaXB0RHBtQzZpQnBJbUJZNHFvY2ljbw?oc=5",
+      "source": "جريدة المدينة",
+      "category": "اقتصاد",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:47.360507+00:00"
     },
     {
       "id": "653805002bddb40189be2c30dbe1fe82",
@@ -1630,7 +1630,7 @@
       "source": "العربية",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:38.663328+00:00"
+      "collected": "2026-10-15T19:07:47.360496+00:00"
     },
     {
       "id": "4a9449f14e61e4763d1303940cde9b04",
@@ -1640,17 +1640,17 @@
       "source": "عربي21",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:38.663315+00:00"
+      "collected": "2026-10-15T19:07:47.360485+00:00"
     },
     {
-      "id": "b3d490c976a61707e41cfbfdc41b53cf",
-      "title": "صندوق النقد: انتعاش الاقتصاد السعودي مرشح لأن يكون قوياً وسريعاً في 2027 - العربية",
-      "title_ar": "صندوق النقد: انتعاش الاقتصاد السعودي مرشح لأن يكون قوياً وسريعاً في 2027 - العربية",
-      "url": "https://news.google.com/rss/articles/CBMisARBVV95cUxNbzlLb0dSN3dHU3FMdlZRNnQzSGxqUlBGdkZqUHlkcGJveWdENWpmUzdpdUZ5RUlmZC13MlE3SEJ1UzRqaldlTUt3Q0dJTTRlcjVBbjNucTA3VDFVWWNoR3ViWEtHeUlBdWo1YnpoNHRnbXlLUGtPZHlaNHROWERFd2RaX3RlS0lmOFBBQ1NfMVFjbGZZWFhVX2FjekZycFJjZHB6cUNCcGxHWE1sRVZvdHp6YmxxbXFOQWJUcEp4cFpmYUFsRklzVEVuRDQ4VFN0YlFiUUVIZ2JRNUZ6QUUyeER3Z09YYWR3RDdNNzJ6RVNaTzJQMUJWT0xUdjQ3eUdsRlJ3RDU0aVRxV2c5eENIeVJtSFZ5YlYtWjktMlpJR3pIOHpKeGZ5dVFyYVNEanZkT1ZrWFpDNzl2c1FHb0kxQlloRHBuT3B2aHFkZXVSbTVnODZ1bk9VTWQ4N1pRQTRfNDBiOW1aNHRiVG5qanY2TVdxajg4enU2dzZkM2JMd3RsOTJzWmlOcHBfb1c0aUVwTlJzbGlTTHIwUl85U1hkd29uU1B4Y3FfWnJwSzhDWm5FR1haX3pMZG8tcmxfUjBaWTRaS1VqLVJaSXNqZ3loQ2FoeXd1WW1jVEh0MVhQOTZOQjhPTUI3cDh3ckExTUdRd1Y3UV9yVFc3Sld3NHZIRm9UNWZ5bTdKTjZDODgzR3JUb3NhT2hsenRmeVR3VktTTnBWS2lvTjd4WlVXZmNnUdIBtgRBVV95cUxQek9iVjRKMm95eWFYTld5Y3ZFNGdnSTBZNUlQZlFjTE52aThTQ1dIN21ZUEdRaDVhZjlhalBCS2VUNk5uaWxTOFlETnphS3k3T1NRUEVTUEk3bnZjV1NaVEFGU1AtOVpWdVN0UDRGcl80TFVnMjRsNTJPcE4taHM0eEJpZUdRTGliVWZTdHoyZ3pYMU56QWp6OEhDNHZNMVEzcTVLeEs1RkJUQUtDU0VZTjdxckZzSDIwdHVaczJhYzlXQzI3NEpvcTF5LUk4c2NOdF85SzJ2Q3dFQUx4aXRoeU5JSDdEYmlUUFpDY3hwc2J6WUhaMU1NWHgwNGNoT3FTWEh5NU1JNGV6MDJ0Ynk5S21wSEdjTkktbTdFVVEyQU1YcVlnSnpVYVZZVmxUMHdlN2lXSDAtOC1fYk1zN0xJQXZKZXNXV2owOHRGZ1NMa3ktX1E3dUlUd1JjVWtraVBmQ3BYNVhHNlc0M0szU1d4MjQtMGRmU0E5LW0ySlRfVTVkTFRFQkQzT2VzSWVRRE96NE9tb1BJLUlWZEhvdnFvRnhpTTJWYWRNYjNVVDh4X3UwYkdKNHhpbjVRNzhCWmxaR05kUktuUEJ0ZHA0M3A5Y09qNmNUQ0ktREUyLUxIanpQQkRpMU1iRTZJa0ZhcUlpVE9xNm51QUNIUXlWNkNxYnVCTkxNVGRFNHhwdHMySVFJOWF3cVBpNWhVMWF3REpIMlV5R1c4ckxLRjYzNWFzY0pnbHRWdw?oc=5",
-      "source": "العربية",
+      "id": "8c10244037ed0fa78102129661d4fbeb",
+      "title": "صندوق النقد الدولي يرفع توقعاته لنمو الاقتصاد السعودي إلى 7.9% في عام 2027 - ارقام",
+      "title_ar": "صندوق النقد الدولي يرفع توقعاته لنمو الاقتصاد السعودي إلى 7.9% في عام 2027 - ارقام",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBIbGx6eGJ0OGQteUgtcHh3cDZBOGdFLXJ6YldXeDBJMEw1MUR3N0dpOWxwQlhpRmFLZ09aeEtXWWJWZ1U1QlNBclRkS18tM0FXdnpzUnJEQ216M0xyY1F1YUs2UEVGUWxDTkE?oc=5",
+      "source": "ارقام",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:38.663302+00:00"
+      "collected": "2026-10-15T19:07:47.360475+00:00"
     },
     {
       "id": "90b549ebcbf50d37bfbc110273ab3ece",
@@ -1660,7 +1660,7 @@
       "source": "الشرق الأوسط",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:38.663286+00:00"
+      "collected": "2026-10-15T19:07:47.360465+00:00"
     },
     {
       "id": "a6eda0eed5131b20b6f41c9640dd9ccb",
@@ -1670,7 +1670,7 @@
       "source": "عاجل",
       "category": "اقتصاد",
       "is_urgent": true,
-      "collected": "2026-10-15T15:01:38.663273+00:00"
+      "collected": "2026-10-15T19:07:47.360456+00:00"
     },
     {
       "id": "e589df0b08cfcc4db90a656a00dc50d7",
@@ -1680,17 +1680,17 @@
       "source": "العربية",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:38.663248+00:00"
+      "collected": "2026-10-15T19:07:47.360433+00:00"
     },
     {
-      "id": "f001371ef30ea5989e8570da957b94da",
-      "title": "Retour Gagnant Politics (800irzmcIQ) - Unisba Media",
-      "title_ar": "Retour Gagnant Politics (800irzmcIQ) - Unisba Media",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1PV193LWozSHB3ZHA5cmhNZWFpQ3l3WXJaNEFUT2t0alZWMVdLTG5kNWptcnY1dWRQTVZwalBldmx1MXl5REU1N2F4RGZrVERCRE95NFhxTHU2SUdDZ3RoV19hV2lVSkpsbF8w?oc=5",
-      "source": "Unisba Media",
+      "id": "4bb313b1987ae6739e23759c21ea3037",
+      "title": "Des conseillers de Hegseth prévoient de retarder la publication d’un rapport sur une frappe en Iran - Investing.com France",
+      "title_ar": "Des conseillers de Hegseth prévoient de retarder la publication d’un rapport sur une frappe en Iran - Investing.com France",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNVzdEQ0ZRVmRYd3hueXdmZ2VpbERuOWpEMVlMb1FvTTZaTU9mQXRyNno5TnoxQ1Naemt5UXFuWkFBT0lVWHlydHh1amZ5dWFtYnBULW9SZkdaNUQ2Y05BUzhSbVIzT0E3OVM1LTlPSGFvR2ZwcmRTeHlUOVo0T2piQ2ZGZGY1QUhldVJ2NFhueHJOYnhNaTNBekJGOEVDVkpuVGpFOUVnQ0FLd2dsdVRoM2JGRFdXaThVdi1KSDI4TUpMRm9XY3gwQkZndlc1bkhJQWVIdjYwcTlPcnQ4Njk5VUthUXRoZnFnRzVN?oc=5",
+      "source": "Investing.com France",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:38.072665+00:00"
+      "collected": "2026-10-15T19:07:46.701670+00:00"
     },
     {
       "id": "a1d643f7cd68f70131887345bb5d95d9",
@@ -1700,7 +1700,7 @@
       "source": "Sciences Po",
       "category": "علوم",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:37.558082+00:00"
+      "collected": "2026-10-15T19:07:46.329535+00:00"
     },
     {
       "id": "dde6681dec1c64e628837cd37ec2d8e3",
@@ -1710,17 +1710,7 @@
       "source": "Fabula, la recherche en littérature",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:37.103984+00:00"
-    },
-    {
-      "id": "755b78c4dbd51901ac1b73532bb68e54",
-      "title": "« Je vois ce qui se passe ici à Paris » : le mouvement des lycéens vu par la presse internationale - NVO",
-      "title_ar": "« Je vois ce qui se passe ici à Paris » : le mouvement des lycéens vu par la presse internationale - NVO",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNaWozbVQzNkRsaEpmVmtieDN5NkNFWjRZdHhUWkU3MkZBSFBoZFBROFNRdF8yc2VwcFd0Qm1QWFVNalhzd21CYkJRU2JyWGpqUVBKN1A0RFVoZzdCTVhyRlJoc1BuTEttdllGWmRYSmFQNl9OLVpKdzZiTlZMOGFWNUpJQUJuQlFSY2tFTFN5LTF0V00yY0hMQ1FvbjRjMVotdXYwcDhCZFZmc1U4?oc=5",
-      "source": "NVO",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:36.547242+00:00"
+      "collected": "2026-10-15T19:07:46.068421+00:00"
     },
     {
       "id": "43a1f37278e4977402116b2416e468a2",
@@ -1730,17 +1720,17 @@
       "source": "tmgm.com",
       "category": "اقتصاد",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:36.263785+00:00"
+      "collected": "2026-10-15T19:07:45.600227+00:00"
     },
     {
-      "id": "0b6658a1b48a39b11d2ebd6e4ac91cb2",
-      "title": "Le Premier ministre Andy Burnham promet de publier les documents relatifs à ses réunions avec les propriétaires de Manchester City - Yahoo Actualités",
-      "title_ar": "Le Premier ministre Andy Burnham promet de publier les documents relatifs à ses réunions avec les propriétaires de Manchester City - Yahoo Actualités",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOcjZzdFBlNk12Y0JTLXpaeTFSay1QUHJuSF9tWGU5ejRwTmJqcjdUYlVFZzlpMndRb1lYTGsxSjFhWWFjU0tPamRXdGg3R0hTeGdFQk5FanJPTHl1U3gwSG43bUFld3daN0pBaWNPNjZ1SC1vN1EzSHYxbE9wbjR2SjhUcG85VFpEakFJ?oc=5",
-      "source": "Yahoo Actualités",
+      "id": "692c9cbb553c3d1e0d2a7781f18ec8c8",
+      "title": "Trump annule le plan de diffusion en direct de l’exécution de Fort Hood - Investing.com France",
+      "title_ar": "Trump annule le plan de diffusion en direct de l’exécution de Fort Hood - Investing.com France",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPczdCYU4yRDM2UElhNGNKT2dpc25BLWdmdUNwU0Q0NHRybnNxLTZwQ1oyQzFWMGdpSEJtbXhyR1NOOXA0OFRlTndwNlFzYUREc3lmdWJua0Y5VnhEQklzVTgwT1RMWWJVQW1RWlZOZlRJQXRoOGU2NlBQYUxRT1V6ckR2NS1XWGt1RWlzajRJMGxaVEpoRU1QX29weWtyMjVhM0psTFZtRFNFcng3d29ac3pkSHo0R004bVV5QkJ1ZmloM0JVSHc?oc=5",
+      "source": "Investing.com France",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:35.803275+00:00"
+      "collected": "2026-10-15T19:07:45.125544+00:00"
     },
     {
       "id": "c2c0f7f7ea9e3e7e9c3e5cc611d57775",
@@ -1750,7 +1740,7 @@
       "source": "Université de Bretagne Occidentale (UBO, Brest)",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:35.323661+00:00"
+      "collected": "2026-10-15T19:07:44.811324+00:00"
     },
     {
       "id": "126aeb217c038b6b824c58296eceeb72",
@@ -1760,27 +1750,17 @@
       "source": "TradingView",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:34.821467+00:00"
+      "collected": "2026-10-15T19:07:44.308701+00:00"
     },
     {
-      "id": "d91991797645c99b21bb5df32866bd6c",
-      "title": "Ilhan Omar Investigation Aims to Build Case for Stripping Her Citizenship - WSJ",
-      "title_ar": "Ilhan Omar Investigation Aims to Build Case for Stripping Her Citizenship - WSJ",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWEZKQlpMV1lxZFFjUU8zOHhaMExjVTg0QUcyZU56YjJRbzVsRmdRcXZEbHlPNGJWUVdUUVJZeXJYdFVocmVNZFV6bTZMeDhHdWpNOGRwUjYzd1JVNk1QTWpmdFNPWkF4SkZBOS1VYzRCdlFzcUpJUlFXaGpMbnEyQmpWN0Izb0k1bHBidlc0RkIwRHdLNVRyM0RMLXhwbVdIbzFsYW1rYmxVdnV6WnlWaE1mQkU0ZzM2T1E?oc=5",
-      "source": "WSJ",
+      "id": "ed9bdfac29cc4823991e5fcce3d324fc",
+      "title": "Traduisons-les : à quoi pense (vraiment) le RN avec sa taxe de 1000 euros sur les travailleurs extra-européens - NVO",
+      "title_ar": "Traduisons-les : à quoi pense (vraiment) le RN avec sa taxe de 1000 euros sur les travailleurs extra-européens - NVO",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdkxCVXQxSnRmQmFOZmVsYXNMc2pMcVZoOEtyUThDWS1pT0VtcnEzQjZwYXI1WWt0Y1B2MDBSWlpsUEZ0QXB5UzF4dGRpM3ZsaDl0VWZSMmVvbFpRSVRianJha0ZzbWFuTHdvOTFwMkFIbmhZTmFtSVJXWndSanhhd3VEVUtWTVRxQlR2OEdwSlNfSGlzSmVyTlRGQVY3RkxrQzB1ajh2Zk1HQVNZS2prZTdvZmpoSzh6dUNhcEE1dw?oc=5",
+      "source": "NVO",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:33.745334+00:00"
-    },
-    {
-      "id": "627d77f8659ac2fb2c8ae495fb04b81c",
-      "title": "Trump says execution of Fort Hood shooter will not be streamed after bipartisan backlash – live - The Guardian",
-      "title_ar": "Trump says execution of Fort Hood shooter will not be streamed after bipartisan backlash – live - The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOWlg5N3lpNlF3R1NJa3BIQ1lDbUpzLVE1bFg0NnVqdlR0UjBTZzlNUXRJWFN1RU0tU1EtMDViTkV4VEpiT29OaFRQT2Zud0E5SmJhMjFaR0FrNDg4RnFSU0hZVnF2LWg2THk2U2VzR1d3bXdvdXhUN2d5ckxjYkZxSXNqVkdpN0dzLUYzZFBHY3NqdHVZUDk5RVBYRGQ2ZmNSNjZ3Tll0dmY5OWFUM05YR1huUEgzNlEtaExxMlBwSzYwaDBQVTdKTnVrY09RM0lqZWhHNlhPc2F5NmdYSU9oVWNoSG1VN0kwbEJIQTVqekl1RW8?oc=5",
-      "source": "The Guardian",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:33.320445+00:00"
+      "collected": "2026-10-15T19:07:43.815151+00:00"
     },
     {
       "id": "9d4d0d0b6cd08e552b4e6a77ba6e1e06",
@@ -1790,67 +1770,77 @@
       "source": "The Washington Post",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:32.811289+00:00"
+      "collected": "2026-10-15T19:07:42.864899+00:00"
     },
     {
-      "id": "a962fa569e6c21f776202750747d5174",
-      "title": "What Chinese viewers are learning from America’s political chaos - The Hill",
-      "title_ar": "What Chinese viewers are learning from America’s political chaos - The Hill",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOa0hocFdDbWlZelh5SlJxXzNENTN6VlZIY3M0cWV0M0t4TzlJSlJ5ZFM0YTU3ZWFPbkl1UVdFaEx6SjVFZTZadDJHSzlGQXZCQUhyckQ4eEVzVlpSUm4yWmVhWmZsT3ZPdnpLRlpsQU1JTjFCQW0wc0k4N0t0V1JCR2hB0gGHAUFVX3lxTE9UQVdwNkJuQ2lXcTNEeFd1cnl4N1Fub1daTWRkLU8xcktQUk5RX3hBcXhIRDdheXdiT2IwSE43RlNOR3cxRjJVMHUxcDlrZzNyVFYwSVQyY2dma1IzWDdhcDhGRVhaWHB2M2ZfdVZhNFE3R19fU2NwSnBEM0pWUTdVWjdQNFVHTQ?oc=5",
-      "source": "The Hill",
+      "id": "9d474aed097540ad4c8a5426da65a761",
+      "title": "DOJ sues California to block votes from alleged noncitizens - Central Oregon Daily",
+      "title_ar": "DOJ sues California to block votes from alleged noncitizens - Central Oregon Daily",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOUTRHNEZ3WUZBdi1PRHZ2dUZQUUVIVmhKcGdrcEpBb1kyYW5RMHFlamJ5aHdsUFVQNUNxUnVEYW1CNHdBWGVVN25Kbl9jeWFVaE9GVWFCbGxZSC1BbjlBeXpuN0dHZl9VUG1za0tBZGZkTkdfbmE0UWJzUlIzSFhjdlZaRk9zaDRmd0hqWkozUjZHc3NuNUx1YjJLVm5OUG5kaFFORmZOZUs3NFRFeFdYcDRUVlhuNnBrWmJxM1VEOHQ1MDZOX1c2Yzd0NnpMQVRmVy14V3BZNmhtOHdIR2V4cW9JcnlKcVdXRlVjVzA3QQ?oc=5",
+      "source": "Central Oregon Daily",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:32.352696+00:00"
+      "collected": "2026-10-15T19:07:42.555434+00:00"
     },
     {
-      "id": "c7b8d29d095d6a5f00b13da1cbf3f49d",
-      "title": "As Democrats Plow Into Red States, They Worry About Tight Races in Bluer Ones - The New York Times",
-      "title_ar": "As Democrats Plow Into Red States, They Worry About Tight Races in Bluer Ones - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPNlBkTDNjMVAySGRTOHdTbzQ5M2JvSV9aakNST19yMndSNTBDTEZoaHUxVWNiOHl0X1BGQng2ZmN0bnphUDFaaGlOVnlOQTZPOU9semhNQnhzX2hqdlVnQ1h2eFB3bkF0UEhPRmRURmxnV3AwdG1YZEUyZmhLTWVlRXRZblg4M2JibEpqckk5eDZpOGc3OVpNczJ3?oc=5",
+      "id": "976dd92803669bcd39c9fd9b5148397e",
+      "title": "I’m Both Elated and Terrified to Hear That Trump’s Administration Is Coming Unstrung - Esquire",
+      "title_ar": "I’m Both Elated and Terrified to Hear That Trump’s Administration Is Coming Unstrung - Esquire",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUEVsWVBLTlFhYjFnUTZtdlJEdTItSF9PMnZYRVNUenVqSFhDZGQ1czZVLWRLcUU5QVJlSGJ0YUVEYmZCRVNvTEZXb1ZBLUNaQ0NKdEQ4dVRiZF9KZ1ZGVFhfbmxfNEhXanhhRXNGT0ZvcXFtOGpMaExxUXVSNW1sOXBwc1h4ci1uaVMwZ01YcmVkaG5EZzFsbHZfVHg5dEIxTm1yTWNB?oc=5",
+      "source": "Esquire",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:42.116447+00:00"
+    },
+    {
+      "id": "3af8b6da9052a8e5cc2ca2df1a969193",
+      "title": "Midterm Election Updates: El-Sayed Campaigns in Upper Michigan With Ocasio-Cortez as Vance Heads Downstate - The New York Times",
+      "title_ar": "Midterm Election Updates: El-Sayed Campaigns in Upper Michigan With Ocasio-Cortez as Vance Heads Downstate - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE85OHNwcVZ6U3FPZXUzTVRXNktLWV9qRTc1R3dkREhaeUI0eGFSU3JQQld0NDdCc3JuVXRHNnBsWlRIS1VvMnVoRXRIT1lqa3NwWmhkX3U2dlE5dXZvY253cDlkdW5SbTFvVElzN1Vn?oc=5",
       "source": "The New York Times",
-      "category": "عام",
+      "category": "سياسة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:31.878315+00:00"
+      "collected": "2026-10-15T19:07:41.730850+00:00"
     },
     {
-      "id": "6042dec9cdfa89c5888c7888d7e30c23",
-      "title": "Bärbel Bas' resignation shows harsh tone of German politics - DW.com",
-      "title_ar": "Bärbel Bas' resignation shows harsh tone of German politics - DW.com",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQa2g5bjAxWXNlazZ0LTUxNnVuVHI1RHE5Y05rbzAyV1FPb3BJQlphcDhnSHJiWGpFYmV3ZzhnX28wSVlsREdMZEdITl84T1ZPRVpPYVRLWTZaNGNoMzUxN21kU1BLVGdSMVBNWnd2QjFld184ZFVMRzJ5R1AxQWw3ejM0M2hxODhCU2FaWVQtanM5QmF3dWFWdXJ3RmPSAZwBQVVfeXFMTl9ndGlQYjdPNHEwSGVhS1VyTEt0QVBRUDgxWlpWbWhQRG9BWUZUVjhDaHhqUUtwVkhCaTJ5bzZuejlTTnNIR1ZMMXI5NXpaX3pSLVB1QzVIak04UDBHN1lXMlVSaEc4TjJEc1FRLUwzUzh5WVVYM0swS3BJaTZxbVZoanlZUzBRSjl3RzN5bk9JNGtUVExFRlpzb051?oc=5",
-      "source": "DW.com",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:31.552121+00:00"
-    },
-    {
-      "id": "9cc525ac95e1636ef2966d1072831ef5",
-      "title": "US regulator accuses nation's largest banks of debanking customers over political views - Fox Business",
-      "title_ar": "US regulator accuses nation's largest banks of debanking customers over political views - Fox Business",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVnZlM1ZfWmxTY082WEdLbWxYWk9aMktVY2toUXByRGlDQTZXbWg4dHJBZ1VqbXV0QWJFZmd5M0VSZzRIUjR4eTlKeFVzOGViaVJkYjFucFVzbzI5Mno4UEh1aFowNkJRNi1NWDNYcmpkak96dHppY3FtRDNJRGFRMEZGRVlsS2V3aHc4RThKYzBQTzZZYldSNnloaF9XNTdlX3U1TndkQUlmeS13VjBLenFlcU9uRHc3MEhxUg?oc=5",
-      "source": "Fox Business",
-      "category": "عام",
-      "is_urgent": false,
-      "collected": "2026-10-15T15:01:31.238703+00:00"
-    },
-    {
-      "id": "d835caaf51460a944a790fe6bbf350db",
-      "title": "Talarico refutes skeptics at CNN Town Hall - CNN",
-      "title_ar": "Talarico refutes skeptics at CNN Town Hall - CNN",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQjFUV1NjZGlmOHFvYkw5ZU8tN2EzeE1EaE5uamo2VG5ONld3QllfQ2drQWJUVjFIVW1Ga3Q2eTJPZ19OOEpFcmxNbGpsd05LS09yczkzRTl1Z1BfTGw1NTFRMmxacklHa2s4akVnaG11cTNXdnRjN0JHcXc2d1ZBQmpaSThBZjB2YXZjbXQ1VzdzTlZzMlN6Nw?oc=5",
+      "id": "532d577aaf8d3cfee87c1ec2cf38eb9f",
+      "title": "Republicans take an ominous turn in their midterm campaign - CNN",
+      "title_ar": "Republicans take an ominous turn in their midterm campaign - CNN",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOb1h4YU43N3NoQ2NGRlhlbk5JaVlYeHBrZ2VVR2pHUFBFN1lNdENkMC1ldUVsM1hNOUtlS0JReFdoTjhuaTJCOTdLOG5mSTBGZkE2UHhqbEo5aDBVV3ZiMl96YlRCajJ2bjdwRTMyYVR0NHpQclVOZzdFZWdGTXVORmhLZF9ZSmpC?oc=5",
       "source": "CNN",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.953612+00:00"
+      "collected": "2026-10-15T19:07:41.485624+00:00"
     },
     {
-      "id": "b69ec3eb66e2abf175e93ff7b9330879",
-      "title": "حين ينسى ترمب عُقدة الـ 444.. سيوقّع الصفقة مع إيران - الجزيرة نت",
-      "title_ar": "حين ينسى ترمب عُقدة الـ 444.. سيوقّع الصفقة مع إيران - الجزيرة نت",
-      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxNRWpBa3NtVzlVNUZlT1NyQ01pSTNqbjlDUG5RdEtSN2IzdXFEQWlPeW5CWUF3QV9qclhWQ1djVEVPTHpyUW80a3JWRlZzMHJ0UngxdkRoLU5POHpWZWxrQmlPMDU5amdsVnNiMFpHaWd0djhncFIyVFdDejk2dkdFWTZXbVN5MTVRSXZ6TkJOUmlDRUdZU1UtZXp4V0JrNjZ0TnZmNlFiTml0Q3NNaVJxV2ptVkItR2cxdnNDMGVtQV8xOS1VT2FIRlVGZHZqWWM2UEQ3enNVRE5BSzFrTEtlVVJuVHdodHp1dTRseVNPOUp3ZllZcjlDelgzOGpzY1ZtcVNCNk82WTRwdkRsX1ZqX19QQUpaeTlIUFlLSHRmbTNXN2lpTnlWMHZZYkNfMDNsT0R2eGFMN1g3R3g2dE85Nl9VOXoxUdIBywJBVV95cUxNZkJXbl9GeC03NDBPUE1UNXEzMmMzMnc0Y0NxUHN3eVJBX0F0OGZRTDJTTkEzMU1GTkE4Tk1iZzFPRlBScC1RbHRLTWNGTUgxYUdNbkYwRUJ2bDZkM0VHSWo5Yk5NdjA1aDlyeDZucjRhSFhEbnhLeUh5RzZYWWhsUURQWmtCLXBldzdpem00bEF1RnlCRVRiRlVYX0FxTlNSME1ELXRDZHh6b2o0bjhPLWVkMENiQXpXZnVxZkwwWFVTenB0YlFZT1FTX21NczFoUjVOb1BLVHpHM3g1dl9wa2pocWZHdVU2SlRtYUo2Y2FyVm0wSlpaODNXVV9ZOExYVUg0T2xoNzJqUDFBWklhSnljeGQ0NE9uTGl2eUpCNUxHLWlIUnN3Tl9leTJ0X1B6RHJ4UDFaQXNCM25iajQ3eHp5Y0VISXFRcUNn?oc=5",
-      "source": "الجزيرة نت",
+      "id": "20fe133447ab51198c3b412f8fac7a8a",
+      "title": "Trump’s worst political instincts are on full display - CNN",
+      "title_ar": "Trump’s worst political instincts are on full display - CNN",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNNEl2VHdodDUzZW9hdnYyOHk1a2NJZ09IY3JEeGVjTkphR19qaUJwT0g2azVoeFdnWDQ3akxhVWpndzdXWWl6VFltbjNDNkhZcHVpeGdkT3RGUlhXX0lnV0NJbWlpUTdDVGZaRk1KZXJxdTFSeGFwZGIxR0hFN0NiRVBya2hrY2dPYzd1SA?oc=5",
+      "source": "CNN",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.078918+00:00"
+      "collected": "2026-10-15T19:07:41.044646+00:00"
+    },
+    {
+      "id": "8d712228b782590eb74c547be0b2c3a9",
+      "title": "Wes Streeting in US for Hegseth meeting as Ukraine tensions escalate – as it happened - The Guardian",
+      "title_ar": "Wes Streeting in US for Hegseth meeting as Ukraine tensions escalate – as it happened - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMl9qTndOc0FWOHlkajYxYldCRGc4YnlUMEt5LVlPMlkwRFppSDBCQmx3cDRHOVpleUg4X29lZk12VTBDQ05CZTZvM2dUUzZzdWw4YldvcmlOOGVpTjNtUk1wUHpXT0pDV01RSWxsYXhHejM0eXlwTUFWRmxrZlpYUS1HZ2QwcGVGc3ZRSWNZczJISm9idEVibzZveF9vSnRUSFkyTF82Ym4yZXZac1E2UXFMX3oyUXoxZGYwZVlneHB0Qy1m?oc=5",
+      "source": "The Guardian",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:40.671722+00:00"
+    },
+    {
+      "id": "f5da384cbad2db8dc46803add73c3556",
+      "title": "The Far-Left Firebrand Who Wants to Upend France’s Politics—and Cancel Its Debt - WSJ",
+      "title_ar": "The Far-Left Firebrand Who Wants to Upend France’s Politics—and Cancel Its Debt - WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSW9LeEZ4Q1lSNTdZNldEcGZOR1ZWenR2SzJoNTBLbGlzR21UZERWUDEyeTl2cWpCOWZSS2RsRHlOVFZOYi1fYXV2TkxxaEphOVctbVdnMGljWFpPZzZTUEpYMFpMX0QxcTNBZTFmb2tJdlFHTVNYUkl3bndFVUZYY2pTNmFOcUR5TWpfLVBmdTQ0cXM1X3Z3amh2cFJrNEdBWDVrVFFKNmNscW1FODRXcWphSUJWaW1fNWVr?oc=5",
+      "source": "WSJ",
+      "category": "عام",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:40.415585+00:00"
     },
     {
       "id": "26e5fe8bcc0f426af7fc1f3cf5f0a803",
@@ -1860,17 +1850,27 @@
       "source": "الجزيرة نت",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.078896+00:00"
+      "collected": "2026-10-15T19:07:39.440900+00:00"
     },
     {
-      "id": "993a580d42cfd8e04c5a5f772b804e47",
-      "title": "قصة الاتصالات السرية بين أمريكا والحوثيين - الجزيرة نت",
-      "title_ar": "قصة الاتصالات السرية بين أمريكا والحوثيين - الجزيرة نت",
-      "url": "https://news.google.com/rss/articles/CBMitwJBVV95cUxOYWJiZmlTTThldFJjNl8yMjVqM0xTdGEtX0c2MXJsLU5KbVI4RjRsbWNyLWNPSzhtREYzUk51aHlibE5LVDExdG1NbVBReTJZRWdscDFDX2VDY0ZUUGNldkxnYU5JcVFhQ0R1Z3FUdGNneWpOQlBsX2NUWGVieEw2NXZ1dTNfaG5LdTRVOWlTamttZzlvMXBJYURISkdBbzY4U0dBc1BGSE1rTGo5czBpTGtZME5LWkdIUVdhRV9XZzRaTjBPNjBpbnQxRXpnTFY5VmdTeFdqekVja3p6WVFUUmFwM2p5c3BWaXZiSDBhV29XZFVlWDJtNVFhR1BSMHZjeXd5bnliNENBVkRqOV9YNGM2VkRZWFVFZTU4MS1zcndCdFlpY2dDNjJzMkhxLW5ON0xBb1hxWdIBvAJBVV95cUxORVNPRWlPUzl5Y0RjVk9yeFZscVB4LVVzRHR3bDV2VlZlbmRKaDRiU2F4WHQtQjZGV0RrTnNobEV3RWREQjhLOUt6R0dyYUpPUlNyLWpadnZRNkYzNkxwYUtTM1p6LVVocFVWRzRlNFlhZ3cyMHJOaUtURkNmV3Z3cDdFa0RpV2VpSW12R2ZWTnA1Z29wYnYwTzcwN0xrN3NrMDNUUmlMOWhoeFhGcnJZd0gxdk80aS1SSmlxR3VoY1RGVWxtcWE2R3ljV29JZFhkQ3B2TTBrNHhjWnFINHVsdVdvTnR4NEVsTTFieGdnY05FLVRiOG1nYk5xVkRTWGxNQmZYd01oRVpKUTRMclg2Yy1tbjM3enlPZ01IakxBSWdHYWpXN3FTcTU3Z0R6bWxkNmpOSUlld09PQ0RJ?oc=5",
+      "id": "b69ec3eb66e2abf175e93ff7b9330879",
+      "title": "حين ينسى ترمب عُقدة الـ 444.. سيوقّع الصفقة مع إيران - الجزيرة نت",
+      "title_ar": "حين ينسى ترمب عُقدة الـ 444.. سيوقّع الصفقة مع إيران - الجزيرة نت",
+      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxNRWpBa3NtVzlVNUZlT1NyQ01pSTNqbjlDUG5RdEtSN2IzdXFEQWlPeW5CWUF3QV9qclhWQ1djVEVPTHpyUW80a3JWRlZzMHJ0UngxdkRoLU5POHpWZWxrQmlPMDU5amdsVnNiMFpHaWd0djhncFIyVFdDejk2dkdFWTZXbVN5MTVRSXZ6TkJOUmlDRUdZU1UtZXp4V0JrNjZ0TnZmNlFiTml0Q3NNaVJxV2ptVkItR2cxdnNDMGVtQV8xOS1VT2FIRlVGZHZqWWM2UEQ3enNVRE5BSzFrTEtlVVJuVHdodHp1dTRseVNPOUp3ZllZcjlDelgzOGpzY1ZtcVNCNk82WTRwdkRsX1ZqX19QQUpaeTlIUFlLSHRmbTNXN2lpTnlWMHZZYkNfMDNsT0R2eGFMN1g3R3g2dE85Nl9VOXoxUdIBywJBVV95cUxNZkJXbl9GeC03NDBPUE1UNXEzMmMzMnc0Y0NxUHN3eVJBX0F0OGZRTDJTTkEzMU1GTkE4Tk1iZzFPRlBScC1RbHRLTWNGTUgxYUdNbkYwRUJ2bDZkM0VHSWo5Yk5NdjA1aDlyeDZucjRhSFhEbnhLeUh5RzZYWWhsUURQWmtCLXBldzdpem00bEF1RnlCRVRiRlVYX0FxTlNSME1ELXRDZHh6b2o0bjhPLWVkMENiQXpXZnVxZkwwWFVTenB0YlFZT1FTX21NczFoUjVOb1BLVHpHM3g1dl9wa2pocWZHdVU2SlRtYUo2Y2FyVm0wSlpaODNXVV9ZOExYVUg0T2xoNzJqUDFBWklhSnljeGQ0NE9uTGl2eUpCNUxHLWlIUnN3Tl9leTJ0X1B6RHJ4UDFaQXNCM25iajQ3eHp5Y0VISXFRcUNn?oc=5",
       "source": "الجزيرة نت",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.078880+00:00"
+      "collected": "2026-10-15T19:07:39.440882+00:00"
+    },
+    {
+      "id": "25b69cd3221d080c9669ed11ea38ceff",
+      "title": "لجان تحقيق 7 أكتوبر بين التعطيل وصراع الانتخابات الإسرائيلية - الجزيرة نت",
+      "title_ar": "لجان تحقيق 7 أكتوبر بين التعطيل وصراع الانتخابات الإسرائيلية - الجزيرة نت",
+      "url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxOVjlNZzJtbE0tdllkTzl4Z0w4VVRoWW92bC0tQm9RV1N4YWkzSUlEeEl2ZlAycUVMYldFR05KZnhDS2Nkel9LRm9UQ29kR2VjN1hPVFVNYzM3RFA3b0lieG5GNzd1QzA0ZnJyWnhXczZtbGVmS0tUbWRRODhDMDFHNG0zRUZiXzJ6NE10WEtoQXYwQndzTEM2ZW45bjFSSHpjVlkycVZIcnE2bWxtd01HZDFFaEIwWE1QNkhZVGNjcWMwVEFlMEpUU2kwakNoazVXR1lUWWU0dFN4bk5HbC1VSXNTVVphRkctR25zX29lWmNHX0lRRm1uT0pLbzZfZE9sVnA1TW92c1J3R0w3MmhnVDhhX2RGZWdjcnNENVNqNUNNRGN5Nndsc1NNZWsybFZza01xT3llcHk?oc=5",
+      "source": "الجزيرة نت",
+      "category": "سياسة",
+      "is_urgent": false,
+      "collected": "2026-10-15T19:07:39.440869+00:00"
     },
     {
       "id": "0a56bb0bb97f91d5bb88c3bbe65858b9",
@@ -1880,7 +1880,7 @@
       "source": "الجزيرة نت",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.078864+00:00"
+      "collected": "2026-10-15T19:07:39.440861+00:00"
     },
     {
       "id": "eb7548338f8892ea82cf84dbbd77078a",
@@ -1890,7 +1890,7 @@
       "source": "الشرق للأخبار",
       "category": "سياسة",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.078847+00:00"
+      "collected": "2026-10-15T19:07:39.440848+00:00"
     },
     {
       "id": "aeec0f88bccd37e5f1c9981f00664832",
@@ -1900,7 +1900,7 @@
       "source": "سكاي نيوز عربية",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.078835+00:00"
+      "collected": "2026-10-15T19:07:39.440838+00:00"
     },
     {
       "id": "2568abb7513d601f2d67a94518474abd",
@@ -1910,7 +1910,7 @@
       "source": "عكاظ",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.078813+00:00"
+      "collected": "2026-10-15T19:07:39.440821+00:00"
     },
     {
       "id": "7502ad358a144447149438d97d6d1a5c",
@@ -1920,7 +1920,7 @@
       "source": "الجزيرة نت",
       "category": "عام",
       "is_urgent": false,
-      "collected": "2026-10-15T15:01:30.078769+00:00"
+      "collected": "2026-10-15T19:07:39.440775+00:00"
     }
   ]
 }
