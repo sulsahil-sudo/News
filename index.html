@@ -12,8 +12,9 @@
 body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px}
 header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);padding:calc(env(safe-area-inset-top) + 8px) 16px 12px;border-bottom:1px solid #1e293b}
 h1{font-size:20px;margin:8px 0}
-.status{font-size:11px;color:#64748b;margin-bottom:4px;}
-.header-date{font-size:14px;color:#fbbf24;font-weight:bold;margin-bottom:8px;}
+.status{font-size:11px;color:#64748b;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
+.header-date{font-size:15px;color:#fbbf24;font-weight:bold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
+.update-time{font-size:12px;color:#10b981;font-weight:normal;}
 .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
 button.action-btn{color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:13px;font-family:inherit;cursor:pointer;flex:1;min-width:22%;}
 #fetchNow{background:#8b5cf6}
@@ -32,7 +33,6 @@ button:disabled{opacity:.7;cursor:wait}
 .feed{padding:0 12px}
 .card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #334155}
 .card .cat{display:inline-block;font-size:11px;background:#3b82f6;color:#fff;padding:2px 8px;border-radius:6px;margin-bottom:8px}
-.card .cat.عاجل{background:#dc2626}
 .card .cat.غرائب{background:#8b5cf6}
 .card .cat.تقنية{background:#0ea5e9}
 .card .cat.فلك{background:#f59e0b}
@@ -46,8 +46,13 @@ button:disabled{opacity:.7;cursor:wait}
 <body>
 <header>
 <h1>🚀 تقنية وغرائب وفلك</h1>
-<div class="status" id="status">جاري التحميل...</div>
-<div class="header-date" id="headerDate">📅 اليوم</div>
+<div class="status" id="status">
+  <span id="newsCount">جاري التحميل...</span>
+</div>
+<div class="header-date">
+  <span id="headerDate">📅 اليوم</span>
+  <span class="update-time" id="updateTime"></span>
+</div>
 <div class="controls">
   <button class="action-btn" id="fetchNow" onclick="fetchAction('now')">⚡ الآن</button>
   <button class="action-btn" id="fetchToday" onclick="fetchAction('today')">📅 اليوم</button>
@@ -60,12 +65,10 @@ button:disabled{opacity:.7;cursor:wait}
 <div class="feed" id="feed"><div class="loading">⏳ جاري تحميل الأخبار...</div></div>
 <script>
 const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
-
-// ✅ التصنيفات الجديدة بدون سياسة
 const CATEGORIES=["الكل","غرائب","منتجات جديدة","تقنية","فلك","عام"];
 let allNews=[],currentCat="الكل";
 
-function updateHeaderDate() {
+function setHeaderDate() {
   var now = new Date();
   var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
   var months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
@@ -77,13 +80,13 @@ if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(
 async function fetchAction(action) {
   var btns = document.querySelectorAll('.action-btn');
   btns.forEach(function(b){b.disabled=true;});
-  document.getElementById("status").textContent = "⏳ جاري الجلب...";
+  document.getElementById("newsCount").textContent = "⏳ جاري الجلب...";
   
   try {
     await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: action}) });
     await new Promise(r => setTimeout(r, 2000));
     await loadNewsFromSheet();
-  } catch(e) { document.getElementById("status").textContent = "خطأ"; }
+  } catch(e) { document.getElementById("newsCount").textContent = "خطأ"; }
   
   btns.forEach(function(b){b.disabled=false;});
 }
@@ -91,14 +94,25 @@ async function fetchAction(action) {
 async function loadNewsFromSheet() {
   var btns = document.querySelectorAll('.action-btn');
   btns.forEach(function(b){b.disabled=true;});
-  document.getElementById("status").textContent = "⏳ جاري التحديث...";
+  document.getElementById("newsCount").textContent = "⏳ جاري التحديث...";
+  
   try {
     var r = await fetch(SHEETS_API+"?t="+Date.now());
     var data = await r.json();
     allNews = data.articles||[];
-    document.getElementById("status").textContent = allNews.length + " خبر";
+    
+    // ✅ عرض عدد الأخبار ووقت التحديث (الذي يرسله Google Sheets)
+    document.getElementById("newsCount").textContent = allNews.length + " خبر";
+    
+    if (data.updated) {
+      var updateDate = new Date(data.updated);
+      var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+      document.getElementById("updateTime").textContent = "🕒 آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
+    }
+
     renderCats(); render();
-  } catch(e) { document.getElementById("status").textContent = "خطأ"; }
+  } catch(e) { document.getElementById("newsCount").textContent = "خطأ في القراءة"; }
+  
   btns.forEach(function(b){b.disabled=false;});
 }
 
@@ -110,7 +124,8 @@ async function clearNews() {
     await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: "clear"}) });
     await new Promise(r => setTimeout(r, 1500));
     allNews = [];
-    document.getElementById("status").textContent = "0 خبر";
+    document.getElementById("newsCount").textContent = "0 خبر";
+    document.getElementById("updateTime").textContent = "";
     renderCats(); render();
     alert("تم حذف جميع الأخبار ونقلها إلى ورقة (المحذوفات).");
   } catch(e) { alert("حدث خطأ"); }
@@ -149,7 +164,7 @@ if(diffDays>=7)dayLabel=dayLabel+' '+da+'/'+mo;
 return dayLabel+' • '+h12+':'+mi+' '+ampm;
 }
 
-updateHeaderDate();
+setHeaderDate();
 renderCats(); loadNewsFromSheet();
 </script>
 </body>
