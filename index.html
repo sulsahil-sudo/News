@@ -79,6 +79,7 @@ async function fetchAction(action) {
     await new Promise(r => setTimeout(r, 2000));
     await loadNewsFromSheet();
   } catch(e) { document.getElementById("status").textContent = "خطأ"; }
+  
   btns.forEach(function(b){b.disabled=false;});
 }
 
