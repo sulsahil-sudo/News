@@ -15,9 +15,11 @@ header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-
 h1{font-size:20px;margin:8px 0}
 .status{font-size:11px;color:#64748b;margin-bottom:4px;}
 .header-date{font-size:14px;color:#fbbf24;font-weight:bold;margin-bottom:8px;}
-.controls{display:flex;gap:8px}
-button.action-btn{color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:13px;font-family:inherit;cursor:pointer;flex:1}
-#refreshBtn{background:#3b82f6}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+button.action-btn{color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:13px;font-family:inherit;cursor:pointer;flex:1;min-width:30%;}
+#fetchNow{background:#8b5cf6}
+#fetchToday{background:#10b981}
+#fetchYesterday{background:#f59e0b}
 #clearBtn{background:#ef4444}
 button:disabled{opacity:.7;cursor:wait}
 .cats{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
@@ -45,8 +47,10 @@ button:disabled{opacity:.7;cursor:wait}
 <div class="status" id="status">جاري التحميل...</div>
 <div class="header-date" id="headerDate">📅 اليوم</div>
 <div class="controls">
-  <button class="action-btn" id="refreshBtn" onclick="refreshNews()">🔄 تحديث</button>
-  <button class="action-btn" id="clearBtn" onclick="clearNews()">🗑️ حذف الكل</button>
+  <button class="action-btn" id="fetchNow" onclick="fetchAction('now')">⚡ الآن</button>
+  <button class="action-btn" id="fetchToday" onclick="fetchAction('today')">📅 اليوم</button>
+  <button class="action-btn" id="fetchYesterday" onclick="fetchAction('yesterday')">📅 أمس</button>
+  <button class="action-btn" id="clearBtn" onclick="clearNews()">🗑️ حذف</button>
 </div>
 <div class="cats" id="cats"></div>
 </header>
@@ -66,34 +70,43 @@ function updateHeaderDate() {
 
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
 
-async function loadNews(){
-var btn=document.getElementById("refreshBtn");
-if(btn){btn.disabled=true;btn.textContent="⏳ جاري الجلب...";}
-try{
-await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: "fetch"}) });
-await new Promise(r => setTimeout(r, 2000));
-var r=await fetch(SHEETS_API+"?t="+Date.now());
-var data=await r.json();
-allNews=data.articles||[];
-document.getElementById("status").textContent=allNews.length+" خبر";
-renderCats(); render();
-}catch(e){ document.getElementById("status").textContent="خطأ"; }
-if(btn){btn.textContent="🔄 تحديث";btn.disabled=false;}
+async function fetchAction(action) {
+  var btns = document.querySelectorAll('.action-btn');
+  btns.forEach(function(b){b.disabled=true;});
+  document.getElementById("status").textContent = "⏳ جاري الجلب...";
+  
+  try {
+    await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: action}) });
+    await new Promise(r => setTimeout(r, 2000));
+    await loadNewsFromSheet();
+  } catch(e) { document.getElementById("status").textContent = "خطأ"; }
+  
+  btns.forEach(function(b){b.disabled=false;});
 }
 
-async function clearNews(){
-if(!confirm("هل أنت متأكد من حذف كل الأخبار؟ سيتم نقلها إلى ورقة المحذوفات.")) return;
-var btn=document.getElementById("clearBtn");
-btn.disabled=true; btn.textContent="⏳ جاري الحذف...";
-try{
-await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: "clear"}) });
-await new Promise(r => setTimeout(r, 1500));
-allNews=[];
-document.getElementById("status").textContent="0 خبر";
-renderCats(); render();
-alert("تم حذف جميع الأخبار ونقلها إلى ورقة (المحذوفات).");
-}catch(e){ alert("حدث خطأ"); }
-btn.textContent="🗑️ حذف الكل"; btn.disabled=false;
+async function loadNewsFromSheet() {
+  try {
+    var r = await fetch(SHEETS_API+"?t="+Date.now());
+    var data = await r.json();
+    allNews = data.articles||[];
+    document.getElementById("status").textContent = allNews.length + " خبر";
+    renderCats(); render();
+  } catch(e) { document.getElementById("status").textContent = "خطأ في القراءة"; }
+}
+
+async function clearNews() {
+  if(!confirm("هل أنت متأكد من حذف كل الأخبار؟ سيتم نقلها إلى ورقة المحذوفات.")) return;
+  var btn = document.getElementById("clearBtn");
+  btn.disabled = true; btn.textContent = "⏳ جاري الحذف...";
+  try {
+    await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: "clear"}) });
+    await new Promise(r => setTimeout(r, 1500));
+    allNews = [];
+    document.getElementById("status").textContent = "0 خبر";
+    renderCats(); render();
+    alert("تم حذف جميع الأخبار ونقلها إلى ورقة (المحذوفات).");
+  } catch(e) { alert("حدث خطأ"); }
+  btn.textContent = "🗑️ حذف"; btn.disabled = false;
 }
 
 function renderCats(){
@@ -131,9 +144,8 @@ if(diffDays>=7)dayLabel=dayLabel+' '+da+'/'+mo;
 return dayLabel+' • '+h12+':'+mi+' '+ampm;
 }
 
-function refreshNews(){loadNews();}
 updateHeaderDate();
-renderCats(); loadNews();
+renderCats(); loadNewsFromSheet();
 </script>
 </body>
 </html>
