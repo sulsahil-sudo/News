@@ -13,8 +13,9 @@
 body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px}
 header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);padding:calc(env(safe-area-inset-top) + 8px) 16px 12px;border-bottom:1px solid #1e293b}
 h1{font-size:20px;margin:8px 0}
-.status{font-size:11px;color:#64748b}
-.controls{display:flex;gap:8px;margin-top:8px}
+.status{font-size:11px;color:#64748b;margin-bottom:4px;}
+.header-date{font-size:14px;color:#fbbf24;font-weight:bold;margin-bottom:8px;}
+.controls{display:flex;gap:8px}
 button.action-btn{color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:13px;font-family:inherit;cursor:pointer;flex:1}
 #refreshBtn{background:#3b82f6}
 #clearBtn{background:#ef4444}
@@ -42,6 +43,7 @@ button:disabled{opacity:.7;cursor:wait}
 <header>
 <h1>🌍 أخبار العالم</h1>
 <div class="status" id="status">جاري التحميل...</div>
+<div class="header-date" id="headerDate">📅 اليوم</div>
 <div class="controls">
   <button class="action-btn" id="refreshBtn" onclick="refreshNews()">🔄 تحديث</button>
   <button class="action-btn" id="clearBtn" onclick="clearNews()">🗑️ حذف الكل</button>
@@ -54,6 +56,14 @@ button:disabled{opacity:.7;cursor:wait}
 const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
 const CATEGORIES=["الكل","عاجل","سياسة","اقتصاد","علوم","تقنية","رياضة","صحة","طبيعة","غرائب","عام"];
 let allNews=[],currentCat="الكل";
+
+// ✅ عرض تاريخ اليوم بشكل ثابت في الأعلى
+function updateHeaderDate() {
+  var now = new Date();
+  var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+  var months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  document.getElementById("headerDate").textContent = "📅 " + days[now.getDay()] + "، " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
+}
 
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
 
@@ -123,6 +133,7 @@ return dayLabel+' • '+h12+':'+mi+' '+ampm;
 }
 
 function refreshNews(){loadNews();}
+updateHeaderDate(); // استدعاء التاريخ
 renderCats(); loadNews();
 </script>
 </body>
