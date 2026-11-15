@@ -59,8 +59,20 @@ if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(
 
 async function loadNews(){
 var btn=document.getElementById("refreshBtn");
-if(btn){btn.disabled=true;btn.textContent="⏳ جاري التحديث...";}
+if(btn){btn.disabled=true;btn.textContent="⏳ جاري جلب الأخبار الآن...";}
 try{
+// إرسال أمر الجلب إلى Apps Script
+await fetch(SHEETS_API, {
+  method: "POST",
+  mode: "no-cors",
+  headers: { "Content-Type": "text/plain" },
+  body: JSON.stringify({action: "fetch"})
+});
+
+// الانتظار قليلاً حتى ينتهي الجلب
+await new Promise(r => setTimeout(r, 3000));
+
+// قراءة الأخبار الجديدة من الشيت
 var r=await fetch(SHEETS_API+"?t="+Date.now());
 var data=await r.json();
 allNews=data.articles||[];
@@ -89,7 +101,6 @@ var feed=document.getElementById("feed");
 if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار</div>';return;}
 
 feed.innerHTML=items.slice(0,200).map(function(n){
-  // التحقق من وجود صورة
   var imgHtml = n.image ? '<div class="img-container"><img src="'+n.image+'" onerror="this.style.display=\'none\'"></div>' : '';
   return '<div class="card">'+imgHtml+'<div class="content"><a href="'+n.url+'" target="_blank"><span class="cat '+n.category+'">'+n.category+'</span><h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+esc(n.source||'')+' • '+timeAgo(n.published_at)+'</div></a></div></div>';
 }).join("");
