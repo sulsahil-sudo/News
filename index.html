@@ -24,12 +24,10 @@ h1{font-size:20px;margin:8px 0}
 .urgent-banner a{display:block;color:#fff;text-decoration:none;font-size:14px;padding:6px 0;border-top:1px solid rgba(255,255,255,.15)}
 .urgent-banner a:first-of-type{border-top:none}
 .feed{padding:0 12px}
-.card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #334155;display:flex;gap:12px;align-items:flex-start}
-.card .img-container{width:80px;height:80px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#334155;display:flex;align-items:center;justify-content:center}
-.card .img-container img{width:100%;height:100%;object-fit:cover}
-.card .content{flex-grow:1}
+.card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #334155}
 .card .cat{display:inline-block;font-size:11px;background:#3b82f6;color:#fff;padding:2px 8px;border-radius:6px;margin-bottom:8px}
 .card .cat.عاجل{background:#dc2626}
+.card .cat.غرائب{background:#8b5cf6} /* لون مميز للغرائب */
 .card h3{font-size:16px;margin:0 0 6px;line-height:1.4}
 .card .meta{font-size:13px;color:#94a3b8;margin-top:8px;font-weight:500}
 .card a{color:inherit;text-decoration:none}
@@ -52,7 +50,8 @@ h1{font-size:20px;margin:8px 0}
 <script>
 const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
 
-const CATEGORIES=["الكل","عاجل","سياسة","اقتصاد","علوم","تقنية","رياضة","صحة","طبيعة","عام"];
+// ✅ أضفنا "غرائب" إلى القائمة
+const CATEGORIES=["الكل","عاجل","سياسة","اقتصاد","علوم","تقنية","رياضة","صحة","طبيعة","غرائب","عام"];
 let allNews=[],currentCat="الكل",lastUrgentId=null;
 
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
@@ -61,18 +60,13 @@ async function loadNews(){
 var btn=document.getElementById("refreshBtn");
 if(btn){btn.disabled=true;btn.textContent="⏳ جاري جلب الأخبار الآن...";}
 try{
-// إرسال أمر الجلب إلى Apps Script
 await fetch(SHEETS_API, {
   method: "POST",
   mode: "no-cors",
   headers: { "Content-Type": "text/plain" },
   body: JSON.stringify({action: "fetch"})
 });
-
-// الانتظار قليلاً حتى ينتهي الجلب
 await new Promise(r => setTimeout(r, 3000));
-
-// قراءة الأخبار الجديدة من الشيت
 var r=await fetch(SHEETS_API+"?t="+Date.now());
 var data=await r.json();
 allNews=data.articles||[];
@@ -86,8 +80,24 @@ if(btn){btn.textContent="❌ فشل";setTimeout(function(){btn.textContent="🔄
 }
 function refreshNews(){loadNews();}
 
+// ✅ دالة جديدة لعرض التصنيفات مع الأرقام
 function renderCats(){
-document.getElementById("cats").innerHTML=CATEGORIES.map(function(c){return '<button class="'+(c===currentCat?'active':'')+'" onclick="setCat(\''+c+'\')">'+c+'</button>';}).join("");
+document.getElementById("cats").innerHTML=CATEGORIES.map(function(c){
+  var count = 0;
+  if(c === "الكل") {
+    count = allNews.length;
+  } else if(c === "عاجل") {
+    count = allNews.filter(function(n){return n.is_urgent;}).length;
+  } else {
+    count = allNews.filter(function(n){return n.category === c;}).length;
+  }
+  
+  // لا نعرض التصنيف إذا كان عدده 0 (ما عدا الكل وعاجل)
+  if (count === 0 && c !== "الكل" && c !== "عاجل") return "";
+
+  var label = c + (count > 0 ? " (" + count + ")" : "");
+  return '<button class="'+(c===currentCat?'active':'')+'" onclick="setCat(\''+c+'\')">'+label+'</button>';
+}).join("");
 }
 function setCat(c){currentCat=c;renderCats();render();}
 
@@ -98,12 +108,8 @@ var items=allNews;
 if(currentCat==="عاجل")items=items.filter(function(n){return n.is_urgent;});
 else if(currentCat!=="الكل")items=items.filter(function(n){return n.category===currentCat;});
 var feed=document.getElementById("feed");
-if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار</div>';return;}
-
-feed.innerHTML=items.slice(0,200).map(function(n){
-  var imgHtml = n.image ? '<div class="img-container"><img src="'+n.image+'" onerror="this.style.display=\'none\'"></div>' : '';
-  return '<div class="card">'+imgHtml+'<div class="content"><a href="'+n.url+'" target="_blank"><span class="cat '+n.category+'">'+n.category+'</span><h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+esc(n.source||'')+' • '+timeAgo(n.published_at)+'</div></a></div></div>';
-}).join("");
+if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار في هذا القسم</div>';return;}
+feed.innerHTML=items.slice(0,200).map(function(n){return '<div class="card"><a href="'+n.url+'" target="_blank"><span class="cat '+n.category+'">'+n.category+'</span><h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+esc(n.source||'')+' • '+timeAgo(n.published_at)+'</div></a></div>';}).join("");
 }
 
 function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
