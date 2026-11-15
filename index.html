@@ -57,7 +57,6 @@ const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4K
 const CATEGORIES=["الكل","عاجل","سياسة","اقتصاد","علوم","تقنية","رياضة","صحة","طبيعة","غرائب","عام"];
 let allNews=[],currentCat="الكل";
 
-// ✅ عرض تاريخ اليوم بشكل ثابت في الأعلى
 function updateHeaderDate() {
   var now = new Date();
   var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
@@ -92,8 +91,8 @@ await new Promise(r => setTimeout(r, 1500));
 allNews=[];
 document.getElementById("status").textContent="0 خبر";
 renderCats(); render();
-alert("تم حذف جميع الأخبار ونقلها إلى ورقة (المحذوفات) في Google Sheets.");
-}catch(e){ alert("حدث خطأ أثناء الحذف"); }
+alert("تم حذف جميع الأخبار ونقلها إلى ورقة (المحذوفات).");
+}catch(e){ alert("حدث خطأ"); }
 btn.textContent="🗑️ حذف الكل"; btn.disabled=false;
 }
 
@@ -133,7 +132,7 @@ return dayLabel+' • '+h12+':'+mi+' '+ampm;
 }
 
 function refreshNews(){loadNews();}
-updateHeaderDate(); // استدعاء التاريخ
+updateHeaderDate();
 renderCats(); loadNews();
 </script>
 </body>
