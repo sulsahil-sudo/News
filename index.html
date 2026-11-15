@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#0f172a">
 <link rel="manifest" href="manifest.json">
-<title>أخبار العالم</title>
+<title>عالم التقنية والغرائب</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px}
@@ -34,6 +34,9 @@ button:disabled{opacity:.7;cursor:wait}
 .card .cat{display:inline-block;font-size:11px;background:#3b82f6;color:#fff;padding:2px 8px;border-radius:6px;margin-bottom:8px}
 .card .cat.عاجل{background:#dc2626}
 .card .cat.غرائب{background:#8b5cf6}
+.card .cat.تقنية{background:#0ea5e9}
+.card .cat.فلك{background:#f59e0b}
+.card .cat.منتجات جديدة{background:#10b981}
 .card h3{font-size:16px;margin:0 0 6px;line-height:1.4}
 .card .meta{font-size:13px;color:#94a3b8;margin-top:8px;font-weight:500}
 .card a{color:inherit;text-decoration:none}
@@ -42,7 +45,7 @@ button:disabled{opacity:.7;cursor:wait}
 </head>
 <body>
 <header>
-<h1>🌍 أخبار العالم</h1>
+<h1>🚀 تقنية وغرائب وفلك</h1>
 <div class="status" id="status">جاري التحميل...</div>
 <div class="header-date" id="headerDate">📅 اليوم</div>
 <div class="controls">
@@ -57,7 +60,9 @@ button:disabled{opacity:.7;cursor:wait}
 <div class="feed" id="feed"><div class="loading">⏳ جاري تحميل الأخبار...</div></div>
 <script>
 const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
-const CATEGORIES=["الكل","عاجل","سياسة","اقتصاد","علوم","تقنية","رياضة","صحة","طبيعة","غرائب","عام"];
+
+// ✅ التصنيفات الجديدة بدون سياسة
+const CATEGORIES=["الكل","غرائب","منتجات جديدة","تقنية","فلك","عام"];
 let allNews=[],currentCat="الكل";
 
 function updateHeaderDate() {
@@ -114,8 +119,8 @@ async function clearNews() {
 
 function renderCats(){
 document.getElementById("cats").innerHTML=CATEGORIES.map(function(c){
-  var count = (c === "الكل") ? allNews.length : (c === "عاجل" ? allNews.filter(function(n){return n.is_urgent;}).length : allNews.filter(function(n){return n.category === c;}).length);
-  if (count === 0 && c !== "الكل" && c !== "عاجل") return "";
+  var count = (c === "الكل") ? allNews.length : allNews.filter(function(n){return n.category === c;}).length;
+  if (count === 0 && c !== "الكل") return "";
   var label = c + (count > 0 ? " (" + count + ")" : "");
   return '<button class="'+(c===currentCat?'active':'')+'" onclick="setCat(\''+c+'\')">'+label+'</button>';
 }).join("");
@@ -123,11 +128,8 @@ document.getElementById("cats").innerHTML=CATEGORIES.map(function(c){
 function setCat(c){currentCat=c;renderCats();render();}
 
 function render(){
-var urgent=allNews.filter(function(n){return n.is_urgent;}).slice(0,3);
-document.getElementById("urgent").innerHTML=urgent.length?'<div class="urgent-banner"><h2>⚡ عاجل الآن</h2>'+urgent.map(function(n){return '<a href="'+n.url+'" target="_blank">'+esc(n.title_ar)+'</a>';}).join("")+'</div>':"";
 var items=allNews;
-if(currentCat==="عاجل")items=items.filter(function(n){return n.is_urgent;});
-else if(currentCat!=="الكل")items=items.filter(function(n){return n.category===currentCat;});
+if(currentCat!=="الكل")items=items.filter(function(n){return n.category===currentCat;});
 var feed=document.getElementById("feed");
 if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار</div>';return;}
 feed.innerHTML=items.slice(0,200).map(function(n){return '<div class="card"><a href="'+n.url+'" target="_blank"><span class="cat '+n.category+'">'+n.category+'</span><h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+esc(n.source||'')+' • '+timeAgo(n.published_at)+'</div></a></div>';}).join("");
