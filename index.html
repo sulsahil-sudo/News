@@ -21,6 +21,10 @@ h1{font-size:20px;margin:8px 0}
 button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:15px;font-family:inherit;cursor:pointer;width:100%;font-weight:bold;}
 #refreshBtn{background:#3b82f6}
 button:disabled{opacity:.7;cursor:wait}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
+.cats::-webkit-scrollbar{display:none}
+.cats button{background:#1e293b;color:#cbd5e1;border:none;padding:6px 14px;border-radius:20px;font-size:14px;white-space:nowrap;font-family:inherit}
+.cats button.active{background:#3b82f6;color:#fff}
 .feed{padding:0 12px}
 .card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #334155}
 .card .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
@@ -52,25 +56,21 @@ button:disabled{opacity:.7;cursor:wait}
 <div class="controls">
   <button class="action-btn" id="refreshBtn" onclick="fetchAction('today', true)">🔄 جلب أخبار اليوم</button>
 </div>
+<div class="cats" id="cats"></div>
 </header>
 <div id="urgent"></div>
 <div class="feed" id="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
 <script>
 const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
-let allNews=[];
+const CATEGORIES = ["الكل", "غرائب", "منتجات جديدة", "تقنية", "فلك", "عام"];
+let allNews = [], currentCat = "الكل";
 let countdownTime = 300; 
 let timerInterval;
-
-// ✅ قاموس لتخزين الترجمات وتجنب تكرار طلبها من جوجل
 const translationCache = {};
 
-// ✅ دالة الترجمة الفورية داخل المتصفح
 async function translateTitle(text) {
   if (!text) return "";
-  // إذا كان النص عربياً، نرجعه كما هو
   if (/[\u0600-\u06FF]/.test(text)) return text;
-  
-  // إذا كانت الترجمة موجودة في الكاش، نرجعها فوراً
   if (translationCache[text]) return translationCache[text];
   
   try {
@@ -78,12 +78,10 @@ async function translateTitle(text) {
     var response = await fetch(url);
     var data = await response.json();
     var translated = data[0].map(function(part) { return part[0]; }).join('');
-    
-    // حفظ الترجمة في الكاش
     translationCache[text] = translated;
     return translated;
   } catch(e) {
-    return text; // في حال الفشل نرجع النص الأصلي
+    return text;
   }
 }
 
@@ -161,7 +159,7 @@ async function loadNewsFromSheet() {
       setTimeout(() => { timeEl.classList.remove('flash'); }, 1500);
     }
     
-    // ✅ عرض الأخبار بعد ترجمتها
+    renderCats(); 
     await renderWithTranslation();
     
   } catch(e) { 
@@ -171,21 +169,40 @@ async function loadNewsFromSheet() {
   }
 }
 
-// ✅ دالة العرض والترجمة
+function renderCats() {
+  document.getElementById("cats").innerHTML = CATEGORIES.map(function(c) {
+    var count = (c === "الكل") ? allNews.length : allNews.filter(function(n){ return n.category === c; }).length;
+    if (count === 0 && c !== "الكل") return "";
+    var label = c + (count > 0 ? " (" + count + ")" : "");
+    return '<button class="'+(c === currentCat ? 'active' : '')+'" onclick="setCat(\''+c+'\')">'+label+'</button>';
+  }).join("");
+}
+
+function setCat(c) {
+  currentCat = c;
+  renderCats();
+  renderWithTranslation();
+}
+
 async function renderWithTranslation() {
   var feed = document.getElementById("feed");
-  if(!allNews.length){feed.innerHTML='<div class="empty">لا توجد أخبار اليوم</div>';return;}
   
-  // عرض هيكل مبدئي (بدون عناوين) لتسريع الاستجابة
-  feed.innerHTML = allNews.slice(0, 200).map(function(n, index) {
+  // تصفية الأخبار حسب التصنيف المختار
+  var items = allNews;
+  if (currentCat !== "الكل") {
+    items = items.filter(function(n) { return n.category === currentCat; });
+  }
+  
+  if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار في هذا القسم</div>';return;}
+  
+  feed.innerHTML = items.slice(0, 200).map(function(n, index) {
     return '<div class="card" id="card-'+index+'"><a href="'+n.url+'" target="_blank">' +
     '<div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div>' +
     '<h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+timeAgo(n.published_at)+'</div></a></div>';
   }).join("");
 
-  // ترجمة العناوين وتحديثها واحدة تلو الأخرى
-  for (let i = 0; i < allNews.length && i < 200; i++) {
-    let n = allNews[i];
+  for (let i = 0; i < items.length && i < 200; i++) {
+    let n = items[i];
     let originalTitle = n.title_ar || n.title;
     let translatedTitle = await translateTitle(originalTitle);
     
