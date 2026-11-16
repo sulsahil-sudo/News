@@ -8,6 +8,7 @@
 <link rel="manifest" href="manifest.json">
 <title>أخبار العالم</title>
 <style>
+/* ... (نفس تنسيقات CSS السابقة) ... */
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px}
 header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);padding:calc(env(safe-area-inset-top) + 8px) 16px 12px;border-bottom:1px solid #1e293b}
@@ -72,14 +73,12 @@ let allNews = [], currentCat = "الكل";
 let countdownTime = 300; 
 let timerInterval;
 const translationCache = {};
-
 let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
 
 async function translateTitle(text) {
   if (!text) return "";
   if (/[\u0600-\u06FF]/.test(text)) return text;
   if (translationCache[text]) return translationCache[text];
-  
   try {
     await new Promise(r => setTimeout(r, 50));
     var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
@@ -167,21 +166,17 @@ async function loadNewsFromSheet() {
     var r = await fetch(SHEETS_API+"?t="+Date.now());
     var data = await r.json();
     
-    // ✅ الفلترة النهائية: التأكد من تاريخ الشهر واليوم (16-11)
-    var todayDay = new Date().getDate();
-    var todayMonth = new Date().getMonth() + 1;
+    // ✅ الفلترة الصارمة: نقارن التاريخ النصي القادم من الشيت مع تاريخ اليوم النصي
+    var todayStr = new Date().toISOString().split('T')[0]; // مثلاً: 2026-11-16
     
     allNews = (data.articles||[]).filter(function(n) {
       if (deletedNews.includes(n.url)) return false;
       
-      // قراءة التاريخ القادم من الشيت
-      var articleDate = new Date(n.published_at);
-      
-      // إذا كان التاريخ لا يطابق اليوم، لا نعرضه
-      if (articleDate.getDate() !== todayDay || (articleDate.getMonth() + 1) !== todayMonth) {
-        return false;
+      // نأخذ أول 10 أحرف من التاريخ (سنة-شهر-يوم) ونقارنها
+      if (n.published_at && n.published_at.substring(0, 10) === todayStr) {
+        return true;
       }
-      return true;
+      return false;
     });
     
     document.getElementById("newsCount").textContent = allNews.length + " خبر";
@@ -246,7 +241,7 @@ async function renderWithTranslation() {
     '<button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button>' +
     '<a href="'+n.url+'" target="_blank">' +
     '<div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div>' +
-    '<h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+timeAgo(n.published_at)+'</div></a></div>';
+    '<h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+displayDate(n.published_at)+'</div></a></div>';
   }).join("");
 
   for (let i = 0; i < items.length && i < 200; i++) {
@@ -263,18 +258,21 @@ async function renderWithTranslation() {
 
 function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 
-function timeAgo(iso){
+// ✅ دالة عرض التاريخ بالترتيب المطلوب (اليوم ثم الشهر)
+function displayDate(iso){
   if(!iso)return '';
-  var d = new Date(iso); 
-  if(isNaN(d.getTime())) return '';
-  var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-  var dayName = days[d.getDay()];
-  var dateStr = d.getDate() + '/' + (d.getMonth() + 1); 
-  var h = d.getHours();
-  var mi = String(d.getMinutes()).padStart(2, '0');
-  var ampm = h >= 12 ? 'مساءً' : 'صباحاً';
-  var h12 = h % 12 || 12;
-  return dayName + ' ' + dateStr + ' الساعة ' + h12 + ':' + mi + ' ' + ampm;
+  // iso هنا عبارة عن نص مثل "2026-11-16 09:35 AM"
+  var parts = iso.split(" "); 
+  if(parts.length < 2) return '';
+  var dateParts = parts[0].split("-"); // [2026, 11, 16]
+  
+  var year = dateParts[0];
+  var month = dateParts[1];
+  var day = dateParts[2];
+  var time = parts[1] + " " + parts[2];
+  
+  // النتيجة: 16/11/2026 الساعة 09:35 AM
+  return day + '/' + month + '/' + year + ' الساعة ' + time;
 }
 
 setHeaderDate();
