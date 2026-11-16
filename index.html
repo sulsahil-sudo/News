@@ -45,12 +45,9 @@ button:disabled{opacity:.7;cursor:wait}
 .modal-header h2{margin:0;color:#fbbf24}
 .close-btn{background:none;border:none;color:#ef4444;font-size:24px;cursor:pointer}
 .feed-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-
-/* ✅ تلوين خلفية المصادر بشكل واضح جداً */
 .feed-item{padding:12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;transition: all 0.3s;}
-.feed-item.active-feed{background-color: rgba(16, 185, 129, 0.15); border: 1px solid #10b981;} /* أخضر */
-.feed-item.inactive-feed{background-color: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444;} /* أحمر */
-
+.feed-item.active-feed{background-color: rgba(16, 185, 129, 0.15); border: 1px solid #10b981;} 
+.feed-item.inactive-feed{background-color: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444;} 
 .feed-item span{font-size:14px;word-break:break-all;padding-left:10px}
 .feed-actions{display:flex;gap:5px;}
 .btn-toggle{background:#f59e0b;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
@@ -112,27 +109,15 @@ let timerInterval;
 
 function openSettings() { renderSettingsList(); document.getElementById("settingsModal").style.display = "block"; }
 function closeSettings() { document.getElementById("settingsModal").style.display = "none"; }
-
-// ✅ تعديل عرض القائمة لإضافة الألوان
 function renderSettingsList() {
   var list = document.getElementById("settingsFeedList");
   if(FEEDS.length === 0) { list.innerHTML = "<p>لا توجد مصادر حالياً.</p>"; return; }
-  
   list.innerHTML = FEEDS.map((feed, index) => {
-    // تحديد اللون بناءً على الحالة
     let statusClass = feed.active === false ? 'inactive-feed' : 'active-feed';
     let btnText = feed.active === false ? '▶️ تشغيل' : '⏸️ إيقاف';
-    
-    return `<div class="feed-item ${statusClass}">
-      <span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span>
-      <div class="feed-actions">
-        <button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button>
-        <button class="btn-delete" onclick="removeFeed(${index})">🗑️</button>
-      </div>
-    </div>`;
+    return `<div class="feed-item ${statusClass}"><span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span><div class="feed-actions"><button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button><button class="btn-delete" onclick="removeFeed(${index})">🗑️</button></div></div>`;
   }).join("");
 }
-
 function toggleFeed(index) { FEEDS[index].active = FEEDS[index].active === false ? true : false; localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
 function removeFeed(index) { if(confirm("هل أنت متأكد من حذف هذا المصدر نهائياً؟")) { FEEDS.splice(index, 1); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); } }
 function addNewFeed() {
@@ -184,14 +169,34 @@ function classify(title) {
   return "عام";
 }
 
+// ✅ دالة الترجمة المطورة (تعمل على الجوال)
 async function translateTitle(text) {
-  if (!text) return ""; if (/[\u0600-\u06FF]/.test(text)) return text; if (translationCache[text]) return translationCache[text];
+  if (!text) return "";
+  if (/[\u0600-\u06FF]/.test(text)) return text;
+  if (translationCache[text]) return translationCache[text];
+
+  // المحاولة الأولى: الواجهة المباشرة
   try {
     await new Promise(r => setTimeout(r, 50));
     var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
-    var response = await fetch(url); var data = await response.json();
-    var translated = data[0].map(function(part) { return part[0]; }).join(''); translationCache[text] = translated; return translated;
-  } catch(e) { return text; }
+    var response = await fetch(url);
+    var data = await response.json();
+    var translated = data[0].map(function(part) { return part[0]; }).join('');
+    translationCache[text] = translated;
+    return translated;
+  } catch(e) {
+    // المحاولة الثانية: استخدام بروكسي (إذا فشلت الأولى على الجوال)
+    try {
+      var proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text));
+      var proxyRes = await fetch(proxyUrl);
+      var proxyData = await proxyRes.json();
+      var proxyTranslated = proxyData[0].map(function(part) { return part[0]; }).join('');
+      translationCache[text] = proxyTranslated;
+      return proxyTranslated;
+    } catch(e2) {
+      return text; 
+    }
+  }
 }
 
 function setHeaderDate() {
