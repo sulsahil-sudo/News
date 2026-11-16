@@ -8,20 +8,16 @@
 <link rel="manifest" href="manifest.json">
 <title>أخبار العالم</title>
 <style>
-/* ... (نفس تنسيقات CSS السابقة) ... */
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px}
 header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);padding:calc(env(safe-area-inset-top) + 8px) 16px 12px;border-bottom:1px solid #1e293b}
 h1{font-size:20px;margin:8px 0}
 .status{font-size:11px;color:#64748b;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
 .header-date{font-size:15px;color:#fbbf24;font-weight:bold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
-.update-time{font-size:16px;color:#10b981;font-weight:bold;transition: all 0.5s;}
-.update-time.flash { color: #ffffff !important; background-color: #10b981; padding: 2px 6px; border-radius: 6px; }
-.countdown-timer{font-size:16px;color:#f43f5e;font-weight:bold;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:5px;}
+.update-time{font-size:16px;color:#10b981;font-weight:bold;}
 .controls{display:flex;gap:8px;margin-bottom:8px;}
 button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:15px;font-family:inherit;cursor:pointer;width:100%;font-weight:bold;}
 #refreshBtn{background:#3b82f6}
-#clearBtn{background:#ef4444}
 button:disabled{opacity:.7;cursor:wait}
 .cats{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
 .cats::-webkit-scrollbar{display:none}
@@ -41,7 +37,6 @@ button:disabled{opacity:.7;cursor:wait}
 .card .meta{font-size:13px;color:#94a3b8;margin-top:8px;font-weight:500}
 .card a{color:inherit;text-decoration:none}
 .delete-btn{position:absolute;top:14px;left:14px;background:rgba(239,68,68,0.1);color:#ef4444;border:1px solid #ef4444;border-radius:50%;width:24px;height:24px;font-size:14px;line-height:20px;text-align:center;cursor:pointer;z-index:10;}
-.delete-btn:hover{background:#ef4444;color:#fff;}
 .loading,.empty{text-align:center;padding:40px;color:#64748b}
 </style>
 </head>
@@ -55,26 +50,68 @@ button:disabled{opacity:.7;cursor:wait}
   <span id="headerDate">اليوم</span>
   <span class="update-time" id="updateTime"></span>
 </div>
-<div class="countdown-timer">
-  <span id="countdownText">⏳ التحديث التلقائي بعد: 05:00</span>
-</div>
 <div class="controls">
-  <button class="action-btn" id="refreshBtn" onclick="fetchAction('today', true)">🔄 جلب أخبار اليوم</button>
-  <button class="action-btn" id="clearBtn" onclick="clearNews()">🗑️ نقل للمحذوفات</button>
+  <button class="action-btn" id="refreshBtn" onclick="fetchAllNews()">🔄 تحديث الأخبار</button>
 </div>
 <div class="cats" id="cats"></div>
 </header>
-<div id="urgent"></div>
-<div class="feed" id="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
+<div id="feed" class="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
 <script>
-const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
+// ⚠️ ضع روابط RSS الخاصة بك هنا (التي نسختها من Inoreader)
+// يمكنك إضافة أي عدد تريده من الروابط
+const FEEDS = [
+  { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", name: "الجزيرة" },
+  { url: "https://www.alarabiya.net/feed/rss2/ar.xml", name: "العربية" },
+  { url: "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", name: "أخبار أمريكا" },
+  { url: "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja", name: "أخبار اليابان" }
+  // أضف المزيد من الروابط هنا بنفس الطريقة:
+  // { url: "ضع_رابط_RSS_هنا", name: "اسم_المصدر" },
+];
+
 const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
 let allNews = [], currentCat = "الكل";
-let countdownTime = 300; 
-let timerInterval;
 const translationCache = {};
 let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
 
+// ✅ دالة جلب البيانات من رابط RSS وتحويلها إلى JSON
+async function fetchRSS(url, sourceName) {
+  try {
+    // استخدام خدمة rss2json المجانية لتحويل RSS إلى JSON (لتجنب مشاكل CORS)
+    var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url);
+    var response = await fetch(apiUrl);
+    var data = await response.json();
+    
+    if (data.status !== "ok" || !data.items) return [];
+    
+    return data.items.map(item => {
+      let category = classify(item.title);
+      return {
+        title: item.title,
+        url: item.link,
+        source: sourceName,
+        category: category,
+        date: item.pubDate,
+        is_urgent: /عاجل|breaking|urgent/i.test(item.title)
+      };
+    });
+  } catch(e) {
+    console.error("Error fetching RSS: " + url, e);
+    return [];
+  }
+}
+
+// ✅ دالة التصنيف التلقائي
+function classify(title) {
+  var t = title.toLowerCase();
+  if (/عاجل|breaking|urgent/.test(t)) return "عاجل";
+  if (/غرائب|عجيب|غريب|مدهش|طريف|weird|strange|odd/.test(t)) return "غرائب"; 
+  if (/هاتف|تطبيق|ذكاء|تقنية|جهاز|gadget|tech|app|software|iphone|android/.test(t)) return "تقنية";
+  if (/منتج|إطلاق|جديد|product|launch|new/.test(t)) return "منتجات جديدة";
+  if (/فلك|فضاء|كوكب|مجرة|نجم|space|nasa|planet|galaxy|star/.test(t)) return "فلك";
+  return "عام";
+}
+
+// ✅ دالة الترجمة
 async function translateTitle(text) {
   if (!text) return "";
   if (/[\u0600-\u06FF]/.test(text)) return text;
@@ -97,109 +134,43 @@ function setHeaderDate() {
   document.getElementById("headerDate").textContent = days[now.getDay()] + "، " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
 }
 
-function startCountdown() {
-  clearInterval(timerInterval);
-  countdownTime = 300; 
-  updateCountdownDisplay();
-  timerInterval = setInterval(function() {
-    countdownTime--;
-    updateCountdownDisplay();
-    if (countdownTime <= 0) {
-      clearInterval(timerInterval);
-      fetchAction('today', false); 
-    }
-  }, 1000);
-}
-
-function updateCountdownDisplay() {
-  var minutes = Math.floor(countdownTime / 60);
-  var seconds = countdownTime % 60;
-  var displayStr = String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
-  document.getElementById("countdownText").textContent = "⏳ التحديث التلقائي بعد: " + displayStr;
-}
-
-async function fetchAction(action, isManual) {
+// ✅ دالة الجلب الشاملة
+async function fetchAllNews() {
   var btn = document.getElementById("refreshBtn");
-  if (isManual) {
-    btn.disabled=true; btn.textContent = "جاري الجلب...";
-  } else {
-    document.getElementById("countdownText").textContent = "⏳ جاري التحديث التلقائي...";
-    document.getElementById("countdownText").style.color = "#3b82f6";
+  btn.disabled = true; btn.textContent = "جاري الجلب...";
+  document.getElementById("newsCount").textContent = "جاري التحميل...";
+  
+  let combinedNews = [];
+  
+  // جلب الأخبار من كل المصادر
+  for (let i = 0; i < FEEDS.length; i++) {
+    let feed = FEEDS[i];
+    let news = await fetchRSS(feed.url, feed.name);
+    combinedNews = combinedNews.concat(news);
   }
   
-  document.getElementById("updateTime").textContent = "";
+  // إزالة التكرار وحذف الأخبار المحذوفة
+  let uniqueLinks = {};
+  allNews = combinedNews.filter(n => {
+    if (!n.url || uniqueLinks[n.url] || deletedNews.includes(n.url)) return false;
+    uniqueLinks[n.url] = true;
+    return true;
+  });
   
-  try {
-    await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: action}) });
-    await new Promise(r => setTimeout(r, 3000)); 
-    await loadNewsFromSheet();
-  } catch(e) { 
-    document.getElementById("newsCount").textContent = "خطأ في التحديث";
-    document.getElementById("updateTime").textContent = "فشل الاتصال";
-    document.getElementById("updateTime").style.color = "#ef4444"; 
-  }
+  // ترتيب من الأحدث للأقدم
+  allNews.sort((a, b) => new Date(b.date) - new Date(a.date));
   
-  if (isManual) {
-    btn.disabled=false; btn.textContent = "🔄 جلب أخبار اليوم";
-  }
-  document.getElementById("countdownText").style.color = "#f43f5e";
-  startCountdown();
-}
-
-async function clearNews() {
-  if(!confirm("هل أنت متأكد من نقل كل الأخبار إلى ورقة المحذوفات؟")) return;
-  var btn = document.getElementById("clearBtn");
-  btn.disabled = true; btn.textContent = "⏳ جاري النقل...";
-  try {
-    await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: "clear"}) });
-    await new Promise(r => setTimeout(r, 1500));
-    allNews = [];
-    document.getElementById("newsCount").textContent = "0 خبر";
-    renderCats(); await renderWithTranslation();
-    alert("تم نقل جميع الأخبار إلى ورقة (المحذوفات).");
-  } catch(e) { alert("حدث خطأ"); }
-  btn.textContent = "🗑️ نقل للمحذوفات"; btn.disabled = false;
-}
-
-async function loadNewsFromSheet() {
-  try {
-    var r = await fetch(SHEETS_API+"?t="+Date.now());
-    var data = await r.json();
-    
-    // ✅ الفلترة الصارمة: نقارن التاريخ النصي القادم من الشيت مع تاريخ اليوم النصي
-    var todayStr = new Date().toISOString().split('T')[0]; // مثلاً: 2026-11-16
-    
-    allNews = (data.articles||[]).filter(function(n) {
-      if (deletedNews.includes(n.url)) return false;
-      
-      // نأخذ أول 10 أحرف من التاريخ (سنة-شهر-يوم) ونقارنها
-      if (n.published_at && n.published_at.substring(0, 10) === todayStr) {
-        return true;
-      }
-      return false;
-    });
-    
-    document.getElementById("newsCount").textContent = allNews.length + " خبر";
-    
-    var timeEl = document.getElementById("updateTime");
-    timeEl.style.color = "#10b981";
-    
-    if (data.updated) {
-      var updateDate = new Date(data.updated);
-      var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-      timeEl.textContent = "آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
-      timeEl.classList.add('flash');
-      setTimeout(() => { timeEl.classList.remove('flash'); }, 1500);
-    }
-    
-    renderCats(); 
-    await renderWithTranslation();
-    
-  } catch(e) { 
-    document.getElementById("newsCount").textContent = "خطأ في القراءة";
-    document.getElementById("updateTime").textContent = "فشل الاتصال";
-    document.getElementById("updateTime").style.color = "#ef4444";
-  }
+  // تحديث وقت التحديث
+  var updateDate = new Date();
+  var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+  document.getElementById("updateTime").textContent = "آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
+  
+  document.getElementById("newsCount").textContent = allNews.length + " خبر";
+  
+  renderCats();
+  await renderWithTranslation();
+  
+  btn.disabled = false; btn.textContent = "🔄 تحديث الأخبار";
 }
 
 function renderCats() {
@@ -237,47 +208,29 @@ async function renderWithTranslation() {
   if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار في هذا القسم</div>';return;}
   
   feed.innerHTML = items.slice(0, 200).map(function(n, index) {
+    let dateObj = new Date(n.date);
+    let dateStr = dateObj.toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'numeric' });
+    let timeStr = dateObj.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+    
     return '<div class="card" id="card-'+index+'">' +
     '<button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button>' +
     '<a href="'+n.url+'" target="_blank">' +
     '<div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div>' +
-    '<h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+displayDate(n.published_at)+'</div></a></div>';
+    '<h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+dateStr+' الساعة '+timeStr+'</div></a></div>';
   }).join("");
 
   for (let i = 0; i < items.length && i < 200; i++) {
     let n = items[i];
-    let originalTitle = n.title_ar || n.title;
-    let translatedTitle = await translateTitle(originalTitle);
-    
+    let translatedTitle = await translateTitle(n.title);
     var titleEl = document.getElementById("title-"+i);
-    if (titleEl) {
-      titleEl.textContent = translatedTitle;
-    }
+    if (titleEl) { titleEl.textContent = translatedTitle; }
   }
 }
 
 function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 
-// ✅ دالة عرض التاريخ بالترتيب المطلوب (اليوم ثم الشهر)
-function displayDate(iso){
-  if(!iso)return '';
-  // iso هنا عبارة عن نص مثل "2026-11-16 09:35 AM"
-  var parts = iso.split(" "); 
-  if(parts.length < 2) return '';
-  var dateParts = parts[0].split("-"); // [2026, 11, 16]
-  
-  var year = dateParts[0];
-  var month = dateParts[1];
-  var day = dateParts[2];
-  var time = parts[1] + " " + parts[2];
-  
-  // النتيجة: 16/11/2026 الساعة 09:35 AM
-  return day + '/' + month + '/' + year + ' الساعة ' + time;
-}
-
 setHeaderDate();
-loadNewsFromSheet();
-startCountdown();
+fetchAllNews();
 </script>
 </body>
 </html>
