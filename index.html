@@ -15,6 +15,7 @@ h1{font-size:20px;margin:8px 0}
 .status{font-size:11px;color:#64748b;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
 .header-date{font-size:15px;color:#fbbf24;font-weight:bold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
 .update-time{font-size:16px;color:#10b981;font-weight:bold;}
+.countdown-timer{font-size:16px;color:#f43f5e;font-weight:bold;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:5px;}
 .controls{display:flex;gap:8px;margin-bottom:8px;}
 button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:15px;font-family:inherit;cursor:pointer;width:100%;font-weight:bold;}
 #refreshBtn{background:#3b82f6}
@@ -50,6 +51,9 @@ button:disabled{opacity:.7;cursor:wait}
   <span id="headerDate">اليوم</span>
   <span class="update-time" id="updateTime"></span>
 </div>
+<div class="countdown-timer">
+  <span id="countdownText">⏳ التحديث التلقائي بعد: 05:00</span>
+</div>
 <div class="controls">
   <button class="action-btn" id="refreshBtn" onclick="fetchAction('today')">🔄 جلب أخبار اليوم</button>
 </div>
@@ -58,17 +62,43 @@ button:disabled{opacity:.7;cursor:wait}
 <div id="urgent"></div>
 <div class="feed" id="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
 <script>
-// ✅ تأكد أن هذا الرابط هو نفس الرابط الموجود في Apps Script (Web App URL)
 const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
-
 const CATEGORIES=["الكل","غرائب","منتجات جديدة","تقنية","فلك","عام"];
 let allNews=[],currentCat="الكل";
+
+// إعدادات المؤقت التنازلي (5 دقائق = 300 ثانية)
+let countdownTime = 300; 
+let timerInterval;
 
 function setHeaderDate() {
   var now = new Date();
   var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
   var months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
   document.getElementById("headerDate").textContent = days[now.getDay()] + "، " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
+}
+
+function startCountdown() {
+  clearInterval(timerInterval);
+  countdownTime = 300; // إعادة ضبط المؤقت لـ 5 دقائق
+  updateCountdownDisplay();
+  
+  timerInterval = setInterval(function() {
+    countdownTime--;
+    updateCountdownDisplay();
+    
+    if (countdownTime <= 0) {
+      clearInterval(timerInterval);
+      // عند وصول العداد لصفر، نقوم بتحديث الأخبار تلقائياً
+      fetchAction('today'); 
+    }
+  }, 1000);
+}
+
+function updateCountdownDisplay() {
+  var minutes = Math.floor(countdownTime / 60);
+  var seconds = countdownTime % 60;
+  var displayStr = String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
+  document.getElementById("countdownText").textContent = "⏳ التحديث التلقائي بعد: " + displayStr;
 }
 
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
@@ -80,7 +110,7 @@ async function fetchAction(action) {
   
   try {
     await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: action}) });
-    await new Promise(r => setTimeout(r, 3000)); // انتظار انتهاء الجلب
+    await new Promise(r => setTimeout(r, 3000)); 
     await loadNewsFromSheet();
   } catch(e) { 
     document.getElementById("newsCount").textContent = "خطأ في التحديث";
@@ -89,6 +119,9 @@ async function fetchAction(action) {
   }
   
   btn.disabled=false; btn.textContent = "🔄 جلب أخبار اليوم";
+  
+  // إعادة تشغيل المؤقت بعد كل تحديث (يدوي أو تلقائي)
+  startCountdown();
 }
 
 async function loadNewsFromSheet() {
@@ -96,7 +129,6 @@ async function loadNewsFromSheet() {
     var r = await fetch(SHEETS_API+"?t="+Date.now());
     var data = await r.json();
     
-    // التطبيق يستقبل الأخبار التي تم فلترتها مسبقاً من Apps Script (أخبار اليوم فقط)
     allNews = data.articles||[];
     
     document.getElementById("newsCount").textContent = allNews.length + " خبر اليوم";
@@ -152,6 +184,7 @@ function timeAgo(iso){
 
 setHeaderDate();
 renderCats(); loadNewsFromSheet();
+startCountdown(); // بدء العداد التنازلي عند فتح التطبيق
 </script>
 </body>
 </html>
