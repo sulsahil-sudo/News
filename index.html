@@ -47,8 +47,11 @@ button:disabled{opacity:.7;cursor:wait}
 .close-btn{background:none;border:none;color:#ef4444;font-size:24px;cursor:pointer}
 .feed-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
 .feed-item{background:#1e293b;padding:10px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #334155}
+.feed-item.inactive{opacity:0.5;border-color:#ef4444;}
 .feed-item span{font-size:14px;word-break:break-all;padding-left:10px}
-.feed-item button{background:#ef4444;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
+.feed-actions{display:flex;gap:5px;}
+.btn-toggle{background:#f59e0b;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
+.btn-delete{background:#ef4444;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
 .add-feed-form{background:#1e293b;padding:15px;border-radius:12px;border:1px solid #334155;display:flex;flex-direction:column;gap:10px}
 .add-feed-form input{padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#fff;font-family:inherit}
 .add-feed-form button{background:#10b981;color:#fff;border:none;padding:10px;border-radius:8px;cursor:pointer;font-weight:bold}
@@ -92,16 +95,15 @@ button:disabled{opacity:.7;cursor:wait}
 </div>
 
 <script>
-// ✅ القائمة الافتراضية (إذا لم يقم المستخدم بتعديلها)
+// ✅ القائمة الافتراضية
 const DEFAULT_FEEDS = [
-  { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", name: "الجزيرة" },
-  { url: "https://www.alarabiya.net/feed/rss2/ar.xml", name: "العربية" },
-  { url: "https://feeds.reuters.com/reuters/topNews", name: "Reuters" },
-  { url: "https://techcrunch.com/feed/", name: "TechCrunch" },
-  { url: "https://www.space.com/feeds/all", name: "Space.com" }
+  { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", name: "الجزيرة", active: true },
+  { url: "https://www.alarabiya.net/feed/rss2/ar.xml", name: "العربية", active: true },
+  { url: "https://feeds.reuters.com/reuters/topNews", name: "Reuters", active: true },
+  { url: "https://techcrunch.com/feed/", name: "TechCrunch", active: true },
+  { url: "https://www.space.com/feeds/all", name: "Space.com", active: true }
 ];
 
-// ✅ قراءة المصادر من ذاكرة التطبيق أو استخدام الافتراضية
 let FEEDS = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
 
 const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
@@ -122,18 +124,30 @@ function renderSettingsList() {
   if(FEEDS.length === 0) { list.innerHTML = "<p>لا توجد مصادر حالياً.</p>"; return; }
   
   list.innerHTML = FEEDS.map((feed, index) => {
-    return `<div class="feed-item">
+    let statusClass = feed.active === false ? 'inactive' : '';
+    let btnText = feed.active === false ? '▶️ تشغيل' : '⏸️ إيقاف';
+    
+    return `<div class="feed-item ${statusClass}">
       <span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span>
-      <button onclick="removeFeed(${index})">حذف</button>
+      <div class="feed-actions">
+        <button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button>
+        <button class="btn-delete" onclick="removeFeed(${index})">🗑️</button>
+      </div>
     </div>`;
   }).join("");
 }
+function toggleFeed(index) {
+  FEEDS[index].active = FEEDS[index].active === false ? true : false;
+  localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
+  renderSettingsList();
+  fetchAllNews(); // تحديث الأخبار بعد التغيير
+}
 function removeFeed(index) {
-  if(confirm("هل أنت متأكد من حذف هذا المصدر؟")) {
+  if(confirm("هل أنت متأكد من حذف هذا المصدر نهائياً؟")) {
     FEEDS.splice(index, 1);
     localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
     renderSettingsList();
-    fetchAllNews(); // تحديث الأخبار بعد الحذف
+    fetchAllNews();
   }
 }
 function addNewFeed() {
@@ -142,13 +156,13 @@ function addNewFeed() {
   if(!name || !url) { alert("الرجاء إدخال اسم المصدر والرابط."); return; }
   if(!url.startsWith("http")) { alert("الرابط يجب أن يبدأ بـ http"); return; }
   
-  FEEDS.push({ url: url, name: name });
+  FEEDS.push({ url: url, name: name, active: true });
   localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
   
   document.getElementById("newFeedName").value = "";
   document.getElementById("newFeedUrl").value = "";
   renderSettingsList();
-  fetchAllNews(); // تحديث الأخبار بعد الإضافة
+  fetchAllNews();
 }
 
 // ✅ دوال جلب الأخبار
@@ -210,9 +224,13 @@ async function fetchAllNews() {
   document.getElementById("newsCount").textContent = "جاري التحميل...";
   
   let combinedNews = [];
+  
+  // ✅ جلب الأخبار فقط من المصادر النشطة (active: true)
   for (let i = 0; i < FEEDS.length; i++) {
-    let news = await fetchRSS(FEEDS[i].url, FEEDS[i].name);
-    combinedNews = combinedNews.concat(news);
+    if (FEEDS[i].active !== false) {
+      let news = await fetchRSS(FEEDS[i].url, FEEDS[i].name);
+      combinedNews = combinedNews.concat(news);
+    }
   }
   
   let uniqueLinks = {};
