@@ -20,6 +20,7 @@ h1{font-size:20px;margin:8px 0}
 .controls{display:flex;gap:8px;margin-bottom:8px;}
 button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:15px;font-family:inherit;cursor:pointer;width:100%;font-weight:bold;}
 #refreshBtn{background:#3b82f6}
+#clearBtn{background:#ef4444}
 button:disabled{opacity:.7;cursor:wait}
 .cats{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
 .cats::-webkit-scrollbar{display:none}
@@ -56,6 +57,7 @@ button:disabled{opacity:.7;cursor:wait}
 </div>
 <div class="controls">
   <button class="action-btn" id="refreshBtn" onclick="fetchAction('today', true)">🔄 جلب أخبار اليوم</button>
+  <button class="action-btn" id="clearBtn" onclick="clearNews()">🗑️ نقل للمحذوفات</button>
 </div>
 <div class="cats" id="cats"></div>
 </header>
@@ -63,8 +65,6 @@ button:disabled{opacity:.7;cursor:wait}
 <div class="feed" id="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
 <script>
 const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
-
-// ✅ الأزرار المطلوبة (الكل، عاجل، عام، فلك، مع إضافة تصنيفات أخرى)
 const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
 let allNews = [], currentCat = "الكل";
 let countdownTime = 300; 
@@ -83,9 +83,7 @@ async function translateTitle(text) {
     var translated = data[0].map(function(part) { return part[0]; }).join('');
     translationCache[text] = translated;
     return translated;
-  } catch(e) {
-    return text;
-  }
+  } catch(e) { return text; }
 }
 
 function setHeaderDate() {
@@ -144,12 +142,27 @@ async function fetchAction(action, isManual) {
   startCountdown();
 }
 
+async function clearNews() {
+  if(!confirm("هل أنت متأكد من نقل كل الأخبار إلى ورقة المحذوفات؟ سيتم مسح الشاشة الرئيسية.")) return;
+  var btn = document.getElementById("clearBtn");
+  btn.disabled = true; btn.textContent = "⏳ جاري النقل...";
+  try {
+    await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: "clear"}) });
+    await new Promise(r => setTimeout(r, 1500));
+    allNews = [];
+    document.getElementById("newsCount").textContent = "0 خبر";
+    renderCats(); await renderWithTranslation();
+    alert("تم نقل جميع الأخبار إلى ورقة (المحذوفات).");
+  } catch(e) { alert("حدث خطأ"); }
+  btn.textContent = "🗑️ نقل للمحذوفات"; btn.disabled = false;
+}
+
 async function loadNewsFromSheet() {
   try {
     var r = await fetch(SHEETS_API+"?t="+Date.now());
     var data = await r.json();
     allNews = data.articles||[];
-    document.getElementById("newsCount").textContent = allNews.length + " خبر اليوم";
+    document.getElementById("newsCount").textContent = allNews.length + " خبر";
     
     var timeEl = document.getElementById("updateTime");
     timeEl.style.color = "#10b981";
@@ -175,7 +188,7 @@ async function loadNewsFromSheet() {
 function renderCats() {
   document.getElementById("cats").innerHTML = CATEGORIES.map(function(c) {
     var count = (c === "الكل") ? allNews.length : allNews.filter(function(n){ return n.category === c; }).length;
-    if (count === 0 && c !== "الكل" && c !== "عاجل") return ""; // نخفي التصنيف إذا كان فارغاً
+    if (count === 0 && c !== "الكل" && c !== "عاجل") return "";
     var label = c + (count > 0 ? " (" + count + ")" : "");
     return '<button class="'+(c === currentCat ? 'active' : '')+'" onclick="setCat(\''+c+'\')">'+label+'</button>';
   }).join("");
