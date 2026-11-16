@@ -81,11 +81,7 @@ button:disabled{opacity:.7;cursor:wait}
     <h2>إدارة المصادر</h2>
     <button class="close-btn" onclick="closeSettings()">✕</button>
   </div>
-  
-  <div class="feed-list" id="settingsFeedList">
-    <!-- سيتم ملؤها بالروابط -->
-  </div>
-
+  <div class="feed-list" id="settingsFeedList"></div>
   <div class="add-feed-form">
     <h3>إضافة مصدر جديد</h3>
     <input type="text" id="newFeedName" placeholder="اسم المصدر (مثال: BBC)">
@@ -105,28 +101,20 @@ const DEFAULT_FEEDS = [
 ];
 
 let FEEDS = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
-
 const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
 let allNews = [], currentCat = "الكل";
 const translationCache = {};
 let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
 
 // ✅ دوال إدارة الإعدادات
-function openSettings() {
-  renderSettingsList();
-  document.getElementById("settingsModal").style.display = "block";
-}
-function closeSettings() {
-  document.getElementById("settingsModal").style.display = "none";
-}
+function openSettings() { renderSettingsList(); document.getElementById("settingsModal").style.display = "block"; }
+function closeSettings() { document.getElementById("settingsModal").style.display = "none"; }
 function renderSettingsList() {
   var list = document.getElementById("settingsFeedList");
   if(FEEDS.length === 0) { list.innerHTML = "<p>لا توجد مصادر حالياً.</p>"; return; }
-  
   list.innerHTML = FEEDS.map((feed, index) => {
     let statusClass = feed.active === false ? 'inactive' : '';
     let btnText = feed.active === false ? '▶️ تشغيل' : '⏸️ إيقاف';
-    
     return `<div class="feed-item ${statusClass}">
       <span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span>
       <div class="feed-actions">
@@ -139,15 +127,13 @@ function renderSettingsList() {
 function toggleFeed(index) {
   FEEDS[index].active = FEEDS[index].active === false ? true : false;
   localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
-  renderSettingsList();
-  fetchAllNews(); // تحديث الأخبار بعد التغيير
+  renderSettingsList(); fetchAllNews();
 }
 function removeFeed(index) {
   if(confirm("هل أنت متأكد من حذف هذا المصدر نهائياً؟")) {
     FEEDS.splice(index, 1);
     localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
-    renderSettingsList();
-    fetchAllNews();
+    renderSettingsList(); fetchAllNews();
   }
 }
 function addNewFeed() {
@@ -155,14 +141,10 @@ function addNewFeed() {
   var url = document.getElementById("newFeedUrl").value.trim();
   if(!name || !url) { alert("الرجاء إدخال اسم المصدر والرابط."); return; }
   if(!url.startsWith("http")) { alert("الرابط يجب أن يبدأ بـ http"); return; }
-  
   FEEDS.push({ url: url, name: name, active: true });
   localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
-  
-  document.getElementById("newFeedName").value = "";
-  document.getElementById("newFeedUrl").value = "";
-  renderSettingsList();
-  fetchAllNews();
+  document.getElementById("newFeedName").value = ""; document.getElementById("newFeedUrl").value = "";
+  renderSettingsList(); fetchAllNews();
 }
 
 // ✅ دوال جلب الأخبار
@@ -172,16 +154,8 @@ async function fetchRSS(url, sourceName) {
     var response = await fetch(apiUrl);
     var data = await response.json();
     if (data.status !== "ok" || !data.items) return [];
-    
     return data.items.map(item => {
-      return {
-        title: item.title,
-        url: item.link,
-        source: sourceName,
-        category: classify(item.title),
-        date: item.pubDate,
-        is_urgent: /عاجل|breaking|urgent/i.test(item.title)
-      };
+      return { title: item.title, url: item.link, source: sourceName, category: classify(item.title), date: item.pubDate, is_urgent: /عاجل|breaking|urgent/i.test(item.title) };
     });
   } catch(e) { return []; }
 }
@@ -225,7 +199,7 @@ async function fetchAllNews() {
   
   let combinedNews = [];
   
-  // ✅ جلب الأخبار فقط من المصادر النشطة (active: true)
+  // جلب الأخبار من المصادر النشطة فقط
   for (let i = 0; i < FEEDS.length; i++) {
     if (FEEDS[i].active !== false) {
       let news = await fetchRSS(FEEDS[i].url, FEEDS[i].name);
@@ -233,9 +207,21 @@ async function fetchAllNews() {
     }
   }
   
+  // ✅ فلترة "أخبار اليوم فقط" (مقارنة تاريخ النشر مع تاريخ اليوم في جهازك)
+  var today = new Date();
+  var todayStr = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0');
+  
   let uniqueLinks = {};
   allNews = combinedNews.filter(n => {
     if (!n.url || uniqueLinks[n.url] || deletedNews.includes(n.url)) return false;
+    
+    // تحويل تاريخ الخبر إلى نفس الصيغة للمقارنة
+    var itemDate = new Date(n.date);
+    var itemStr = itemDate.getFullYear() + "-" + String(itemDate.getMonth() + 1).padStart(2, '0') + "-" + String(itemDate.getDate()).padStart(2, '0');
+    
+    // إذا كان تاريخ الخبر لا يطابق تاريخ اليوم، نحذفه
+    if (itemStr !== todayStr) return false;
+
     uniqueLinks[n.url] = true;
     return true;
   });
@@ -245,7 +231,7 @@ async function fetchAllNews() {
   var updateDate = new Date();
   var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
   document.getElementById("updateTime").textContent = "آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
-  document.getElementById("newsCount").textContent = allNews.length + " خبر";
+  document.getElementById("newsCount").textContent = allNews.length + " خبر اليوم";
   
   renderCats();
   await renderWithTranslation();
@@ -261,26 +247,17 @@ function renderCats() {
   }).join("");
 }
 
-function setCat(c) {
-  currentCat = c;
-  renderCats();
-  renderWithTranslation();
-}
-
+function setCat(c) { currentCat = c; renderCats(); renderWithTranslation(); }
 function deleteArticle(url) {
-  if(!deletedNews.includes(url)) {
-    deletedNews.push(url);
-    localStorage.setItem("deletedNews", JSON.stringify(deletedNews));
-  }
-  allNews = allNews.filter(n => n.url !== url);
-  renderCats(); renderWithTranslation();
+  if(!deletedNews.includes(url)) { deletedNews.push(url); localStorage.setItem("deletedNews", JSON.stringify(deletedNews)); }
+  allNews = allNews.filter(n => n.url !== url); renderCats(); renderWithTranslation();
 }
 
 async function renderWithTranslation() {
   var feed = document.getElementById("feed");
   var items = allNews;
   if (currentCat !== "الكل") { items = items.filter(function(n) { return n.category === currentCat; }); }
-  if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار في هذا القسم</div>';return;}
+  if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار اليوم في هذا القسم</div>';return;}
   
   feed.innerHTML = items.slice(0, 200).map(function(n, index) {
     let dateObj = new Date(n.date);
