@@ -57,15 +57,27 @@ button:disabled{opacity:.7;cursor:wait}
 </header>
 <div id="feed" class="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
 <script>
-// ⚠️ ضع روابط RSS الخاصة بك هنا (التي نسختها من Inoreader)
-// يمكنك إضافة أي عدد تريده من الروابط
+// ✅ قائمة المصادر الجاهزة (بدون حاجة لتعديل)
 const FEEDS = [
+  // عربية
   { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", name: "الجزيرة" },
   { url: "https://www.alarabiya.net/feed/rss2/ar.xml", name: "العربية" },
-  { url: "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", name: "أخبار أمريكا" },
-  { url: "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja", name: "أخبار اليابان" }
-  // أضف المزيد من الروابط هنا بنفس الطريقة:
-  // { url: "ضع_رابط_RSS_هنا", name: "اسم_المصدر" },
+  { url: "https://arabic.rt.com/rss/", name: "روسيا اليوم" },
+  { url: "https://www.skynewsarabia.com/web/rss/95.xml", name: "سكاي نيوز" },
+  
+  // عالمية وتقنية
+  { url: "https://feeds.reuters.com/reuters/topNews", name: "Reuters" },
+  { url: "https://apnews.com/index.rss", name: "AP News" },
+  { url: "https://techcrunch.com/feed/", name: "TechCrunch" },
+  { url: "https://www.theverge.com/rss/index.xml", name: "The Verge" },
+  { url: "https://www.gsmarena.com/rss-news-reviews.php3", name: "GSMArena" },
+  
+  // غرائب
+  { url: "https://www.odditycentral.com/feed", name: "Oddity Central" },
+  { url: "https://www.cbc.ca/strombo/feed/strange-news/", name: "Strange News" },
+  
+  // فلك
+  { url: "https://www.space.com/feeds/all", name: "Space.com" }
 ];
 
 const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
@@ -73,34 +85,26 @@ let allNews = [], currentCat = "الكل";
 const translationCache = {};
 let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
 
-// ✅ دالة جلب البيانات من رابط RSS وتحويلها إلى JSON
 async function fetchRSS(url, sourceName) {
   try {
-    // استخدام خدمة rss2json المجانية لتحويل RSS إلى JSON (لتجنب مشاكل CORS)
     var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url);
     var response = await fetch(apiUrl);
     var data = await response.json();
-    
     if (data.status !== "ok" || !data.items) return [];
     
     return data.items.map(item => {
-      let category = classify(item.title);
       return {
         title: item.title,
         url: item.link,
         source: sourceName,
-        category: category,
+        category: classify(item.title),
         date: item.pubDate,
         is_urgent: /عاجل|breaking|urgent/i.test(item.title)
       };
     });
-  } catch(e) {
-    console.error("Error fetching RSS: " + url, e);
-    return [];
-  }
+  } catch(e) { return []; }
 }
 
-// ✅ دالة التصنيف التلقائي
 function classify(title) {
   var t = title.toLowerCase();
   if (/عاجل|breaking|urgent/.test(t)) return "عاجل";
@@ -111,7 +115,6 @@ function classify(title) {
   return "عام";
 }
 
-// ✅ دالة الترجمة
 async function translateTitle(text) {
   if (!text) return "";
   if (/[\u0600-\u06FF]/.test(text)) return text;
@@ -134,22 +137,17 @@ function setHeaderDate() {
   document.getElementById("headerDate").textContent = days[now.getDay()] + "، " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
 }
 
-// ✅ دالة الجلب الشاملة
 async function fetchAllNews() {
   var btn = document.getElementById("refreshBtn");
   btn.disabled = true; btn.textContent = "جاري الجلب...";
   document.getElementById("newsCount").textContent = "جاري التحميل...";
   
   let combinedNews = [];
-  
-  // جلب الأخبار من كل المصادر
   for (let i = 0; i < FEEDS.length; i++) {
-    let feed = FEEDS[i];
-    let news = await fetchRSS(feed.url, feed.name);
+    let news = await fetchRSS(FEEDS[i].url, FEEDS[i].name);
     combinedNews = combinedNews.concat(news);
   }
   
-  // إزالة التكرار وحذف الأخبار المحذوفة
   let uniqueLinks = {};
   allNews = combinedNews.filter(n => {
     if (!n.url || uniqueLinks[n.url] || deletedNews.includes(n.url)) return false;
@@ -157,19 +155,15 @@ async function fetchAllNews() {
     return true;
   });
   
-  // ترتيب من الأحدث للأقدم
   allNews.sort((a, b) => new Date(b.date) - new Date(a.date));
   
-  // تحديث وقت التحديث
   var updateDate = new Date();
   var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
   document.getElementById("updateTime").textContent = "آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
-  
   document.getElementById("newsCount").textContent = allNews.length + " خبر";
   
   renderCats();
   await renderWithTranslation();
-  
   btn.disabled = false; btn.textContent = "🔄 تحديث الأخبار";
 }
 
@@ -199,19 +193,14 @@ function deleteArticle(url) {
 
 async function renderWithTranslation() {
   var feed = document.getElementById("feed");
-  
   var items = allNews;
-  if (currentCat !== "الكل") {
-    items = items.filter(function(n) { return n.category === currentCat; });
-  }
-  
+  if (currentCat !== "الكل") { items = items.filter(function(n) { return n.category === currentCat; }); }
   if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار في هذا القسم</div>';return;}
   
   feed.innerHTML = items.slice(0, 200).map(function(n, index) {
     let dateObj = new Date(n.date);
     let dateStr = dateObj.toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'numeric' });
     let timeStr = dateObj.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
-    
     return '<div class="card" id="card-'+index+'">' +
     '<button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button>' +
     '<a href="'+n.url+'" target="_blank">' +
@@ -220,8 +209,7 @@ async function renderWithTranslation() {
   }).join("");
 
   for (let i = 0; i < items.length && i < 200; i++) {
-    let n = items[i];
-    let translatedTitle = await translateTitle(n.title);
+    let translatedTitle = await translateTitle(items[i].title);
     var titleEl = document.getElementById("title-"+i);
     if (titleEl) { titleEl.textContent = translatedTitle; }
   }
