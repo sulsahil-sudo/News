@@ -46,7 +46,9 @@ button:disabled{opacity:.7;cursor:wait}
 .close-btn{background:none;border:none;color:#ef4444;font-size:24px;cursor:pointer}
 .feed-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
 .feed-item{background:#1e293b;padding:10px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #334155}
-.feed-item.inactive{opacity:0.5;border-color:#ef4444;}
+/* ✅ تلوين المصادر */
+.feed-item.active-feed{border-right:5px solid #10b981;} /* أخضر للنشط */
+.feed-item.inactive-feed{border-right:5px solid #ef4444; opacity:0.7;} /* أحمر للمقفل */
 .feed-item span{font-size:14px;word-break:break-all;padding-left:10px}
 .feed-actions{display:flex;gap:5px;}
 .btn-toggle{background:#f59e0b;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
@@ -106,18 +108,29 @@ let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
 let countdownTime = 300; 
 let timerInterval;
 
-// ✅ دوال إدارة الإعدادات
 function openSettings() { renderSettingsList(); document.getElementById("settingsModal").style.display = "block"; }
 function closeSettings() { document.getElementById("settingsModal").style.display = "none"; }
+
+// ✅ تعديل عرض القائمة لإضافة الألوان
 function renderSettingsList() {
   var list = document.getElementById("settingsFeedList");
   if(FEEDS.length === 0) { list.innerHTML = "<p>لا توجد مصادر حالياً.</p>"; return; }
+  
   list.innerHTML = FEEDS.map((feed, index) => {
-    let statusClass = feed.active === false ? 'inactive' : '';
+    // تحديد اللون بناءً على الحالة
+    let statusClass = feed.active === false ? 'inactive-feed' : 'active-feed';
     let btnText = feed.active === false ? '▶️ تشغيل' : '⏸️ إيقاف';
-    return `<div class="feed-item ${statusClass}"><span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span><div class="feed-actions"><button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button><button class="btn-delete" onclick="removeFeed(${index})">🗑️</button></div></div>`;
+    
+    return `<div class="feed-item ${statusClass}">
+      <span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span>
+      <div class="feed-actions">
+        <button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button>
+        <button class="btn-delete" onclick="removeFeed(${index})">🗑️</button>
+      </div>
+    </div>`;
   }).join("");
 }
+
 function toggleFeed(index) { FEEDS[index].active = FEEDS[index].active === false ? true : false; localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
 function removeFeed(index) { if(confirm("هل أنت متأكد من حذف هذا المصدر نهائياً؟")) { FEEDS.splice(index, 1); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); } }
 function addNewFeed() {
@@ -129,7 +142,6 @@ function addNewFeed() {
   renderSettingsList(); fetchAllNews();
 }
 
-// ✅ دوال المؤقت
 function startCountdown() {
   clearInterval(timerInterval);
   countdownTime = 300; 
@@ -139,7 +151,7 @@ function startCountdown() {
     updateCountdownDisplay();
     if (countdownTime <= 0) {
       clearInterval(timerInterval);
-      fetchAllNews(); // التحديث التلقائي
+      fetchAllNews(); 
     }
   }, 1000);
 }
@@ -150,7 +162,6 @@ function updateCountdownDisplay() {
   document.getElementById("countdownText").textContent = "⏳ التحديث التلقائي بعد: " + displayStr;
 }
 
-// ✅ دوال جلب الأخبار
 async function fetchRSS(url, sourceName) {
   try {
     var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url);
@@ -198,7 +209,6 @@ async function fetchAllNews() {
     }
   }
   
-  // فلترة 36 ساعة
   var now = new Date();
   var thirtySixHoursAgo = new Date(now.getTime() - (36 * 60 * 60 * 1000));
 
@@ -210,7 +220,6 @@ async function fetchAllNews() {
     uniqueLinks[n.url] = true; return true;
   });
   
-  // ✅ الترتيب الزمني (من الأحدث للأقدم)
   allNews.sort((a, b) => new Date(b.date) - new Date(a.date));
   
   var updateDate = new Date(); var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
@@ -219,7 +228,7 @@ async function fetchAllNews() {
   renderCats(); await renderWithTranslation(); 
   
   btn.disabled = false; btn.textContent = "🔄 تحديث الأخبار";
-  startCountdown(); // إعادة تشغيل العداد بعد كل تحديث
+  startCountdown();
 }
 
 function renderCats() {
