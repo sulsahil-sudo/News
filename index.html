@@ -45,10 +45,12 @@ button:disabled{opacity:.7;cursor:wait}
 .modal-header h2{margin:0;color:#fbbf24}
 .close-btn{background:none;border:none;color:#ef4444;font-size:24px;cursor:pointer}
 .feed-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.feed-item{background:#1e293b;padding:10px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #334155}
-/* ✅ تلوين المصادر */
-.feed-item.active-feed{border-right:5px solid #10b981;} /* أخضر للنشط */
-.feed-item.inactive-feed{border-right:5px solid #ef4444; opacity:0.7;} /* أحمر للمقفل */
+
+/* ✅ تلوين خلفية المصادر بشكل واضح جداً */
+.feed-item{padding:12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;transition: all 0.3s;}
+.feed-item.active-feed{background-color: rgba(16, 185, 129, 0.15); border: 1px solid #10b981;} /* أخضر */
+.feed-item.inactive-feed{background-color: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444;} /* أحمر */
+
 .feed-item span{font-size:14px;word-break:break-all;padding-left:10px}
 .feed-actions{display:flex;gap:5px;}
 .btn-toggle{background:#f59e0b;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
