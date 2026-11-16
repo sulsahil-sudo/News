@@ -36,7 +36,7 @@ button:disabled{opacity:.7;cursor:wait}
 .card .cat.تقنية{background:#0ea5e9}
 .card .cat.فلك{background:#f59e0b}
 .card .cat.منتجات جديدة{background:#10b981}
-.card h3{font-size:16px;margin:0 0 6px;line-height:1.4;padding-left:25px;} /* مساحة لزر الحذف */
+.card h3{font-size:16px;margin:0 0 6px;line-height:1.4;padding-left:25px;}
 .card .meta{font-size:13px;color:#94a3b8;margin-top:8px;font-weight:500}
 .card a{color:inherit;text-decoration:none}
 .delete-btn{position:absolute;top:14px;left:14px;background:rgba(239,68,68,0.1);color:#ef4444;border:1px solid #ef4444;border-radius:50%;width:24px;height:24px;font-size:14px;line-height:20px;text-align:center;cursor:pointer;z-index:10;}
@@ -73,7 +73,6 @@ let countdownTime = 300;
 let timerInterval;
 const translationCache = {};
 
-// ✅ مخزن الأخبار المحذوفة (يقرأ من ذاكرة المتصفح)
 let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
 
 async function translateTitle(text) {
@@ -167,8 +166,23 @@ async function loadNewsFromSheet() {
   try {
     var r = await fetch(SHEETS_API+"?t="+Date.now());
     var data = await r.json();
-    // ✅ تصفية الأخبار التي تم حذفها
-    allNews = (data.articles||[]).filter(n => !deletedNews.includes(n.url));
+    
+    // ✅ الفلترة النهائية: التأكد من تاريخ الشهر واليوم (16-11)
+    var todayDay = new Date().getDate();
+    var todayMonth = new Date().getMonth() + 1;
+    
+    allNews = (data.articles||[]).filter(function(n) {
+      if (deletedNews.includes(n.url)) return false;
+      
+      // قراءة التاريخ القادم من الشيت
+      var articleDate = new Date(n.published_at);
+      
+      // إذا كان التاريخ لا يطابق اليوم، لا نعرضه
+      if (articleDate.getDate() !== todayDay || (articleDate.getMonth() + 1) !== todayMonth) {
+        return false;
+      }
+      return true;
+    });
     
     document.getElementById("newsCount").textContent = allNews.length + " خبر";
     
@@ -208,7 +222,6 @@ function setCat(c) {
   renderWithTranslation();
 }
 
-// ✅ دالة حذف الخبر
 function deleteArticle(url) {
   if(!deletedNews.includes(url)) {
     deletedNews.push(url);
@@ -229,7 +242,6 @@ async function renderWithTranslation() {
   if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار في هذا القسم</div>';return;}
   
   feed.innerHTML = items.slice(0, 200).map(function(n, index) {
-    // ✅ إضافة زر الحذف (X)
     return '<div class="card" id="card-'+index+'">' +
     '<button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button>' +
     '<a href="'+n.url+'" target="_blank">' +
