@@ -27,7 +27,7 @@ button:disabled{opacity:.7;cursor:wait}
 .cats button{background:#1e293b;color:#cbd5e1;border:none;padding:6px 14px;border-radius:20px;font-size:14px;white-space:nowrap;font-family:inherit}
 .cats button.active{background:#3b82f6;color:#fff}
 .feed{padding:0 12px}
-.card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #334155}
+.card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #334155;position:relative;}
 .card .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
 .card .cat{display:inline-block;font-size:11px;background:#3b82f6;color:#fff;padding:2px 8px;border-radius:6px;}
 .card .src{display:inline-block;font-size:12px;color:#94a3b8;font-weight:bold;}
@@ -36,9 +36,11 @@ button:disabled{opacity:.7;cursor:wait}
 .card .cat.تقنية{background:#0ea5e9}
 .card .cat.فلك{background:#f59e0b}
 .card .cat.منتجات جديدة{background:#10b981}
-.card h3{font-size:16px;margin:0 0 6px;line-height:1.4}
+.card h3{font-size:16px;margin:0 0 6px;line-height:1.4;padding-left:25px;} /* مساحة لزر الحذف */
 .card .meta{font-size:13px;color:#94a3b8;margin-top:8px;font-weight:500}
 .card a{color:inherit;text-decoration:none}
+.delete-btn{position:absolute;top:14px;left:14px;background:rgba(239,68,68,0.1);color:#ef4444;border:1px solid #ef4444;border-radius:50%;width:24px;height:24px;font-size:14px;line-height:20px;text-align:center;cursor:pointer;z-index:10;}
+.delete-btn:hover{background:#ef4444;color:#fff;}
 .loading,.empty{text-align:center;padding:40px;color:#64748b}
 </style>
 </head>
@@ -71,12 +73,16 @@ let countdownTime = 300;
 let timerInterval;
 const translationCache = {};
 
+// ✅ مخزن الأخبار المحذوفة (يقرأ من ذاكرة المتصفح)
+let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
+
 async function translateTitle(text) {
   if (!text) return "";
   if (/[\u0600-\u06FF]/.test(text)) return text;
   if (translationCache[text]) return translationCache[text];
   
   try {
+    await new Promise(r => setTimeout(r, 50));
     var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
     var response = await fetch(url);
     var data = await response.json();
@@ -143,7 +149,7 @@ async function fetchAction(action, isManual) {
 }
 
 async function clearNews() {
-  if(!confirm("هل أنت متأكد من نقل كل الأخبار إلى ورقة المحذوفات؟ سيتم مسح الشاشة الرئيسية.")) return;
+  if(!confirm("هل أنت متأكد من نقل كل الأخبار إلى ورقة المحذوفات؟")) return;
   var btn = document.getElementById("clearBtn");
   btn.disabled = true; btn.textContent = "⏳ جاري النقل...";
   try {
@@ -161,7 +167,9 @@ async function loadNewsFromSheet() {
   try {
     var r = await fetch(SHEETS_API+"?t="+Date.now());
     var data = await r.json();
-    allNews = data.articles||[];
+    // ✅ تصفية الأخبار التي تم حذفها
+    allNews = (data.articles||[]).filter(n => !deletedNews.includes(n.url));
+    
     document.getElementById("newsCount").textContent = allNews.length + " خبر";
     
     var timeEl = document.getElementById("updateTime");
@@ -200,6 +208,16 @@ function setCat(c) {
   renderWithTranslation();
 }
 
+// ✅ دالة حذف الخبر
+function deleteArticle(url) {
+  if(!deletedNews.includes(url)) {
+    deletedNews.push(url);
+    localStorage.setItem("deletedNews", JSON.stringify(deletedNews));
+  }
+  allNews = allNews.filter(n => n.url !== url);
+  renderCats(); renderWithTranslation();
+}
+
 async function renderWithTranslation() {
   var feed = document.getElementById("feed");
   
@@ -211,7 +229,10 @@ async function renderWithTranslation() {
   if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار في هذا القسم</div>';return;}
   
   feed.innerHTML = items.slice(0, 200).map(function(n, index) {
-    return '<div class="card" id="card-'+index+'"><a href="'+n.url+'" target="_blank">' +
+    // ✅ إضافة زر الحذف (X)
+    return '<div class="card" id="card-'+index+'">' +
+    '<button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button>' +
+    '<a href="'+n.url+'" target="_blank">' +
     '<div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div>' +
     '<h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+timeAgo(n.published_at)+'</div></a></div>';
   }).join("");
