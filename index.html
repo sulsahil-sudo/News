@@ -61,6 +61,32 @@ let allNews=[];
 let countdownTime = 300; 
 let timerInterval;
 
+// ✅ قاموس لتخزين الترجمات وتجنب تكرار طلبها من جوجل
+const translationCache = {};
+
+// ✅ دالة الترجمة الفورية داخل المتصفح
+async function translateTitle(text) {
+  if (!text) return "";
+  // إذا كان النص عربياً، نرجعه كما هو
+  if (/[\u0600-\u06FF]/.test(text)) return text;
+  
+  // إذا كانت الترجمة موجودة في الكاش، نرجعها فوراً
+  if (translationCache[text]) return translationCache[text];
+  
+  try {
+    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
+    var response = await fetch(url);
+    var data = await response.json();
+    var translated = data[0].map(function(part) { return part[0]; }).join('');
+    
+    // حفظ الترجمة في الكاش
+    translationCache[text] = translated;
+    return translated;
+  } catch(e) {
+    return text; // في حال الفشل نرجع النص الأصلي
+  }
+}
+
 function setHeaderDate() {
   var now = new Date();
   var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
@@ -134,7 +160,10 @@ async function loadNewsFromSheet() {
       timeEl.classList.add('flash');
       setTimeout(() => { timeEl.classList.remove('flash'); }, 1500);
     }
-    render();
+    
+    // ✅ عرض الأخبار بعد ترجمتها
+    await renderWithTranslation();
+    
   } catch(e) { 
     document.getElementById("newsCount").textContent = "خطأ في القراءة";
     document.getElementById("updateTime").textContent = "فشل الاتصال";
@@ -142,14 +171,29 @@ async function loadNewsFromSheet() {
   }
 }
 
-function render(){
-var feed=document.getElementById("feed");
-if(!allNews.length){feed.innerHTML='<div class="empty">لا توجد أخبار اليوم</div>';return;}
-feed.innerHTML=allNews.slice(0,200).map(function(n){
-  return '<div class="card"><a href="'+n.url+'" target="_blank">' +
-  '<div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div>' +
-  '<h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+timeAgo(n.published_at)+'</div></a></div>';
-}).join("");
+// ✅ دالة العرض والترجمة
+async function renderWithTranslation() {
+  var feed = document.getElementById("feed");
+  if(!allNews.length){feed.innerHTML='<div class="empty">لا توجد أخبار اليوم</div>';return;}
+  
+  // عرض هيكل مبدئي (بدون عناوين) لتسريع الاستجابة
+  feed.innerHTML = allNews.slice(0, 200).map(function(n, index) {
+    return '<div class="card" id="card-'+index+'"><a href="'+n.url+'" target="_blank">' +
+    '<div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div>' +
+    '<h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+timeAgo(n.published_at)+'</div></a></div>';
+  }).join("");
+
+  // ترجمة العناوين وتحديثها واحدة تلو الأخرى
+  for (let i = 0; i < allNews.length && i < 200; i++) {
+    let n = allNews[i];
+    let originalTitle = n.title_ar || n.title;
+    let translatedTitle = await translateTitle(originalTitle);
+    
+    var titleEl = document.getElementById("title-"+i);
+    if (titleEl) {
+      titleEl.textContent = translatedTitle;
+    }
+  }
 }
 
 function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
