@@ -169,33 +169,26 @@ function classify(title) {
   return "عام";
 }
 
-// ✅ دالة الترجمة المطورة (تعمل على الجوال)
+// ✅ الترجمة باستخدام MyMemory (تضمن العمل على الجوال)
 async function translateTitle(text) {
   if (!text) return "";
   if (/[\u0600-\u06FF]/.test(text)) return text;
   if (translationCache[text]) return translationCache[text];
 
-  // المحاولة الأولى: الواجهة المباشرة
   try {
-    await new Promise(r => setTimeout(r, 50));
-    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
+    // استخدام MyMemory API التي لا تحظر الجوال
+    var url = "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(text) + "&langpair=en|ar";
     var response = await fetch(url);
     var data = await response.json();
-    var translated = data[0].map(function(part) { return part[0]; }).join('');
-    translationCache[text] = translated;
-    return translated;
-  } catch(e) {
-    // المحاولة الثانية: استخدام بروكسي (إذا فشلت الأولى على الجوال)
-    try {
-      var proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text));
-      var proxyRes = await fetch(proxyUrl);
-      var proxyData = await proxyRes.json();
-      var proxyTranslated = proxyData[0].map(function(part) { return part[0]; }).join('');
-      translationCache[text] = proxyTranslated;
-      return proxyTranslated;
-    } catch(e2) {
-      return text; 
+    
+    if (data.responseData && data.responseData.translatedText) {
+      var translated = data.responseData.translatedText;
+      translationCache[text] = translated;
+      return translated;
     }
+    return text;
+  } catch(e) {
+    return text;
   }
 }
 
