@@ -14,7 +14,8 @@ header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-
 h1{font-size:20px;margin:8px 0}
 .status{font-size:11px;color:#64748b;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
 .header-date{font-size:15px;color:#fbbf24;font-weight:bold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
-.update-time{font-size:16px;color:#10b981;font-weight:bold;}
+.update-time{font-size:16px;color:#10b981;font-weight:bold;transition: all 0.5s;}
+.update-time.flash { color: #ffffff !important; background-color: #10b981; padding: 2px 6px; border-radius: 6px; }
 .countdown-timer{font-size:16px;color:#f43f5e;font-weight:bold;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:5px;}
 .controls{display:flex;gap:8px;margin-bottom:8px;}
 button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:15px;font-family:inherit;cursor:pointer;width:100%;font-weight:bold;}
@@ -55,7 +56,7 @@ button:disabled{opacity:.7;cursor:wait}
   <span id="countdownText">⏳ التحديث التلقائي بعد: 05:00</span>
 </div>
 <div class="controls">
-  <button class="action-btn" id="refreshBtn" onclick="fetchAction('today')">🔄 جلب أخبار اليوم</button>
+  <button class="action-btn" id="refreshBtn" onclick="fetchAction('today', true)">🔄 جلب أخبار اليوم</button>
 </div>
 <div class="cats" id="cats"></div>
 </header>
@@ -66,7 +67,6 @@ const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4K
 const CATEGORIES=["الكل","غرائب","منتجات جديدة","تقنية","فلك","عام"];
 let allNews=[],currentCat="الكل";
 
-// إعدادات المؤقت التنازلي (5 دقائق = 300 ثانية)
 let countdownTime = 300; 
 let timerInterval;
 
@@ -79,7 +79,7 @@ function setHeaderDate() {
 
 function startCountdown() {
   clearInterval(timerInterval);
-  countdownTime = 300; // إعادة ضبط المؤقت لـ 5 دقائق
+  countdownTime = 300; 
   updateCountdownDisplay();
   
   timerInterval = setInterval(function() {
@@ -89,7 +89,7 @@ function startCountdown() {
     if (countdownTime <= 0) {
       clearInterval(timerInterval);
       // عند وصول العداد لصفر، نقوم بتحديث الأخبار تلقائياً
-      fetchAction('today'); 
+      fetchAction('today', false); 
     }
   }, 1000);
 }
@@ -103,9 +103,17 @@ function updateCountdownDisplay() {
 
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
 
-async function fetchAction(action) {
+async function fetchAction(action, isManual) {
   var btn = document.getElementById("refreshBtn");
-  btn.disabled=true; btn.textContent = "جاري الجلب...";
+  
+  // إذا كان تحديثاً يدوياً، نغير الزر. إذا كان تلقائياً، نكتفي بتغيير العداد.
+  if (isManual) {
+    btn.disabled=true; btn.textContent = "جاري الجلب...";
+  } else {
+    document.getElementById("countdownText").textContent = "⏳ جاري التحديث التلقائي...";
+    document.getElementById("countdownText").style.color = "#3b82f6";
+  }
+  
   document.getElementById("updateTime").textContent = "";
   
   try {
@@ -118,9 +126,12 @@ async function fetchAction(action) {
     document.getElementById("updateTime").style.color = "#ef4444"; 
   }
   
-  btn.disabled=false; btn.textContent = "🔄 جلب أخبار اليوم";
+  if (isManual) {
+    btn.disabled=false; btn.textContent = "🔄 جلب أخبار اليوم";
+  }
   
-  // إعادة تشغيل المؤقت بعد كل تحديث (يدوي أو تلقائي)
+  // إعادة تشغيل المؤقت بعد كل تحديث (يدوي أو تلقائي) وإرجاع لونه
+  document.getElementById("countdownText").style.color = "#f43f5e";
   startCountdown();
 }
 
@@ -132,12 +143,18 @@ async function loadNewsFromSheet() {
     allNews = data.articles||[];
     
     document.getElementById("newsCount").textContent = allNews.length + " خبر اليوم";
-    document.getElementById("updateTime").style.color = "#10b981";
+    
+    var timeEl = document.getElementById("updateTime");
+    timeEl.style.color = "#10b981";
     
     if (data.updated) {
       var updateDate = new Date(data.updated);
       var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-      document.getElementById("updateTime").textContent = "آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
+      timeEl.textContent = "آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
+      
+      // ✅ تأثير الوميض: يضيء باللون الأخضر لمدة ثانية لتعرف أن التحديث حدث
+      timeEl.classList.add('flash');
+      setTimeout(() => { timeEl.classList.remove('flash'); }, 1500);
     }
 
     renderCats(); render();
@@ -184,7 +201,7 @@ function timeAgo(iso){
 
 setHeaderDate();
 renderCats(); loadNewsFromSheet();
-startCountdown(); // بدء العداد التنازلي عند فتح التطبيق
+startCountdown();
 </script>
 </body>
 </html>
