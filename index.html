@@ -93,6 +93,8 @@ const DEFAULT_FEEDS = [
   { url: "https://techcrunch.com/feed/", name: "TechCrunch", active: true },
   { url: "https://www.space.com/feeds/all", name: "Space.com", active: true }
 ];
+
+// ✅ قراءة المصادر من الذاكرة بدقة
 let FEEDS = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
 const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
 let allNews = [], currentCat = "الكل";
@@ -120,6 +122,7 @@ function addNewFeed() {
   document.getElementById("newFeedName").value = ""; document.getElementById("newFeedUrl").value = "";
   renderSettingsList(); fetchAllNews();
 }
+
 async function fetchRSS(url, sourceName) {
   try {
     var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url);
@@ -129,6 +132,7 @@ async function fetchRSS(url, sourceName) {
     return data.items.map(item => ({ title: item.title, url: item.link, source: sourceName, category: classify(item.title), date: item.pubDate, is_urgent: /عاجل|breaking|urgent/i.test(item.title) }));
   } catch(e) { return []; }
 }
+
 function classify(title) {
   var t = title.toLowerCase();
   if (/عاجل|breaking|urgent/.test(t)) return "عاجل";
@@ -138,6 +142,7 @@ function classify(title) {
   if (/فلك|فضاء|كوكب|مجرة|نجم|space|nasa|planet|galaxy|star/.test(t)) return "فلك";
   return "عام";
 }
+
 async function translateTitle(text) {
   if (!text) return ""; if (/[\u0600-\u06FF]/.test(text)) return text; if (translationCache[text]) return translationCache[text];
   try {
@@ -147,16 +152,27 @@ async function translateTitle(text) {
     var translated = data[0].map(function(part) { return part[0]; }).join(''); translationCache[text] = translated; return translated;
   } catch(e) { return text; }
 }
+
 function setHeaderDate() {
   var now = new Date(); var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت']; var months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
   document.getElementById("headerDate").textContent = days[now.getDay()] + "، " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
 }
+
 async function fetchAllNews() {
   var btn = document.getElementById("refreshBtn"); btn.disabled = true; btn.textContent = "جاري الجلب..."; document.getElementById("newsCount").textContent = "جاري التحميل...";
   let combinedNews = [];
-  for (let i = 0; i < FEEDS.length; i++) { if (FEEDS[i].active !== false) { let news = await fetchRSS(FEEDS[i].url, FEEDS[i].name); combinedNews = combinedNews.concat(news); } }
   
-  // ✅ الحل السحري: فلترة الأخبار التي نُشرت خلال الـ 36 ساعة الماضية
+  // ✅ التأكد من قراءة الحالة (نشط/موقوف) بدقة من الذاكرة قبل الجلب
+  let currentFeeds = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
+  
+  for (let i = 0; i < currentFeeds.length; i++) {
+    if (currentFeeds[i].active !== false) { // إذا كانت القيمة ليست false، فهي نشطة
+      let news = await fetchRSS(currentFeeds[i].url, currentFeeds[i].name);
+      combinedNews = combinedNews.concat(news);
+    }
+  }
+  
+  // فلترة 36 ساعة
   var now = new Date();
   var thirtySixHoursAgo = new Date(now.getTime() - (36 * 60 * 60 * 1000));
 
@@ -164,7 +180,7 @@ async function fetchAllNews() {
   allNews = combinedNews.filter(n => {
     if (!n.url || uniqueLinks[n.url] || deletedNews.includes(n.url)) return false;
     var itemDate = new Date(n.date);
-    if (itemDate < thirtySixHoursAgo) return false; // إذا كان أقدم من 36 ساعة، نرفضه
+    if (itemDate < thirtySixHoursAgo) return false;
     uniqueLinks[n.url] = true; return true;
   });
   
@@ -174,6 +190,7 @@ async function fetchAllNews() {
   document.getElementById("newsCount").textContent = allNews.length + " خبر";
   renderCats(); await renderWithTranslation(); btn.disabled = false; btn.textContent = "🔄 تحديث الأخبار";
 }
+
 function renderCats() {
   document.getElementById("cats").innerHTML = CATEGORIES.map(function(c) {
     var count = (c === "الكل") ? allNews.length : allNews.filter(function(n){ return n.category === c; }).length;
@@ -182,8 +199,10 @@ function renderCats() {
     return '<button class="'+(c === currentCat ? 'active' : '')+'" onclick="setCat(\''+c+'\')">'+label+'</button>';
   }).join("");
 }
+
 function setCat(c) { currentCat = c; renderCats(); renderWithTranslation(); }
 function deleteArticle(url) { if(!deletedNews.includes(url)) { deletedNews.push(url); localStorage.setItem("deletedNews", JSON.stringify(deletedNews)); } allNews = allNews.filter(n => n.url !== url); renderCats(); renderWithTranslation(); }
+
 async function renderWithTranslation() {
   var feed = document.getElementById("feed"); var items = allNews;
   if (currentCat !== "الكل") { items = items.filter(function(n) { return n.category === currentCat; }); }
@@ -194,7 +213,9 @@ async function renderWithTranslation() {
   }).join("");
   for (let i = 0; i < items.length && i < 200; i++) { let translatedTitle = await translateTitle(items[i].title); var titleEl = document.getElementById("title-"+i); if (titleEl) { titleEl.textContent = translatedTitle; } }
 }
+
 function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+
 setHeaderDate(); fetchAllNews();
 </script>
 </body>
