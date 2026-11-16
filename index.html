@@ -30,6 +30,7 @@ button:disabled{opacity:.7;cursor:wait}
 .card .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
 .card .cat{display:inline-block;font-size:11px;background:#3b82f6;color:#fff;padding:2px 8px;border-radius:6px;}
 .card .src{display:inline-block;font-size:12px;color:#94a3b8;font-weight:bold;}
+.card .cat.عاجل{background:#dc2626}
 .card .cat.غرائب{background:#8b5cf6}
 .card .cat.تقنية{background:#0ea5e9}
 .card .cat.فلك{background:#f59e0b}
@@ -62,7 +63,9 @@ button:disabled{opacity:.7;cursor:wait}
 <div class="feed" id="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
 <script>
 const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
-const CATEGORIES = ["الكل", "غرائب", "منتجات جديدة", "تقنية", "فلك", "عام"];
+
+// ✅ الأزرار المطلوبة (الكل، عاجل، عام، فلك، مع إضافة تصنيفات أخرى)
+const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
 let allNews = [], currentCat = "الكل";
 let countdownTime = 300; 
 let timerInterval;
@@ -172,7 +175,7 @@ async function loadNewsFromSheet() {
 function renderCats() {
   document.getElementById("cats").innerHTML = CATEGORIES.map(function(c) {
     var count = (c === "الكل") ? allNews.length : allNews.filter(function(n){ return n.category === c; }).length;
-    if (count === 0 && c !== "الكل") return "";
+    if (count === 0 && c !== "الكل" && c !== "عاجل") return ""; // نخفي التصنيف إذا كان فارغاً
     var label = c + (count > 0 ? " (" + count + ")" : "");
     return '<button class="'+(c === currentCat ? 'active' : '')+'" onclick="setCat(\''+c+'\')">'+label+'</button>';
   }).join("");
@@ -187,7 +190,6 @@ function setCat(c) {
 async function renderWithTranslation() {
   var feed = document.getElementById("feed");
   
-  // تصفية الأخبار حسب التصنيف المختار
   var items = allNews;
   if (currentCat !== "الكل") {
     items = items.filter(function(n) { return n.category === currentCat; });
