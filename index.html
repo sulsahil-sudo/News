@@ -9,15 +9,16 @@
 <title>أخبار العالم</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px}
+body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px;overflow-x:hidden}
 header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);padding:calc(env(safe-area-inset-top) + 8px) 16px 12px;border-bottom:1px solid #1e293b}
 h1{font-size:20px;margin:8px 0}
 .status{font-size:11px;color:#64748b;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
 .header-date{font-size:15px;color:#fbbf24;font-weight:bold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
 .update-time{font-size:16px;color:#10b981;font-weight:bold;}
 .controls{display:flex;gap:8px;margin-bottom:8px;}
-button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:15px;font-family:inherit;cursor:pointer;width:100%;font-weight:bold;}
-#refreshBtn{background:#3b82f6}
+button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:14px;font-family:inherit;cursor:pointer;font-weight:bold;}
+#refreshBtn{background:#3b82f6;flex:2;}
+#settingsBtn{background:#64748b;flex:1;}
 button:disabled{opacity:.7;cursor:wait}
 .cats{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
 .cats::-webkit-scrollbar{display:none}
@@ -38,6 +39,19 @@ button:disabled{opacity:.7;cursor:wait}
 .card a{color:inherit;text-decoration:none}
 .delete-btn{position:absolute;top:14px;left:14px;background:rgba(239,68,68,0.1);color:#ef4444;border:1px solid #ef4444;border-radius:50%;width:24px;height:24px;font-size:14px;line-height:20px;text-align:center;cursor:pointer;z-index:10;}
 .loading,.empty{text-align:center;padding:40px;color:#64748b}
+
+/* ✅ تنسيقات شاشة الإعدادات */
+#settingsModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#0f172a;z-index:200;padding:20px;overflow-y:auto}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid #334155;padding-bottom:10px}
+.modal-header h2{margin:0;color:#fbbf24}
+.close-btn{background:none;border:none;color:#ef4444;font-size:24px;cursor:pointer}
+.feed-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.feed-item{background:#1e293b;padding:10px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #334155}
+.feed-item span{font-size:14px;word-break:break-all;padding-left:10px}
+.feed-item button{background:#ef4444;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
+.add-feed-form{background:#1e293b;padding:15px;border-radius:12px;border:1px solid #334155;display:flex;flex-direction:column;gap:10px}
+.add-feed-form input{padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#fff;font-family:inherit}
+.add-feed-form button{background:#10b981;color:#fff;border:none;padding:10px;border-radius:8px;cursor:pointer;font-weight:bold}
 </style>
 </head>
 <body>
@@ -52,39 +66,92 @@ button:disabled{opacity:.7;cursor:wait}
 </div>
 <div class="controls">
   <button class="action-btn" id="refreshBtn" onclick="fetchAllNews()">🔄 تحديث الأخبار</button>
+  <button class="action-btn" id="settingsBtn" onclick="openSettings()">⚙️ المصادر</button>
 </div>
 <div class="cats" id="cats"></div>
 </header>
 <div id="feed" class="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
+
+<!-- ✅ شاشة إعدادات المصادر -->
+<div id="settingsModal">
+  <div class="modal-header">
+    <h2>إدارة المصادر</h2>
+    <button class="close-btn" onclick="closeSettings()">✕</button>
+  </div>
+  
+  <div class="feed-list" id="settingsFeedList">
+    <!-- سيتم ملؤها بالروابط -->
+  </div>
+
+  <div class="add-feed-form">
+    <h3>إضافة مصدر جديد</h3>
+    <input type="text" id="newFeedName" placeholder="اسم المصدر (مثال: BBC)">
+    <input type="text" id="newFeedUrl" placeholder="رابط RSS (يبدأ بـ http)">
+    <button onclick="addNewFeed()">➕ إضافة المصدر</button>
+  </div>
+</div>
+
 <script>
-// ✅ قائمة المصادر الجاهزة (بدون حاجة لتعديل)
-const FEEDS = [
-  // عربية
+// ✅ القائمة الافتراضية (إذا لم يقم المستخدم بتعديلها)
+const DEFAULT_FEEDS = [
   { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", name: "الجزيرة" },
   { url: "https://www.alarabiya.net/feed/rss2/ar.xml", name: "العربية" },
-  { url: "https://arabic.rt.com/rss/", name: "روسيا اليوم" },
-  { url: "https://www.skynewsarabia.com/web/rss/95.xml", name: "سكاي نيوز" },
-  
-  // عالمية وتقنية
   { url: "https://feeds.reuters.com/reuters/topNews", name: "Reuters" },
-  { url: "https://apnews.com/index.rss", name: "AP News" },
   { url: "https://techcrunch.com/feed/", name: "TechCrunch" },
-  { url: "https://www.theverge.com/rss/index.xml", name: "The Verge" },
-  { url: "https://www.gsmarena.com/rss-news-reviews.php3", name: "GSMArena" },
-  
-  // غرائب
-  { url: "https://www.odditycentral.com/feed", name: "Oddity Central" },
-  { url: "https://www.cbc.ca/strombo/feed/strange-news/", name: "Strange News" },
-  
-  // فلك
   { url: "https://www.space.com/feeds/all", name: "Space.com" }
 ];
+
+// ✅ قراءة المصادر من ذاكرة التطبيق أو استخدام الافتراضية
+let FEEDS = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
 
 const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
 let allNews = [], currentCat = "الكل";
 const translationCache = {};
 let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
 
+// ✅ دوال إدارة الإعدادات
+function openSettings() {
+  renderSettingsList();
+  document.getElementById("settingsModal").style.display = "block";
+}
+function closeSettings() {
+  document.getElementById("settingsModal").style.display = "none";
+}
+function renderSettingsList() {
+  var list = document.getElementById("settingsFeedList");
+  if(FEEDS.length === 0) { list.innerHTML = "<p>لا توجد مصادر حالياً.</p>"; return; }
+  
+  list.innerHTML = FEEDS.map((feed, index) => {
+    return `<div class="feed-item">
+      <span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span>
+      <button onclick="removeFeed(${index})">حذف</button>
+    </div>`;
+  }).join("");
+}
+function removeFeed(index) {
+  if(confirm("هل أنت متأكد من حذف هذا المصدر؟")) {
+    FEEDS.splice(index, 1);
+    localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
+    renderSettingsList();
+    fetchAllNews(); // تحديث الأخبار بعد الحذف
+  }
+}
+function addNewFeed() {
+  var name = document.getElementById("newFeedName").value.trim();
+  var url = document.getElementById("newFeedUrl").value.trim();
+  if(!name || !url) { alert("الرجاء إدخال اسم المصدر والرابط."); return; }
+  if(!url.startsWith("http")) { alert("الرابط يجب أن يبدأ بـ http"); return; }
+  
+  FEEDS.push({ url: url, name: name });
+  localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
+  
+  document.getElementById("newFeedName").value = "";
+  document.getElementById("newFeedUrl").value = "";
+  renderSettingsList();
+  fetchAllNews(); // تحديث الأخبار بعد الإضافة
+}
+
+// ✅ دوال جلب الأخبار
 async function fetchRSS(url, sourceName) {
   try {
     var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url);
