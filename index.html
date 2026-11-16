@@ -1,164 +1,200 @@
-// ==========================================
-// دالة جلب الأخبار من عدة مصادر
-// ==========================================
-function fetchLatestSiteNews_شيت5اخبار(actionType) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("شيت5اخبار");
-  if (!sheet) return;
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.json">
+<title>أخبار العالم</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px}
+header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);padding:calc(env(safe-area-inset-top) + 8px) 16px 12px;border-bottom:1px solid #1e293b}
+h1{font-size:20px;margin:8px 0}
+.status{font-size:11px;color:#64748b;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
+.header-date{font-size:15px;color:#fbbf24;font-weight:bold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
+.update-time{font-size:16px;color:#10b981;font-weight:bold;transition: all 0.5s;}
+.update-time.flash { color: #ffffff !important; background-color: #10b981; padding: 2px 6px; border-radius: 6px; }
+.countdown-timer{font-size:16px;color:#f43f5e;font-weight:bold;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:5px;}
+.controls{display:flex;gap:8px;margin-bottom:8px;}
+button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:15px;font-family:inherit;cursor:pointer;width:100%;font-weight:bold;}
+#refreshBtn{background:#3b82f6}
+button:disabled{opacity:.7;cursor:wait}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
+.cats::-webkit-scrollbar{display:none}
+.cats button{background:#1e293b;color:#cbd5e1;border:none;padding:6px 14px;border-radius:20px;font-size:14px;white-space:nowrap;font-family:inherit}
+.cats button.active{background:#3b82f6;color:#fff}
+.urgent-banner{background:linear-gradient(90deg,#dc2626,#991b1b);padding:12px 16px;margin:12px;border-radius:12px}
+.urgent-banner h2{font-size:14px;margin:0 0 6px}
+.urgent-banner a{display:block;color:#fff;text-decoration:none;font-size:14px;padding:6px 0;border-top:1px solid rgba(255,255,255,.15)}
+.urgent-banner a:first-of-type{border-top:none}
+.feed{padding:0 12px}
+.card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #334155}
+.card .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.card .cat{display:inline-block;font-size:11px;background:#3b82f6;color:#fff;padding:2px 8px;border-radius:6px;}
+.card .src{display:inline-block;font-size:12px;color:#94a3b8;font-weight:bold;}
+.card .cat.غرائب{background:#8b5cf6}
+.card .cat.تقنية{background:#0ea5e9}
+.card .cat.فلك{background:#f59e0b}
+.card .cat.منتجات جديدة{background:#10b981}
+.card h3{font-size:16px;margin:0 0 6px;line-height:1.4}
+.card .meta{font-size:13px;color:#94a3b8;margin-top:8px;font-weight:500}
+.card a{color:inherit;text-decoration:none}
+.loading,.empty{text-align:center;padding:40px;color:#64748b}
+</style>
+</head>
+<body>
+<header>
+<h1>🚀 أخبار العالم</h1>
+<div class="status" id="status">
+  <span id="newsCount">جاري التحميل...</span>
+</div>
+<div class="header-date">
+  <span id="headerDate">اليوم</span>
+  <span class="update-time" id="updateTime"></span>
+</div>
+<div class="countdown-timer">
+  <span id="countdownText">⏳ التحديث التلقائي بعد: 05:00</span>
+</div>
+<div class="controls">
+  <button class="action-btn" id="refreshBtn" onclick="fetchAction('today', true)">🔄 جلب أخبار اليوم</button>
+</div>
+<div class="cats" id="cats"></div>
+</header>
+<div id="urgent"></div>
+<div class="feed" id="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
+<script>
+// تأكد أن هذا الرابط هو الرابط الموجود في Apps Script (Web App URL)
+const SHEETS_API = "https://script.google.com/macros/s/AKfycbxY1dSoVpMBrOU23NA4Ke4XNKw_-U0BJiO7nkr6iIXAP1xy7GdaROZHfXFzTUB4UPCl/exec";
 
-  var saudiTimeZone = "Asia/Riyadh";
-  var fetchedNews = [];
-  
-  // مسح الأخبار القديمة
-  var maxRows = sheet.getMaxRows();
-  if (maxRows > 1) {
-    sheet.getRange(2, 2, maxRows - 1, 6).clearContent().clearFormat();
-  }
+const CATEGORIES=["الكل","غرائب","منتجات جديدة","تقنية","فلك","عام"];
+let allNews=[],currentCat="الكل";
+let countdownTime = 300; 
+let timerInterval;
 
+function setHeaderDate() {
   var now = new Date();
-  var todayStr = Utilities.formatDate(now, saudiTimeZone, "yyyy-MM-dd");
-
-  // ✅ مصادر متعددة (عربية وإنجليزية)
-  var directFeeds = [
-    // مصادر عربية
-    { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", term: "الجزيرة" },
-    { url: "https://www.alarabiya.net/feed/rss2/ar.xml", term: "العربية" },
-    { url: "https://arabic.rt.com/rss/", term: "روسيا اليوم" },
-    { url: "https://www.skynewsarabia.com/web/rss/95.xml", term: "سكاي نيوز" },
-    // مصادر أجنبية
-    { url: "https://techcrunch.com/category/gadgets/feed/", term: "TechCrunch" },
-    { url: "https://newatlas.com/index.rss", term: "New Atlas" },
-    { url: "https://www.space.com/feeds/all", term: "Space.com" },
-    { url: "https://www.nasa.gov/rss/dyn/breaking_news.rss", term: "NASA" }
-  ];
-
-  directFeeds.forEach(function(feed) {
-    try {
-      var res = UrlFetchApp.fetch(feed.url, { "muteHttpExceptions": true });
-      var xml = res.getContentText();
-      if (xml.indexOf("<?xml") === -1 && xml.indexOf("<rss") === -1) return;
-
-      var doc = XmlService.parse(xml);
-      var root = doc.getRootElement();
-      var items = root.getChild("channel") ? root.getChild("channel").getChildren("item") : root.getChildren("entry");
-
-      items.forEach(function(item) {
-        var rawTitle = (item.getChildText("title") || "").trim();
-        var link = item.getChildText("link");
-        if (!link && item.getChild("link")) link = item.getChild("link").getAttribute("href").getValue();
-        var pubDateStr = item.getChildText("pubDate") || item.getChildText("published") || item.getChildText("updated");
-
-        if (link && rawTitle) {
-          var pubDate = pubDateStr ? new Date(pubDateStr) : new Date();
-          var itemDate = Utilities.formatDate(pubDate, saudiTimeZone, "yyyy-MM-dd");
-          
-          if (itemDate !== todayStr) return;
-
-          fetchedNews.push([
-            "'" + itemDate,
-            "'" + Utilities.formatDate(pubDate, saudiTimeZone, "hh:mm a"),
-            "",
-            rawTitle,
-            feed.term,
-            link
-          ]);
-        }
-      });
-    } catch (e) {}
-  });
-
-  fetchedNews.sort(function(a, b) {
-    var dateA = new Date(a[0].replace(/'/g, '') + " " + a[1]);
-    var dateB = new Date(b[0].replace(/'/g, '') + " " + b[1]);
-    return dateB - dateA;
-  });
-
-  if (fetchedNews.length > 0) {
-    sheet.getRange(2, 2, fetchedNews.length, 6).setValues(fetchedNews);
-    sheet.getRange(2, 2, fetchedNews.length, 2).setNumberFormat("@");
-    sheet.getRange(2, 5, fetchedNews.length, 1).setFontColor("#555555").setFontStyle("italic");
-    sheet.getRange(2, 6, fetchedNews.length, 1).setBackground("#EFEFEF").setFontWeight("bold");
-  }
+  var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+  var months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  document.getElementById("headerDate").textContent = days[now.getDay()] + "، " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
 }
 
-function doGet(e) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("شيت5اخبار");
-  var result = {updated: new Date().toISOString(), count: 0, articles: []};
-  if (!sheet) return outputJSON(result);
-  var lastRow = sheet.getLastRow();
-  if (lastRow < 2) return outputJSON(result);
-  var data = sheet.getRange(2, 2, lastRow - 1, 6).getValues();
-  var articles = [];
-  data.forEach(function(row) {
-    var dateStr = row[0], timeStr = row[1], titleAr = row[3], source = row[4], directUrl = row[5];
-    if (!titleAr) return;
-    var url = String(directUrl || "").trim();
-    if (!url || url.indexOf("http") === -1) url = "https://www.google.com/search?q=" + encodeURIComponent(titleAr);
-    var pubDate = new Date();
-    try { pubDate = new Date(String(dateStr) + " " + String(timeStr)); if (isNaN(pubDate.getTime())) pubDate = new Date(); } catch(err) {}
-    var id = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, url).map(function(b) { return (b & 0xFF).toString(16).padStart(2, '0'); }).join('');
-    var cat = classify(titleAr);
-    articles.push({
-      id: id, title: titleAr, title_ar: titleAr, url: url,
-      source: String(source || "مصدر"), category: cat, is_urgent: /عاجل|breaking|urgent/i.test(titleAr),
-      published_at: pubDate.toISOString()
-    });
-  });
-  var unique = []; var seen = {};
-  articles.forEach(function(a) { if (!seen[a.id]) { seen[a.id] = true; unique.push(a); } });
-  unique.sort(function(a, b) { return new Date(b.published_at) - new Date(a.published_at); });
-  result.count = unique.length;
-  result.articles = unique.slice(0, 500);
-  return outputJSON(result);
-}
-
-function doPost(e) {
-  try {
-    var body = JSON.parse(e.postData.contents);
-    if (body.action === "clear") {
-      clearAllNews();
-      return ContentService.createTextOutput(JSON.stringify({status: "cleared"})).setMimeType(ContentService.MimeType.JSON);
-    } else {
-      fetchLatestSiteNews_شيت5اخبار(body.action);
-      return ContentService.createTextOutput(JSON.stringify({status: "success"})).setMimeType(ContentService.MimeType.JSON);
+function startCountdown() {
+  clearInterval(timerInterval);
+  countdownTime = 300; 
+  updateCountdownDisplay();
+  timerInterval = setInterval(function() {
+    countdownTime--;
+    updateCountdownDisplay();
+    if (countdownTime <= 0) {
+      clearInterval(timerInterval);
+      fetchAction('today', false); 
     }
-  } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({status: "error", message: err.toString()})).setMimeType(ContentService.MimeType.JSON);
+  }, 1000);
+}
+
+function updateCountdownDisplay() {
+  var minutes = Math.floor(countdownTime / 60);
+  var seconds = countdownTime % 60;
+  var displayStr = String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
+  document.getElementById("countdownText").textContent = "⏳ التحديث التلقائي بعد: " + displayStr;
+}
+
+async function fetchAction(action, isManual) {
+  var btn = document.getElementById("refreshBtn");
+  if (isManual) {
+    btn.disabled=true; btn.textContent = "جاري الجلب...";
+  } else {
+    document.getElementById("countdownText").textContent = "⏳ جاري التحديث التلقائي...";
+    document.getElementById("countdownText").style.color = "#3b82f6";
+  }
+  
+  document.getElementById("updateTime").textContent = "";
+  
+  try {
+    await fetch(SHEETS_API, { method: "POST", mode: "no-cors", body: JSON.stringify({action: action}) });
+    await new Promise(r => setTimeout(r, 3000)); 
+    await loadNewsFromSheet();
+  } catch(e) { 
+    document.getElementById("newsCount").textContent = "خطأ في التحديث";
+    document.getElementById("updateTime").textContent = "فشل الاتصال";
+    document.getElementById("updateTime").style.color = "#ef4444"; 
+  }
+  
+  if (isManual) {
+    btn.disabled=false; btn.textContent = "🔄 جلب أخبار اليوم";
+  }
+  document.getElementById("countdownText").style.color = "#f43f5e";
+  startCountdown();
+}
+
+async function loadNewsFromSheet() {
+  try {
+    var r = await fetch(SHEETS_API+"?t="+Date.now());
+    var data = await r.json();
+    allNews = data.articles||[];
+    document.getElementById("newsCount").textContent = allNews.length + " خبر اليوم";
+    
+    var timeEl = document.getElementById("updateTime");
+    timeEl.style.color = "#10b981";
+    
+    if (data.updated) {
+      var updateDate = new Date(data.updated);
+      var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+      timeEl.textContent = "آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
+      timeEl.classList.add('flash');
+      setTimeout(() => { timeEl.classList.remove('flash'); }, 1500);
+    }
+    renderCats(); render();
+  } catch(e) { 
+    document.getElementById("newsCount").textContent = "خطأ في القراءة";
+    document.getElementById("updateTime").textContent = "فشل الاتصال";
+    document.getElementById("updateTime").style.color = "#ef4444";
   }
 }
 
-function clearAllNews() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("شيت5اخبار");
-  var trashSheet = ss.getSheetByName("المحذوفات");
-  if (!trashSheet) return;
-  var lastRow = sheet.getLastRow();
-  if (lastRow < 2) return;
-  var data = sheet.getRange(2, 2, lastRow - 1, 6).getValues();
-  var now = new Date();
-  var transferDate = Utilities.formatDate(now, "Asia/Riyadh", "yyyy-MM-dd");
-  var transferTime = Utilities.formatDate(now, "Asia/Riyadh", "hh:mm a");
-  if (data.length > 0) {
-    var trashData = [];
-    data.forEach(function(row) {
-      trashData.push([transferDate, transferTime, row[0], row[1], row[5], row[3], row[4]]);
-    });
-    var trashLastRow = trashSheet.getLastRow();
-    trashSheet.getRange(trashLastRow + 1, 1, trashData.length, 7).setValues(trashData);
-  }
-  sheet.getRange(2, 2, lastRow - 1, 6).clearContent().clearFormat();
+function renderCats(){
+document.getElementById("cats").innerHTML=CATEGORIES.map(function(c){
+  var count = (c === "الكل") ? allNews.length : allNews.filter(function(n){return n.category === c;}).length;
+  if (count === 0 && c !== "الكل") return "";
+  var label = c + (count > 0 ? " (" + count + ")" : "");
+  return '<button class="'+(c===currentCat?'active':'')+'" onclick="setCat(\''+c+'\')">'+label+'</button>';
+}).join("");
+}
+function setCat(c){currentCat=c;renderCats();render();}
+
+function render(){
+var items=allNews;
+if(currentCat!=="الكل")items=items.filter(function(n){return n.category===currentCat;});
+var feed=document.getElementById("feed");
+if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار اليوم في هذا القسم</div>';return;}
+feed.innerHTML=items.slice(0,200).map(function(n){
+  return '<div class="card"><a href="'+n.url+'" target="_blank">' +
+  '<div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div>' +
+  '<h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+timeAgo(n.published_at)+'</div></a></div>';
+}).join("");
 }
 
-function classify(title) {
-  var t = title.toLowerCase();
-  if (/غرائب|عجيب|غريب|مدهش|طريف|weird|strange|odd/.test(t)) return "غرائب"; 
-  if (/هاتف|تطبيق|ذكاء|تقنية|جهاز|gadget|tech|app|software|iphone|android/.test(t)) return "تقنية";
-  if (/منتج|إطلاق|جديد|product|launch|new/.test(t)) return "منتجات جديدة";
-  if (/فلك|فضاء|كوكب|مجرة|نجم|space|nasa|planet|galaxy|star/.test(t)) return "فلك";
-  return "عام";
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+
+function timeAgo(iso){
+  if(!iso)return '';
+  var d = new Date(iso); 
+  if(isNaN(d.getTime())) return '';
+  var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+  var dayName = days[d.getDay()];
+  var dateStr = d.getDate() + '/' + (d.getMonth() + 1); 
+  var h = d.getHours();
+  var mi = String(d.getMinutes()).padStart(2, '0');
+  var ampm = h >= 12 ? 'مساءً' : 'صباحاً';
+  var h12 = h % 12 || 12;
+  return dayName + ' ' + dateStr + ' الساعة ' + h12 + ':' + mi + ' ' + ampm;
 }
 
-function outputJSON(data) {
-  return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
-}
+setHeaderDate();
+renderCats(); loadNewsFromSheet();
+startCountdown();
+</script>
+</body>
+</html>
