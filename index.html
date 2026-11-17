@@ -55,8 +55,6 @@ button:disabled{opacity:.7;cursor:wait}
 .add-feed-form{background:#1e293b;padding:15px;border-radius:12px;border:1px solid #334155;display:flex;flex-direction:column;gap:10px}
 .add-feed-form input{padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#fff;font-family:inherit}
 .add-feed-form button{background:#10b981;color:#fff;border:none;padding:10px;border-radius:8px;cursor:pointer;font-weight:bold}
-
-/* ✅ تنسيق أزرار إيقاف/تشغيل الكل */
 .bulk-actions{display:flex;gap:10px;margin-bottom:15px;}
 .btn-bulk{flex:1;border:none;border-radius:8px;padding:10px;cursor:pointer;font-weight:bold;font-family:inherit;font-size:14px;}
 .btn-stop-all{background:#ef4444;color:#fff;}
@@ -88,13 +86,10 @@ button:disabled{opacity:.7;cursor:wait}
     <h2>إدارة المصادر</h2>
     <button class="close-btn" onclick="closeSettings()">✕</button>
   </div>
-  
-  <!-- ✅ أزرار الإيقاف والتشغيل الشاملة -->
   <div class="bulk-actions">
     <button class="btn-bulk btn-stop-all" onclick="stopAllFeeds()">⏸️ إيقاف الكل</button>
     <button class="btn-bulk btn-start-all" onclick="startAllFeeds()">▶️ تشغيل الكل</button>
   </div>
-
   <div class="feed-list" id="settingsFeedList"></div>
   <div class="add-feed-form">
     <h3>إضافة مصدر جديد</h3>
@@ -122,7 +117,6 @@ let timerInterval;
 
 function openSettings() { renderSettingsList(); document.getElementById("settingsModal").style.display = "block"; }
 function closeSettings() { document.getElementById("settingsModal").style.display = "none"; }
-
 function renderSettingsList() {
   var list = document.getElementById("settingsFeedList");
   if(FEEDS.length === 0) { list.innerHTML = "<p>لا توجد مصادر حالياً.</p>"; return; }
@@ -132,21 +126,8 @@ function renderSettingsList() {
     return `<div class="feed-item ${statusClass}"><span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span><div class="feed-actions"><button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button><button class="btn-delete" onclick="removeFeed(${index})">🗑️</button></div></div>`;
   }).join("");
 }
-
-// ✅ دوال الإيقاف والتشغيل الشاملة
-function stopAllFeeds() {
-  FEEDS.forEach(feed => feed.active = false);
-  localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
-  renderSettingsList();
-  fetchAllNews(); 
-}
-function startAllFeeds() {
-  FEEDS.forEach(feed => feed.active = true);
-  localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
-  renderSettingsList();
-  fetchAllNews();
-}
-
+function stopAllFeeds() { FEEDS.forEach(feed => feed.active = false); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
+function startAllFeeds() { FEEDS.forEach(feed => feed.active = true); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
 function toggleFeed(index) { FEEDS[index].active = FEEDS[index].active === false ? true : false; localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
 function removeFeed(index) { if(confirm("هل أنت متأكد من حذف هذا المصدر نهائياً؟")) { FEEDS.splice(index, 1); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); } }
 function addNewFeed() {
@@ -198,16 +179,25 @@ function classify(title) {
   return "عام";
 }
 
+// ✅ الترجمة باستخدام بروكسي corsproxy.io (يعمل على الجوال)
 async function translateTitle(text) {
-  if (!text) return ""; if (/[\u0600-\u06FF]/.test(text)) return text; if (translationCache[text]) return translationCache[text];
+  if (!text) return "";
+  if (/[\u0600-\u06FF]/.test(text)) return text;
+  if (translationCache[text]) return translationCache[text];
+
   try {
-    var url = "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(text) + "&langpair=en|ar";
-    var response = await fetch(url); var data = await response.json();
-    if (data.responseData && data.responseData.translatedText) {
-      var translated = data.responseData.translatedText; translationCache[text] = translated; return translated;
-    }
+    var originalUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
+    var proxyUrl = "https://corsproxy.io/?" + encodeURIComponent(originalUrl);
+    
+    var response = await fetch(proxyUrl);
+    var data = await response.json();
+    var translated = data[0].map(function(part) { return part[0]; }).join('');
+    
+    translationCache[text] = translated;
+    return translated;
+  } catch(e) {
     return text;
-  } catch(e) { return text; }
+  }
 }
 
 function setHeaderDate() {
