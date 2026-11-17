@@ -179,17 +179,18 @@ function classify(title) {
   return "عام";
 }
 
-// ✅ دالة الترجمة المضمونة عبر corsproxy.io
+// ✅ دالة الترجمة (Google Translate المباشر) 
 async function translateTitle(text) {
   if (!text) return "";
   if (/[\u0600-\u06FF]/.test(text)) return text;
   if (translationCache[text]) return translationCache[text];
 
   try {
-    var originalUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
-    var proxyUrl = "https://corsproxy.io/?" + encodeURIComponent(originalUrl);
+    // إضافة تأخير بسيط بين كل طلب وطلب لتجنب الحظر
+    await new Promise(r => setTimeout(r, 100));
     
-    var response = await fetch(proxyUrl);
+    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
+    var response = await fetch(url);
     var data = await response.json();
     var translated = data[0].map(function(part) { return part[0]; }).join('');
     
