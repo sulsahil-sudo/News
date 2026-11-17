@@ -179,7 +179,7 @@ function classify(title) {
   return "عام";
 }
 
-// ✅ الترجمة باستخدام بروكسي corsproxy.io (يعمل على الجوال)
+// ✅ دالة الترجمة المضمونة عبر corsproxy.io
 async function translateTitle(text) {
   if (!text) return "";
   if (/[\u0600-\u06FF]/.test(text)) return text;
