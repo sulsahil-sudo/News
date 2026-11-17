@@ -99,12 +99,28 @@ button:disabled{opacity:.7;cursor:wait}
   </div>
 </div>
 <script>
+// ✅ تم إضافة جميع مصادرك من ملف OPML هنا
 const DEFAULT_FEEDS = [
-  { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", name: "الجزيرة", active: true },
-  { url: "https://www.alarabiya.net/feed/rss2/ar.xml", name: "العربية", active: true },
-  { url: "https://feeds.reuters.com/reuters/topNews", name: "Reuters", active: true },
+  { url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml", name: "The New York Times", active: true },
+  { url: "https://www.wired.com/feed/rss", name: "WIRED", active: true },
+  { url: "https://www.theverge.com/rss/index.xml", name: "The Verge", active: true },
+  { url: "https://lifehacker.com/feed/rss", name: "Lifehacker", active: true },
+  { url: "https://www.engadget.com/rss.xml", name: "Engadget", active: true },
   { url: "https://techcrunch.com/feed/", name: "TechCrunch", active: true },
-  { url: "https://www.space.com/feeds/all", name: "Space.com", active: true }
+  { url: "https://feeds.arstechnica.com/arstechnica/index", name: "Ars Technica", active: true },
+  { url: "https://feeds.content.dowjones.io/public/rss/RSSWorldNews", name: "WSJ: World News", active: true },
+  { url: "https://news.google.com/news/rss/search?q=made-in-china.com%20site%3Amade-in-china.com&hl=en-US&gl=US&ceid=US:en", name: "Made in China (Google News)", active: true },
+  { url: "https://newatlas.com/technology/index.rss", name: "New Atlas - Technology", active: true },
+  { url: "https://www.cnbc.com/id/100003114/device/rss/rss.html", name: "CNBC Top News", active: true },
+  { url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA", name: "Associated Press", active: true },
+  { url: "https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ", name: "Reuters", active: true },
+  { url: "https://www.ftchinese.com/rss/feed", name: "FT中文网", active: true },
+  { url: "https://www.rfa.org/arc/outboundfeeds/mandarin/rss/", name: "RFA", active: true },
+  { url: "https://feeds.feedburner.com/odditymall", name: "OddityMall", active: true },
+  { url: "https://newatlas.com/index.rss", name: "Gizmag", active: true },
+  { url: "https://madeinchinajournal.com/feed/", name: "Made in China Journal", active: true },
+  { url: "https://news.google.com/news/rss/search/section/q/alibaba/alibaba?hl=en&gl=US", name: "Alibaba (Google News)", active: true },
+  { url: "https://www.gsmarena.com/rss-news-reviews.php3", name: "GSMArena", active: true }
 ];
 
 let FEEDS = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
@@ -141,7 +157,6 @@ function startAllFeeds() { FEEDS.forEach(feed => feed.active = true); localStora
 function toggleFeed(index) { FEEDS[index].active = FEEDS[index].active === false ? true : false; localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
 function removeFeed(index) { if(confirm("هل أنت متأكد من حذف هذا المصدر نهائياً؟")) { FEEDS.splice(index, 1); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); } }
 
-// ✅ دالة إضافة مصدر جديد مع منع تكرار رابط الـ RSS
 function addNewFeed() {
   var name = document.getElementById("newFeedName").value.trim(); 
   var url = document.getElementById("newFeedUrl").value.trim();
@@ -149,28 +164,17 @@ function addNewFeed() {
   if(!name || !url) { alert("الرجاء إدخال اسم المصدر والرابط."); return; }
   if(!url.startsWith("http")) { alert("الرابط يجب أن يبدأ بـ http"); return; }
   
-  // ✅ تنظيف الرابط المدخل
   var cleanNewUrl = url.replace(/\/$/, "").toLowerCase(); 
   
-  // ✅ البحث عن أي تطابق (سواء في الاسم أو الرابط)
   var isDuplicate = FEEDS.some(function(feed) {
     var cleanFeedUrl = feed.url.replace(/\/$/, "").toLowerCase();
-    
-    // منع التكرار إذا تطابق الرابط حرفياً
     if (cleanFeedUrl === cleanNewUrl) return true;
-    
-    // منع التكرار إذا تطابق اسم المصدر
     if (feed.name.toLowerCase() === name.toLowerCase()) return true;
-
     return false;
   });
 
-  if (isDuplicate) {
-    alert("⚠️ هذا المصدر (أو رابطه) موجود مسبقاً في القائمة!");
-    return;
-  }
+  if (isDuplicate) { alert("⚠️ هذا المصدر (أو رابطه) موجود مسبقاً في القائمة!"); return; }
   
-  // إضافة المصدر
   FEEDS.push({ url: url, name: name, active: true }); 
   localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
   
