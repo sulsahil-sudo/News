@@ -59,6 +59,7 @@ button:disabled{opacity:.7;cursor:wait}
 .btn-bulk{flex:1;border:none;border-radius:8px;padding:10px;cursor:pointer;font-weight:bold;font-family:inherit;font-size:14px;}
 .btn-stop-all{background:#ef4444;color:#fff;}
 .btn-start-all{background:#10b981;color:#fff;}
+.btn-reset{background:#3b82f6;color:#fff;border:none;padding:10px;border-radius:8px;cursor:pointer;font-weight:bold;width:100%;margin-top:10px;}
 </style>
 </head>
 <body>
@@ -91,7 +92,10 @@ button:disabled{opacity:.7;cursor:wait}
     <button class="btn-bulk btn-start-all" onclick="startAllFeeds()">▶️ تشغيل الكل</button>
   </div>
   <div class="feed-list" id="settingsFeedList"></div>
-  <div class="add-feed-form">
+  
+  <button class="btn-reset" onclick="resetFeeds()">🔄 استعادة المصادر الافتراضية (مسح الذاكرة)</button>
+  
+  <div class="add-feed-form" style="margin-top:20px;">
     <h3>إضافة مصدر جديد</h3>
     <input type="text" id="newFeedName" placeholder="اسم المصدر (مثال: BBC)">
     <input type="text" id="newFeedUrl" placeholder="رابط RSS (يبدأ بـ http)">
@@ -99,7 +103,7 @@ button:disabled{opacity:.7;cursor:wait}
   </div>
 </div>
 <script>
-// ✅ تم إضافة جميع مصادرك من ملف OPML هنا
+// ✅ القائمة الجديدة (20 مصدراً)
 const DEFAULT_FEEDS = [
   { url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml", name: "The New York Times", active: true },
   { url: "https://www.wired.com/feed/rss", name: "WIRED", active: true },
@@ -123,6 +127,11 @@ const DEFAULT_FEEDS = [
   { url: "https://www.gsmarena.com/rss-news-reviews.php3", name: "GSMArena", active: true }
 ];
 
+// ✅ السحر كله هنا: مسح الذاكرة القديمة تلقائياً عند أول فتح
+if (!localStorage.getItem("myFeeds") || JSON.parse(localStorage.getItem("myFeeds")).length < 20) {
+  localStorage.setItem("myFeeds", JSON.stringify(DEFAULT_FEEDS));
+}
+
 let FEEDS = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
 const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
 let allNews = [], currentCat = "الكل";
@@ -133,6 +142,16 @@ let timerInterval;
 
 function openSettings() { renderSettingsList(); document.getElementById("settingsModal").style.display = "block"; }
 function closeSettings() { document.getElementById("settingsModal").style.display = "none"; }
+
+function resetFeeds() {
+  if(confirm("هل أنت متأكد من استعادة المصادر الافتراضية؟ سيتم مسح أي مصادر أضفتها يدوياً.")) {
+    FEEDS = JSON.parse(JSON.stringify(DEFAULT_FEEDS));
+    localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
+    renderSettingsList();
+    fetchAllNews();
+    alert("تم استعادة جميع المصادر الافتراضية بنجاح!");
+  }
+}
 
 function renderSettingsList() {
   var list = document.getElementById("settingsFeedList");
