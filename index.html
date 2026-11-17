@@ -45,13 +45,37 @@ button:disabled{opacity:.7;cursor:wait}
 .modal-header h2{margin:0;color:#fbbf24}
 .close-btn{background:none;border:none;color:#ef4444;font-size:24px;cursor:pointer}
 .feed-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.feed-item{padding:12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;transition: all 0.3s;}
+
+/* ✅ تنسيق بطاقة المصدر مع مساحة لزر الحذف وتكبير الخط */
+.feed-item{padding:12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;transition: all 0.3s;position:relative; padding-left: 40px;}
 .feed-item.active-feed{background-color: rgba(16, 185, 129, 0.15); border: 1px solid #10b981;} 
 .feed-item.inactive-feed{background-color: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444;} 
-.feed-item span{font-size:14px;word-break:break-all;padding-left:10px}
+
+/* ✅ تكبير خط الرابط */
+.feed-item span{font-size:16px;word-break:break-all;font-weight:bold;color:#e2e8f0;}
+
 .feed-actions{display:flex;gap:5px;}
 .btn-toggle{background:#f59e0b;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
 .btn-delete{background:#ef4444;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
+
+/* ✅ وضع زر الحذف في الزاوية اليسرى السفلية ليكون بعيداً عن الرابط */
+.feed-delete-btn {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .add-feed-form{background:#1e293b;padding:15px;border-radius:12px;border:1px solid #334155;display:flex;flex-direction:column;gap:10px}
 .add-feed-form input{padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#fff;font-family:inherit}
 .add-feed-form button{background:#10b981;color:#fff;border:none;padding:10px;border-radius:8px;cursor:pointer;font-weight:bold}
@@ -117,47 +141,44 @@ let timerInterval;
 
 function openSettings() { renderSettingsList(); document.getElementById("settingsModal").style.display = "block"; }
 function closeSettings() { document.getElementById("settingsModal").style.display = "none"; }
+
+// ✅ تعديل عرض القائمة مع وضع زر الحذف في مكان لا يغطي الرابط
 function renderSettingsList() {
   var list = document.getElementById("settingsFeedList");
   if(FEEDS.length === 0) { list.innerHTML = "<p>لا توجد مصادر حالياً.</p>"; return; }
+  
   list.innerHTML = FEEDS.map((feed, index) => {
     let statusClass = feed.active === false ? 'inactive-feed' : 'active-feed';
     let btnText = feed.active === false ? '▶️ تشغيل' : '⏸️ إيقاف';
-    return `<div class="feed-item ${statusClass}"><span><b>${feed.name}</b><br><small style="color:#64748b">${feed.url}</small></span><div class="feed-actions"><button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button><button class="btn-delete" onclick="removeFeed(${index})">🗑️</button></div></div>`;
+    
+    return `<div class="feed-item ${statusClass}">
+      <span>${feed.name}<br><small style="font-size:14px; color:#94a3b8; font-weight:normal;">${feed.url}</small></span>
+      <div class="feed-actions">
+        <button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button>
+      </div>
+      <button class="feed-delete-btn" onclick="removeFeed(${index})" title="حذف المصدر">✕</button>
+    </div>`;
   }).join("");
 }
+
 function stopAllFeeds() { FEEDS.forEach(feed => feed.active = false); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
 function startAllFeeds() { FEEDS.forEach(feed => feed.active = true); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
 function toggleFeed(index) { FEEDS[index].active = FEEDS[index].active === false ? true : false; localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
 function removeFeed(index) { if(confirm("هل أنت متأكد من حذف هذا المصدر نهائياً؟")) { FEEDS.splice(index, 1); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); } }
-
-// ✅ دالة إضافة مصدر جديد مع منع التكرار
 function addNewFeed() {
-  var name = document.getElementById("newFeedName").value.trim();
-  var url = document.getElementById("newFeedUrl").value.trim();
-  
+  var name = document.getElementById("newFeedName").value.trim(); var url = document.getElementById("newFeedUrl").value.trim();
   if(!name || !url) { alert("الرجاء إدخال اسم المصدر والرابط."); return; }
   if(!url.startsWith("http")) { alert("الرابط يجب أن يبدأ بـ http"); return; }
   
-  // التحقق مما إذا كان المصدر موجوداً مسبقاً (سواء بالرابط أو بالاسم)
   var isDuplicate = FEEDS.some(function(feed) {
     return feed.url.trim().toLowerCase() === url.toLowerCase() || feed.name.trim().toLowerCase() === name.toLowerCase();
   });
 
-  if (isDuplicate) {
-    alert("⚠️ هذا المصدر موجود مسبقاً في القائمة!");
-    return;
-  }
+  if (isDuplicate) { alert("⚠️ هذا المصدر موجود مسبقاً في القائمة!"); return; }
   
-  // إذا لم يكن موجوداً، نضيفه
-  FEEDS.push({ url: url, name: name, active: true }); 
-  localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
-  
-  document.getElementById("newFeedName").value = ""; 
-  document.getElementById("newFeedUrl").value = "";
-  
-  renderSettingsList(); 
-  fetchAllNews();
+  FEEDS.push({ url: url, name: name, active: true }); localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
+  document.getElementById("newFeedName").value = ""; document.getElementById("newFeedUrl").value = "";
+  renderSettingsList(); fetchAllNews();
 }
 
 function startCountdown() {
