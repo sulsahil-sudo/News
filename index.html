@@ -1,50 +1,371 @@
-async function fetchRSS(url, sourceName) {
-  const proxies = [
-    "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url),
-    "https://api.allorigins.win/raw?url=" + encodeURIComponent(url)
-  ];
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.json">
+<title>أخبار العالم</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding-bottom:80px;overflow-x:hidden}
+header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);padding:calc(env(safe-area-inset-top) + 8px) 16px 12px;border-bottom:1px solid #1e293b}
+h1{font-size:20px;margin:8px 0}
+.status{font-size:11px;color:#64748b;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
+.header-date{font-size:15px;color:#fbbf24;font-weight:bold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
+.update-time{font-size:16px;color:#10b981;font-weight:bold;}
+.countdown-timer{font-size:16px;color:#f43f5e;font-weight:bold;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:5px;}
+.controls{display:flex;gap:8px;margin-bottom:8px;}
+button.action-btn{color:#fff;border:none;padding:10px;border-radius:20px;font-size:14px;font-family:inherit;cursor:pointer;font-weight:bold;}
+#refreshBtn{background:#3b82f6;flex:2;}
+#settingsBtn{background:#64748b;flex:1;}
+button:disabled{opacity:.7;cursor:wait}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
+.cats::-webkit-scrollbar{display:none}
+.cats button{background:#1e293b;color:#cbd5e1;border:none;padding:6px 14px;border-radius:20px;font-size:14px;white-space:nowrap;font-family:inherit}
+.cats button.active{background:#3b82f6;color:#fff}
+.feed{padding:0 12px}
+.card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #334155;position:relative;}
+.card .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.card .cat{display:inline-block;font-size:11px;background:#3b82f6;color:#fff;padding:2px 8px;border-radius:6px;}
+.card .src{display:inline-block;font-size:12px;color:#94a3b8;font-weight:bold;}
+.card .cat.عاجل{background:#dc2626}
+.card .cat.غرائب{background:#8b5cf6}
+.card .cat.تقنية{background:#0ea5e9}
+.card .cat.فلك{background:#f59e0b}
+.card .cat.منتجات جديدة{background:#10b981}
+.card h3{font-size:16px;margin:0 0 6px;line-height:1.4;padding-left:25px;}
+.card .meta{font-size:13px;color:#94a3b8;margin-top:8px;font-weight:500}
+.card a{color:inherit;text-decoration:none}
+.delete-btn{position:absolute;top:14px;left:14px;background:rgba(239,68,68,0.1);color:#ef4444;border:1px solid #ef4444;border-radius:50%;width:24px;height:24px;font-size:14px;line-height:20px;text-align:center;cursor:pointer;z-index:10;}
+.loading,.empty{text-align:center;padding:40px;color:#64748b}
+#settingsModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#0f172a;z-index:200;padding:20px;overflow-y:auto}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid #334155;padding-bottom:10px}
+.modal-header h2{margin:0;color:#fbbf24}
+.close-btn{background:none;border:none;color:#ef4444;font-size:24px;cursor:pointer}
+.feed-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.feed-item{padding:12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;transition: all 0.3s;position:relative; padding-left: 40px;}
+.feed-item.active-feed{background-color: rgba(16, 185, 129, 0.15); border: 1px solid #10b981;} 
+.feed-item.inactive-feed{background-color: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444;} 
+.feed-item span{font-size:16px;word-break:break-all;font-weight:bold;color:#e2e8f0;}
+.feed-actions{display:flex;gap:5px;}
+.btn-toggle{background:#f59e0b;color:#fff;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
+.feed-delete-btn{position:absolute;bottom:8px;left:8px;background:#ef4444;color:white;border:none;border-radius:50%;width:24px;height:24px;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.add-feed-form{background:#1e293b;padding:15px;border-radius:12px;border:1px solid #334155;display:flex;flex-direction:column;gap:10px}
+.add-feed-form input{padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#fff;font-family:inherit}
+.add-feed-form button{background:#10b981;color:#fff;border:none;padding:10px;border-radius:8px;cursor:pointer;font-weight:bold}
+.bulk-actions{display:flex;gap:10px;margin-bottom:15px;}
+.btn-bulk{flex:1;border:none;border-radius:8px;padding:10px;cursor:pointer;font-weight:bold;font-family:inherit;font-size:14px;}
+.btn-stop-all{background:#ef4444;color:#fff;}
+.btn-start-all{background:#10b981;color:#fff;}
 
-  // 1. المحاولة الأولى عبر rss2json
-  try {
-    const response = await fetch(proxies[0]);
-    if (response.ok) {
-      const data = await response.json();
-      if (data.status === "ok" && Array.isArray(data.items) && data.items.length) {
-        return data.items.map(item => ({
-          title: item.title,
-          url: item.link,
-          source: sourceName,
-          category: classify(item.title),
-          date: item.pubDate,
-          is_urgent: /عاجل|breaking|urgent/i.test(item.title)
-        }));
-      }
-    }
-  } catch (e) {}
-
-  // 2. محاولة احتياطية بقراءة XML مباشرة عبر proxy
-  try {
-    const res = await fetch(proxies[1]);
-    if (res.ok) {
-      const xmlText = await res.text();
-      const doc = new DOMParser().parseFromString(xmlText, "text/xml");
-      const entries = Array.from(doc.querySelectorAll("item, entry"));
-      return entries.map(el => {
-        const title = el.querySelector("title")?.textContent?.trim() || "";
-        const linkEl = el.querySelector("link");
-        const link = linkEl?.getAttribute("href") || linkEl?.textContent?.trim() || "";
-        const pubDate = el.querySelector("pubDate, updated, published")?.textContent?.trim() || new Date().toISOString();
-        return {
-          title,
-          url: link,
-          source: sourceName,
-          category: classify(title),
-          date: pubDate,
-          is_urgent: /عاجل|breaking|urgent/i.test(title)
-        };
-      }).filter(item => item.title && item.url);
-    }
-  } catch (e) {}
-
-  return [];
+/* ✅ تنسيق مربع البحث */
+.search-container {
+  margin-bottom: 10px;
+  padding: 0 4px;
 }
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+}
+.search-input::placeholder {
+  color: #64748b;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>🚀 أخبار العالم</h1>
+<div class="status" id="status">
+  <span id="newsCount">جاري التحميل...</span>
+</div>
+<div class="header-date">
+  <span id="headerDate">اليوم</span>
+  <span class="update-time" id="updateTime"></span>
+</div>
+<div class="countdown-timer">
+  <span id="countdownText">⏳ التحديث التلقائي بعد: 05:00</span>
+</div>
+<div class="controls">
+  <button class="action-btn" id="refreshBtn" onclick="fetchAllNews()">🔄 تحديث الأخبار</button>
+  <button class="action-btn" id="settingsBtn" onclick="openSettings()">⚙️ المصادر</button>
+</div>
+<div class="cats" id="cats"></div>
+</header>
+
+<div class="search-container">
+  <input type="text" id="searchBox" class="search-input" placeholder="🔍 ابحث في الأخبار..." oninput="renderWithTranslation()">
+</div>
+
+<div id="feed" class="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
+<div id="settingsModal">
+  <div class="modal-header">
+    <h2>إدارة المصادر</h2>
+    <button class="close-btn" onclick="closeSettings()">✕</button>
+  </div>
+  <div class="bulk-actions">
+    <button class="btn-bulk btn-stop-all" onclick="stopAllFeeds()">⏸️ إيقاف الكل</button>
+    <button class="btn-bulk btn-start-all" onclick="startAllFeeds()">▶️ تشغيل الكل</button>
+  </div>
+  <div class="feed-list" id="settingsFeedList"></div>
+  
+  <div class="add-feed-form" style="margin-top:20px;">
+    <h3>إضافة مصدر جديد</h3>
+    <input type="text" id="newFeedName" placeholder="اسم المصدر (مثال: BBC)">
+    <input type="text" id="newFeedUrl" placeholder="رابط RSS (يبدأ بـ http)">
+    <button onclick="addNewFeed()">➕ إضافة المصدر</button>
+  </div>
+</div>
+<script>
+const DEFAULT_FEEDS = [
+  { url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml", name: "The New York Times", active: true },
+  { url: "https://www.wired.com/feed/rss", name: "WIRED", active: true },
+  { url: "https://www.theverge.com/rss/index.xml", name: "The Verge", active: true },
+  { url: "https://lifehacker.com/feed/rss", name: "Lifehacker", active: true },
+  { url: "https://www.engadget.com/rss.xml", name: "Engadget", active: true },
+  { url: "https://techcrunch.com/feed/", name: "TechCrunch", active: true },
+  { url: "https://feeds.arstechnica.com/arstechnica/index", name: "Ars Technica", active: true },
+  { url: "https://feeds.content.dowjones.io/public/rss/RSSWorldNews", name: "WSJ: World News", active: true },
+  { url: "https://news.google.com/news/rss/search?q=made-in-china.com%20site%3Amade-in-china.com&hl=en-US&gl=US&ceid=US:en", name: "Made in China (Google News)", active: true },
+  { url: "https://newatlas.com/technology/index.rss", name: "New Atlas - Technology", active: true },
+  { url: "https://www.cnbc.com/id/100003114/device/rss/rss.html", name: "CNBC Top News", active: true },
+  { url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA", name: "Associated Press", active: true },
+  { url: "https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ", name: "Reuters", active: true },
+  { url: "https://www.ftchinese.com/rss/feed", name: "FT中文网", active: true },
+  { url: "https://www.rfa.org/arc/outboundfeeds/mandarin/rss/", name: "RFA", active: true },
+  { url: "https://feeds.feedburner.com/odditymall", name: "OddityMall", active: true },
+  { url: "https://newatlas.com/index.rss", name: "Gizmag", active: true },
+  { url: "https://madeinchinajournal.com/feed/", name: "Made in China Journal", active: true },
+  { url: "https://news.google.com/news/rss/search/section/q/alibaba/alibaba?hl=en&gl=US", name: "Alibaba (Google News)", active: true },
+  { url: "https://www.gsmarena.com/rss-news-reviews.php3", name: "GSMArena", active: true }
+];
+
+if (!localStorage.getItem("myFeeds") || JSON.parse(localStorage.getItem("myFeeds")).length < 20) {
+  localStorage.setItem("myFeeds", JSON.stringify(DEFAULT_FEEDS));
+}
+
+let FEEDS = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
+const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
+let allNews = [], currentCat = "الكل";
+const translationCache = {};
+let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
+let countdownTime = 300; 
+let timerInterval;
+
+function openSettings() { renderSettingsList(); document.getElementById("settingsModal").style.display = "block"; }
+function closeSettings() { document.getElementById("settingsModal").style.display = "none"; }
+
+function renderSettingsList() {
+  var list = document.getElementById("settingsFeedList");
+  if(FEEDS.length === 0) { list.innerHTML = "<p>لا توجد مصادر حالياً.</p>"; return; }
+  
+  list.innerHTML = FEEDS.map((feed, index) => {
+    let statusClass = feed.active === false ? 'inactive-feed' : 'active-feed';
+    let btnText = feed.active === false ? '▶️ تشغيل' : '⏸️ إيقاف';
+    
+    return `<div class="feed-item ${statusClass}">
+      <span>${feed.name}<br><small style="font-size:13px; color:#94a3b8; font-weight:normal;">${feed.url}</small></span>
+      <div class="feed-actions">
+        <button class="btn-toggle" onclick="toggleFeed(${index})">${btnText}</button>
+      </div>
+      <button class="feed-delete-btn" onclick="removeFeed(${index})" title="حذف المصدر">✕</button>
+    </div>`;
+  }).join("");
+}
+
+function stopAllFeeds() { FEEDS.forEach(feed => feed.active = false); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
+function startAllFeeds() { FEEDS.forEach(feed => feed.active = true); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
+function toggleFeed(index) { FEEDS[index].active = FEEDS[index].active === false ? true : false; localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); }
+function removeFeed(index) { if(confirm("هل أنت متأكد من حذف هذا المصدر نهائياً؟")) { FEEDS.splice(index, 1); localStorage.setItem("myFeeds", JSON.stringify(FEEDS)); renderSettingsList(); fetchAllNews(); } }
+
+function addNewFeed() {
+  var name = document.getElementById("newFeedName").value.trim(); 
+  var url = document.getElementById("newFeedUrl").value.trim();
+  
+  if(!name || !url) { alert("الرجاء إدخال اسم المصدر والرابط."); return; }
+  if(!url.startsWith("http")) { alert("الرابط يجب أن يبدأ بـ http"); return; }
+  
+  var cleanNewUrl = url.replace(/\/$/, "").toLowerCase(); 
+  
+  var isDuplicate = FEEDS.some(function(feed) {
+    var cleanFeedUrl = feed.url.replace(/\/$/, "").toLowerCase();
+    if (cleanFeedUrl === cleanNewUrl) return true;
+    if (feed.name.toLowerCase() === name.toLowerCase()) return true;
+    return false;
+  });
+
+  if (isDuplicate) { alert("⚠️ هذا المصدر (أو رابطه) موجود مسبقاً في القائمة!"); return; }
+  
+  FEEDS.push({ url: url, name: name, active: true }); 
+  localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
+  
+  document.getElementById("newFeedName").value = ""; 
+  document.getElementById("newFeedUrl").value = "";
+  
+  renderSettingsList(); 
+  fetchAllNews();
+}
+
+function startCountdown() {
+  clearInterval(timerInterval);
+  countdownTime = 300; 
+  updateCountdownDisplay();
+  timerInterval = setInterval(function() {
+    countdownTime--;
+    updateCountdownDisplay();
+    if (countdownTime <= 0) {
+      clearInterval(timerInterval);
+      fetchAllNews(); 
+    }
+  }, 1000);
+}
+function updateCountdownDisplay() {
+  var minutes = Math.floor(countdownTime / 60);
+  var seconds = countdownTime % 60;
+  var displayStr = String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
+  document.getElementById("countdownText").textContent = "⏳ التحديث التلقائي بعد: " + displayStr;
+}
+
+async function fetchRSS(url, sourceName) {
+  try {
+    var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url);
+    var response = await fetch(apiUrl);
+    var data = await response.json();
+    if (data.status !== "ok" || !data.items) return [];
+    return data.items.map(item => ({ title: item.title, url: item.link, source: sourceName, category: classify(item.title), date: item.pubDate, is_urgent: /عاجل|breaking|urgent/i.test(item.title) }));
+  } catch(e) { return []; }
+}
+
+function classify(title) {
+  var t = title.toLowerCase();
+  if (/عاجل|breaking|urgent/.test(t)) return "عاجل";
+  if (/غرائب|عجيب|غريب|مدهش|طريف|weird|strange|odd/.test(t)) return "غرائب"; 
+  if (/هاتف|تطبيق|ذكاء|تقنية|جهاز|gadget|tech|app|software|iphone|android/.test(t)) return "تقنية";
+  if (/منتج|إطلاق|جديد|product|launch|new/.test(t)) return "منتجات جديدة";
+  if (/فلك|فضاء|كوكب|مجرة|نجم|space|nasa|planet|galaxy|star/.test(t)) return "فلك";
+  return "عام";
+}
+
+async function translateTitle(text) {
+  if (!text) return "";
+  if (/[\u0600-\u06FF]/.test(text)) return text;
+  if (translationCache[text]) return translationCache[text];
+
+  try {
+    await new Promise(r => setTimeout(r, 100));
+    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=" + encodeURIComponent(text);
+    var response = await fetch(url);
+    var data = await response.json();
+    var translated = data[0].map(function(part) { return part[0]; }).join('');
+    translationCache[text] = translated;
+    return translated;
+  } catch(e) {
+    return text;
+  }
+}
+
+function setHeaderDate() {
+  var now = new Date(); var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت']; var months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  document.getElementById("headerDate").textContent = days[now.getDay()] + "، " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
+}
+
+async function fetchAllNews() {
+  var btn = document.getElementById("refreshBtn"); btn.disabled = true; btn.textContent = "جاري الجلب..."; document.getElementById("newsCount").textContent = "جاري التحميل...";
+  let combinedNews = [];
+  
+  let currentFeeds = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
+  for (let i = 0; i < currentFeeds.length; i++) {
+    if (currentFeeds[i].active !== false) {
+      let news = await fetchRSS(currentFeeds[i].url, currentFeeds[i].name);
+      combinedNews = combinedNews.concat(news);
+    }
+  }
+  
+  var now = new Date();
+  var thirtySixHoursAgo = new Date(now.getTime() - (36 * 60 * 60 * 1000));
+
+  let uniqueLinks = {};
+  allNews = combinedNews.filter(n => {
+    if (!n.url || uniqueLinks[n.url] || deletedNews.includes(n.url)) return false;
+    var itemDate = new Date(n.date);
+    if (itemDate < thirtySixHoursAgo) return false;
+    uniqueLinks[n.url] = true; return true;
+  });
+  
+  allNews.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  var updateDate = new Date(); var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+  document.getElementById("updateTime").textContent = "آخر تحديث: " + updateDate.toLocaleTimeString('ar-SA', timeOptions);
+  document.getElementById("newsCount").textContent = allNews.length + " خبر";
+  renderCats(); await renderWithTranslation(); 
+  
+  btn.disabled = false; btn.textContent = "🔄 تحديث الأخبار";
+  startCountdown();
+}
+
+function renderCats() {
+  document.getElementById("cats").innerHTML = CATEGORIES.map(function(c) {
+    var count = (c === "الكل") ? allNews.length : allNews.filter(function(n){ return n.category === c; }).length;
+    if (count === 0 && c !== "الكل" && c !== "عاجل") return "";
+    var label = c + (count > 0 ? " (" + count + ")" : "");
+    return '<button class="'+(c === currentCat ? 'active' : '')+'" onclick="setCat(\''+c+'\')">'+label+'</button>';
+  }).join("");
+}
+
+function setCat(c) { currentCat = c; renderCats(); renderWithTranslation(); }
+function deleteArticle(url) { if(!deletedNews.includes(url)) { deletedNews.push(url); localStorage.setItem("deletedNews", JSON.stringify(deletedNews)); } allNews = allNews.filter(n => n.url !== url); renderCats(); renderWithTranslation(); }
+
+async function renderWithTranslation() {
+  var feed = document.getElementById("feed");
+  var searchTerm = document.getElementById("searchBox").value.trim().toLowerCase();
+
+  for (let i = 0; i < allNews.length; i++) {
+    if (!allNews[i].title_ar && allNews[i].title) {
+      allNews[i].title_ar = await translateTitle(allNews[i].title);
+    }
+  }
+
+  var items = allNews;
+
+  if (searchTerm !== "") {
+    items = items.filter(function(n) {
+      var arTitle = (n.title_ar || translationCache[n.title] || "").toLowerCase();
+      var origTitle = (n.title || "").toLowerCase();
+      return arTitle.includes(searchTerm) || origTitle.includes(searchTerm);
+    });
+  }
+
+  if (currentCat !== "الكل") {
+    items = items.filter(function(n) {
+      return n.category === currentCat;
+    });
+  }
+
+  if (!items.length) {
+    feed.innerHTML = '<div class="empty">لا توجد أخبار حديثة في هذا القسم</div>';
+    return;
+  }
+
+  feed.innerHTML = items.slice(0, 200).map(function(n, index) {
+    let dateObj = new Date(n.date);
+    let dateStr = dateObj.toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'numeric' });
+    let timeStr = dateObj.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+    let displayTitle = n.title_ar || translationCache[n.title] || n.title;
+    return '<div class="card" id="card-'+index+'"><button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button><a href="'+n.url+'" target="_blank"><div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div><h3>'+esc(displayTitle)+'</h3><div class="meta">'+dateStr+' الساعة '+timeStr+'</div></a></div>';
+  }).join("");
+}
+
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&','<':'<','>':'>','"':'"',"'":'''}[c];});}
+
+setHeaderDate(); 
+fetchAllNews();
+</script>
+</body>
+</html>
