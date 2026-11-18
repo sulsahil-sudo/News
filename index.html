@@ -328,9 +328,7 @@ async function renderWithTranslation() {
   var searchTerm = document.getElementById("searchBox").value.trim().toLowerCase();
   if (searchTerm !== "") {
     items = items.filter(function(n) { 
-      var arTitle = (n.title_ar || translationCache[n.title] || "").toLowerCase();
-      var origTitle = (n.title || "").toLowerCase();
-      return arTitle.includes(searchTerm) || origTitle.includes(searchTerm); 
+      return (n.title_ar || n.title).toLowerCase().includes(searchTerm); 
     });
   }
 
@@ -343,15 +341,10 @@ async function renderWithTranslation() {
     return '<div class="card" id="card-'+index+'"><button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button><a href="'+n.url+'" target="_blank"><div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div><h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+dateStr+' الساعة '+timeStr+'</div></a></div>';
   }).join("");
   
-  for (let i = 0; i < items.length && i < 200; i++) {
-    let translatedTitle = await translateTitle(items[i].title);
-    items[i].title_ar = translatedTitle;
-    var titleEl = document.getElementById("title-"+i);
-    if (titleEl) { titleEl.textContent = translatedTitle; }
-  }
+  for (let i = 0; i < items.length && i < 200; i++) { let translatedTitle = await translateTitle(items[i].title); var titleEl = document.getElementById("title-"+i); if (titleEl) { titleEl.textContent = translatedTitle; } }
 }
 
-function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&','<':'<','>':'>','"':'"',"'":'''}[c];});}
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 
 setHeaderDate(); 
 fetchAllNews();
