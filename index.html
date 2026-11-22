@@ -277,22 +277,38 @@ function renderCats() {
 function setCat(c) { currentCat = c; renderCats(); renderFeed(); }
 function deleteArticle(url) { if(!deletedNews.includes(url)) { deletedNews.push(url); localStorage.setItem("deletedNews", JSON.stringify(deletedNews)); } allNews = allNews.filter(n => n.url !== url); renderCats(); renderFeed(); }
 
+
 // ✅ دالة العرض والبحث (تعمل الآن على العناوين المترجمة)
+  function normalizeArabic(text){
+
+  return String(text || "")
+    .toLowerCase()
+    .replace(/[\u064B-\u065F\u0670]/g, "")
+    .replace(/[أإآ]/g, "ا")
+    .replace(/ى/g, "ي")
+    .replace(/ة/g, "ه")
+    .replace(/ـ/g, "")
+    .trim();
+
+}
 function renderFeed() {
   var feed = document.getElementById("feed"); var items = allNews;
   
   var searchTerm = document.getElementById("searchBox").value.trim().toLowerCase();
   
   if (currentCat !== "الكل") { items = items.filter(function(n) { return n.category === currentCat; }); }
-if (searchTerm !== "") {
+if(searchTerm !== ""){
+
+  const q = normalizeArabic(searchTerm);
 
   items = items.filter(function(n){
 
-    if(!n.title_ar) return false;
+    const title =
+      normalizeArabic(
+        n.title_ar || n.title
+      );
 
-    return n.title_ar
-      .toLowerCase()
-      .includes(searchTerm);
+    return title.includes(q);
 
   });
 
