@@ -107,8 +107,34 @@ button:disabled{opacity:.7;cursor:wait}
 </header>
 
 <div class="search-container">
-  <input type="text" id="searchBox" class="search-input" placeholder="🔍 ابحث في الأخبار..." oninput="renderFeed()">
+  <div style="position:relative">
+
+<input type="text"
+id="searchBox"
+class="search-input"
+placeholder="🔍 ابحث في الأخبار..."
+oninput="toggleClearBtn();renderFeed()">
+
+<button
+id="clearSearchBtn"
+onclick="clearSearch()"
+style="
+position:absolute;
+left:12px;
+top:50%;
+transform:translateY(-50%);
+background:none;
+border:none;
+color:#ef4444;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+display:none;
+">
+✕
+</button>
 </div>
+
 
 <div id="feed" class="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
 <div id="settingsModal">
