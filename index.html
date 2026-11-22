@@ -101,7 +101,7 @@ button:disabled{opacity:.7;cursor:wait}
 </header>
 
 <div class="search-container">
-  <input type="text" id="searchBox" class="search-input" placeholder="🔍 ابحث في الأخبار..." oninput="renderWithTranslation()">
+  <input type="text" id="searchBox" class="search-input" placeholder="🔍 ابحث في الأخبار (بالعربية)..." oninput="filterNews()">
 </div>
 
 <div id="feed" class="feed"><div class="loading">جاري تحميل الأخبار...</div></div>
@@ -276,6 +276,11 @@ function setHeaderDate() {
   document.getElementById("headerDate").textContent = days[now.getDay()] + "، " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
 }
 
+// ✅ دالة البحث
+function filterNews() {
+  renderWithTranslation();
+}
+
 async function fetchAllNews() {
   var btn = document.getElementById("refreshBtn"); btn.disabled = true; btn.textContent = "جاري الجلب..."; document.getElementById("newsCount").textContent = "جاري التحميل...";
   let combinedNews = [];
@@ -323,46 +328,46 @@ function setCat(c) { currentCat = c; renderCats(); renderWithTranslation(); }
 function deleteArticle(url) { if(!deletedNews.includes(url)) { deletedNews.push(url); localStorage.setItem("deletedNews", JSON.stringify(deletedNews)); } allNews = allNews.filter(n => n.url !== url); renderCats(); renderWithTranslation(); }
 
 async function renderWithTranslation() {
-  var feed = document.getElementById("feed");
+  var feed = document.getElementById("feed"); var items = allNews;
+  
+  // ✅ البحث في العنوان المترجم
   var searchTerm = document.getElementById("searchBox").value.trim().toLowerCase();
-
-  for (let i = 0; i < allNews.length; i++) {
-    if (!allNews[i].title_ar && allNews[i].title) {
-      allNews[i].title_ar = await translateTitle(allNews[i].title);
-    }
-  }
-
-  var items = allNews;
-
+  
+  if (currentCat !== "الكل") { items = items.filter(function(n) { return n.category === currentCat; }); }
+  
   if (searchTerm !== "") {
-    items = items.filter(function(n) {
-      var arTitle = (n.title_ar || translationCache[n.title] || "").toLowerCase();
-      var origTitle = (n.title || "").toLowerCase();
-      return arTitle.includes(searchTerm) || origTitle.includes(searchTerm);
-    });
+    // البحث في العناوين المترجمة (بعد الترجمة)
+    var filteredItems = [];
+    for (var j = 0; j < items.length; j++) {
+      var n = items[j];
+      var tTitle = (n.title_ar || n.title).toLowerCase();
+      
+      // إذا كان النص العربي يحتوي على مصطلح البحث، نضيفه
+      if (tTitle.includes(searchTerm)) {
+        filteredItems.push(n);
+      } else {
+        // إذا لم يترجم بعد، نقوم بترجمته ونبحث فيه
+        var translated = await translateTitle(n.title);
+        if (translated.toLowerCase().includes(searchTerm)) {
+          n.title_ar = translated; // تخزين الترجمة
+          filteredItems.push(n);
+        }
+      }
+    }
+    items = filteredItems;
   }
-
-  if (currentCat !== "الكل") {
-    items = items.filter(function(n) {
-      return n.category === currentCat;
-    });
-  }
-
-  if (!items.length) {
-    feed.innerHTML = '<div class="empty">لا توجد أخبار حديثة في هذا القسم</div>';
-    return;
-  }
-
+  
+  if(!items.length){feed.innerHTML='<div class="empty">لا توجد نتائج بحث مطابقة.</div>';return;}
+  
   feed.innerHTML = items.slice(0, 200).map(function(n, index) {
-    let dateObj = new Date(n.date);
-    let dateStr = dateObj.toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'numeric' });
-    let timeStr = dateObj.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
-    let displayTitle = n.title_ar || translationCache[n.title] || n.title;
-    return '<div class="card" id="card-'+index+'"><button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button><a href="'+n.url+'" target="_blank"><div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div><h3>'+esc(displayTitle)+'</h3><div class="meta">'+dateStr+' الساعة '+timeStr+'</div></a></div>';
+    let dateObj = new Date(n.date); let dateStr = dateObj.toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'numeric' }); let timeStr = dateObj.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+    return '<div class="card" id="card-'+index+'"><button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button><a href="'+n.url+'" target="_blank"><div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div><h3 id="title-'+index+'">جاري الترجمة...</h3><div class="meta">'+dateStr+' الساعة '+timeStr+'</div></a></div>';
   }).join("");
+  
+  for (let i = 0; i < items.length && i < 200; i++) { let translatedTitle = await translateTitle(items[i].title); var titleEl = document.getElementById("title-"+i); if (titleEl) { titleEl.textContent = translatedTitle; } }
 }
 
-function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&','<':'<','>':'>','"':'"',"'":'''}[c];});}
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 
 setHeaderDate(); 
 fetchAllNews();
