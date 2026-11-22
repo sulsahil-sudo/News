@@ -77,6 +77,13 @@ button:disabled{opacity:.7;cursor:wait}
 .search-input::placeholder {
   color: #64748b;
 }
+  .search-highlight{
+  background: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
 </style>
 </head>
 <body>
@@ -291,15 +298,22 @@ function deleteArticle(url) { if(!deletedNews.includes(url)) { deletedNews.push(
     .trim();
 
 }
-  function highlightText(text, searchTerm){
+ function highlightText(text, searchTerm){
 
   if(!searchTerm) return text;
 
-  return text.replace(
-    new RegExp("(" + searchTerm + ")", "gi"),
-    '<span class="search-highlight">$1</span>'
+  const escaped = searchTerm.replace(
+    /[.*+?^${}()|[\]\\]/g,
+    '\\$&'
   );
 
+  return text.replace(
+    new RegExp(escaped, 'ig'),
+    match =>
+      '<span class="search-highlight">' +
+      match +
+      '</span>'
+  );
 }
 function renderFeed() {
   var feed = document.getElementById("feed"); var items = allNews;
