@@ -284,7 +284,19 @@ function renderFeed() {
   var searchTerm = document.getElementById("searchBox").value.trim().toLowerCase();
   
   if (currentCat !== "الكل") { items = items.filter(function(n) { return n.category === currentCat; }); }
-  if (searchTerm !== "") { items = items.filter(function(n) { return (n.title_ar || n.title).toLowerCase().includes(searchTerm); }); }
+if (searchTerm !== "") {
+
+  items = items.filter(function(n){
+
+    if(!n.title_ar) return false;
+
+    return n.title_ar
+      .toLowerCase()
+      .includes(searchTerm);
+
+  });
+
+}
   
   if(!items.length){feed.innerHTML='<div class="empty">لا توجد أخبار مطابقة للبحث.</div>';return;}
   
