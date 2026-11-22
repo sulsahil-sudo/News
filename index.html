@@ -291,6 +291,16 @@ function deleteArticle(url) { if(!deletedNews.includes(url)) { deletedNews.push(
     .trim();
 
 }
+  function highlightText(text, searchTerm){
+
+  if(!searchTerm) return text;
+
+  return text.replace(
+    new RegExp("(" + searchTerm + ")", "gi"),
+    '<span class="search-highlight">$1</span>'
+  );
+
+}
 function renderFeed() {
   var feed = document.getElementById("feed"); var items = allNews;
   
@@ -318,7 +328,12 @@ if(searchTerm !== ""){
   
   feed.innerHTML = items.slice(0, 200).map(function(n, index) {
     let dateObj = new Date(n.date); let dateStr = dateObj.toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'numeric' }); let timeStr = dateObj.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
-    return '<div class="card"><button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button><a href="'+n.url+'" target="_blank"><div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div><h3>'+esc(n.title_ar||n.title)+'</h3><div class="meta">'+dateStr+' الساعة '+timeStr+'</div></a></div>';
+    return '<div class="card"><button class="delete-btn" onclick="deleteArticle(\''+n.url+'\')" title="حذف الخبر">✕</button><a href="'+n.url+'" target="_blank"><div class="top-row"><span class="cat '+n.category+'">'+n.category+'</span><span class="src">📰 '+esc(n.source||'')+'</span></div><h3>'+
+highlightText(
+  esc(n.title_ar || n.title),
+  searchTerm
+)+
+'</h3><div class="meta">'+dateStr+' الساعة '+timeStr+'</div></a></div>';
   }).join("");
 }
 
