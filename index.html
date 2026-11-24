@@ -35,6 +35,7 @@ button:disabled{opacity:.7;cursor:wait}
 .card .cat.تقنية{background:#0ea5e9}
 .card .cat.فلك{background:#f59e0b}
 .card .cat.منتجات جديدة{background:#10b981}
+.card .cat.صحة{background:#ec4899} /* لون وردي لتصنيف الصحة */
 .card h3{font-size:16px;margin:0 0 6px;line-height:1.4;padding-left:25px;}
 .card .meta{font-size:13px;color:#94a3b8;margin-top:8px;font-weight:500}
 .card a{color:inherit;text-decoration:none}
@@ -55,12 +56,17 @@ button:disabled{opacity:.7;cursor:wait}
 .add-feed-form{background:#1e293b;padding:15px;border-radius:12px;border:1px solid #334155;display:flex;flex-direction:column;gap:10px}
 .add-feed-form input{padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#fff;font-family:inherit}
 .add-feed-form button{background:#10b981;color:#fff;border:none;padding:10px;border-radius:8px;cursor:pointer;font-weight:bold}
-.bulk-actions{display:flex;gap:10px;margin-bottom:15px;}
+.bulk-actions{display:flex;gap:10px;margin-bottom:15px; flex-wrap:wrap;}
 .btn-bulk{flex:1;border:none;border-radius:8px;padding:10px;cursor:pointer;font-weight:bold;font-family:inherit;font-size:14px;}
 .btn-stop-all{background:#ef4444;color:#fff;}
 .btn-start-all{background:#10b981;color:#fff;}
+.btn-check{background:#8b5cf6;color:#fff; width: 100%; margin-bottom: 10px;}
 .source-search-container { margin-bottom: 15px; }
 .source-search-input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #334155; background-color: #0f172a; color: #fff; font-family: inherit; font-size: 14px; }
+.btn-check-health { width: 100%; padding: 12px; background-color: #8b5cf6; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 10px; font-family: inherit; }
+.btn-check-health:disabled { opacity: 0.7; cursor: wait; }
+.health-ok { color: #10b981; font-weight: bold; margin-right: 5px; }
+.health-fail { color: #ef4444; font-weight: bold; margin-right: 5px; }
 </style>
 </head>
 <body>
@@ -92,6 +98,8 @@ button:disabled{opacity:.7;cursor:wait}
   <div class="source-search-container">
     <input type="text" id="sourceSearchBox" class="source-search-input" placeholder="🔍 ابحث عن مصدر..." oninput="renderSettingsList()">
   </div>
+
+  <button class="btn-check-health" id="healthCheckBtn" onclick="checkHealth()">🩺 فحص صحة المصادر</button>
   
   <div class="bulk-actions">
     <button class="btn-bulk btn-stop-all" onclick="stopAllFeeds()">⏸️ إيقاف الكل</button>
@@ -107,51 +115,46 @@ button:disabled{opacity:.7;cursor:wait}
   </div>
 </div>
 <script>
-// القائمة الكاملة (القديمة + الجديدة)
 const DEFAULT_FEEDS = [
-  // القديمة (5)
-  { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", name: "الجزيرة", active: true },
-  { url: "https://www.alarabiya.net/feed/rss2/ar.xml", name: "العربية", active: true },
-  { url: "https://feeds.reuters.com/reuters/topNews", name: "Reuters", active: true },
-  { url: "https://techcrunch.com/feed/", name: "TechCrunch", active: true },
-  { url: "https://www.space.com/feeds/all", name: "Space.com", active: true },
-  // الجديدة (20)
-  { url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml", name: "The New York Times", active: true },
-  { url: "https://www.wired.com/feed/rss", name: "WIRED", active: true },
-  { url: "https://www.theverge.com/rss/index.xml", name: "The Verge", active: true },
-  { url: "https://lifehacker.com/feed/rss", name: "Lifehacker", active: true },
-  { url: "https://www.engadget.com/rss.xml", name: "Engadget", active: true },
-  { url: "https://feeds.arstechnica.com/arstechnica/index", name: "Ars Technica", active: true },
-  { url: "https://feeds.content.dowjones.io/public/rss/RSSWorldNews", name: "WSJ: World News", active: true },
-  { url: "https://news.google.com/news/rss/search?q=made-in-china.com%20site%3Amade-in-china.com&hl=en-US&gl=US&ceid=US:en", name: "Made in China (Google News)", active: true },
-  { url: "https://newatlas.com/technology/index.rss", name: "New Atlas - Technology", active: true },
-  { url: "https://www.cnbc.com/id/100003114/device/rss/rss.html", name: "CNBC Top News", active: true },
-  { url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA", name: "Associated Press", active: true },
-  { url: "https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ", name: "Reuters (YouTube)", active: true },
-  { url: "https://www.ftchinese.com/rss/feed", name: "FT中文网", active: true },
-  { url: "https://www.rfa.org/arc/outboundfeeds/mandarin/rss/", name: "RFA", active: true },
-  { url: "https://feeds.feedburner.com/odditymall", name: "OddityMall", active: true },
-  { url: "https://newatlas.com/index.rss", name: "Gizmag", active: true },
-  { url: "https://madeinchinajournal.com/feed/", name: "Made in China Journal", active: true },
-  { url: "https://news.google.com/news/rss/search/section/q/alibaba/alibaba?hl=en&gl=US", name: "Alibaba (Google News)", active: true },
-  { url: "https://www.gsmarena.com/rss-news-reviews.php3", name: "GSMArena", active: true }
+  { url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml", name: "The New York Times", active: true, health: "unknown" },
+  { url: "https://www.wired.com/feed/rss", name: "WIRED", active: true, health: "unknown" },
+  { url: "https://www.theverge.com/rss/index.xml", name: "The Verge", active: true, health: "unknown" },
+  { url: "https://lifehacker.com/feed/rss", name: "Lifehacker", active: true, health: "unknown" },
+  { url: "https://www.engadget.com/rss.xml", name: "Engadget", active: true, health: "unknown" },
+  { url: "https://techcrunch.com/feed/", name: "TechCrunch", active: true, health: "unknown" },
+  { url: "https://feeds.arstechnica.com/arstechnica/index", name: "Ars Technica", active: true, health: "unknown" },
+  { url: "https://feeds.content.dowjones.io/public/rss/RSSWorldNews", name: "WSJ: World News", active: true, health: "unknown" },
+  { url: "https://news.google.com/news/rss/search?q=made-in-china.com%20site%3Amade-in-china.com&hl=en-US&gl=US&ceid=US:en", name: "Made in China (Google News)", active: true, health: "unknown" },
+  { url: "https://newatlas.com/technology/index.rss", name: "New Atlas - Technology", active: true, health: "unknown" },
+  { url: "https://www.cnbc.com/id/100003114/device/rss/rss.html", name: "CNBC Top News", active: true, health: "unknown" },
+  { url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA", name: "Associated Press", active: true, health: "unknown" },
+  { url: "https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ", name: "Reuters (YouTube)", active: true, health: "unknown" },
+  { url: "https://www.ftchinese.com/rss/feed", name: "FT中文网", active: true, health: "unknown" },
+  { url: "https://www.rfa.org/arc/outboundfeeds/mandarin/rss/", name: "RFA", active: true, health: "unknown" },
+  { url: "https://feeds.feedburner.com/odditymall", name: "OddityMall", active: true, health: "unknown" },
+  { url: "https://newatlas.com/index.rss", name: "Gizmag", active: true, health: "unknown" },
+  { url: "https://madeinchinajournal.com/feed/", name: "Made in China Journal", active: true, health: "unknown" },
+  { url: "https://news.google.com/news/rss/search/section/q/alibaba/alibaba?hl=en&gl=US", name: "Alibaba (Google News)", active: true, health: "unknown" },
+  { url: "https://www.gsmarena.com/rss-news-reviews.php3", name: "GSMArena", active: true, health: "unknown" }
 ];
 
-// ✅ الدمج الذكي: إضافة المصادر الجديدة للذاكرة دون مسح القديمة
-let existingFeeds = JSON.parse(localStorage.getItem("myFeeds") || "[]");
-let existingUrls = existingFeeds.map(f => f.url.toLowerCase());
+const OLD_FEEDS = [
+  { url: "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9", name: "الجزيرة", active: true, health: "unknown" },
+  { url: "https://www.alarabiya.net/feed/rss2/ar.xml", name: "العربية", active: true, health: "unknown" },
+  { url: "https://feeds.reuters.com/reuters/topNews", name: "Reuters", active: true, health: "unknown" },
+  { url: "https://techcrunch.com/feed/", name: "TechCrunch", active: true, health: "unknown" },
+  { url: "https://www.space.com/feeds/all", name: "Space.com", active: true, health: "unknown" }
+];
 
-DEFAULT_FEEDS.forEach(function(newFeed) {
-  if (!existingUrls.includes(newFeed.url.toLowerCase())) {
-    existingFeeds.push(newFeed);
-  }
-});
+const ALL_DEFAULT_FEEDS = [...OLD_FEEDS, ...DEFAULT_FEEDS];
 
-// حفظ القائمة المدمجة
-localStorage.setItem("myFeeds", JSON.stringify(existingFeeds));
+if (!localStorage.getItem("myFeeds")) {
+  localStorage.setItem("myFeeds", JSON.stringify(ALL_DEFAULT_FEEDS));
+}
+
 let FEEDS = JSON.parse(localStorage.getItem("myFeeds"));
-
-const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة"];
+// ✅ إضافة تصنيف "صحة" إلى قائمة التصنيفات
+const CATEGORIES = ["الكل", "عاجل", "عام", "فلك", "غرائب", "تقنية", "منتجات جديدة", "صحة"];
 let allNews = [], currentCat = "الكل";
 const translationCache = {};
 let deletedNews = JSON.parse(localStorage.getItem("deletedNews") || "[]");
@@ -164,6 +167,38 @@ function openSettings() {
   document.getElementById("settingsModal").style.display = "block"; 
 }
 function closeSettings() { document.getElementById("settingsModal").style.display = "none"; }
+
+async function checkHealth() {
+  var btn = document.getElementById("healthCheckBtn");
+  btn.disabled = true;
+  btn.textContent = "⏳ جاري فحص المصادر...";
+  
+  let currentFeeds = JSON.parse(localStorage.getItem("myFeeds") || "[]");
+  
+  for (let i = 0; i < currentFeeds.length; i++) {
+    try {
+      var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(currentFeeds[i].url);
+      var response = await fetch(apiUrl);
+      var data = await response.json();
+      
+      if (data.status === "ok" && data.items && data.items.length > 0) {
+        currentFeeds[i].health = "ok";
+      } else {
+        currentFeeds[i].health = "fail";
+      }
+    } catch(e) {
+      currentFeeds[i].health = "fail";
+    }
+  }
+  
+  localStorage.setItem("myFeeds", JSON.stringify(currentFeeds));
+  FEEDS = currentFeeds;
+  
+  renderSettingsList();
+  btn.disabled = false;
+  btn.textContent = "🩺 فحص صحة المصادر";
+  alert("تم فحص جميع المصادر!");
+}
 
 function renderSettingsList() {
   var list = document.getElementById("settingsFeedList");
@@ -185,8 +220,12 @@ function renderSettingsList() {
     let statusClass = feed.active === false ? 'inactive-feed' : 'active-feed';
     let btnText = feed.active === false ? '▶️ تشغيل' : '⏸️ إيقاف';
     
+    let healthIcon = "";
+    if (feed.health === "ok") healthIcon = '<span class="health-ok">✅</span>';
+    else if (feed.health === "fail") healthIcon = '<span class="health-fail">❌</span>';
+    
     return `<div class="feed-item ${statusClass}">
-      <span>${feed.name}<br><small style="font-size:13px; color:#94a3b8; font-weight:normal;">${feed.url}</small></span>
+      <span>${healthIcon}${feed.name}<br><small style="font-size:13px; color:#94a3b8; font-weight:normal;">${feed.url}</small></span>
       <div class="feed-actions">
         <button class="btn-toggle" onclick="toggleFeed(${originalIndex})">${btnText}</button>
       </div>
@@ -218,7 +257,7 @@ function addNewFeed() {
 
   if (isDuplicate) { alert("⚠️ هذا المصدر (أو رابطه) موجود مسبقاً في القائمة!"); return; }
   
-  FEEDS.push({ url: url, name: name, active: true }); 
+  FEEDS.push({ url: url, name: name, active: true, health: "unknown" }); 
   localStorage.setItem("myFeeds", JSON.stringify(FEEDS));
   
   document.getElementById("newFeedName").value = ""; 
@@ -265,6 +304,8 @@ function classify(title) {
   if (/هاتف|تطبيق|ذكاء|تقنية|جهاز|gadget|tech|app|software|iphone|android/.test(t)) return "تقنية";
   if (/منتج|إطلاق|جديد|product|launch|new/.test(t)) return "منتجات جديدة";
   if (/فلك|فضاء|كوكب|مجرة|نجم|space|nasa|planet|galaxy|star/.test(t)) return "فلك";
+  // ✅ إضافة تصنيف الصحة
+  if (/صحة|مرض|وباء|لقاح|علاج|طبيب|مستشفى|health|disease|vaccine|medical|doctor|hospital/.test(t)) return "صحة";
   return "عام";
 }
 
@@ -295,7 +336,7 @@ async function fetchAllNews() {
   var btn = document.getElementById("refreshBtn"); btn.disabled = true; btn.textContent = "جاري الجلب..."; document.getElementById("newsCount").textContent = "جاري التحميل...";
   let combinedNews = [];
   
-  let currentFeeds = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(DEFAULT_FEEDS));
+  let currentFeeds = JSON.parse(localStorage.getItem("myFeeds") || JSON.stringify(ALL_DEFAULT_FEEDS));
   for (let i = 0; i < currentFeeds.length; i++) {
     if (currentFeeds[i].active !== false) {
       let news = await fetchRSS(currentFeeds[i].url, currentFeeds[i].name);
